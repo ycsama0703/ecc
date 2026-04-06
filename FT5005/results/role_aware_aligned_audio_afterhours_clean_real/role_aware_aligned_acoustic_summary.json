@@ -1,0 +1,14 @@
+{
+  "num_events": 172,
+  "num_sentence_rows": 53873,
+  "feature_column_count": 88,
+  "winsorize_quantile": 0.01,
+  "role_counts": {
+    "answer": 4169,
+    "operator": 224,
+    "presenter": 4421,
+    "question": 827,
+    "unknown": 44232
+  },
+  "mapped_row_share_mean": 0.182059
+}

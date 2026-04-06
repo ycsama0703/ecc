@@ -1,0 +1,540 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_qa": 553,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ]
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qa_benchmark_all_count": 47,
+    "qna_lsa_components": 4,
+    "qa_benchmark_svd": {
+      "input_feature_count": 47,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6964621128047552
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6026047228923573
+    }
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "expert_choice_counts": {
+    "residual_pre_call_market_only": 0,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 3,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 6
+  },
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 6.921102195379463e-05,
+      "rmse": 0.00013349287280217217,
+      "r2": 0.9984141606625622
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    },
+    "validation_selected_transfer_expert": {
+      "mae": 7.098330214615625e-05,
+      "rmse": 0.00012780682598281307,
+      "r2": 0.9985463792059631
+    },
+    "positive_stack_on_gated_transfer_experts": {
+      "mae": 8.621587604866291e-05,
+      "rmse": 0.00012978122389452622,
+      "r2": 0.998501120365599
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9945024082810152,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9959160233667426,
+    "validation_selected_transfer_expert": 0.9959160233667426,
+    "positive_stack_on_gated_transfer_experts": 0.995856057296706
+  },
+  "significance": {
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__validation_selected_transfer_expert": {
+      "rmse_diff_mean": 8.773651289343814e-07,
+      "rmse_diff_ci_low": -1.8116418979413213e-07,
+      "rmse_diff_ci_high": 2.2679809433346036e-06,
+      "mae_diff_mean": 5.236280954147142e-07,
+      "mae_diff_ci_low": -2.2000243331502e-06,
+      "mae_diff_ci_high": 3.3316719754018315e-06,
+      "r2_gain_mean": 2.5457975722318477e-05,
+      "r2_gain_ci_low": -4.256930921117674e-06,
+      "r2_gain_ci_high": 9.78257133328109e-05,
+      "mse_gain_mean": 2.1451425483518237e-10,
+      "mse_gain_pvalue": 0.1845,
+      "mae_gain_mean": 5.074851136820637e-07,
+      "mae_gain_pvalue": 0.7345
+    },
+    "residual_pre_call_market_only__vs__validation_selected_transfer_expert": {
+      "rmse_diff_mean": 2.4534313039816653e-06,
+      "rmse_diff_ci_low": -9.573249918585258e-06,
+      "rmse_diff_ci_high": 1.2367755650239325e-05,
+      "mae_diff_mean": -3.3948775948365443e-06,
+      "mae_diff_ci_low": -1.191078139015111e-05,
+      "mae_diff_ci_high": 5.4692066958579685e-06,
+      "r2_gain_mean": 5.279163496653502e-05,
+      "r2_gain_ci_low": -0.0003528619586572107,
+      "r2_gain_ci_high": 0.00039469126538700395,
+      "mse_gain_mean": 7.227441854094031e-10,
+      "mse_gain_pvalue": 0.65025,
+      "mae_gain_mean": -3.4235914989447814e-06,
+      "mae_gain_pvalue": 0.45025
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__positive_stack_on_gated_transfer_experts": {
+      "rmse_diff_mean": -1.8282840362336926e-06,
+      "rmse_diff_ci_low": -1.331205807216089e-05,
+      "rmse_diff_ci_high": 6.491600480034387e-06,
+      "mae_diff_mean": -1.4786555213742083e-05,
+      "mae_diff_ci_low": -2.195504037346029e-05,
+      "mae_diff_ci_high": -7.32449392558933e-06,
+      "r2_gain_mean": -3.7091935331080574e-06,
+      "r2_gain_ci_low": -0.00020594548280746528,
+      "r2_gain_ci_high": 0.00036253090061484373,
+      "mse_gain_mean": -2.940670529249037e-10,
+      "mse_gain_pvalue": 0.81075,
+      "mae_gain_mean": -1.4725088788824622e-05,
+      "mae_gain_pvalue": 0.00025
+    },
+    "residual_pre_call_market_only__vs__positive_stack_on_gated_transfer_experts": {
+      "rmse_diff_mean": -2.5221786118640833e-07,
+      "rmse_diff_ci_low": -1.4101785726774467e-05,
+      "rmse_diff_ci_high": 1.0711508956036995e-05,
+      "mae_diff_mean": -1.8705060903993344e-05,
+      "mae_diff_ci_low": -2.8490936318064582e-05,
+      "mae_diff_ci_high": -8.236331607586563e-06,
+      "r2_gain_mean": 2.3624465711108488e-05,
+      "r2_gain_ci_low": -0.00038107477749189375,
+      "r2_gain_ci_high": 0.0004979939158919228,
+      "mse_gain_mean": 2.1416287764931666e-10,
+      "mse_gain_pvalue": 0.90875,
+      "mae_gain_mean": -1.8656165401451472e-05,
+      "mae_gain_pvalue": 0.00125
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 8.408006190002656e-05,
+        "rmse": 9.916346493128078e-05,
+        "r2": 0.9890689667365894,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.7207,
+      "sem_audio_threshold": 0.62779,
+      "stack_intercept": 1.9213198477027044e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.1324187933046376,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8688139762642649
+      }
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 0.00019012130010225827,
+        "rmse": 0.00025048909113754717,
+        "r2": 0.7678051517041923,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.69665,
+      "sem_audio_threshold": 0.6396299999999999,
+      "stack_intercept": 3.349952370965657e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.19397982283031193,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8033558357875679
+      }
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 7.66000839865564e-05,
+        "rmse": 0.00012693796961797002,
+        "r2": 0.9859434563179972,
+        "n": 6
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "qa_threshold": 0.69665,
+      "sem_audio_threshold": 0.69665,
+      "stack_intercept": 2.5435251885790305e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0024716883734042,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.0
+      }
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.0001147365808099314,
+        "rmse": 0.00021987093023883339,
+        "r2": 0.9944965012043776,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 0.00012337508078530944,
+        "rmse": 0.00019078984137971998,
+        "r2": 0.995856057296706,
+        "n": 9
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.5814,
+      "sem_audio_threshold": 0.62779,
+      "stack_intercept": 2.510948329966737e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5113056529820073,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.4800298826284656
+      }
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 4.640696218774482e-05,
+        "rmse": 4.9974280609126755e-05,
+        "r2": 0.9980088290130593,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "qa_threshold": 0.5814,
+      "sem_audio_threshold": 0.64054,
+      "stack_intercept": 2.8182488879105027e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9470319713293712,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.05321195723204358
+      }
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.627681494177939e-05,
+        "rmse": 4.526257035661489e-05,
+        "r2": 0.999206561699441,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 7.445029849358955e-05,
+        "rmse": 7.976810335671186e-05,
+        "r2": 0.9975357017598485,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.7027,
+      "sem_audio_threshold": 0.6281,
+      "stack_intercept": 3.587163118924652e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.4076607313895872,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.5958571362957936
+      }
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 3.831126035562245e-05,
+        "rmse": 4.051401923623037e-05,
+        "r2": 0.7651377189293358,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "qa_threshold": 0.68372,
+      "sem_audio_threshold": 0.71314,
+      "stack_intercept": 5.106313501342715e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.1421986016766488,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8580426742700537
+      }
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.315809287679451e-05,
+        "rmse": 4.977015283355336e-05,
+        "r2": 0.9981181033661115,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 5.546150448211256e-05,
+        "rmse": 5.6789012636241345e-05,
+        "r2": 0.9975498850941349,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.5814,
+      "sem_audio_threshold": 0.64028,
+      "stack_intercept": 3.603471996302529e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.016801327288350244,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5440555459949705,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.44040034189405963
+      }
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "positive_stack_on_gated_transfer_experts": {
+        "mae": 9.586397039763986e-05,
+        "rmse": 0.00012703113991721114,
+        "r2": 0.9995574144786707,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "qa_threshold": 0.69665,
+      "sem_audio_threshold": 0.6396299999999999,
+      "stack_intercept": 4.0603595708425463e-05,
+      "stack_weights": {
+        "residual_pre_call_market_only": 0.0,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5017665455297609,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.5021811629701438
+      }
+    }
+  }
+}

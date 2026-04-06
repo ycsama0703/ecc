@@ -1,0 +1,10 @@
+coefficient,feature
+5.450273457429396e-10,pair_tail_factor
+3.808579203870843e-10,pair_minus_pre_pred
+3.8085792038708424e-10,logistic_minus_pre_pred
+3.808579203870836e-10,agreed_minus_pre_pred
+2.6247703504400977e-10,sem_minus_pre_pred
+1.1955572945362798e-10,qa_minus_pre_pred
+4.2413367736334355e-11,agreed_choose_qa
+-4.2160683522545186e-11,selected_minus_pre_pred
+0.0,abs_pair_minus_logistic_pred

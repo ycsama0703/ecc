@@ -1,0 +1,10 @@
+shared_conjunctive_activation_rate_test,shared_conjunctive_direction_a,shared_conjunctive_direction_b,shared_conjunctive_feature_a,shared_conjunctive_feature_b,shared_conjunctive_threshold_a,shared_conjunctive_threshold_b,shared_logistic_activation_rate_test,shared_logistic_threshold,simple_gate_activation_rate_test,simple_gate_feature,simple_gate_threshold,single_feature_search_activation_rate_test,single_feature_search_direction,single_feature_search_feature,single_feature_search_threshold,ticker
+0.6,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.4,0.5080312589675685,1.0,a4_strict_row_share,0.62779,0.8,le,a4_broad_row_share,0.97736,AAPL
+0.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.0,0.5080312589675685,0.6,a4_strict_row_share,0.6396299999999999,0.6,ge,a4_strict_row_share,0.6396299999999999,AMGN
+1.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,1.0,0.5080312589675685,1.0,a4_strict_row_share,0.69665,1.0,ge,a4_strict_row_share,0.69665,AMZN
+0.3333333333333333,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.3333333333333333,0.5080312589675685,0.6666666666666666,a4_strict_row_share,0.62779,0.3333333333333333,ge,a4_broad_row_share,0.97034,CSCO
+1.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.8,0.5080312589675685,1.0,a4_strict_row_share,0.64054,1.0,ge,a4_strict_row_share,0.64054,DIS
+1.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,1.0,0.5080312589675685,1.0,a4_strict_row_share,0.6281,1.0,ge,a4_strict_row_share,0.6281,IBM
+1.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.8571428571428571,0.5080312589675685,0.2857142857142857,a4_strict_row_share,0.71314,0.0,le,a4_strict_row_share,0.6383599999999999,MSFT
+1.0,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,0.75,0.5080312589675685,1.0,a4_strict_row_share,0.64028,1.0,ge,a4_broad_row_share,0.96806,NKE
+0.375,ge,ge,a4_strict_row_share,a4_broad_row_share,0.6408,0.9607,1.0,0.5080312589675685,0.5,a4_strict_row_share,0.6396299999999999,0.5,ge,a4_strict_row_share,0.6396299999999999,NVDA

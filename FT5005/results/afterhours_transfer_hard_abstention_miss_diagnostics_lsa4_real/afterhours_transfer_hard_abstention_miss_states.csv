@@ -1,0 +1,4 @@
+rest_count,state,state_share_within_rest,state_share_within_top_miss,top_miss_count,top_miss_share_within_state
+24,agreement_keep_agreed,0.5333333333333333,0.3333333333333333,5,0.1724137931034483
+9,agreement_veto_to_pre,0.2,0.4,6,0.4
+12,disagreement_auto_pre,0.26666666666666666,0.26666666666666666,4,0.25

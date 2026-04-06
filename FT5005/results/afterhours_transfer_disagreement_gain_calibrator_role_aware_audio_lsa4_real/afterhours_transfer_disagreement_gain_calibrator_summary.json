@@ -1,0 +1,167 @@
+{
+  "config": {
+    "event_rows_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_disagreement_slice_diagnostics_role_aware_audio_lsa4_real/afterhours_transfer_disagreement_slice_event_rows.csv",
+    "train_splits": [
+      "val2020_test_post2020"
+    ],
+    "val_split": "val2021_test_post2021",
+    "refit_train_splits": [
+      "val2020_test_post2020",
+      "val2021_test_post2021"
+    ],
+    "test_split": "val2022_test_post2022",
+    "feature_names": [
+      "qa_minus_pre_pred",
+      "sem_minus_pre_pred",
+      "sem_minus_qa_pred",
+      "abs_sem_minus_qa_pred",
+      "tree_choose_qa",
+      "logistic_choose_qa"
+    ],
+    "alpha_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
+  },
+  "label_balance": {
+    "train": {
+      "size": 34,
+      "positive_gain_count": 3,
+      "negative_gain_count": 6,
+      "tie_count": 25
+    },
+    "val": {
+      "size": 32,
+      "positive_gain_count": 1,
+      "negative_gain_count": 4,
+      "tie_count": 27
+    },
+    "test": {
+      "size": 16,
+      "positive_gain_count": 7,
+      "negative_gain_count": 6,
+      "tie_count": 3
+    }
+  },
+  "tuning": [
+    {
+      "alpha": 0.01,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.125,
+      "val_pred_gain_min": -2.1282735175614915e-08,
+      "val_pred_gain_max": 8.942218084400079e-10
+    },
+    {
+      "alpha": 0.1,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.125,
+      "val_pred_gain_min": -2.1253397403625985e-08,
+      "val_pred_gain_max": 8.892553392761771e-10
+    },
+    {
+      "alpha": 1.0,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.125,
+      "val_pred_gain_min": -2.099042624821277e-08,
+      "val_pred_gain_max": 8.466658244650506e-10
+    },
+    {
+      "alpha": 10.0,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.125,
+      "val_pred_gain_min": -1.925194960571034e-08,
+      "val_pred_gain_max": 6.069196472742655e-10
+    },
+    {
+      "alpha": 100.0,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.0,
+      "val_pred_gain_min": -1.1838280301906929e-08,
+      "val_pred_gain_max": -3.981465713796981e-10
+    },
+    {
+      "alpha": 1000.0,
+      "val_r2": 0.9988962305002904,
+      "val_rmse": 0.0001828417887285875,
+      "val_mae": 0.00010124364544072733,
+      "val_qa_share": 0.0,
+      "val_pred_gain_min": -3.866803973435879e-09,
+      "val_pred_gain_max": -1.6347821452165939e-09
+    }
+  ],
+  "selected_alpha": 0.01,
+  "validation_reference": {
+    "residual_pre_call_market_only": {
+      "mae": 0.00010124364544072733,
+      "rmse": 0.0001828417887285875,
+      "r2": 0.9988962305002904
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 0.00010180101394511386,
+      "rmse": 0.00018295860717357424,
+      "r2": 0.9988948196430913
+    }
+  },
+  "test_overall": {
+    "residual_pre_call_market_only": {
+      "mae": 4.088960511298371e-05,
+      "rmse": 5.566471003628528e-05,
+      "r2": 0.9990420565517482
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 4.206668313006067e-05,
+      "rmse": 5.4587078413713346e-05,
+      "r2": 0.9990787878213131
+    },
+    "compact_learnable_disagreement_gain_calibrator": {
+      "mae": 4.088960511298371e-05,
+      "rmse": 5.566471003628528e-05,
+      "r2": 0.9990420565517482
+    }
+  },
+  "test_calibrator": {
+    "qa_share": 0.0,
+    "predicted_gain_min": -2.3359701671604846e-08,
+    "predicted_gain_max": -8.008081083950532e-10,
+    "coef_rows": [
+      {
+        "feature": "qa_minus_pre_pred",
+        "coefficient": -2.918483740237707e-09
+      },
+      {
+        "feature": "sem_minus_qa_pred",
+        "coefficient": 1.3031450209221556e-09
+      },
+      {
+        "feature": "sem_minus_pre_pred",
+        "coefficient": -1.1520463971582868e-09
+      },
+      {
+        "feature": "abs_sem_minus_qa_pred",
+        "coefficient": -5.175966206176542e-10
+      },
+      {
+        "feature": "logistic_choose_qa",
+        "coefficient": -2.886172144570247e-10
+      },
+      {
+        "feature": "tree_choose_qa",
+        "coefficient": 2.8861721445692737e-10
+      }
+    ]
+  }
+}

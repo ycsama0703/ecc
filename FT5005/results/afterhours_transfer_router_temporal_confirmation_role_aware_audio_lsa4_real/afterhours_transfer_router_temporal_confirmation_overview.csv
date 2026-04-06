@@ -1,0 +1,4 @@
+hybrid_pair_tree_p_vs_pre,hybrid_pair_tree_p_vs_retained,hybrid_pair_tree_p_vs_selected,hybrid_pair_tree_r2,hybrid_plus_text_logistic_p_vs_pair_tree,hybrid_plus_text_logistic_p_vs_pre,hybrid_plus_text_logistic_p_vs_retained,hybrid_plus_text_logistic_p_vs_selected,hybrid_plus_text_logistic_r2,pre_only_r2,retained_r2,selected_r2,split,test_size,test_start_year,train_end_year,val_year
+0.72,0.8725,1.0,0.9966761198391151,0.401,0.297,0.3745,0.62325,0.9966364812004386,0.9966786186791518,0.996677836433374,0.996670544380836,val2020_test_post2020,114,2021,2019,2020
+0.317,0.02375,0.08675,0.9987899837274773,0.004,0.815,0.0,0.0,0.998821455679833,0.9988257380604549,0.9987813131941412,0.9987822866467783,val2021_test_post2021,83,2022,2020,2021
+0.24,0.05225,0.17275,0.9986242670023903,0.7435,0.17325,0.13475,0.23225,0.9986363798329253,0.9984820619311983,0.9985272895023753,0.9985463792059631,val2022_test_post2022,60,2023,2021,2022

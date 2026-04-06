@@ -1,0 +1,10 @@
+feature,loading
+qa_bench_evasion_score_mean,-0.45417917036563465
+qa_bench_direct_early_score_mean,0.4289558346145166
+qa_bench_direct_answer_share,0.41284506589035025
+qa_bench_high_evasion_share,-0.4014741831582264
+qa_bench_coverage_mean,0.3573879543863502
+qa_pair_low_overlap_share,-0.29778963996009755
+qa_multi_part_question_share,0.18400991418925436
+qa_pair_count,-0.16140407836974546
+qa_pair_answer_forward_rate_mean,-0.04218839107178978

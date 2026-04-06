@@ -1,0 +1,169 @@
+component,direction,family,rank,term,weight
+1,positive,question_mask_struct_pls1_bi,1,medical and,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,2,mean why,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,3,medical,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,4,about linearity,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,5,letter it,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,6,unusual,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,7,picked,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,8,retail margin,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,9,why those,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,10,picked medical,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,11,retail,0.09357564994291612
+1,positive,question_mask_struct_pls1_bi,12,letter,0.09357564994291612
+1,negative,question_mask_struct_pls1_bi,1,seems to,-0.08544912547926597
+1,negative,question_mask_struct_pls1_bi,2,amount,-0.07093147262350163
+1,negative,question_mask_struct_pls1_bi,3,provide,-0.0690399160816952
+1,negative,question_mask_struct_pls1_bi,4,least,-0.06888773316284157
+1,negative,question_mask_struct_pls1_bi,5,at least,-0.06888773316284157
+1,negative,question_mask_struct_pls1_bi,6,in this,-0.06690593434628819
+1,negative,question_mask_struct_pls1_bi,7,that seems,-0.06644431974508413
+1,negative,question_mask_struct_pls1_bi,8,this,-0.06599214128121295
+1,negative,question_mask_struct_pls1_bi,9,recent,-0.06586224073900039
+1,negative,question_mask_struct_pls1_bi,10,buy,-0.06332202954817745
+1,negative,question_mask_struct_pls1_bi,11,gotten,-0.0632433017311007
+1,negative,question_mask_struct_pls1_bi,12,to provide,-0.061348000932194405
+1,positive,question_mask_struct_pls2_bi,1,medical and,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,2,mean why,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,3,medical,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,4,about linearity,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,5,letter it,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,6,unusual,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,7,picked,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,8,retail margin,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,9,why those,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,10,picked medical,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,11,retail,0.09357564994291612
+1,positive,question_mask_struct_pls2_bi,12,letter,0.09357564994291612
+1,negative,question_mask_struct_pls2_bi,1,seems to,-0.08544912547926597
+1,negative,question_mask_struct_pls2_bi,2,amount,-0.07093147262350163
+1,negative,question_mask_struct_pls2_bi,3,provide,-0.0690399160816952
+1,negative,question_mask_struct_pls2_bi,4,least,-0.06888773316284157
+1,negative,question_mask_struct_pls2_bi,5,at least,-0.06888773316284157
+1,negative,question_mask_struct_pls2_bi,6,in this,-0.06690593434628819
+1,negative,question_mask_struct_pls2_bi,7,that seems,-0.06644431974508413
+1,negative,question_mask_struct_pls2_bi,8,this,-0.06599214128121295
+1,negative,question_mask_struct_pls2_bi,9,recent,-0.06586224073900039
+1,negative,question_mask_struct_pls2_bi,10,buy,-0.06332202954817745
+1,negative,question_mask_struct_pls2_bi,11,gotten,-0.0632433017311007
+1,negative,question_mask_struct_pls2_bi,12,to provide,-0.061348000932194405
+2,positive,question_mask_struct_pls2_bi,1,amount,0.1244530986155044
+2,positive,question_mask_struct_pls2_bi,2,least,0.11971858607538723
+2,positive,question_mask_struct_pls2_bi,3,at least,0.11971858607538723
+2,positive,question_mask_struct_pls2_bi,4,recent,0.11391056911283248
+2,positive,question_mask_struct_pls2_bi,5,buy,0.11293528065115413
+2,positive,question_mask_struct_pls2_bi,6,gotten,0.10709634940595161
+2,positive,question_mask_struct_pls2_bi,7,provide the,0.10403591294506266
+2,positive,question_mask_struct_pls2_bi,8,to provide,0.10403591294506266
+2,positive,question_mask_struct_pls2_bi,9,to you,0.10403591294506263
+2,positive,question_mask_struct_pls2_bi,10,for this,0.10269998246189412
+2,positive,question_mask_struct_pls2_bi,11,issue,0.10096054815821562
+2,positive,question_mask_struct_pls2_bi,12,the market,0.09823056540936152
+2,negative,question_mask_struct_pls2_bi,1,phase,-0.064517070936746
+2,negative,question_mask_struct_pls2_bi,2,cell,-0.06451707093674593
+2,negative,question_mask_struct_pls2_bi,3,that share,-0.06451707093674593
+2,negative,question_mask_struct_pls2_bi,4,less heavily,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,5,in otezla,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,6,your competitors,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,7,in favor,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,8,achieved,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,9,heavier less,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,10,heavily,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,11,heavily pretreated,-0.06451707093674591
+2,negative,question_mask_struct_pls2_bi,12,heavier,-0.06451707093674591
+1,positive,question_mask_struct_pls4_bi,1,medical and,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,2,mean why,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,3,medical,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,4,about linearity,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,5,letter it,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,6,unusual,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,7,picked,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,8,retail margin,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,9,why those,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,10,picked medical,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,11,retail,0.09357564994291612
+1,positive,question_mask_struct_pls4_bi,12,letter,0.09357564994291612
+1,negative,question_mask_struct_pls4_bi,1,seems to,-0.08544912547926597
+1,negative,question_mask_struct_pls4_bi,2,amount,-0.07093147262350163
+1,negative,question_mask_struct_pls4_bi,3,provide,-0.0690399160816952
+1,negative,question_mask_struct_pls4_bi,4,least,-0.06888773316284157
+1,negative,question_mask_struct_pls4_bi,5,at least,-0.06888773316284157
+1,negative,question_mask_struct_pls4_bi,6,in this,-0.06690593434628819
+1,negative,question_mask_struct_pls4_bi,7,that seems,-0.06644431974508413
+1,negative,question_mask_struct_pls4_bi,8,this,-0.06599214128121295
+1,negative,question_mask_struct_pls4_bi,9,recent,-0.06586224073900039
+1,negative,question_mask_struct_pls4_bi,10,buy,-0.06332202954817745
+1,negative,question_mask_struct_pls4_bi,11,gotten,-0.0632433017311007
+1,negative,question_mask_struct_pls4_bi,12,to provide,-0.061348000932194405
+2,positive,question_mask_struct_pls4_bi,1,amount,0.1244530986155044
+2,positive,question_mask_struct_pls4_bi,2,least,0.11971858607538723
+2,positive,question_mask_struct_pls4_bi,3,at least,0.11971858607538723
+2,positive,question_mask_struct_pls4_bi,4,recent,0.11391056911283248
+2,positive,question_mask_struct_pls4_bi,5,buy,0.11293528065115413
+2,positive,question_mask_struct_pls4_bi,6,gotten,0.10709634940595161
+2,positive,question_mask_struct_pls4_bi,7,provide the,0.10403591294506266
+2,positive,question_mask_struct_pls4_bi,8,to provide,0.10403591294506266
+2,positive,question_mask_struct_pls4_bi,9,to you,0.10403591294506263
+2,positive,question_mask_struct_pls4_bi,10,for this,0.10269998246189412
+2,positive,question_mask_struct_pls4_bi,11,issue,0.10096054815821562
+2,positive,question_mask_struct_pls4_bi,12,the market,0.09823056540936152
+2,negative,question_mask_struct_pls4_bi,1,phase,-0.064517070936746
+2,negative,question_mask_struct_pls4_bi,2,cell,-0.06451707093674593
+2,negative,question_mask_struct_pls4_bi,3,that share,-0.06451707093674593
+2,negative,question_mask_struct_pls4_bi,4,less heavily,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,5,in otezla,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,6,your competitors,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,7,in favor,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,8,achieved,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,9,heavier less,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,10,heavily,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,11,heavily pretreated,-0.06451707093674591
+2,negative,question_mask_struct_pls4_bi,12,heavier,-0.06451707093674591
+3,positive,question_mask_struct_pls4_bi,1,seems to,0.13492854326951031
+3,positive,question_mask_struct_pls4_bi,2,amount,0.11570244671136445
+3,positive,question_mask_struct_pls4_bi,3,least,0.11078870619978096
+3,positive,question_mask_struct_pls4_bi,4,at least,0.11078870619978096
+3,positive,question_mask_struct_pls4_bi,5,buy,0.10596239510935448
+3,positive,question_mask_struct_pls4_bi,6,provide,0.10584376495932767
+3,positive,question_mask_struct_pls4_bi,7,recent,0.10559915731991995
+3,positive,question_mask_struct_pls4_bi,8,in this,0.10263751013770916
+3,positive,question_mask_struct_pls4_bi,9,to you,0.1007167047792883
+3,positive,question_mask_struct_pls4_bi,10,provide the,0.10071670477928829
+3,positive,question_mask_struct_pls4_bi,11,to provide,0.10071670477928829
+3,positive,question_mask_struct_pls4_bi,12,gotten,0.09988968133540439
+3,negative,question_mask_struct_pls4_bi,1,were the,-0.05320140231432561
+3,negative,question_mask_struct_pls4_bi,2,expected,-0.05320140231432561
+3,negative,question_mask_struct_pls4_bi,3,in 2q,-0.0524438192353521
+3,negative,question_mask_struct_pls4_bi,4,in europe,-0.04953271178864608
+3,negative,question_mask_struct_pls4_bi,5,discretionary,-0.04850423953380117
+3,negative,question_mask_struct_pls4_bi,6,macro,-0.04481247211371976
+3,negative,question_mask_struct_pls4_bi,7,of how,-0.04473186095505032
+3,negative,question_mask_struct_pls4_bi,8,did you,-0.04105992703510593
+3,negative,question_mask_struct_pls4_bi,9,does that,-0.04085377884361081
+3,negative,question_mask_struct_pls4_bi,10,europe and,-0.040734926667297326
+3,negative,question_mask_struct_pls4_bi,11,3q,-0.04056410290909999
+3,negative,question_mask_struct_pls4_bi,12,were,-0.040512111353486605
+4,positive,question_mask_struct_pls4_bi,1,in 2q,0.06604122112079946
+4,positive,question_mask_struct_pls4_bi,2,in europe,0.05341044507167468
+4,positive,question_mask_struct_pls4_bi,3,of how,0.05089929861644824
+4,positive,question_mask_struct_pls4_bi,4,2q,0.047505330197985605
+4,positive,question_mask_struct_pls4_bi,5,in,0.045205979038740546
+4,positive,question_mask_struct_pls4_bi,6,quantify,0.0445333409191172
+4,positive,question_mask_struct_pls4_bi,7,expected,0.0436522162652858
+4,positive,question_mask_struct_pls4_bi,8,were the,0.0436522162652858
+4,positive,question_mask_struct_pls4_bi,9,that last,0.043638776135179316
+4,positive,question_mask_struct_pls4_bi,10,discretionary,0.043023455599898994
+4,positive,question_mask_struct_pls4_bi,11,kuiper,0.04293393031814891
+4,positive,question_mask_struct_pls4_bi,12,we saw,0.04257302625745364
+4,negative,question_mask_struct_pls4_bi,1,experience for,-0.038961871709201214
+4,negative,question_mask_struct_pls4_bi,2,for consumers,-0.038961871709201214
+4,negative,question_mask_struct_pls4_bi,3,that would,-0.03763167877816234
+4,negative,question_mask_struct_pls4_bi,4,full year,-0.03754846235847186
+4,negative,question_mask_struct_pls4_bi,5,the full,-0.03754846235847186
+4,negative,question_mask_struct_pls4_bi,6,my,-0.03681999172517674
+4,negative,question_mask_struct_pls4_bi,7,point,-0.03579589891765341
+4,negative,question_mask_struct_pls4_bi,8,if the,-0.035793910858733756
+4,negative,question_mask_struct_pls4_bi,9,for the,-0.03426554359922253
+4,negative,question_mask_struct_pls4_bi,10,would suggest,-0.034043100970471994
+4,negative,question_mask_struct_pls4_bi,11,suggest that,-0.034043100970471994
+4,negative,question_mask_struct_pls4_bi,12,suggest,-0.034043100970471994

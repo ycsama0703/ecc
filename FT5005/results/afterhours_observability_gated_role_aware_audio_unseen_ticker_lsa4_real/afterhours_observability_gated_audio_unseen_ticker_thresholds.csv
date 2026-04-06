@@ -1,0 +1,10 @@
+gate_feature,test_activation_rate_semantic,test_activation_rate_semantic_audio,test_events,threshold_semantic,threshold_semantic_audio,ticker,val_activation_rate_semantic,val_activation_rate_semantic_audio
+a4_strict_row_share,1.0,1.0,5,0.62779,0.62779,AAPL,0.9,0.9
+a4_strict_row_share,0.6,0.6,5,0.6396299999999999,0.6396299999999999,AMGN,0.8636363636363636,0.8636363636363636
+a4_strict_row_share,1.0,1.0,6,0.69665,0.69665,AMZN,0.5,0.5
+a4_strict_row_share,0.6666666666666666,0.6666666666666666,9,0.62779,0.62779,CSCO,0.9,0.9
+a4_strict_row_share,1.0,1.0,5,0.5814,0.64054,DIS,1.0,0.8
+a4_strict_row_share,1.0,1.0,7,0.6281,0.6281,IBM,0.9047619047619048,0.9047619047619048
+a4_strict_row_share,0.42857142857142855,0.2857142857142857,7,0.69655,0.71314,MSFT,0.5,0.3
+a4_strict_row_share,1.0,1.0,8,0.5814,0.64028,NKE,1.0,0.7894736842105263
+a4_strict_row_share,0.5,0.5,8,0.6396299999999999,0.6396299999999999,NVDA,0.8636363636363636,0.8636363636363636

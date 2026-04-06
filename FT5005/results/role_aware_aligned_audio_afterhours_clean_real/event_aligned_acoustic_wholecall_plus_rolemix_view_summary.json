@@ -1,0 +1,9 @@
+{
+  "base_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/audio_sentence_aligned_afterhours_clean_parallel_real/event_aligned_acoustic_features.csv",
+  "extra_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/role_aware_aligned_audio_afterhours_clean_real/event_role_aware_aligned_acoustic_features.csv",
+  "output_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/role_aware_aligned_audio_afterhours_clean_real/event_aligned_acoustic_wholecall_plus_rolemix_view.csv",
+  "num_rows": 172,
+  "base_feature_count": 444,
+  "extra_feature_count": 367,
+  "extra_prefix": "rolemix_"
+}

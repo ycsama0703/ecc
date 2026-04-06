@@ -1,0 +1,14 @@
+count,family_signature,overlap_group,year
+1,clarify,lex_only_veto,2023
+1,clarify+quant,sem_only_veto,2023
+2,clarify+structural,sem_only_veto,2023
+1,quant,sem_only_veto,2023
+1,quant+structural,sem_only_veto,2023
+1,structural,sem_only_veto,2023
+2,clarify+quant,shared_veto,2023
+1,clarify+quant,lex_only_veto,2024
+1,clarify+structural,lex_only_veto,2024
+1,clarify,sem_only_veto,2024
+1,clarify+structural,sem_only_veto,2024
+2,clarify+quant,shared_veto,2024
+1,clarify+quant,sem_only_veto,2025

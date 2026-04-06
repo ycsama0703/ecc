@@ -1,0 +1,2092 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_both_audio": 172,
+    "joined_rows": 172
+  },
+  "split_sizes": {
+    "train": 89,
+    "val": 23,
+    "test": 60
+  },
+  "config": {
+    "alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "max_features": 8000,
+    "min_df": 2,
+    "lsa_components": 16,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_agg_suffixes": [
+      "winsor_mean"
+    ],
+    "aligned_compressed_components": 8
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "controls": [
+      "call_duration_min",
+      "scheduled_hour_et",
+      "revenue_surprise_pct",
+      "ebitda_surprise_pct",
+      "eps_gaap_surprise_pct",
+      "analyst_eps_norm_num_est",
+      "analyst_eps_norm_std",
+      "analyst_revenue_num_est",
+      "analyst_revenue_std",
+      "analyst_net_income_num_est",
+      "analyst_net_income_std"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "old_audio": [
+      "audio_bitrate_kbps_est",
+      "audio_chunk_count",
+      "audio_duration_sec",
+      "audio_file_size_bytes",
+      "audio_num_channels",
+      "audio_num_frames",
+      "audio_sample_rate",
+      "chunk_abs_mean_mean",
+      "chunk_abs_mean_std",
+      "chunk_dynamic_range_mean",
+      "chunk_dynamic_range_std",
+      "chunk_high_band_share_mean",
+      "chunk_high_band_share_std",
+      "chunk_low_band_share_mean",
+      "chunk_low_band_share_std",
+      "chunk_max_abs_mean",
+      "chunk_max_abs_std",
+      "chunk_mid_band_share_mean",
+      "chunk_mid_band_share_std",
+      "chunk_rms_mean",
+      "chunk_rms_std",
+      "chunk_silence_share_mean",
+      "chunk_silence_share_std",
+      "chunk_spectral_bandwidth_hz_mean",
+      "chunk_spectral_bandwidth_hz_std",
+      "chunk_spectral_centroid_hz_mean",
+      "chunk_spectral_centroid_hz_std",
+      "chunk_spectral_flatness_mean",
+      "chunk_spectral_flatness_std",
+      "chunk_spectral_rolloff85_hz_mean",
+      "chunk_spectral_rolloff85_hz_std",
+      "chunk_std_mean",
+      "chunk_std_std",
+      "chunk_zcr_mean",
+      "chunk_zcr_std",
+      "has_real_audio"
+    ],
+    "aligned_audio": [
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__aligned_audio_duration_mean_sec",
+      "aligned_audio__aligned_audio_duration_median_sec",
+      "aligned_audio__aligned_audio_duration_sum_sec",
+      "aligned_audio__aligned_audio_sentence_count",
+      "aligned_audio__alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__loudness_sma3_amean_winsor_mean",
+      "aligned_audio__loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_answer_MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_answer_StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_answer_StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_answer_VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__rolemix_answer_alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__rolemix_answer_hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_answer_spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_answer_spectralFlux_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_presenter_MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_presenter_StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_presenter_StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_presenter_VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__rolemix_presenter_alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__rolemix_presenter_hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_presenter_spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_presenter_spectralFlux_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_qa_MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_qa_StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_qa_StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_qa_VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__rolemix_qa_alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__rolemix_qa_hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_qa_spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_qa_spectralFlux_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_question_MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_question_StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__rolemix_question_StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__rolemix_question_VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__rolemix_question_alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__rolemix_question_hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__rolemix_question_spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__rolemix_question_spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__rolemix_question_spectralFlux_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__spectralFlux_sma3_stddevNorm_winsor_mean"
+    ],
+    "aligned_audio_svd": {
+      "input_feature_count": 444,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6308991305182107
+    }
+  },
+  "models": {
+    "prior_only": {
+      "family": "prior_passthrough",
+      "feature_bundles": [],
+      "feature_count": 1,
+      "val": {
+        "mae": 0.0019584885589000373,
+        "rmse": 0.004891882377800723,
+        "r2": 0.002205108485209162
+      },
+      "test": {
+        "mae": 0.0017171483500254274,
+        "rmse": 0.0032928515889152103,
+        "r2": 0.03508881128987884
+      }
+    },
+    "residual_pre_call_market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market"
+      ],
+      "feature_count": 6,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0007650598697296879,
+        "rmse": 0.0009975759675944897,
+        "r2": 0.9585063900651409
+      },
+      "test": {
+        "mae": 0.0007796617701334478,
+        "rmse": 0.0009634630929242406,
+        "r2": 0.9173936955166082
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0012475446233768226,
+          "abs_coefficient": 0.0012475446233768226
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": 0.0002774126364292516,
+          "abs_coefficient": 0.0002774126364292516
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00023702626821313057,
+          "abs_coefficient": 0.00023702626821313057
+        },
+        {
+          "feature": "html_integrity_flag=warn",
+          "coefficient": 2.3283174019958763e-05,
+          "abs_coefficient": 2.3283174019958763e-05
+        },
+        {
+          "feature": "html_integrity_flag=pass",
+          "coefficient": -2.3283174019953325e-05,
+          "abs_coefficient": 2.3283174019953325e-05
+        },
+        {
+          "feature": "html_integrity_flag=fail",
+          "coefficient": 0.0,
+          "abs_coefficient": 0.0
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls"
+      ],
+      "feature_count": 20,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0005506448747897335,
+        "rmse": 0.0006895953130809618,
+        "r2": 0.980172047675532
+      },
+      "test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0007804146684348236,
+          "abs_coefficient": 0.0007804146684348236
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00039347421272637763,
+          "abs_coefficient": 0.00039347421272637763
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00036012587102581575,
+          "abs_coefficient": 0.00036012587102581575
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00032564985186115183,
+          "abs_coefficient": 0.00032564985186115183
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0002744396694834601,
+          "abs_coefficient": 0.0002744396694834601
+        },
+        {
+          "feature": "eps_gaap_surprise_pct",
+          "coefficient": -0.0001450828297877397,
+          "abs_coefficient": 0.0001450828297877397
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00013816599450603166,
+          "abs_coefficient": 0.00013816599450603166
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": 0.000134907846525655,
+          "abs_coefficient": 0.000134907846525655
+        },
+        {
+          "feature": "analyst_eps_norm_num_est",
+          "coefficient": -0.0001332128956972547,
+          "abs_coefficient": 0.0001332128956972547
+        },
+        {
+          "feature": "analyst_eps_norm_std",
+          "coefficient": -0.00012071417194590262,
+          "abs_coefficient": 0.00012071417194590262
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "old_audio"
+      ],
+      "feature_count": 59,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0006858120966314418,
+        "rmse": 0.0007761309138393483,
+        "r2": 0.9748834937653469
+      },
+      "test": {
+        "mae": 0.0009887039608034028,
+        "rmse": 0.0013566506542874563,
+        "r2": 0.8362131293909326
+      },
+      "top_coefficients": [
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0006771523399534023,
+          "abs_coefficient": 0.0006771523399534023
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006332707257668866,
+          "abs_coefficient": 0.0006332707257668866
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005012664181821178,
+          "abs_coefficient": 0.0005012664181821178
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0004422118553717623,
+          "abs_coefficient": 0.0004422118553717623
+        },
+        {
+          "feature": "chunk_abs_mean_std",
+          "coefficient": 0.0003653114497854774,
+          "abs_coefficient": 0.0003653114497854774
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": 0.0003419987840274641,
+          "abs_coefficient": 0.0003419987840274641
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.0003385249662092285,
+          "abs_coefficient": 0.0003385249662092285
+        },
+        {
+          "feature": "chunk_spectral_flatness_mean",
+          "coefficient": -0.0002994862294399279,
+          "abs_coefficient": 0.0002994862294399279
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": -0.00029373588175139807,
+          "abs_coefficient": 0.00029373588175139807
+        },
+        {
+          "feature": "analyst_eps_norm_num_est",
+          "coefficient": -0.000269230839762018,
+          "abs_coefficient": 0.000269230839762018
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "aligned_audio"
+      ],
+      "feature_count": 467,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.001749022212346091,
+        "rmse": 0.0029085838967407244,
+        "r2": 0.6472618324247024
+      },
+      "test": {
+        "mae": 0.0011887293048571366,
+        "rmse": 0.0015578299987961453,
+        "r2": 0.7840351095669789
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0004142625604241593,
+          "abs_coefficient": 0.0004142625604241593
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0004012879656275864,
+          "abs_coefficient": 0.0004012879656275864
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.0001857312524316588,
+          "abs_coefficient": 0.0001857312524316588
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00015170380412541862,
+          "abs_coefficient": 0.00015170380412541862
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -0.0001490607305367811,
+          "abs_coefficient": 0.0001490607305367811
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00014472446102416317,
+          "abs_coefficient": 0.00014472446102416317
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00014334910847867637,
+          "abs_coefficient": 0.00014334910847867637
+        },
+        {
+          "feature": "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+          "coefficient": 0.0001242602194298226,
+          "abs_coefficient": 0.0001242602194298226
+        },
+        {
+          "feature": "aligned_audio__StddevUnvoicedSegmentLength_winsor_mean",
+          "coefficient": 0.00012398810598949862,
+          "abs_coefficient": 0.00012398810598949862
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00012263523638854,
+          "abs_coefficient": 0.00012263523638854
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 28,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.00035507575448162263,
+        "rmse": 0.000495137951809386,
+        "r2": 0.9897778630407834
+      },
+      "test": {
+        "mae": 0.0007764440271665063,
+        "rmse": 0.0009884967927954224,
+        "r2": 0.9130452006929656
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006567480701896415,
+          "abs_coefficient": 0.0006567480701896415
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005124122326950883,
+          "abs_coefficient": 0.0005124122326950883
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.0003890373885510478,
+          "abs_coefficient": 0.0003890373885510478
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0003283269110823433,
+          "abs_coefficient": 0.0003283269110823433
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0003160073893770073,
+          "abs_coefficient": 0.0003160073893770073
+        },
+        {
+          "feature": "eps_gaap_surprise_pct",
+          "coefficient": -0.00015324246858971203,
+          "abs_coefficient": 0.00015324246858971203
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 9.218740421578654e-05,
+          "abs_coefficient": 9.218740421578654e-05
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 8.233101490584111e-05,
+          "abs_coefficient": 8.233101490584111e-05
+        },
+        {
+          "feature": "analyst_eps_norm_std",
+          "coefficient": -5.9679960840544894e-05,
+          "abs_coefficient": 5.9679960840544894e-05
+        },
+        {
+          "feature": "aligned_audio_svd_8",
+          "coefficient": 4.215161348866967e-05,
+          "abs_coefficient": 4.215161348866967e-05
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 506,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0018414517963634346,
+        "rmse": 0.003269577210495262,
+        "r2": 0.5542693907425018
+      },
+      "test": {
+        "mae": 0.001123961066319891,
+        "rmse": 0.0015204787169200461,
+        "r2": 0.7942671137979265
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00041225262955972336,
+          "abs_coefficient": 0.00041225262955972336
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0004021495106033815,
+          "abs_coefficient": 0.0004021495106033815
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00019207346124027876,
+          "abs_coefficient": 0.00019207346124027876
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00014480611852328042,
+          "abs_coefficient": 0.00014480611852328042
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00013619649063332105,
+          "abs_coefficient": 0.00013619649063332105
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -0.00012978350712477144,
+          "abs_coefficient": 0.00012978350712477144
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00012791176777591598,
+          "abs_coefficient": 0.00012791176777591598
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00011730387509175543,
+          "abs_coefficient": 0.00011730387509175543
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00011620487929304936,
+          "abs_coefficient": 0.00011620487929304936
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.0001160119308049095,
+          "abs_coefficient": 0.0001160119308049095
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4"
+      ],
+      "feature_count": 28,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.00042938256710825577,
+        "rmse": 0.000554773213465561,
+        "r2": 0.9871672353083657
+      },
+      "test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0007361961407485601,
+          "abs_coefficient": 0.0007361961407485601
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00047234132731411134,
+          "abs_coefficient": 0.00047234132731411134
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00044983077976805955,
+          "abs_coefficient": 0.00044983077976805955
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0004102941806231901,
+          "abs_coefficient": 0.0004102941806231901
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.0003953585559948337,
+          "abs_coefficient": 0.0003953585559948337
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": -0.00031971600731513667,
+          "abs_coefficient": 0.00031971600731513667
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.0003019138649913462,
+          "abs_coefficient": 0.0003019138649913462
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00026478724182289455,
+          "abs_coefficient": 0.00026478724182289455
+        },
+        {
+          "feature": "a4_broad_row_share",
+          "coefficient": -0.00025503306415810726,
+          "abs_coefficient": 0.00025503306415810726
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00019837704540367788,
+          "abs_coefficient": 0.00019837704540367788
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "old_audio"
+      ],
+      "feature_count": 67,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005121724459276328,
+        "rmse": 0.0006099831159155924,
+        "r2": 0.9844859605316121
+      },
+      "test": {
+        "mae": 0.0007865732459072798,
+        "rmse": 0.0010418177908366297,
+        "r2": 0.9034112452839724
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005682952841563311,
+          "abs_coefficient": 0.0005682952841563311
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005476407595286286,
+          "abs_coefficient": 0.0005476407595286286
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0003283444871458475,
+          "abs_coefficient": 0.0003283444871458475
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00022739336252232026,
+          "abs_coefficient": 0.00022739336252232026
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00021791883021150398,
+          "abs_coefficient": 0.00021791883021150398
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00017955837406127828,
+          "abs_coefficient": 0.00017955837406127828
+        },
+        {
+          "feature": "chunk_low_band_share_mean",
+          "coefficient": 0.0001482736345648942,
+          "abs_coefficient": 0.0001482736345648942
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": -0.0001278997734241593,
+          "abs_coefficient": 0.0001278997734241593
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00012396235724461882,
+          "abs_coefficient": 0.00012396235724461882
+        },
+        {
+          "feature": "chunk_mid_band_share_std",
+          "coefficient": -0.00011531777345489804,
+          "abs_coefficient": 0.00011531777345489804
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "aligned_audio"
+      ],
+      "feature_count": 475,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0015452423187229975,
+        "rmse": 0.002524219896417924,
+        "r2": 0.7343293153074435
+      },
+      "test": {
+        "mae": 0.001178088286988511,
+        "rmse": 0.0015279172470733385,
+        "r2": 0.7922492050005052
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00041987491927100674,
+          "abs_coefficient": 0.00041987491927100674
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0004053123738312514,
+          "abs_coefficient": 0.0004053123738312514
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00019579644361311218,
+          "abs_coefficient": 0.00019579644361311218
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00014237880230836885,
+          "abs_coefficient": 0.00014237880230836885
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -0.00013553283164013211,
+          "abs_coefficient": 0.00013553283164013211
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.0001327516905622454,
+          "abs_coefficient": 0.0001327516905622454
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00013096272651423908,
+          "abs_coefficient": 0.00013096272651423908
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00012812291496711321,
+          "abs_coefficient": 0.00012812291496711321
+        },
+        {
+          "feature": "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+          "coefficient": 0.00012783036794776495,
+          "abs_coefficient": 0.00012783036794776495
+        },
+        {
+          "feature": "aligned_audio__StddevUnvoicedSegmentLength_winsor_mean",
+          "coefficient": 0.00012481505239175436,
+          "abs_coefficient": 0.00012481505239175436
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 36,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00034507893424572784,
+        "rmse": 0.0004806091324596603,
+        "r2": 0.9903689574474986
+      },
+      "test": {
+        "mae": 0.0006801970524040992,
+        "rmse": 0.0009415486925567824,
+        "r2": 0.9211087936199159
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005777740263592018,
+          "abs_coefficient": 0.0005777740263592018
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005577109503189398,
+          "abs_coefficient": 0.0005577109503189398
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0003073585166844519,
+          "abs_coefficient": 0.0003073585166844519
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00021454017135930762,
+          "abs_coefficient": 0.00021454017135930762
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.0002135689998748125,
+          "abs_coefficient": 0.0002135689998748125
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00016027748019979316,
+          "abs_coefficient": 0.00016027748019979316
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00015964800710620682,
+          "abs_coefficient": 0.00015964800710620682
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00015057017737134883,
+          "abs_coefficient": 0.00015057017737134883
+        },
+        {
+          "feature": "a4_broad_row_share",
+          "coefficient": -0.00014137001657519742,
+          "abs_coefficient": 0.00014137001657519742
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": -0.0001318404942795076,
+          "abs_coefficient": 0.0001318404942795076
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 514,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0017538252084029413,
+        "rmse": 0.003049076662811223,
+        "r2": 0.6123623503077407
+      },
+      "test": {
+        "mae": 0.001130261912129596,
+        "rmse": 0.001524331105759138,
+        "r2": 0.7932232752860071
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00041428327911332733,
+          "abs_coefficient": 0.00041428327911332733
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.00040335768972391114,
+          "abs_coefficient": 0.00040335768972391114
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.0001978883302985108,
+          "abs_coefficient": 0.0001978883302985108
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00013593535764044623,
+          "abs_coefficient": 0.00013593535764044623
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.0001270460075270071,
+          "abs_coefficient": 0.0001270460075270071
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -0.00012070333603156157,
+          "abs_coefficient": 0.00012070333603156157
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00011797660165535912,
+          "abs_coefficient": 0.00011797660165535912
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00011556523877887869,
+          "abs_coefficient": 0.00011556523877887869
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00011517547305758108,
+          "abs_coefficient": 0.00011517547305758108
+        },
+        {
+          "feature": "aligned_audio__StddevUnvoicedSegmentLength_winsor_mean",
+          "coefficient": 0.00011425525284943847,
+          "abs_coefficient": 0.00011425525284943847
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa"
+      ],
+      "feature_count": 44,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004027388589134916,
+        "rmse": 0.0006606027395562599,
+        "r2": 0.9818042481820246
+      },
+      "test": {
+        "mae": 0.0007475859576684987,
+        "rmse": 0.0011626347972388074,
+        "r2": 0.8797099619918988
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006559729116087193,
+          "abs_coefficient": 0.0006559729116087193
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006114635966961653,
+          "abs_coefficient": 0.0006114635966961653
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.0002693493836090371,
+          "abs_coefficient": 0.0002693493836090371
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.0002449430508646227,
+          "abs_coefficient": 0.0002449430508646227
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00021946934105359874,
+          "abs_coefficient": 0.00021946934105359874
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00020563642390012153,
+          "abs_coefficient": 0.00020563642390012153
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00018191139352594733,
+          "abs_coefficient": 0.00018191139352594733
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00018164390738800585,
+          "abs_coefficient": 0.00018164390738800585
+        },
+        {
+          "feature": "qna_text_lsa_15",
+          "coefficient": 0.0001500839935450766,
+          "abs_coefficient": 0.0001500839935450766
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0001494533941272036,
+          "abs_coefficient": 0.0001494533941272036
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "old_audio"
+      ],
+      "feature_count": 83,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004451468033145576,
+        "rmse": 0.0006405170181854811,
+        "r2": 0.9828939156103652
+      },
+      "test": {
+        "mae": 0.000718454900343908,
+        "rmse": 0.001123943486495886,
+        "r2": 0.8875830035706059
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006433051874667262,
+          "abs_coefficient": 0.0006433051874667262
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.000607449822442424,
+          "abs_coefficient": 0.000607449822442424
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00026966626297457566,
+          "abs_coefficient": 0.00026966626297457566
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00022897104570795734,
+          "abs_coefficient": 0.00022897104570795734
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00019213718151978658,
+          "abs_coefficient": 0.00019213718151978658
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.0001910890458784045,
+          "abs_coefficient": 0.0001910890458784045
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.0001787016449192032,
+          "abs_coefficient": 0.0001787016449192032
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.0001610745401179014,
+          "abs_coefficient": 0.0001610745401179014
+        },
+        {
+          "feature": "qna_text_lsa_15",
+          "coefficient": 0.00015783830677733307,
+          "abs_coefficient": 0.00015783830677733307
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00014919372560547056,
+          "abs_coefficient": 0.00014919372560547056
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "aligned_audio"
+      ],
+      "feature_count": 491,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0016418040269865716,
+        "rmse": 0.002928828952031379,
+        "r2": 0.6423343096446581
+      },
+      "test": {
+        "mae": 0.001047893998725079,
+        "rmse": 0.00139452988995841,
+        "r2": 0.8269392097856569
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0004228483588064071,
+          "abs_coefficient": 0.0004228483588064071
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0004085505719177507,
+          "abs_coefficient": 0.0004085505719177507
+        },
+        {
+          "feature": "qna_text_lsa_15",
+          "coefficient": 0.00019798868454988053,
+          "abs_coefficient": 0.00019798868454988053
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00014723936145003341,
+          "abs_coefficient": 0.00014723936145003341
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.0001240947224238526,
+          "abs_coefficient": 0.0001240947224238526
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00010402411371354507,
+          "abs_coefficient": 0.00010402411371354507
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00010167433980768784,
+          "abs_coefficient": 0.00010167433980768784
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_amean_winsor_mean",
+          "coefficient": 0.00010038318709376952,
+          "abs_coefficient": 0.00010038318709376952
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+          "coefficient": 9.443431071604431e-05,
+          "abs_coefficient": 9.443431071604431e-05
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -9.429116052973303e-05,
+          "abs_coefficient": 9.429116052973303e-05
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 52,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00041811371789044025,
+        "rmse": 0.0006641426881333918,
+        "r2": 0.9816087158200928
+      },
+      "test": {
+        "mae": 0.0007345573867003601,
+        "rmse": 0.0011671721488474855,
+        "r2": 0.8787692311153804
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006586944064820916,
+          "abs_coefficient": 0.0006586944064820916
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006197338215597766,
+          "abs_coefficient": 0.0006197338215597766
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00024254280014621954,
+          "abs_coefficient": 0.00024254280014621954
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00023898751733171685,
+          "abs_coefficient": 0.00023898751733171685
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00020105977823199907,
+          "abs_coefficient": 0.00020105977823199907
+        },
+        {
+          "feature": "qna_text_lsa_15",
+          "coefficient": 0.0001665224535621282,
+          "abs_coefficient": 0.0001665224535621282
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00016562116157677864,
+          "abs_coefficient": 0.00016562116157677864
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00016221835273635157,
+          "abs_coefficient": 0.00016221835273635157
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.0001594047119027693,
+          "abs_coefficient": 0.0001594047119027693
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0001512474497822274,
+          "abs_coefficient": 0.0001512474497822274
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 530,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0017898246314869868,
+        "rmse": 0.0032118622968570934,
+        "r2": 0.5698666677744852
+      },
+      "test": {
+        "mae": 0.0011356195369997314,
+        "rmse": 0.001516815518937394,
+        "r2": 0.7952572393882338
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0004080816647338971,
+          "abs_coefficient": 0.0004080816647338971
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0003961251952579109,
+          "abs_coefficient": 0.0003961251952579109
+        },
+        {
+          "feature": "qna_text_lsa_15",
+          "coefficient": 0.00019731264819943878,
+          "abs_coefficient": 0.00019731264819943878
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00015267505499051598,
+          "abs_coefficient": 0.00015267505499051598
+        },
+        {
+          "feature": "aligned_audio__rolemix_question_F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00011841076372643738,
+          "abs_coefficient": 0.00011841076372643738
+        },
+        {
+          "feature": "aligned_audio__rolemix_answer_mfcc4V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00010314753952831481,
+          "abs_coefficient": 0.00010314753952831481
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -9.092575192050327e-05,
+          "abs_coefficient": 9.092575192050327e-05
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_mfcc4_sma3_stddevNorm_winsor_mean",
+          "coefficient": -8.79836705943477e-05,
+          "abs_coefficient": 8.79836705943477e-05
+        },
+        {
+          "feature": "aligned_audio__rolemix_presenter_F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+          "coefficient": 8.731971051935426e-05,
+          "abs_coefficient": 8.731971051935426e-05
+        },
+        {
+          "feature": "aligned_audio__rolemix_qa_HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -8.699641745135725e-05,
+          "abs_coefficient": 8.699641745135725e-05
+        }
+      ]
+    }
+  },
+  "significance": {
+    "audio_upgrade_vs_old_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0009887039608034028,
+        "rmse": 0.0013566506542874563,
+        "r2": 0.8362131293909326
+      },
+      "challenger_test": {
+        "mae": 0.0011887293048571366,
+        "rmse": 0.0015578299987961453,
+        "r2": 0.7840351095669789
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00019976622711760265,
+        "rmse_diff_ci_low": -0.0005995509697070298,
+        "rmse_diff_ci_high": 0.00023900650094034527,
+        "mae_diff_mean": -0.00019766430698582373,
+        "mae_diff_ci_low": -0.0004851145570840207,
+        "mae_diff_ci_high": 8.278979335439536e-05,
+        "r2_gain_mean": -0.06790159597591046,
+        "r2_gain_ci_low": -0.30350846003540766,
+        "r2_gain_ci_high": 0.07305473335881722
+      },
+      "permutation": {
+        "mse_gain_mean": -5.863333073706145e-07,
+        "mse_gain_pvalue": 0.393,
+        "mae_gain_mean": -0.00020002534405373366,
+        "mae_gain_pvalue": 0.18725
+      }
+    },
+    "audio_upgrade_vs_no_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "challenger_test": {
+        "mae": 0.0011887293048571366,
+        "rmse": 0.0015578299987961453,
+        "r2": 0.7840351095669789
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.0005992144287108114,
+        "rmse_diff_ci_low": -0.0008926796590264862,
+        "rmse_diff_ci_high": -0.00031002488976394535,
+        "mae_diff_mean": -0.00046288047225711914,
+        "mae_diff_ci_low": -0.0007206353899874535,
+        "mae_diff_ci_high": -0.00022407956239051406,
+        "r2_gain_mean": -0.16976026330723176,
+        "r2_gain_ci_low": -0.4689938821372558,
+        "r2_gain_ci_high": -0.060103422005286324
+      },
+      "permutation": {
+        "mse_gain_mean": -1.521663284640604e-06,
+        "mse_gain_pvalue": 0.0005,
+        "mae_gain_mean": -0.0004650852532433068,
+        "mae_gain_pvalue": 0.00025
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "challenger_test": {
+        "mae": 0.0007764440271665063,
+        "rmse": 0.0009884967927954224,
+        "r2": 0.9130452006929656
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -3.66462403226912e-05,
+        "rmse_diff_ci_low": -0.00012851593683512233,
+        "rmse_diff_ci_high": 5.6364178674603905e-05,
+        "mae_diff_mean": -5.230377942356124e-05,
+        "mae_diff_ci_low": -0.00013745501951986926,
+        "mae_diff_ci_high": 3.481349982702114e-05,
+        "r2_gain_mean": -0.007594296275935187,
+        "r2_gain_ci_low": -0.03662669757531863,
+        "r2_gain_ci_high": 0.013149944818240819
+      },
+      "permutation": {
+        "mse_gain_mean": -7.195488885824217e-08,
+        "mse_gain_pvalue": 0.447,
+        "mae_gain_mean": -5.279997555267669e-05,
+        "mae_gain_pvalue": 0.2295
+      }
+    },
+    "merged_vs_aligned_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0011887293048571366,
+        "rmse": 0.0015578299987961453,
+        "r2": 0.7840351095669789
+      },
+      "challenger_test": {
+        "mae": 0.001123961066319891,
+        "rmse": 0.0015204787169200461,
+        "r2": 0.7942671137979265
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 3.764623529239701e-05,
+        "rmse_diff_ci_low": -0.00015304794181458497,
+        "rmse_diff_ci_high": 0.0002593834169536388,
+        "mae_diff_mean": 6.39052888628299e-05,
+        "mae_diff_ci_low": -7.594339479157358e-05,
+        "mae_diff_ci_high": 0.00023775300418508096,
+        "r2_gain_mean": 0.012956566875406441,
+        "r2_gain_ci_low": -0.0666994485720763,
+        "r2_gain_ci_high": 0.111202899106711
+      },
+      "permutation": {
+        "mse_gain_mean": 1.1497877654236815e-07,
+        "mse_gain_pvalue": 0.7465,
+        "mae_gain_mean": 6.476823853724543e-05,
+        "mae_gain_pvalue": 0.48575
+      }
+    },
+    "audio_upgrade_vs_old_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007865732459072798,
+        "rmse": 0.0010418177908366297,
+        "r2": 0.9034112452839724
+      },
+      "challenger_test": {
+        "mae": 0.001178088286988511,
+        "rmse": 0.0015279172470733385,
+        "r2": 0.7922492050005052
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00048081868955886654,
+        "rmse_diff_ci_low": -0.0007509610937366855,
+        "rmse_diff_ci_high": -0.00020293646558585616,
+        "mae_diff_mean": -0.0003892725839739109,
+        "mae_diff_ci_low": -0.0006414318365482577,
+        "mae_diff_ci_high": -0.00015176124021491218,
+        "r2_gain_mean": -0.1381622079733822,
+        "r2_gain_ci_low": -0.3807739264219648,
+        "r2_gain_ci_high": -0.046189547439068133
+      },
+      "permutation": {
+        "mse_gain_mean": -1.2491468046004536e-06,
+        "mse_gain_pvalue": 0.00225,
+        "mae_gain_mean": -0.0003915150410812311,
+        "mae_gain_pvalue": 0.00225
+      }
+    },
+    "audio_upgrade_vs_no_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "challenger_test": {
+        "mae": 0.001178088286988511,
+        "rmse": 0.0015279172470733385,
+        "r2": 0.7922492050005052
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00044490577524312387,
+        "rmse_diff_ci_low": -0.0007233077400369072,
+        "rmse_diff_ci_high": -0.00015094913114348666,
+        "mae_diff_mean": -0.0003914664011875055,
+        "mae_diff_ci_low": -0.0006458568280234638,
+        "mae_diff_ci_high": -0.0001486322601451803,
+        "r2_gain_mean": -0.13240690799960436,
+        "r2_gain_ci_low": -0.39515553967143,
+        "r2_gain_ci_high": -0.033875493934715166
+      },
+      "permutation": {
+        "mse_gain_mean": -1.1744826761838989e-06,
+        "mse_gain_pvalue": 0.00425,
+        "mae_gain_mean": -0.0003945250108152347,
+        "mae_gain_pvalue": 0.00325
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "challenger_test": {
+        "mae": 0.0006801970524040992,
+        "rmse": 0.0009415486925567824,
+        "r2": 0.9211087936199159
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 0.00013630962603386265,
+        "rmse_diff_ci_low": 3.2494209963567316e-05,
+        "rmse_diff_ci_high": 0.0002559877910715885,
+        "mae_diff_mean": 0.00010491637754955139,
+        "mae_diff_ci_low": 2.622546484124269e-05,
+        "mae_diff_ci_high": 0.00019296551368388215,
+        "r2_gain_mean": 0.028724128252841808,
+        "r2_gain_ci_low": 0.007032315084277533,
+        "r2_gain_ci_high": 0.06534077622780778
+      },
+      "permutation": {
+        "mse_gain_mean": 2.7353449726488424e-07,
+        "mse_gain_pvalue": 0.02175,
+        "mae_gain_mean": 0.00010336622376917692,
+        "mae_gain_pvalue": 0.01725
+      }
+    },
+    "merged_vs_aligned_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.001178088286988511,
+        "rmse": 0.0015279172470733385,
+        "r2": 0.7922492050005052
+      },
+      "challenger_test": {
+        "mae": 0.001130261912129596,
+        "rmse": 0.001524331105759138,
+        "r2": 0.7932232752860071
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 4.7599934089962556e-06,
+        "rmse_diff_ci_low": -0.00017930148829588735,
+        "rmse_diff_ci_high": 0.0001971853620343611,
+        "mae_diff_mean": 4.663819858437078e-05,
+        "mae_diff_ci_low": -8.37430165345753e-05,
+        "mae_diff_ci_high": 0.00019869819879957717,
+        "r2_gain_mean": 0.00179037677727539,
+        "r2_gain_ci_low": -0.07773228066572857,
+        "r2_gain_ci_high": 0.08439618176936317
+      },
+      "permutation": {
+        "mse_gain_mean": 1.0945793919293187e-08,
+        "mse_gain_pvalue": 0.976,
+        "mae_gain_mean": 4.782637485891468e-05,
+        "mae_gain_pvalue": 0.5495
+      }
+    },
+    "audio_upgrade_vs_old_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.000718454900343908,
+        "rmse": 0.001123943486495886,
+        "r2": 0.8875830035706059
+      },
+      "challenger_test": {
+        "mae": 0.001047893998725079,
+        "rmse": 0.00139452988995841,
+        "r2": 0.8269392097856569
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.0002695463297281514,
+        "rmse_diff_ci_low": -0.0005310699048834673,
+        "rmse_diff_ci_high": 1.8312663625280798e-06,
+        "mae_diff_mean": -0.00032825718614943277,
+        "mae_diff_ci_low": -0.000548304521284407,
+        "mae_diff_ci_high": -0.00011265569407944906,
+        "r2_gain_mean": -0.07904251813308702,
+        "r2_gain_ci_low": -0.267726707497974,
+        "r2_gain_ci_high": 0.0004018495122110877
+      },
+      "permutation": {
+        "mse_gain_mean": -6.814646531508869e-07,
+        "mse_gain_pvalue": 0.05075,
+        "mae_gain_mean": -0.00032943909838117083,
+        "mae_gain_pvalue": 0.00475
+      }
+    },
+    "audio_upgrade_vs_no_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007475859576684987,
+        "rmse": 0.0011626347972388074,
+        "r2": 0.8797099619918988
+      },
+      "challenger_test": {
+        "mae": 0.001047893998725079,
+        "rmse": 0.00139452988995841,
+        "r2": 0.8269392097856569
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00023229328006932554,
+        "rmse_diff_ci_low": -0.0004974408886496089,
+        "rmse_diff_ci_high": 3.6871417227430075e-05,
+        "mae_diff_mean": -0.0002994465606057009,
+        "mae_diff_ci_low": -0.0005236657431636085,
+        "mae_diff_ci_high": -8.498964254469647e-05,
+        "r2_gain_mean": -0.07120467600061668,
+        "r2_gain_ci_low": -0.2631482168354809,
+        "r2_gain_ci_high": 0.007485334286800109
+      },
+      "permutation": {
+        "mse_gain_mean": -5.929939422368922e-07,
+        "mse_gain_pvalue": 0.092,
+        "mae_gain_mean": -0.00030030804105658017,
+        "mae_gain_pvalue": 0.01025
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.0007475859576684987,
+        "rmse": 0.0011626347972388074,
+        "r2": 0.8797099619918988
+      },
+      "challenger_test": {
+        "mae": 0.0007345573867003601,
+        "rmse": 0.0011671721488474855,
+        "r2": 0.8787692311153804
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -3.892538584374606e-06,
+        "rmse_diff_ci_low": -3.743220827206969e-05,
+        "rmse_diff_ci_high": 3.792428287949616e-05,
+        "mae_diff_mean": 1.3275377613016869e-05,
+        "mae_diff_ci_low": -2.0800267504840948e-05,
+        "mae_diff_ci_high": 4.7802226735819147e-05,
+        "r2_gain_mean": 0.00020373012805397308,
+        "r2_gain_ci_low": -0.007445489774780484,
+        "r2_gain_ci_high": 0.016746180257348513
+      },
+      "permutation": {
+        "mse_gain_mean": -1.0571153294734157e-08,
+        "mse_gain_pvalue": 0.8295,
+        "mae_gain_mean": 1.3028570968138508e-05,
+        "mae_gain_pvalue": 0.487
+      }
+    },
+    "merged_vs_aligned_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.001047893998725079,
+        "rmse": 0.00139452988995841,
+        "r2": 0.8269392097856569
+      },
+      "challenger_test": {
+        "mae": 0.0011356195369997314,
+        "rmse": 0.001516815518937394,
+        "r2": 0.7952572393882338
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00012146080174627325,
+        "rmse_diff_ci_low": -0.00024979333507043396,
+        "rmse_diff_ci_high": -3.0106521805739656e-06,
+        "mae_diff_mean": -8.785772086439699e-05,
+        "mae_diff_ci_low": -0.0001794526136372588,
+        "mae_diff_ci_high": -3.300154204445863e-06,
+        "r2_gain_mean": -0.03920065450018949,
+        "r2_gain_ci_low": -0.12721886847536734,
+        "r2_gain_ci_high": -0.0007939076352594713
+      },
+      "permutation": {
+        "mse_gain_mean": -3.560157045019e-07,
+        "mse_gain_pvalue": 0.08575,
+        "mae_gain_mean": -8.772553827465241e-05,
+        "mae_gain_pvalue": 0.0705
+      }
+    }
+  }
+}

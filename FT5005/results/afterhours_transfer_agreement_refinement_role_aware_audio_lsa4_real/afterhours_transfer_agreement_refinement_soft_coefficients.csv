@@ -1,0 +1,9 @@
+coefficient,feature
+0.004450902440447546,agreed_minus_pre_pred
+0.004450902440447546,logistic_minus_pre_pred
+0.004450902440447545,pair_minus_pre_pred
+0.003025377027867012,agreed_choose_qa
+0.001615772655284257,qa_minus_pre_pred
+0.0007288687513711543,sem_minus_pre_pred
+-0.00034605266534379987,selected_minus_pre_pred
+0.0,abs_pair_minus_logistic_pred

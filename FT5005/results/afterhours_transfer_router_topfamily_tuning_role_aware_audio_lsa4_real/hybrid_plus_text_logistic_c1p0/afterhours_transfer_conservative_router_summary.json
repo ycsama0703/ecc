@@ -1,0 +1,812 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_qa": 553,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "router_features": [
+      "a4_strict_row_share",
+      "a4_strict_high_conf_share",
+      "qa_pair_count",
+      "qa_pair_low_overlap_share",
+      "qa_pair_answer_hedge_rate_mean",
+      "qa_pair_answer_assertive_rate_mean",
+      "qa_pair_answer_forward_rate_mean",
+      "qa_multi_part_question_share",
+      "qa_evasive_proxy_share",
+      "qa_bench_direct_answer_share",
+      "qa_bench_direct_early_score_mean",
+      "qa_bench_evasion_score_mean",
+      "qa_bench_high_evasion_share",
+      "qa_bench_coverage_mean",
+      "qa_bench_nonresponse_share",
+      "aligned_audio__aligned_audio_sentence_count",
+      "answer_to_question_word_ratio",
+      "qna_word_count",
+      "question_mark_per_1k_words"
+    ],
+    "router_c": 1.0,
+    "tree_depth": 2,
+    "tree_min_leaf_frac": 0.08,
+    "override_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      0.99
+    ]
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qa_benchmark_all_count": 47,
+    "qna_lsa_components": 4,
+    "qa_benchmark_svd": {
+      "input_feature_count": 47,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6964621128047552
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6026047228923573
+    }
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 6.921102195379463e-05,
+      "rmse": 0.00013349287280217217,
+      "r2": 0.9984141606625622
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    },
+    "validation_selected_transfer_expert": {
+      "mae": 7.098330214615625e-05,
+      "rmse": 0.00012780682598281307,
+      "r2": 0.9985463792059631
+    },
+    "conservative_logistic_override_on_selected_expert": {
+      "mae": 6.92545685256378e-05,
+      "rmse": 0.00012415338795235313,
+      "r2": 0.9986282967157322
+    },
+    "conservative_tree_override_on_selected_expert": {
+      "mae": 6.930590455955882e-05,
+      "rmse": 0.00012682033297530128,
+      "r2": 0.9985687325119726
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9945024082810152,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9959160233667426,
+    "validation_selected_transfer_expert": 0.9959160233667426,
+    "conservative_logistic_override_on_selected_expert": 0.9959160233667426,
+    "conservative_tree_override_on_selected_expert": 0.995940470185962
+  },
+  "significance": {
+    "validation_selected_transfer_expert__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": 3.792343017900509e-06,
+      "rmse_diff_ci_low": -1.8596048403140005e-06,
+      "rmse_diff_ci_high": 1.1067547727295132e-05,
+      "mae_diff_mean": 1.707312523454593e-06,
+      "mae_diff_ci_low": -3.93250808010114e-06,
+      "mae_diff_ci_high": 7.265405463996654e-06,
+      "r2_gain_mean": 0.00011087664962643378,
+      "r2_gain_ci_low": -4.454071522737302e-05,
+      "r2_gain_ci_high": 0.0004670685888556321,
+      "mse_gain_mean": 9.205210277535618e-10,
+      "mse_gain_pvalue": 0.293,
+      "mae_gain_mean": 1.728733620518425e-06,
+      "mae_gain_pvalue": 0.55925
+    },
+    "validation_selected_transfer_expert__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": 1.0635932444125134e-06,
+      "rmse_diff_ci_low": -1.0782013607425148e-07,
+      "rmse_diff_ci_high": 2.8433895862596527e-06,
+      "mae_diff_mean": 1.668998211484228e-06,
+      "mae_diff_ci_low": -3.717971617229227e-07,
+      "mae_diff_ci_high": 4.009785996923428e-06,
+      "r2_gain_mean": 2.9171633274150678e-05,
+      "r2_gain_ci_low": -2.540689348004554e-06,
+      "r2_gain_ci_high": 0.00010528856218134656,
+      "mse_gain_mean": 2.511879118347711e-10,
+      "mse_gain_pvalue": 0.13475,
+      "mae_gain_mean": 1.6773975865974131e-06,
+      "mae_gain_pvalue": 0.1225
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": 4.66970814683489e-06,
+      "rmse_diff_ci_low": -1.1506136938317057e-06,
+      "rmse_diff_ci_high": 1.1809945172875017e-05,
+      "mae_diff_mean": 2.2309406188693072e-06,
+      "mae_diff_ci_low": -3.721589547224817e-06,
+      "mae_diff_ci_high": 7.98069917886119e-06,
+      "r2_gain_mean": 0.00013633462534875227,
+      "r2_gain_ci_low": -2.4228376139320827e-05,
+      "r2_gain_ci_high": 0.0005187822685547072,
+      "mse_gain_mean": 1.1350352825887441e-09,
+      "mse_gain_pvalue": 0.17275,
+      "mae_gain_mean": 2.2362187342004887e-06,
+      "mae_gain_pvalue": 0.477
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": 1.940958373346895e-06,
+      "rmse_diff_ci_low": 2.509844496802376e-07,
+      "rmse_diff_ci_high": 4.251648310583791e-06,
+      "mae_diff_mean": 2.1926263068989424e-06,
+      "mae_diff_ci_low": -1.310826404088233e-06,
+      "mae_diff_ci_high": 5.825809515742305e-06,
+      "r2_gain_mean": 5.4629608996469154e-05,
+      "r2_gain_ci_low": 4.736341884978291e-06,
+      "r2_gain_ci_high": 0.00017925456800274578,
+      "mse_gain_mean": 4.657021666699535e-10,
+      "mse_gain_pvalue": 0.0305,
+      "mae_gain_mean": 2.1848827002794768e-06,
+      "mae_gain_pvalue": 0.23425
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 5.2457421857045704e-05,
+        "rmse": 6.120000612728082e-05,
+        "r2": 0.9958364789903258,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.7,
+      "tree_override_threshold": 0.65,
+      "event_logistic_top_features": [
+        [
+          "qa_gate_active",
+          0.9625668234802712
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.7174897944935016
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.70180305245158
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.6666841764372861
+        ],
+        [
+          "qa_pair_answer_hedge_rate_mean",
+          0.5757933308884547
+        ]
+      ],
+      "event_tree_used_features": [
+        "aligned_audio__aligned_audio_sentence_count",
+        "qa_evasive_proxy_share"
+      ]
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.65,
+      "event_logistic_top_features": [
+        [
+          "answer_to_question_word_ratio",
+          0.7995689836901576
+        ],
+        [
+          "a4_strict_row_share",
+          0.6629532330602039
+        ],
+        [
+          "qna_word_count",
+          0.55137766200299
+        ],
+        [
+          "sem_audio_gate_active",
+          0.5069776850006983
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.49491360509841664
+        ]
+      ],
+      "event_tree_used_features": [
+        "answer_to_question_word_ratio",
+        "qa_gate_active",
+        "qa_pair_answer_forward_rate_mean"
+      ]
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          1.2591259729204511
+        ],
+        [
+          "qa_gate_active",
+          0.6307476590011623
+        ],
+        [
+          "sem_audio_gate_active",
+          0.6307476590011623
+        ],
+        [
+          "qa_pair_low_overlap_share",
+          -0.5928553096966561
+        ],
+        [
+          "qa_bench_evasion_score_mean",
+          -0.46035420156928425
+        ]
+      ],
+      "event_tree_used_features": [
+        "abs_sem_minus_qa_pred",
+        "qa_pair_answer_hedge_rate_mean"
+      ]
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.0001147365808099314,
+        "rmse": 0.00021987093023883339,
+        "r2": 0.9944965012043776,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00010290927981261946,
+        "rmse": 0.00018883663097985922,
+        "r2": 0.995940470185962,
+        "n": 9
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_bench_high_evasion_share",
+          -0.8106015439410977
+        ],
+        [
+          "a4_strict_row_share",
+          0.7528682744211177
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.681483500320566
+        ],
+        [
+          "question_mark_per_1k_words",
+          0.5705023695593452
+        ],
+        [
+          "a4_strict_high_conf_share",
+          -0.5483533390969811
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_expert_pred"
+      ]
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 3.459134099444244e-05,
+        "rmse": 3.709981661475098e-05,
+        "r2": 0.9989026151019295,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.55,
+      "tree_override_threshold": 0.85,
+      "event_logistic_top_features": [
+        [
+          "qa_multi_part_question_share",
+          -0.838840648984744
+        ],
+        [
+          "sem_minus_qa_pred",
+          -0.6753073561469608
+        ],
+        [
+          "qna_word_count",
+          0.6658654668958468
+        ],
+        [
+          "qa_pair_answer_forward_rate_mean",
+          0.664132423967591
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.6556332831772677
+        ]
+      ],
+      "event_tree_used_features": [
+        "answer_to_question_word_ratio",
+        "qa_pair_answer_forward_rate_mean"
+      ]
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.627681494177939e-05,
+        "rmse": 4.526257035661489e-05,
+        "r2": 0.999206561699441,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 4.368348412389272e-05,
+        "rmse": 5.124731987621945e-05,
+        "r2": 0.9989828686267195,
+        "n": 7
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.368348412389272e-05,
+        "rmse": 5.124731987621945e-05,
+        "r2": 0.9989828686267195,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_evasive_proxy_share",
+          1.1098212700549206
+        ],
+        [
+          "qa_gate_active",
+          1.000455882363082
+        ],
+        [
+          "qa_bench_high_evasion_share",
+          -0.7969623426030898
+        ],
+        [
+          "a4_strict_row_share",
+          0.6669888001539575
+        ],
+        [
+          "question_mark_per_1k_words",
+          0.4547246293105931
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share",
+        "qa_evasive_proxy_share"
+      ]
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 1.6827566727817273e-05,
+        "rmse": 1.8699234081502515e-05,
+        "r2": 0.9499677249794097,
+        "n": 7
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 1.5721158308881877e-05,
+        "rmse": 1.8144181338335225e-05,
+        "r2": 0.9528938760965606,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_gate_active",
+          0.8078689596270329
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.6577843642241349
+        ],
+        [
+          "a4_strict_row_share",
+          0.6043754384453107
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.5910348327880526
+        ],
+        [
+          "qa_pair_answer_assertive_rate_mean",
+          0.543617413228418
+        ]
+      ],
+      "event_tree_used_features": [
+        "abs_sem_minus_qa_pred",
+        "qa_expert_pred"
+      ]
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.315809287679451e-05,
+        "rmse": 4.977015283355336e-05,
+        "r2": 0.9981181033661115,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 3.717458468304901e-05,
+        "rmse": 5.172636045911405e-05,
+        "r2": 0.9979672608085238,
+        "n": 8
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.7,
+      "event_logistic_top_features": [
+        [
+          "qna_word_count",
+          0.8452217570405838
+        ],
+        [
+          "qa_multi_part_question_share",
+          -0.6774422894334418
+        ],
+        [
+          "question_mark_per_1k_words",
+          0.6364134251178692
+        ],
+        [
+          "qa_bench_nonresponse_share",
+          0.6243110852042575
+        ],
+        [
+          "qa_pair_answer_assertive_rate_mean",
+          -0.6170582506271969
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_high_conf_share",
+        "qa_pair_count"
+      ]
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 7.861957887292845e-05,
+        "rmse": 0.00010582835636515283,
+        "r2": 0.9996928285031469,
+        "n": 8
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 6.504959336302926e-05,
+        "rmse": 9.46800263281782e-05,
+        "r2": 0.9997541367874948,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.55,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          1.2390890384328548
+        ],
+        [
+          "qa_gate_active",
+          0.8842584693611991
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.8022727379078142
+        ],
+        [
+          "a4_strict_row_share",
+          0.7287882115921954
+        ],
+        [
+          "answer_to_question_word_ratio",
+          -0.6156048248214729
+        ]
+      ],
+      "event_tree_used_features": [
+        "abs_sem_minus_qa_pred",
+        "sem_audio_expert_pred"
+      ]
+    }
+  }
+}

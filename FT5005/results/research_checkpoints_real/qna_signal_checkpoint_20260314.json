@@ -1,0 +1,132 @@
+{
+  "qa_feature_summary": {
+    "num_events": 553,
+    "num_events_with_pairs": 552,
+    "avg_pair_count": 9.625678119349006
+  },
+  "decomposition": {
+    "full_all_html": {
+      "label": "Full sample, all HTML rows",
+      "split_sizes": {
+        "train": 281,
+        "val": 90,
+        "test": 182
+      },
+      "market_only_qav1": 0.9044217331959152,
+      "market_only_qav2": 0.9044217331959152,
+      "market_plus_controls_qav1": 0.9089054296986068,
+      "market_plus_controls_qav2": 0.9089054296986068,
+      "ecc_text_timing_only_qav1": -0.021895892357156166,
+      "ecc_text_timing_only_qav2": 0.09515353911484392,
+      "ecc_text_timing_plus_audio_qav1": -0.1764262095337099,
+      "ecc_text_timing_plus_audio_qav2": 0.03181639722406726,
+      "market_controls_plus_ecc_qav1": 0.8907838065582022,
+      "market_controls_plus_ecc_qav2": 0.8843135456819984,
+      "market_controls_plus_ecc_audio_qav1": 0.8976256626344963,
+      "market_controls_plus_ecc_audio_qav2": 0.889907670698153,
+      "qa_benchmark_only_qav2": 0.18795118276951317,
+      "qa_benchmark_plus_qna_lsa_qav2": 0.11621131941533647,
+      "market_controls_plus_qa_benchmark_qav2": 0.8964059104020381,
+      "market_controls_plus_qa_benchmark_plus_qna_lsa_qav2": 0.8911501679469344
+    },
+    "full_clean": {
+      "label": "Full sample, exclude html_integrity_flag=fail",
+      "split_sizes": {
+        "train": 244,
+        "val": 74,
+        "test": 156
+      },
+      "market_only_qav1": 0.9009616186914533,
+      "market_only_qav2": 0.9009616186914533,
+      "market_plus_controls_qav1": 0.9111161258526039,
+      "market_plus_controls_qav2": 0.9111161258526039,
+      "ecc_text_timing_only_qav1": -0.07419434123237689,
+      "ecc_text_timing_only_qav2": -0.005483349243630364,
+      "ecc_text_timing_plus_audio_qav1": -0.23142708468339435,
+      "ecc_text_timing_plus_audio_qav2": 0.18715435250180945,
+      "market_controls_plus_ecc_qav1": 0.8878874222460528,
+      "market_controls_plus_ecc_qav2": 0.8784244419664635,
+      "market_controls_plus_ecc_audio_qav1": 0.8601467599624205,
+      "market_controls_plus_ecc_audio_qav2": 0.8902862838500047,
+      "qa_benchmark_only_qav2": 0.16807587534739266,
+      "qa_benchmark_plus_qna_lsa_qav2": 0.12332332291524273,
+      "market_controls_plus_qa_benchmark_qav2": 0.8899888262386197,
+      "market_controls_plus_qa_benchmark_plus_qna_lsa_qav2": 0.8852835679265166
+    },
+    "offhours_all_html": {
+      "label": "Off-hours only, all HTML rows",
+      "split_sizes": {
+        "train": 239,
+        "val": 78,
+        "test": 160
+      },
+      "market_only_qav1": 0.9066488282609616,
+      "market_only_qav2": 0.9066488282609616,
+      "market_plus_controls_qav1": 0.9093925922646195,
+      "market_plus_controls_qav2": 0.9093925922646195,
+      "ecc_text_timing_only_qav1": -0.07634984907459463,
+      "ecc_text_timing_only_qav2": 0.13869032322805164,
+      "ecc_text_timing_plus_audio_qav1": -0.6822545831056803,
+      "ecc_text_timing_plus_audio_qav2": 0.18030972335337347,
+      "market_controls_plus_ecc_qav1": 0.8981212758802901,
+      "market_controls_plus_ecc_qav2": 0.8922738828405075,
+      "market_controls_plus_ecc_audio_qav1": 0.906703465166161,
+      "market_controls_plus_ecc_audio_qav2": 0.9011363091377188
+    },
+    "offhours_clean": {
+      "label": "Off-hours only, exclude html_integrity_flag=fail",
+      "split_sizes": {
+        "train": 212,
+        "val": 62,
+        "test": 137
+      },
+      "market_only_qav1": 0.9047004859133355,
+      "market_only_qav2": 0.9047004859133355,
+      "market_plus_controls_qav1": 0.9114538744136229,
+      "market_plus_controls_qav2": 0.9114538744136229,
+      "ecc_text_timing_only_qav1": -0.05383514906289122,
+      "ecc_text_timing_only_qav2": -0.08548029247214517,
+      "ecc_text_timing_plus_audio_qav1": -0.4616069129255578,
+      "ecc_text_timing_plus_audio_qav2": -0.012932354289340475,
+      "market_controls_plus_ecc_qav1": 0.9085288097588822,
+      "market_controls_plus_ecc_qav2": 0.9046019175239821,
+      "market_controls_plus_ecc_audio_qav1": 0.8840135364961703,
+      "market_controls_plus_ecc_audio_qav2": 0.8670330602192208
+    }
+  },
+  "headline_models": {
+    "target_variant_shock_minus_pre": {
+      "qav1_best_mixed": 0.8903340674405978,
+      "qav2_best_mixed": 0.8842764242016502,
+      "qav1_structured_plus_extra": 0.878992733830802,
+      "qav2_structured_plus_extra": 0.878992733830802,
+      "qav2_structured_plus_extra_plus_qa_benchmark": 0.8818191510217862
+    },
+    "offhours_subset_shock_minus_pre": {
+      "qav1_dense_plus_qna_lsa": 0.8966291647325347,
+      "qav2_dense_plus_qna_lsa": 0.8912823480601998,
+      "qav1_dense": 0.8348450023154195,
+      "qav2_dense": 0.8795294710114022
+    },
+    "regime_residual_shock_minus_pre": {
+      "qav1_global": 0.8417667251449378,
+      "qav2_global": 0.881793732264183,
+      "qav1_regime_specific": 0.8579188840603762,
+      "qav2_regime_specific": 0.7986371334063842,
+      "qav1_hybrid": 0.8579188840603762,
+      "qav2_hybrid": 0.7898441045933166
+    }
+  },
+  "current_reading": {
+    "qa_v2_feature_coverage": {
+      "num_events": 553,
+      "num_events_with_pairs": 552,
+      "avg_pair_count": 9.625678119349006
+    },
+    "full_sample_ecc_only_improves_but_remains_below_market": true,
+    "clean_sample_robustness_is_weak": true,
+    "headline_mixed_models_do_not_improve": true,
+    "market_only_baseline_still_dominant": true,
+    "recommended_next_gate": "Move to transferred pair-level Q&A labels or public-data benchmark pivot only after preserving benchmark ladder discipline."
+  }
+}

@@ -1,0 +1,385 @@
+component,direction,family,rank,term,weight
+1,positive,tail_question_top1_lsa,1,the,0.37335089945295064
+1,positive,tail_question_top1_lsa,2,you,0.2675634437422898
+1,positive,tail_question_top1_lsa,3,and,0.225963246373247
+1,positive,tail_question_top1_lsa,4,of,0.1981512109787056
+1,positive,tail_question_top1_lsa,5,to,0.19207658492522167
+1,positive,tail_question_top1_lsa,6,that,0.18051266126890247
+1,positive,tail_question_top1_lsa,7,in,0.14170358107244094
+1,positive,tail_question_top1_lsa,8,on,0.1238121785097244
+1,positive,tail_question_top1_lsa,9,about,0.11750454423033446
+1,positive,tail_question_top1_lsa,10,is,0.11725877739240476
+1,positive,tail_question_top1_lsa,11,just,0.10406454234912145
+1,positive,tail_question_top1_lsa,12,it,0.09984854095009343
+1,negative,tail_question_top1_lsa,1,jim,0.00454644365562952
+1,negative,tail_question_top1_lsa,2,jim you,0.00454644365562952
+1,negative,tail_question_top1_lsa,3,early indications,0.005065786426218196
+1,negative,tail_question_top1_lsa,4,any early,0.005065786426218196
+1,negative,tail_question_top1_lsa,5,the challenges,0.005118958567883836
+1,negative,tail_question_top1_lsa,6,than you,0.005210829753647142
+1,negative,tail_question_top1_lsa,7,restructuring,0.005223846843846342
+1,negative,tail_question_top1_lsa,8,year to,0.005236675687295804
+1,negative,tail_question_top1_lsa,9,the context,0.005290327666353233
+1,negative,tail_question_top1_lsa,10,context of,0.005290327666353233
+1,negative,tail_question_top1_lsa,11,year was,0.005295120665426994
+1,negative,tail_question_top1_lsa,12,helped,0.00530477874628662
+2,positive,tail_question_top1_lsa,1,the,0.1905602919429599
+2,positive,tail_question_top1_lsa,2,is,0.16125598312336403
+2,positive,tail_question_top1_lsa,3,so,0.11873959335249507
+2,positive,tail_question_top1_lsa,4,million,0.11542744813091692
+2,positive,tail_question_top1_lsa,5,next,0.10214105769749285
+2,positive,tail_question_top1_lsa,6,one,0.09549433976342815
+2,positive,tail_question_top1_lsa,7,that,0.09401511026407734
+2,positive,tail_question_top1_lsa,8,question,0.09181491892281442
+2,positive,tail_question_top1_lsa,9,year,0.08995379420681777
+2,positive,tail_question_top1_lsa,10,for the,0.07966614302340189
+2,positive,tail_question_top1_lsa,11,for,0.07788585758827565
+2,positive,tail_question_top1_lsa,12,disney,0.0746438558425835
+2,negative,tail_question_top1_lsa,1,little,-0.1708923857338799
+2,negative,tail_question_top1_lsa,2,software,-0.1619922496918266
+2,negative,tail_question_top1_lsa,3,bit,-0.1589371031466343
+2,negative,tail_question_top1_lsa,4,little bit,-0.14904840402764594
+2,negative,tail_question_top1_lsa,5,maybe,-0.14436337664541643
+2,negative,tail_question_top1_lsa,6,you,-0.13669295265595122
+2,negative,tail_question_top1_lsa,7,the software,-0.09475273718242375
+2,negative,tail_question_top1_lsa,8,if,-0.09314797521277383
+2,negative,tail_question_top1_lsa,9,growth,-0.07873561679324934
+2,negative,tail_question_top1_lsa,10,if you,-0.07815650292414271
+2,negative,tail_question_top1_lsa,11,europe,-0.07161518754092408
+2,negative,tail_question_top1_lsa,12,us,-0.06949437450825209
+3,positive,tail_question_top1_lsa,1,do,0.18456162576338578
+3,positive,tail_question_top1_lsa,2,do you,0.13255155029087007
+3,positive,tail_question_top1_lsa,3,around,0.12282360948771771
+3,positive,tail_question_top1_lsa,4,term,0.11002461121117689
+3,positive,tail_question_top1_lsa,5,million,0.10961617816309335
+3,positive,tail_question_top1_lsa,6,to,0.1065766247106557
+3,positive,tail_question_top1_lsa,7,how do,0.10625509419301093
+3,positive,tail_question_top1_lsa,8,ai,0.09187958674500012
+3,positive,tail_question_top1_lsa,9,when,0.09185877588893454
+3,positive,tail_question_top1_lsa,10,think,0.09117804035245058
+3,positive,tail_question_top1_lsa,11,data,0.08204265877351063
+3,positive,tail_question_top1_lsa,12,how,0.08182015628756908
+3,negative,tail_question_top1_lsa,1,year,-0.16838316446030466
+3,negative,tail_question_top1_lsa,2,flow,-0.16529549481933292
+3,negative,tail_question_top1_lsa,3,cash,-0.1514827500544144
+3,negative,tail_question_top1_lsa,4,cash flow,-0.13733420542146837
+3,negative,tail_question_top1_lsa,5,well,-0.1185313868997312
+3,negative,tail_question_top1_lsa,6,as well,-0.10774473138860481
+3,negative,tail_question_top1_lsa,7,just,-0.09773231066832164
+3,negative,tail_question_top1_lsa,8,bit,-0.09182987542785154
+3,negative,tail_question_top1_lsa,9,free,-0.09155613694764553
+3,negative,tail_question_top1_lsa,10,free cash,-0.09155613694764553
+3,negative,tail_question_top1_lsa,11,quarter,-0.08940406610694947
+3,negative,tail_question_top1_lsa,12,as,-0.08898618012529914
+4,positive,tail_question_top1_lsa,1,about,0.1869742068957426
+4,positive,tail_question_top1_lsa,2,think,0.18007190189836172
+4,positive,tail_question_top1_lsa,3,think about,0.17552885730960785
+4,positive,tail_question_top1_lsa,4,flow,0.13370105618748876
+4,positive,tail_question_top1_lsa,5,how do,0.13119849370940126
+4,positive,tail_question_top1_lsa,6,cash,0.12863958591174307
+4,positive,tail_question_top1_lsa,7,cash flow,0.10931656494579116
+4,positive,tail_question_top1_lsa,8,as,0.10587663062575671
+4,positive,tail_question_top1_lsa,9,about the,0.10565134829434505
+4,positive,tail_question_top1_lsa,10,well,0.10526760193973397
+4,positive,tail_question_top1_lsa,11,as well,0.10153529676364466
+4,positive,tail_question_top1_lsa,12,do,0.10088389079575134
+4,negative,tail_question_top1_lsa,1,is,-0.12704511811989955
+4,negative,tail_question_top1_lsa,2,disney,-0.1263628978681556
+4,negative,tail_question_top1_lsa,3,on,-0.11542163725759816
+4,negative,tail_question_top1_lsa,4,to,-0.11076549749335737
+4,negative,tail_question_top1_lsa,5,is it,-0.08538947547898934
+4,negative,tail_question_top1_lsa,6,how much,-0.08283094450834864
+4,negative,tail_question_top1_lsa,7,platform,-0.0799612699415105
+4,negative,tail_question_top1_lsa,8,if,-0.07960514674232466
+4,negative,tail_question_top1_lsa,9,that,-0.07871691493335625
+4,negative,tail_question_top1_lsa,10,much,-0.07390876758816278
+4,negative,tail_question_top1_lsa,11,give,-0.07165958839688198
+4,negative,tail_question_top1_lsa,12,or,-0.06859769817496261
+1,positive,tail_answer_top1_lsa,1,the,0.3567102455117583
+1,positive,tail_answer_top1_lsa,2,and,0.355679679384545
+1,positive,tail_answer_top1_lsa,3,we,0.2807949957044356
+1,positive,tail_answer_top1_lsa,4,that,0.2500380519031278
+1,positive,tail_answer_top1_lsa,5,to,0.24975340757570502
+1,positive,tail_answer_top1_lsa,6,of,0.241945105623447
+1,positive,tail_answer_top1_lsa,7,in,0.20729540779409278
+1,positive,tail_answer_top1_lsa,8,it,0.14385727072804202
+1,positive,tail_answer_top1_lsa,9,you,0.12297537986566869
+1,positive,tail_answer_top1_lsa,10,so,0.12294292458663986
+1,positive,tail_answer_top1_lsa,11,is,0.11936167495713211
+1,positive,tail_answer_top1_lsa,12,our,0.1072251997588802
+1,negative,tail_answer_top1_lsa,1,and some,0.002425027827065008
+1,negative,tail_answer_top1_lsa,2,sense,0.002425027827065008
+1,negative,tail_answer_top1_lsa,3,in retail,0.002425027827065008
+1,negative,tail_answer_top1_lsa,4,calling,0.002425027827065008
+1,negative,tail_answer_top1_lsa,5,and drive,0.002425027827065008
+1,negative,tail_answer_top1_lsa,6,the internet,0.002425027827065008
+1,negative,tail_answer_top1_lsa,7,to call,0.002425027827065008
+1,negative,tail_answer_top1_lsa,8,very very,0.002527076484896574
+1,negative,tail_answer_top1_lsa,9,large number,0.002527076484896574
+1,negative,tail_answer_top1_lsa,10,it off,0.002527076484896574
+1,negative,tail_answer_top1_lsa,11,chat,0.002527076484896574
+1,negative,tail_answer_top1_lsa,12,no,0.002527076484896574
+2,positive,tail_answer_top1_lsa,1,thank,0.33298653957087465
+2,positive,tail_answer_top1_lsa,2,thank you,0.33293081938822006
+2,positive,tail_answer_top1_lsa,3,you,0.30774333722676156
+2,positive,tail_answer_top1_lsa,4,turn,0.1721548820244106
+2,positive,tail_answer_top1_lsa,5,turn it,0.16667023962256391
+2,positive,tail_answer_top1_lsa,6,it back,0.16430834331801575
+2,positive,tail_answer_top1_lsa,7,me turn,0.16430834331801575
+2,positive,tail_answer_top1_lsa,8,you to,0.16430834331801575
+2,positive,tail_answer_top1_lsa,9,to close,0.16430834331801575
+2,positive,tail_answer_top1_lsa,10,out the,0.16430834331801575
+2,positive,tail_answer_top1_lsa,11,close out,0.16430834331801575
+2,positive,tail_answer_top1_lsa,12,the call,0.16052262035749026
+2,negative,tail_answer_top1_lsa,1,and,-0.10242659573476738
+2,negative,tail_answer_top1_lsa,2,in,-0.08811048932894021
+2,negative,tail_answer_top1_lsa,3,we,-0.08725739284830787
+2,negative,tail_answer_top1_lsa,4,of,-0.0785262160696265
+2,negative,tail_answer_top1_lsa,5,that,-0.0780287857661363
+2,negative,tail_answer_top1_lsa,6,is,-0.051082937697136364
+2,negative,tail_answer_top1_lsa,7,so,-0.04633080459106164
+2,negative,tail_answer_top1_lsa,8,there,-0.03466821770588906
+2,negative,tail_answer_top1_lsa,9,and so,-0.03399562293459824
+2,negative,tail_answer_top1_lsa,10,in the,-0.03191504392711607
+2,negative,tail_answer_top1_lsa,11,re,-0.030909136540515015
+2,negative,tail_answer_top1_lsa,12,that we,-0.028277767319701465
+3,positive,tail_answer_top1_lsa,1,you want,0.2724614588688706
+3,positive,tail_answer_top1_lsa,2,want to,0.2638746266632765
+3,positive,tail_answer_top1_lsa,3,want,0.2637477888819398
+3,positive,tail_answer_top1_lsa,4,you,0.1931664293387032
+3,positive,tail_answer_top1_lsa,5,take,0.17484283265754977
+3,positive,tail_answer_top1_lsa,6,to take,0.17469204860026594
+3,positive,tail_answer_top1_lsa,7,do you,0.17089170558518166
+3,positive,tail_answer_top1_lsa,8,thank,0.17052381573215572
+3,positive,tail_answer_top1_lsa,9,thank you,0.1699033619536448
+3,positive,tail_answer_top1_lsa,10,question,0.12439830900619454
+3,positive,tail_answer_top1_lsa,11,take the,0.10710090736144234
+3,positive,tail_answer_top1_lsa,12,thanks,0.10522025536997481
+3,negative,tail_answer_top1_lsa,1,turn it,-0.15953238981094747
+3,negative,tail_answer_top1_lsa,2,you to,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,3,to close,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,4,me turn,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,5,close out,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,6,out the,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,7,it back,-0.1581246284694132
+3,negative,tail_answer_top1_lsa,8,to you,-0.15285921988160928
+3,negative,tail_answer_top1_lsa,9,back to,-0.15092347614337265
+3,negative,tail_answer_top1_lsa,10,close,-0.13984559678314665
+3,negative,tail_answer_top1_lsa,11,back,-0.13744586953205348
+3,negative,tail_answer_top1_lsa,12,turn,-0.1336988057984395
+4,positive,tail_answer_top1_lsa,1,thank,0.33211169107098876
+4,positive,tail_answer_top1_lsa,2,thank you,0.3317148078553288
+4,positive,tail_answer_top1_lsa,3,everybody,0.12244201702915686
+4,positive,tail_answer_top1_lsa,4,you all,0.10929638974877694
+4,positive,tail_answer_top1_lsa,5,very much,0.0909283977131056
+4,positive,tail_answer_top1_lsa,6,you very,0.0909283977131056
+4,positive,tail_answer_top1_lsa,7,cisco,0.08603836390897586
+4,positive,tail_answer_top1_lsa,8,30,0.08572643546802909
+4,positive,tail_answer_top1_lsa,9,today,0.08490186739467025
+4,positive,tail_answer_top1_lsa,10,2024,0.08257546762762474
+4,positive,tail_answer_top1_lsa,11,david,0.07672386681375142
+4,positive,tail_answer_top1_lsa,12,you david,0.07672386681375142
+4,negative,tail_answer_top1_lsa,1,you want,-0.27983784576684645
+4,negative,tail_answer_top1_lsa,2,want,-0.2665728151748455
+4,negative,tail_answer_top1_lsa,3,want to,-0.26623435813074
+4,negative,tail_answer_top1_lsa,4,to take,-0.18486012071800462
+4,negative,tail_answer_top1_lsa,5,do you,-0.17527780227125855
+4,negative,tail_answer_top1_lsa,6,take,-0.1647459723321751
+4,negative,tail_answer_top1_lsa,7,to,-0.1582297843079659
+4,negative,tail_answer_top1_lsa,8,take the,-0.10586338124312171
+4,negative,tail_answer_top1_lsa,9,do,-0.10482454948801355
+4,negative,tail_answer_top1_lsa,10,question,-0.09671067619032656
+4,negative,tail_answer_top1_lsa,11,the first,-0.0872201109802351
+4,negative,tail_answer_top1_lsa,12,turn it,-0.07927112026155402
+1,positive,tail_qa_top1_lsa,1,the,0.3943740738603394
+1,positive,tail_qa_top1_lsa,2,and,0.2843975893291039
+1,positive,tail_qa_top1_lsa,3,to,0.23019493799910798
+1,positive,tail_qa_top1_lsa,4,you,0.2216569760015547
+1,positive,tail_qa_top1_lsa,5,that,0.21129942192495363
+1,positive,tail_qa_top1_lsa,6,of,0.21103983094730877
+1,positive,tail_qa_top1_lsa,7,we,0.1852903989137434
+1,positive,tail_qa_top1_lsa,8,in,0.16118847348049092
+1,positive,tail_qa_top1_lsa,9,it,0.12268436708681787
+1,positive,tail_qa_top1_lsa,10,is,0.11516359760327784
+1,positive,tail_qa_top1_lsa,11,on,0.11277563760444698
+1,positive,tail_qa_top1_lsa,12,for,0.09708369082171896
+1,negative,tail_qa_top1_lsa,1,the internet,0.0019450711786520517
+1,negative,tail_qa_top1_lsa,2,in retail,0.0019450711786520517
+1,negative,tail_qa_top1_lsa,3,and drive,0.0019450711786520517
+1,negative,tail_qa_top1_lsa,4,answers,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,5,chat,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,6,it has,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,7,very very,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,8,us that,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,9,large number,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,10,last several,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,11,it off,0.0019680940185935166
+1,negative,tail_qa_top1_lsa,12,fleet,0.0020033597411306292
+2,positive,tail_qa_top1_lsa,1,you,0.24312147978127202
+2,positive,tail_qa_top1_lsa,2,little,0.11276208859460833
+2,positive,tail_qa_top1_lsa,3,bit,0.10891744871310415
+2,positive,tail_qa_top1_lsa,4,little bit,0.10385274114450735
+2,positive,tail_qa_top1_lsa,5,maybe,0.10266045481668366
+2,positive,tail_qa_top1_lsa,6,just,0.09277449023072577
+2,positive,tail_qa_top1_lsa,7,talk,0.09273951063764999
+2,positive,tail_qa_top1_lsa,8,you could,0.09247559999032345
+2,positive,tail_qa_top1_lsa,9,could,0.08498884714672365
+2,positive,tail_qa_top1_lsa,10,any,0.08442440555822008
+2,positive,tail_qa_top1_lsa,11,about,0.07884056947139281
+2,positive,tail_qa_top1_lsa,12,about the,0.07384057391035967
+2,negative,tail_qa_top1_lsa,1,we,-0.2209766459785427
+2,negative,tail_qa_top1_lsa,2,and,-0.14423309578698784
+2,negative,tail_qa_top1_lsa,3,ai,-0.12306872157440224
+2,negative,tail_qa_top1_lsa,4,our,-0.11846703296121144
+2,negative,tail_qa_top1_lsa,5,new,-0.09503339293419984
+2,negative,tail_qa_top1_lsa,6,and so,-0.09001695304359585
+2,negative,tail_qa_top1_lsa,7,so,-0.08841654021949874
+2,negative,tail_qa_top1_lsa,8,with,-0.0858024686149672
+2,negative,tail_qa_top1_lsa,9,that we,-0.08306787748596353
+2,negative,tail_qa_top1_lsa,10,that,-0.0777174679898393
+2,negative,tail_qa_top1_lsa,11,we re,-0.07511589986248388
+2,negative,tail_qa_top1_lsa,12,in,-0.07276800745125943
+3,positive,tail_qa_top1_lsa,1,30,0.14711129001877007
+3,positive,tail_qa_top1_lsa,2,cisco,0.14179769509548187
+3,positive,tail_qa_top1_lsa,3,call,0.13759907624882883
+3,positive,tail_qa_top1_lsa,4,2024,0.12632375010368077
+3,positive,tail_qa_top1_lsa,5,cash,0.12598418541824508
+3,positive,tail_qa_top1_lsa,6,today,0.12359150057268964
+3,positive,tail_qa_top1_lsa,7,ai,0.11825168542205813
+3,positive,tail_qa_top1_lsa,8,next,0.11367428284500122
+3,positive,tail_qa_top1_lsa,9,will,0.10567303516187852
+3,positive,tail_qa_top1_lsa,10,flow,0.10383614701483052
+3,positive,tail_qa_top1_lsa,11,free,0.10349133082050326
+3,positive,tail_qa_top1_lsa,12,cash flow,0.10016126504541338
+3,negative,tail_qa_top1_lsa,1,bit,-0.09576736725914808
+3,negative,tail_qa_top1_lsa,2,little,-0.09537077496352904
+3,negative,tail_qa_top1_lsa,3,little bit,-0.0903955306984266
+3,negative,tail_qa_top1_lsa,4,china,-0.0685555654511265
+3,negative,tail_qa_top1_lsa,5,can,-0.0625334048061511
+3,negative,tail_qa_top1_lsa,6,talk,-0.06186530026525797
+3,negative,tail_qa_top1_lsa,7,sports,-0.05971156198934391
+3,negative,tail_qa_top1_lsa,8,could you,-0.055457966733383914
+3,negative,tail_qa_top1_lsa,9,can you,-0.05486789884174188
+3,negative,tail_qa_top1_lsa,10,you just,-0.05252818669139069
+3,negative,tail_qa_top1_lsa,11,in the,-0.050057991903903976
+3,negative,tail_qa_top1_lsa,12,what you,-0.04908509745713495
+4,positive,tail_qa_top1_lsa,1,we,0.2043314608431614
+4,positive,tail_qa_top1_lsa,2,cash,0.18245152555980929
+4,positive,tail_qa_top1_lsa,3,flow,0.17486352230721053
+4,positive,tail_qa_top1_lsa,4,cash flow,0.16547953921920813
+4,positive,tail_qa_top1_lsa,5,year,0.13197862363831717
+4,positive,tail_qa_top1_lsa,6,free cash,0.11091299776973144
+4,positive,tail_qa_top1_lsa,7,as well,0.09442397447116652
+4,positive,tail_qa_top1_lsa,8,well,0.0900220963645572
+4,positive,tail_qa_top1_lsa,9,free,0.0878795439502123
+4,positive,tail_qa_top1_lsa,10,as,0.0869560200918149
+4,positive,tail_qa_top1_lsa,11,quarter,0.08645301245997941
+4,positive,tail_qa_top1_lsa,12,that we,0.0785454606108415
+4,negative,tail_qa_top1_lsa,1,ai,-0.18059020161420855
+4,negative,tail_qa_top1_lsa,2,their,-0.09707004480529995
+4,negative,tail_qa_top1_lsa,3,data,-0.09574654667787834
+4,negative,tail_qa_top1_lsa,4,around,-0.08356657932258497
+4,negative,tail_qa_top1_lsa,5,disney,-0.07912151370742436
+4,negative,tail_qa_top1_lsa,6,is,-0.07837265847619403
+4,negative,tail_qa_top1_lsa,7,follow,-0.06994336186532368
+4,negative,tail_qa_top1_lsa,8,with,-0.06912653247690753
+4,negative,tail_qa_top1_lsa,9,follow up,-0.06718641641587036
+4,negative,tail_qa_top1_lsa,10,is it,-0.061448836820627746
+4,negative,tail_qa_top1_lsa,11,first,-0.0594638619140412
+4,negative,tail_qa_top1_lsa,12,sports,-0.057916660214501946
+1,positive,tail_qa_top2_lsa,1,the,0.44483075502808117
+1,positive,tail_qa_top2_lsa,2,and,0.32630407091993396
+1,positive,tail_qa_top2_lsa,3,to,0.26524406187955696
+1,positive,tail_qa_top2_lsa,4,of,0.24115526637075788
+1,positive,tail_qa_top2_lsa,5,that,0.2401292819308567
+1,positive,tail_qa_top2_lsa,6,you,0.2097735532116246
+1,positive,tail_qa_top2_lsa,7,we,0.20939905500128914
+1,positive,tail_qa_top2_lsa,8,in,0.17088077934396373
+1,positive,tail_qa_top2_lsa,9,it,0.11274646302103002
+1,positive,tail_qa_top2_lsa,10,is,0.10729961761468779
+1,positive,tail_qa_top2_lsa,11,on,0.1050741134298839
+1,positive,tail_qa_top2_lsa,12,for,0.09288029258608865
+1,negative,tail_qa_top2_lsa,1,25 years,0.001087412825117973
+1,negative,tail_qa_top2_lsa,2,pretty natural,0.001187995668340469
+1,negative,tail_qa_top2_lsa,3,2022 we,0.0012720095056504399
+1,negative,tail_qa_top2_lsa,4,18,0.001376696267980892
+1,negative,tail_qa_top2_lsa,5,vision and,0.0013812821316350277
+1,negative,tail_qa_top2_lsa,6,and ai,0.0014176576499400444
+1,negative,tail_qa_top2_lsa,7,100 but,0.0014548998625143993
+1,negative,tail_qa_top2_lsa,8,most people,0.0014573985873573534
+1,negative,tail_qa_top2_lsa,9,to them,0.0014573985873573534
+1,negative,tail_qa_top2_lsa,10,so they,0.0014580773379975934
+1,negative,tail_qa_top2_lsa,11,computers,0.0014580773379975934
+1,negative,tail_qa_top2_lsa,12,of any,0.001472827791923883
+2,positive,tail_qa_top2_lsa,1,you,0.2604210309741983
+2,positive,tail_qa_top2_lsa,2,just,0.12452033642920217
+2,positive,tail_qa_top2_lsa,3,cisco,0.10155524455443005
+2,positive,tail_qa_top2_lsa,4,fiscal,0.10063163726744312
+2,positive,tail_qa_top2_lsa,5,kind of,0.09355911770900253
+2,positive,tail_qa_top2_lsa,6,kind,0.09282225381882774
+2,positive,tail_qa_top2_lsa,7,on,0.08872319199188787
+2,positive,tail_qa_top2_lsa,8,follow up,0.08029935894589252
+2,positive,tail_qa_top2_lsa,9,follow,0.07967555901186985
+2,positive,tail_qa_top2_lsa,10,chuck,0.07804549119807377
+2,positive,tail_qa_top2_lsa,11,growth,0.07750797111437523
+2,positive,tail_qa_top2_lsa,12,maybe,0.07513590965185298
+2,negative,tail_qa_top2_lsa,1,and,-0.19861298037434497
+2,negative,tail_qa_top2_lsa,2,we,-0.19099028436171123
+2,negative,tail_qa_top2_lsa,3,our,-0.09208534673234679
+2,negative,tail_qa_top2_lsa,4,to,-0.08382463888432694
+2,negative,tail_qa_top2_lsa,5,and so,-0.08046466169954315
+2,negative,tail_qa_top2_lsa,6,ai,-0.07663471882356611
+2,negative,tail_qa_top2_lsa,7,it,-0.07283386598726459
+2,negative,tail_qa_top2_lsa,8,computing,-0.07032528087409781
+2,negative,tail_qa_top2_lsa,9,new,-0.06283766546566343
+2,negative,tail_qa_top2_lsa,10,amazon,-0.061502501334532396
+2,negative,tail_qa_top2_lsa,11,we re,-0.0578583396801911
+2,negative,tail_qa_top2_lsa,12,they,-0.05761896163547991
+3,positive,tail_qa_top2_lsa,1,ai,0.2744628541503045
+3,positive,tail_qa_top2_lsa,2,data,0.1501288020290496
+3,positive,tail_qa_top2_lsa,3,software,0.14850892844948368
+3,positive,tail_qa_top2_lsa,4,computing,0.13584179257433487
+3,positive,tail_qa_top2_lsa,5,is,0.11486686493612762
+3,positive,tail_qa_top2_lsa,6,data center,0.10586443497824088
+3,positive,tail_qa_top2_lsa,7,center,0.1010205235633145
+3,positive,tail_qa_top2_lsa,8,enterprise,0.09380147828275233
+3,positive,tail_qa_top2_lsa,9,gaming,0.08845053102129166
+3,positive,tail_qa_top2_lsa,10,nvidia,0.08736425647773259
+3,positive,tail_qa_top2_lsa,11,cloud,0.08427566621429675
+3,positive,tail_qa_top2_lsa,12,new,0.08291995737591346
+3,negative,tail_qa_top2_lsa,1,we,-0.24074845599411482
+3,negative,tail_qa_top2_lsa,2,amazon,-0.07146898673977559
+3,negative,tail_qa_top2_lsa,3,cash,-0.0705696362948474
+3,negative,tail_qa_top2_lsa,4,continue,-0.06925106627613369
+3,negative,tail_qa_top2_lsa,5,prime,-0.06905647403632978
+3,negative,tail_qa_top2_lsa,6,we re,-0.0683015469278827
+3,negative,tail_qa_top2_lsa,7,stores,-0.06703292144233329
+3,negative,tail_qa_top2_lsa,8,cost,-0.06566855332217708
+3,negative,tail_qa_top2_lsa,9,re,-0.05891090585358818
+3,negative,tail_qa_top2_lsa,10,continue to,-0.05889395209746754
+3,negative,tail_qa_top2_lsa,11,at,-0.057313908389066914
+3,negative,tail_qa_top2_lsa,12,cash flow,-0.05725759165845477
+4,positive,tail_qa_top2_lsa,1,cisco,0.18044892777928714
+4,positive,tail_qa_top2_lsa,2,we,0.16255738674460704
+4,positive,tail_qa_top2_lsa,3,our,0.12991385335926536
+4,positive,tail_qa_top2_lsa,4,30,0.11724673973010077
+4,positive,tail_qa_top2_lsa,5,fiscal,0.11059694269757275
+4,positive,tail_qa_top2_lsa,6,call,0.09693518484256322
+4,positive,tail_qa_top2_lsa,7,year,0.08913312832676351
+4,positive,tail_qa_top2_lsa,8,our fiscal,0.08666719602288118
+4,positive,tail_qa_top2_lsa,9,of,0.08365118010936919
+4,positive,tail_qa_top2_lsa,10,today,0.07681122997152856
+4,positive,tail_qa_top2_lsa,11,free,0.07424334242081541
+4,positive,tail_qa_top2_lsa,12,investor,0.0713712976586144
+4,negative,tail_qa_top2_lsa,1,you,-0.12330019444639054
+4,negative,tail_qa_top2_lsa,2,china,-0.09809583122440854
+4,negative,tail_qa_top2_lsa,3,christine,-0.08000240055696005
+4,negative,tail_qa_top2_lsa,4,is,-0.07932453554067848
+4,negative,tail_qa_top2_lsa,5,is it,-0.06206085691263728
+4,negative,tail_qa_top2_lsa,6,study,-0.062025977372233185
+4,negative,tail_qa_top2_lsa,7,to,-0.0601203466665309
+4,negative,tail_qa_top2_lsa,8,3q,-0.060111025030088486
+4,negative,tail_qa_top2_lsa,9,do,-0.05797498469448811
+4,negative,tail_qa_top2_lsa,10,biosimilar,-0.05731278258961729
+4,negative,tail_qa_top2_lsa,11,on,-0.05667309319395
+4,negative,tail_qa_top2_lsa,12,you expect,-0.05608977556352769

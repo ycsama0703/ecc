@@ -1,0 +1,11 @@
+count,family_signature,overlap_group,share_within_group
+4,clarify+quant,shared_veto,1.0
+1,clarify,sem_only_veto,0.1111111111111111
+2,clarify+quant,sem_only_veto,0.2222222222222222
+3,clarify+structural,sem_only_veto,0.3333333333333333
+1,quant,sem_only_veto,0.1111111111111111
+1,quant+structural,sem_only_veto,0.1111111111111111
+1,structural,sem_only_veto,0.1111111111111111
+1,clarify,lex_only_veto,0.3333333333333333
+1,clarify+quant,lex_only_veto,0.3333333333333333
+1,clarify+structural,lex_only_veto,0.3333333333333333

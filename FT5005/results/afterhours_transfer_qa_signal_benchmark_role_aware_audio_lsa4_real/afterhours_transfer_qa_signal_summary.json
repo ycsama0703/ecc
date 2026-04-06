@@ -1,0 +1,1470 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_qa": 553,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ]
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qa_quality_core": [
+      "qa_bench_coverage_mean",
+      "qa_bench_direct_answer_share",
+      "qa_bench_evasion_score_mean",
+      "qa_bench_pair_count",
+      "qa_bench_specificity_gap_mean",
+      "qa_bench_delay_share_mean",
+      "qa_bench_short_evasive_share",
+      "qa_bench_numeric_mismatch_share"
+    ],
+    "qa_benchmark_all_count": 47,
+    "qna_lsa_components": 4,
+    "qa_benchmark_svd": {
+      "input_feature_count": 47,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6964621128047552
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6026047228923573
+    }
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+      "mae": 7.755345540921158e-05,
+      "rmse": 0.00013532689776945295,
+      "r2": 0.998370286435591
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+      "mae": 7.412447206987104e-05,
+      "rmse": 0.00013267180331696235,
+      "r2": 0.9984336085914479
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+      "mae": 8.582120368951944e-05,
+      "rmse": 0.00015409948877943502,
+      "r2": 0.9978867765376795
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+      "mae": 8.571281343437783e-05,
+      "rmse": 0.0001537521645783954,
+      "r2": 0.9978962917736661
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+      "mae": 7.766015704584212e-05,
+      "rmse": 0.00014528974838879042,
+      "r2": 0.9981214923360252
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 6.921102195379463e-05,
+      "rmse": 0.00013349287280217217,
+      "r2": 0.9984141606625622
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+      "mae": 8.662627195337007e-05,
+      "rmse": 0.0001464720017487925,
+      "r2": 0.9980907963251306
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+      "mae": 8.329950412640995e-05,
+      "rmse": 0.00014440741936498196,
+      "r2": 0.9981442390068389
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+      "mae": 7.630483195162172e-05,
+      "rmse": 0.00014126272765337453,
+      "r2": 0.9982241830230061
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 7.176252871974012e-05,
+      "rmse": 0.00013648785290355672,
+      "r2": 0.9983422042124812
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "mae": 7.45325011514522e-05,
+      "rmse": 0.00013265247559846274,
+      "r2": 0.9984340649441351
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+      "mae": 8.605063472505644e-05,
+      "rmse": 0.00014409254237648312,
+      "r2": 0.9981523230702414
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+      "mae": 8.223688303326805e-05,
+      "rmse": 0.00014147262486195394,
+      "r2": 0.9982189018571618
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+      "mae": 8.425018901974154e-05,
+      "rmse": 0.000145752544101596,
+      "r2": 0.9981095059445496
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.797417167811138e-05,
+      "rmse": 0.00013789409936087766,
+      "r2": 0.9983078673972803
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": 0.9951938826520538,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.9953431936186407,
+    "residual_pre_call_market_plus_a4_plus_qa_quality_core": 0.9938824025574876,
+    "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.9938824025574876,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": 0.9944965012043776,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9945024082810152,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": 0.9947666051876116,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.9948195836376263,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": 0.9950660391964407,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.9950660391964407,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": 0.9959066749431505,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9959160233667426,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": 0.9953948810025982,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.9953948810025982,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": 0.995653055915251,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.9956920631028509
+  },
+  "mean_test_activation_rate": {
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.7994708994708994,
+    "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.9777777777777779,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.6031746031746033,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.7994708994708994,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.8587301587301588,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.7835978835978836,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6566137566137566,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.7518518518518519
+  },
+  "significance": {
+    "residual_pre_call_market_only__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": 1.5760661750472844e-06,
+      "rmse_diff_ci_low": -1.0524481486749989e-05,
+      "rmse_diff_ci_high": 1.1571247359051045e-05,
+      "mae_diff_mean": -3.918505690251259e-06,
+      "mae_diff_ci_low": -1.2273824369359184e-05,
+      "mae_diff_ci_high": 4.637123572802067e-06,
+      "r2_gain_mean": 2.7333659244216546e-05,
+      "r2_gain_ci_low": -0.0003902393578043783,
+      "r2_gain_ci_high": 0.00035393227308436756,
+      "mse_gain_mean": 5.082299305742206e-10,
+      "mse_gain_pvalue": 0.75175,
+      "mae_gain_mean": -3.931076612626845e-06,
+      "mae_gain_pvalue": 0.37125
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+      "rmse_diff_mean": -3.8085255087723634e-06,
+      "rmse_diff_ci_low": -1.0043509596202549e-05,
+      "rmse_diff_ci_high": 2.232761436946313e-06,
+      "mae_diff_mean": -2.6541638538307475e-06,
+      "mae_diff_ci_low": -8.465997235738458e-06,
+      "mae_diff_ci_high": 2.9267381132562647e-06,
+      "r2_gain_mean": -0.00011481824603863616,
+      "r2_gain_ci_low": -0.0004845048803536006,
+      "r2_gain_ci_high": 6.879257079830118e-05,
+      "mse_gain_mean": -1.0527083727385e-09,
+      "mse_gain_pvalue": 0.3615,
+      "mae_gain_mean": -2.63368481003275e-06,
+      "mae_gain_pvalue": 0.37175
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+      "rmse_diff_mean": -2.4956292658433098e-05,
+      "rmse_diff_ci_low": -4.4997824767417865e-05,
+      "rmse_diff_ci_high": -5.162992042944149e-06,
+      "mae_diff_mean": -1.4323250143926384e-05,
+      "mae_diff_ci_low": -2.7906195829375482e-05,
+      "mae_diff_ci_high": -1.3644487212486527e-06,
+      "r2_gain_mean": -0.0007093409743584651,
+      "r2_gain_ci_low": -0.0019014152488216112,
+      "r2_gain_ci_high": -0.0001723343308941277,
+      "mse_gain_mean": -7.0906290899057434e-09,
+      "mse_gain_pvalue": 0.0145,
+      "mae_gain_mean": -1.4222026174539531e-05,
+      "mae_gain_pvalue": 0.03625
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "rmse_diff_mean": -4.153632895240954e-06,
+      "rmse_diff_ci_low": -1.785109024083192e-05,
+      "rmse_diff_ci_high": 1.0662415660795443e-05,
+      "mae_diff_mean": 2.2566456180788836e-06,
+      "mae_diff_ci_low": -7.394240214832662e-06,
+      "mae_diff_ci_high": 1.1541974259967062e-05,
+      "r2_gain_mean": -0.00011096397672360747,
+      "r2_gain_ci_low": -0.0006975766692919854,
+      "r2_gain_ci_high": 0.00041290254790735955,
+      "mse_gain_mean": -1.2712480663406742e-09,
+      "mse_gain_pvalue": 0.67425,
+      "mae_gain_mean": 2.2797653060436628e-06,
+      "mae_gain_pvalue": 0.65025
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+      "rmse_diff_mean": -1.596100860034934e-05,
+      "rmse_diff_ci_low": -2.523854294720809e-05,
+      "rmse_diff_ci_high": -5.937418868220058e-06,
+      "mae_diff_mean": -1.1926336150751344e-05,
+      "mae_diff_ci_low": -2.1300585288960197e-05,
+      "mae_diff_ci_high": -3.076580030516909e-06,
+      "r2_gain_mean": -0.00047232375406768457,
+      "r2_gain_ci_low": -0.0013621427040092697,
+      "r2_gain_ci_high": -0.0001352597869134608,
+      "mse_gain_mean": -4.304403745017529e-09,
+      "mse_gain_pvalue": 0.0045,
+      "mae_gain_mean": -1.180871686657166e-05,
+      "mae_gain_pvalue": 0.014
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+      "rmse_diff_mean": -7.749157466809928e-06,
+      "rmse_diff_ci_low": -1.5867741131447048e-05,
+      "rmse_diff_ci_high": 1.0591044181960306e-06,
+      "mae_diff_mean": -3.0905187955523906e-07,
+      "mae_diff_ci_low": -8.671031122014363e-06,
+      "mae_diff_ci_high": 7.804811484380513e-06,
+      "r2_gain_mean": -0.00021009404234682727,
+      "r2_gain_ci_low": -0.0006516035624638872,
+      "r2_gain_ci_high": 3.3224517726576744e-05,
+      "mse_gain_mean": -2.079834967586693e-09,
+      "mse_gain_pvalue": 0.1345,
+      "mae_gain_mean": -2.717414599018265e-07,
+      "mae_gain_pvalue": 0.95275
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": -1.3297999270982726e-05,
+      "rmse_diff_ci_low": -2.256539338384032e-05,
+      "rmse_diff_ci_high": -5.524477124102522e-06,
+      "mae_diff_mean": -1.0804658398874085e-05,
+      "mae_diff_ci_low": -1.9437674662834666e-05,
+      "mae_diff_ci_high": -2.7241626852017156e-06,
+      "r2_gain_mean": -0.0003797292854338255,
+      "r2_gain_ci_low": -0.0010651765463696062,
+      "r2_gain_ci_high": -0.00013574596030981596,
+      "mse_gain_mean": -3.4654045626949004e-09,
+      "mse_gain_pvalue": 0.00125,
+      "mae_gain_mean": -1.0746095773429755e-05,
+      "mae_gain_pvalue": 0.014
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": -9.611103097540972e-06,
+      "rmse_diff_ci_low": -2.0064382480381737e-05,
+      "rmse_diff_ci_high": -2.2417084434476792e-06,
+      "mae_diff_mean": -6.504626993168412e-06,
+      "mae_diff_ci_low": -1.4365696473229087e-05,
+      "mae_diff_ci_high": 5.701704950610425e-07,
+      "r2_gain_mean": -0.00028361629657887457,
+      "r2_gain_ci_low": -0.0009119136847826808,
+      "r2_gain_ci_high": -4.835810440199928e-05,
+      "mse_gain_mean": -2.465683615911357e-09,
+      "mse_gain_pvalue": 0.01425,
+      "mae_gain_mean": -6.4833844182730805e-06,
+      "mae_gain_pvalue": 0.10125
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 7.056028943884671e-05,
+        "rmse": 9.523043662319402e-05,
+        "r2": 0.9899188661662859,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 7.056028943884671e-05,
+        "rmse": 9.523043662319402e-05,
+        "r2": 0.9899188661662859,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 9.016149554470464e-05,
+        "rmse": 0.00010468526449550698,
+        "r2": 0.9878177098628901,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.7207,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.2,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 8.593797526963061e-05,
+        "rmse": 0.00010612078330719605,
+        "r2": 0.9874813146681325,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 8.593797526963061e-05,
+        "rmse": 0.00010612078330719605,
+        "r2": 0.9874813146681325,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 9.927808681475811e-05,
+        "rmse": 0.00012113421006872204,
+        "r2": 0.9836885919457069,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 9.927808681475811e-05,
+        "rmse": 0.00012113421006872204,
+        "r2": 0.9836885919457069,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 0.00010632515213732067,
+        "rmse": 0.00012642690310764383,
+        "r2": 0.9822320702334801,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010632515213732067,
+        "rmse": 0.00012642690310764383,
+        "r2": 0.9822320702334801,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.64054,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.8,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 0.00014894467009787235,
+        "rmse": 0.00017092719098616403,
+        "r2": 0.9675226833049465,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00014894467009787235,
+        "rmse": 0.00017092719098616403,
+        "r2": 0.9675226833049465,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.00019478020001389962,
+        "rmse": 0.0002788838339162639,
+        "r2": 0.7121795643022787,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 0.0001992239678617916,
+        "rmse": 0.0002723069769528468,
+        "r2": 0.7255947074505582,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.6,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 0.00019706769549732587,
+        "rmse": 0.00027650801099446854,
+        "r2": 0.7170625844073295,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 0.0001957670124356266,
+        "rmse": 0.00027417802280566234,
+        "r2": 0.7218108251220482,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.625,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.8,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 0.00019200466043232153,
+        "rmse": 0.0002745503849954355,
+        "r2": 0.721054692516663,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 0.0002112391382560786,
+        "rmse": 0.00029121882946865044,
+        "r2": 0.6861559859883992,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 0.00020729522403515095,
+        "rmse": 0.00028518078613925835,
+        "r2": 0.6990353629207898,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.6,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 0.00019725765324608074,
+        "rmse": 0.00028585668513992014,
+        "r2": 0.6976070566016314,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.000191063160511881,
+        "rmse": 0.0002746848300704106,
+        "r2": 0.7207814311610705,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.625,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.8,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00018414980222998778,
+        "rmse": 0.0002805486471301913,
+        "r2": 0.7087329860892564,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.6,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 0.0001981267810171653,
+        "rmse": 0.0002848938556282249,
+        "r2": 0.6996406806590703,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00019943534005102394,
+        "rmse": 0.00028283128558090613,
+        "r2": 0.7039740108184417,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 0.00019001900772955876,
+        "rmse": 0.00029047418067759624,
+        "r2": 0.6877589371102762,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001947302049284039,
+        "rmse": 0.0002762941929157122,
+        "r2": 0.7174999948373899,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.6
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 9.062807265164045e-05,
+        "rmse": 0.00014388407877971473,
+        "r2": 0.9819398674787128,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 9.062807265164045e-05,
+        "rmse": 0.00014388407877971473,
+        "r2": 0.9819398674787128,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 9.249597887813124e-05,
+        "rmse": 0.0001449497512178658,
+        "r2": 0.9816713532869608,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 9.249597887813124e-05,
+        "rmse": 0.0001449497512178658,
+        "r2": 0.9816713532869608,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 8.366397049453076e-05,
+        "rmse": 0.00014026964812575442,
+        "r2": 0.9828358276518452,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.366397049453076e-05,
+        "rmse": 0.00014026964812575442,
+        "r2": 0.9828358276518452,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 9.967603034239704e-05,
+        "rmse": 0.00015068861445454788,
+        "r2": 0.9801912837514746,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 9.967603034239704e-05,
+        "rmse": 0.00015068861445454788,
+        "r2": 0.9801912837514746,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 8.639182303941141e-05,
+        "rmse": 0.00014865529148455568,
+        "r2": 0.9807222565092248,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.639182303941141e-05,
+        "rmse": 0.00014865529148455568,
+        "r2": 0.9807222565092248,
+        "n": 6
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001146947882964278,
+        "rmse": 0.00020546864703543542,
+        "r2": 0.9951938826520538,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 0.00010213496596599481,
+        "rmse": 0.0002022518331716136,
+        "r2": 0.9953431936186407,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.6666666666666666,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 0.0001187016880268084,
+        "rmse": 0.00023181355318011837,
+        "r2": 0.9938824025574876,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 0.0001187016880268084,
+        "rmse": 0.00023181355318011837,
+        "r2": 0.9938824025574876,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 0.0001147365808099314,
+        "rmse": 0.00021987093023883339,
+        "r2": 0.9944965012043776,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.0001147365808099314,
+        "rmse": 0.00021987093023883339,
+        "r2": 0.9944965012043776,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 0.00012451766148289986,
+        "rmse": 0.00021440757543059777,
+        "r2": 0.9947666051876116,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 0.00011779790281285396,
+        "rmse": 0.00021331957471295868,
+        "r2": 0.9948195836376263,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.6666666666666666,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 0.00011707317692647,
+        "rmse": 0.0002081834606067619,
+        "r2": 0.9950660391964407,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00011707317692647,
+        "rmse": 0.0002081834606067619,
+        "r2": 0.9950660391964407,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00010416457022357017,
+        "rmse": 0.00018962102635845015,
+        "r2": 0.9959066749431505,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.6666666666666666,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 0.00011613104115549029,
+        "rmse": 0.0001977947935376787,
+        "r2": 0.9955461769410893,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010906687750742214,
+        "rmse": 0.00019601145181936535,
+        "r2": 0.9956261272998106,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6666666666666666,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 0.00010982510998250345,
+        "rmse": 0.00019540712851964264,
+        "r2": 0.995653055915251,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010662256638074625,
+        "rmse": 0.00019452841244767358,
+        "r2": 0.9956920631028509,
+        "n": 9
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.62779,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.6666666666666666
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 3.254699668221449e-05,
+        "rmse": 3.6596556616375455e-05,
+        "r2": 0.9989321852828084,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 3.254699668221449e-05,
+        "rmse": 3.6596556616375455e-05,
+        "r2": 0.9989321852828084,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 3.500526567743425e-05,
+        "rmse": 3.8661841398918225e-05,
+        "r2": 0.9988082627252315,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 3.500526567743425e-05,
+        "rmse": 3.8661841398918225e-05,
+        "r2": 0.9988082627252315,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 1.3464449749648114e-05,
+        "rmse": 1.6867283197435395e-05,
+        "r2": 0.9997731672662595,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.3464449749648114e-05,
+        "rmse": 1.6867283197435395e-05,
+        "r2": 0.9997731672662595,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.64054,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 2.812600734611782e-05,
+        "rmse": 3.310739091168879e-05,
+        "r2": 0.999126092700441,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.7735,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.05,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 3.800804942923434e-05,
+        "rmse": 3.885275495907767e-05,
+        "r2": 0.9987964639828197,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 3.800804942923434e-05,
+        "rmse": 3.885275495907767e-05,
+        "r2": 0.9987964639828197,
+        "n": 5
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.6281,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.9047619047619048,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 9.121469844027408e-05,
+        "rmse": 0.00010987525097277948,
+        "r2": 0.9953244307350883,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 9.121469844027408e-05,
+        "rmse": 0.00010987525097277948,
+        "r2": 0.9953244307350883,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 4.533217782780768e-05,
+        "rmse": 5.497610923134164e-05,
+        "r2": 0.9988294694946888,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.627681494177939e-05,
+        "rmse": 4.526257035661489e-05,
+        "r2": 0.999206561699441,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.7027,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.42857142857142855,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5714285714285714,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 7.593786069188785e-05,
+        "rmse": 0.0001053968406955284,
+        "r2": 0.9956978066874208,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 7.593786069188785e-05,
+        "rmse": 0.0001053968406955284,
+        "r2": 0.9956978066874208,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.6281,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.9047619047619048,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 2.5649997404744033e-05,
+        "rmse": 3.746575275239251e-05,
+        "r2": 0.9994563696928471,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 2.5649997404744033e-05,
+        "rmse": 3.746575275239251e-05,
+        "r2": 0.9994563696928471,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.6281,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9047619047619048,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 8.163868507731922e-05,
+        "rmse": 0.00010904432311957864,
+        "r2": 0.9953948810025982,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.163868507731922e-05,
+        "rmse": 0.00010904432311957864,
+        "r2": 0.9953948810025982,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6408,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.8095238095238095,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 2.9786397566254243e-05,
+        "rmse": 4.218294896608863e-05,
+        "r2": 0.9993108581728328,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.9786397566254243e-05,
+        "rmse": 4.218294896608863e-05,
+        "r2": 0.9993108581728328,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.6281,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.9047619047619048,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 1.3928447183847787e-05,
+        "rmse": 1.732382068191364e-05,
+        "r2": 0.9570572379923804,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 1.6905869955575092e-05,
+        "rmse": 1.9484013527516626e-05,
+        "r2": 0.9456800377424914,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.69655,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.42857142857142855,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 1.548391018591537e-05,
+        "rmse": 1.9294012195737826e-05,
+        "r2": 0.9467342910061319,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 1.548391018591537e-05,
+        "rmse": 1.9294012195737826e-05,
+        "r2": 0.9467342910061319,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.6383599999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.9,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 1.77033858067046e-05,
+        "rmse": 2.1512432221086385e-05,
+        "r2": 0.9337811484062731,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.68372,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.6,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.8571428571428571,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 1.2638012311706654e-05,
+        "rmse": 1.4863968888289735e-05,
+        "r2": 0.968386528408793,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 1.7033738912740268e-05,
+        "rmse": 1.970879128957899e-05,
+        "r2": 0.94441948128265,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.69655,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.42857142857142855,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 1.5274584517637532e-05,
+        "rmse": 1.9904090502906857e-05,
+        "r2": 0.9433125018635071,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.6776331826615837e-05,
+        "rmse": 1.978139019969166e-05,
+        "r2": 0.9440092565456374,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.69655,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.42857142857142855,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.6402257032372616e-05,
+        "rmse": 2.1440290393087467e-05,
+        "r2": 0.9342245328530856,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.71314,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.3,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.2857142857142857,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 1.558631670673131e-05,
+        "rmse": 2.1707085803043026e-05,
+        "r2": 0.9325773744753522,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.701438098652137e-05,
+        "rmse": 2.0225003902484286e-05,
+        "r2": 0.9414698222756988,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.72309,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.1,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.14285714285714285,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 1.8394305222607134e-05,
+        "rmse": 2.5503452164894353e-05,
+        "r2": 0.9069319624715897,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.7735,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.05,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.0
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 3.819426233149454e-05,
+        "rmse": 5.321715489425128e-05,
+        "r2": 0.9978484020506,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 3.819426233149454e-05,
+        "rmse": 5.321715489425128e-05,
+        "r2": 0.9978484020506,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.64028,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.7894736842105263,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 3.315809287679451e-05,
+        "rmse": 4.977015283355336e-05,
+        "r2": 0.9981181033661115,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.315809287679451e-05,
+        "rmse": 4.977015283355336e-05,
+        "r2": 0.9981181033661115,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 5.05529000202294e-05,
+        "rmse": 6.318112981276422e-05,
+        "r2": 0.9969672780666652,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 5.05529000202294e-05,
+        "rmse": 6.318112981276422e-05,
+        "r2": 0.9969672780666652,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.64028,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.7894736842105263,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 3.7855059714203196e-05,
+        "rmse": 5.4550557323746667e-05,
+        "r2": 0.9977392309415676,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.7855059714203196e-05,
+        "rmse": 5.4550557323746667e-05,
+        "r2": 0.9977392309415676,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.64028,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.7894736842105263,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 4.1776614733804904e-05,
+        "rmse": 5.931012732512911e-05,
+        "r2": 0.9973275134423436,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.1776614733804904e-05,
+        "rmse": 5.931012732512911e-05,
+        "r2": 0.9973275134423436,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.64028,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.7894736842105263,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 4.667417969121838e-05,
+        "rmse": 5.7364164226092525e-05,
+        "r2": 0.9975000048990174,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.667417969121838e-05,
+        "rmse": 5.7364164226092525e-05,
+        "r2": 0.9975000048990174,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 1.0
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.979434291975784e-05,
+        "rmse": 0.0001120807326492996,
+        "r2": 0.9996554607260162,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 7.282416816624695e-05,
+        "rmse": 0.00010438869232935051,
+        "r2": 0.9997011290346491,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.5,
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core": {
+        "mae": 0.00012298366576160368,
+        "rmse": 0.0001846791859028002,
+        "r2": 0.9990645669397815,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": {
+        "mae": 0.00012298366576160368,
+        "rmse": 0.0001846791859028002,
+        "r2": 0.9990645669397815,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 0.5814,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_quality_core_observability_gate": 1.0,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd": {
+        "mae": 0.0001162915353622866,
+        "rmse": 0.00017414771553066202,
+        "r2": 0.9991682125271433,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.69665,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.0,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core": {
+        "mae": 0.00010457191042307552,
+        "rmse": 0.0001361892484016793,
+        "r2": 0.9994912991561077,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": {
+        "mae": 8.579956583685161e-05,
+        "rmse": 0.00012882394159732696,
+        "r2": 0.9995448338278295,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_observability_gate": 0.5,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd": {
+        "mae": 0.00011041675019614463,
+        "rmse": 0.00014552815091777724,
+        "r2": 0.9994191408508764,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.890700502055146e-05,
+        "rmse": 0.00012308514148290874,
+        "r2": 0.9995844836950497,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_observability_gate": 0.5,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 9.502857098489608e-05,
+        "rmse": 0.00011603572453297491,
+        "r2": 0.9996307162064252,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.5,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd": {
+        "mae": 0.00010526561227347255,
+        "rmse": 0.00013762079132326267,
+        "r2": 0.9994805486093105,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.212807982510511e-05,
+        "rmse": 0.00012238959148067822,
+        "r2": 0.999589166563571,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_quality_core_plus_aligned_audio_svd_observability_gate": 0.5,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd": {
+        "mae": 0.0001190896774712985,
+        "rmse": 0.0001498098528542686,
+        "r2": 0.9993844581765151,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.384712959391386e-05,
+        "rmse": 0.00010651060599602147,
+        "r2": 0.9996888552172843,
+        "n": 8
+      },
+      "threshold__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.6396299999999999,
+      "val_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.8636363636363636,
+      "test_activation_rate__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_qa_benchmark_svd_plus_aligned_audio_svd_observability_gate": 0.5
+    }
+  }
+}

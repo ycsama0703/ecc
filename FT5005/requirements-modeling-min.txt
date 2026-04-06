@@ -1,0 +1,9 @@
+# Minimal verified environment for post-migration reruns of the core ICAIF baseline stack.
+# Scope:
+# - scripts/run_identity_classical_baselines.py
+# - scripts/run_target_variant_experiments.py
+# - scripts/run_regime_residual_experiments.py
+# - scripts/run_regime_subset_residual_experiments.py
+numpy==2.4.3
+scipy==1.17.1
+scikit-learn==1.8.0

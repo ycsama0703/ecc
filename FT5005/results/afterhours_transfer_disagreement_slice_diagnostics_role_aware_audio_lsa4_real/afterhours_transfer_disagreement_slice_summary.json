@@ -1,0 +1,799 @@
+{
+  "source_temporal_root": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_router_temporal_confirmation_role_aware_audio_lsa4_real",
+  "source_temporal_config": {
+    "target_variant": "shock_minus_pre",
+    "include_regimes": "after_hours",
+    "exclude_html_flags": "fail",
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_compressed_components": 8,
+    "pair_tree_depth": 2,
+    "pair_tree_min_leaf_frac": 0.08,
+    "plus_text_logistic_c": 2.0
+  },
+  "patterns": {
+    "tree_sem_logistic_qa": "tree prefers the retained semantic expert while logistic prefers the QA expert",
+    "tree_qa_logistic_sem": "tree prefers the QA expert while logistic prefers the retained semantic expert"
+  },
+  "splits": {
+    "val2020_test_post2020": {
+      "test_size": 34,
+      "pattern_counts": {
+        "tree_qa_logistic_sem": 30,
+        "tree_sem_logistic_qa": 4
+      },
+      "chosen_model_counts": {
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 18,
+        "residual_pre_call_market_only": 16
+      },
+      "best_model_counts": {
+        "residual_pre_call_market_only": 30,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 2,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 2
+      },
+      "qa_vs_pre": {
+        "qa_better_count": 3,
+        "pre_better_count": 6,
+        "tie_count": 25,
+        "qa_vs_pre_mse_gain_sum": -6.57962904330343e-08
+      },
+      "overall": {
+        "residual_pre_call_market_only": {
+          "mae": 0.00011476465628853647,
+          "rmse": 0.0002567181771171811,
+          "r2": 0.9942621400670233
+        },
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+          "mae": 0.00011880895454694628,
+          "rmse": 0.00026045999208151844,
+          "r2": 0.9940936558617235
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+          "mae": 0.0001149846884684029,
+          "rmse": 0.00025677639911672855,
+          "r2": 0.9942595371538632
+        },
+        "validation_selected_transfer_expert": {
+          "mae": 0.0001160637008266223,
+          "rmse": 0.0002571561548812356,
+          "r2": 0.9942425450480095
+        },
+        "conservative_tree_override_on_selected_expert": {
+          "mae": 0.0001160637008266223,
+          "rmse": 0.0002571561548812356,
+          "r2": 0.9942425450480095
+        },
+        "conservative_logistic_override_on_selected_expert": {
+          "mae": 0.0001177299421887269,
+          "rmse": 0.0002600850603651738,
+          "r2": 0.9941106479675771
+        }
+      },
+      "pattern_details": {
+        "tree_sem_logistic_qa": {
+          "split": "val2020_test_post2020",
+          "pattern": "tree_sem_logistic_qa",
+          "test_size": 4,
+          "qa_better_than_pre_count": 0,
+          "pre_better_than_qa_count": 3,
+          "qa_pre_tie_count": 1,
+          "qa_vs_pre_mse_gain_sum": -5.814406238128939e-08,
+          "best_model_count_pre": 4,
+          "best_model_count_qa": 0,
+          "best_model_count_sem": 0,
+          "residual_pre_call_market_only_r2": 0.9816022872577972,
+          "residual_pre_call_market_only_rmse": 0.00027047137904268834,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9779466206383817,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00029612629480776605,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9816022872577972,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.00027047137904268834,
+          "validation_selected_transfer_expert_r2": 0.9816022872577972,
+          "validation_selected_transfer_expert_rmse": 0.00027047137904268834,
+          "conservative_tree_override_on_selected_expert_r2": 0.9816022872577972,
+          "conservative_tree_override_on_selected_expert_rmse": 0.00027047137904268834,
+          "conservative_logistic_override_on_selected_expert_r2": 0.9779466206383817,
+          "conservative_logistic_override_on_selected_expert_rmse": 0.00029612629480776605
+        },
+        "tree_qa_logistic_sem": {
+          "split": "val2020_test_post2020",
+          "pattern": "tree_qa_logistic_sem",
+          "test_size": 30,
+          "qa_better_than_pre_count": 3,
+          "pre_better_than_qa_count": 3,
+          "qa_pre_tie_count": 24,
+          "qa_vs_pre_mse_gain_sum": -7.652228051744905e-09,
+          "best_model_count_pre": 26,
+          "best_model_count_qa": 2,
+          "best_model_count_sem": 2,
+          "residual_pre_call_market_only_r2": 0.9947484368589056,
+          "residual_pre_call_market_only_rmse": 0.00025482834066586273,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9947278087322831,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00025532833269127907,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9947456967124317,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.0002548948138186289,
+          "validation_selected_transfer_expert_r2": 0.9947278087322831,
+          "validation_selected_transfer_expert_rmse": 0.00025532833269127907,
+          "conservative_tree_override_on_selected_expert_r2": 0.9947278087322831,
+          "conservative_tree_override_on_selected_expert_rmse": 0.00025532833269127907,
+          "conservative_logistic_override_on_selected_expert_r2": 0.9947456967124317,
+          "conservative_logistic_override_on_selected_expert_rmse": 0.0002548948138186289
+        }
+      }
+    },
+    "val2021_test_post2021": {
+      "test_size": 32,
+      "pattern_counts": {
+        "tree_sem_logistic_qa": 27,
+        "tree_qa_logistic_sem": 5
+      },
+      "chosen_model_counts": {
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 27,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 5
+      },
+      "best_model_counts": {
+        "residual_pre_call_market_only": 30,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 1,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 1
+      },
+      "qa_vs_pre": {
+        "qa_better_count": 1,
+        "pre_better_count": 4,
+        "tie_count": 27,
+        "qa_vs_pre_mse_gain_sum": -1.3674314695944853e-09
+      },
+      "overall": {
+        "residual_pre_call_market_only": {
+          "mae": 0.00010124364544072733,
+          "rmse": 0.0001828417887285875,
+          "r2": 0.9988962305002904
+        },
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+          "mae": 0.00010180101394511386,
+          "rmse": 0.00018295860717357424,
+          "r2": 0.9988948196430913
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+          "mae": 0.00010996013687226408,
+          "rmse": 0.00018623633171226204,
+          "r2": 0.9988548660669629
+        },
+        "validation_selected_transfer_expert": {
+          "mae": 0.00010996013687226408,
+          "rmse": 0.00018623633171226204,
+          "r2": 0.9988548660669629
+        },
+        "conservative_tree_override_on_selected_expert": {
+          "mae": 0.00010972850271638714,
+          "rmse": 0.00018623038079190846,
+          "r2": 0.998854939248086
+        },
+        "conservative_logistic_override_on_selected_expert": {
+          "mae": 0.00010203264810099079,
+          "rmse": 0.00018296466450829987,
+          "r2": 0.9988947464619683
+        }
+      },
+      "pattern_details": {
+        "tree_sem_logistic_qa": {
+          "split": "val2021_test_post2021",
+          "pattern": "tree_sem_logistic_qa",
+          "test_size": 27,
+          "qa_better_than_pre_count": 1,
+          "pre_better_than_qa_count": 4,
+          "qa_pre_tie_count": 22,
+          "qa_vs_pre_mse_gain_sum": -1.3674314695944853e-09,
+          "best_model_count_pre": 26,
+          "best_model_count_qa": 1,
+          "best_model_count_sem": 0,
+          "residual_pre_call_market_only_r2": 0.9991468044561095,
+          "residual_pre_call_market_only_rmse": 0.00016949481672572146,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9991453003532347,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00016964415258673344,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.999102784202898,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.00017381233270373486,
+          "validation_selected_transfer_expert_r2": 0.999102784202898,
+          "validation_selected_transfer_expert_rmse": 0.00017381233270373486,
+          "conservative_tree_override_on_selected_expert_r2": 0.999102784202898,
+          "conservative_tree_override_on_selected_expert_rmse": 0.00017381233270373486,
+          "conservative_logistic_override_on_selected_expert_r2": 0.9991453003532347,
+          "conservative_logistic_override_on_selected_expert_rmse": 0.00016964415258673344
+        },
+        "tree_qa_logistic_sem": {
+          "split": "val2021_test_post2021",
+          "pattern": "tree_qa_logistic_sem",
+          "test_size": 5,
+          "qa_better_than_pre_count": 0,
+          "pre_better_than_qa_count": 0,
+          "qa_pre_tie_count": 5,
+          "qa_vs_pre_mse_gain_sum": 0.0,
+          "best_model_count_pre": 4,
+          "best_model_count_qa": 0,
+          "best_model_count_sem": 1,
+          "residual_pre_call_market_only_r2": 0.8233386314101554,
+          "residual_pre_call_market_only_rmse": 0.00024253928438877767,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.8233386314101554,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00024253928438877767,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.8232960295086098,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.00024256852680873384,
+          "validation_selected_transfer_expert_r2": 0.8232960295086098,
+          "validation_selected_transfer_expert_rmse": 0.00024256852680873384,
+          "conservative_tree_override_on_selected_expert_r2": 0.8233386314101554,
+          "conservative_tree_override_on_selected_expert_rmse": 0.00024253928438877767,
+          "conservative_logistic_override_on_selected_expert_r2": 0.8232960295086098,
+          "conservative_logistic_override_on_selected_expert_rmse": 0.00024256852680873384
+        }
+      }
+    },
+    "val2022_test_post2022": {
+      "test_size": 16,
+      "pattern_counts": {
+        "tree_sem_logistic_qa": 7,
+        "tree_qa_logistic_sem": 9
+      },
+      "chosen_model_counts": {
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 13,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 3
+      },
+      "best_model_counts": {
+        "residual_pre_call_market_only": 6,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 5,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 5
+      },
+      "qa_vs_pre": {
+        "qa_better_count": 7,
+        "pre_better_count": 6,
+        "tie_count": 3,
+        "qa_vs_pre_mse_gain_sum": 1.9009730188612628e-09
+      },
+      "overall": {
+        "residual_pre_call_market_only": {
+          "mae": 4.088960511298371e-05,
+          "rmse": 5.566471003628528e-05,
+          "r2": 0.9990420565517482
+        },
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+          "mae": 4.206668313006067e-05,
+          "rmse": 5.4587078413713346e-05,
+          "r2": 0.9990787878213131
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+          "mae": 4.6617642370977324e-05,
+          "rmse": 6.36166665542524e-05,
+          "r2": 0.9987488142576769
+        },
+        "validation_selected_transfer_expert": {
+          "mae": 4.770705261868279e-05,
+          "rmse": 6.377172475808074e-05,
+          "r2": 0.9987427075859939
+        },
+        "conservative_tree_override_on_selected_expert": {
+          "mae": 4.4270320780460335e-05,
+          "rmse": 6.13891548953662e-05,
+          "r2": 0.9988348997947643
+        },
+        "conservative_logistic_override_on_selected_expert": {
+          "mae": 4.441400472057765e-05,
+          "rmse": 5.708065394205432e-05,
+          "r2": 0.9989927022842258
+        }
+      },
+      "pattern_details": {
+        "tree_sem_logistic_qa": {
+          "split": "val2022_test_post2022",
+          "pattern": "tree_sem_logistic_qa",
+          "test_size": 7,
+          "qa_better_than_pre_count": 3,
+          "pre_better_than_qa_count": 2,
+          "qa_pre_tie_count": 2,
+          "qa_vs_pre_mse_gain_sum": 3.3826927581595235e-10,
+          "best_model_count_pre": 2,
+          "best_model_count_qa": 3,
+          "best_model_count_sem": 2,
+          "residual_pre_call_market_only_r2": 0.9988478284319616,
+          "residual_pre_call_market_only_rmse": 7.369470621754706e-05,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9988580804434427,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 7.336610622236366e-05,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9984755402939811,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 8.476873256098957e-05,
+          "validation_selected_transfer_expert_r2": 0.998467678945857,
+          "validation_selected_transfer_expert_rmse": 8.498701960464337e-05,
+          "conservative_tree_override_on_selected_expert_r2": 0.9984755402939811,
+          "conservative_tree_override_on_selected_expert_rmse": 8.476873256098957e-05,
+          "conservative_logistic_override_on_selected_expert_r2": 0.9988580804434427,
+          "conservative_logistic_override_on_selected_expert_rmse": 7.336610622236366e-05
+        },
+        "tree_qa_logistic_sem": {
+          "split": "val2022_test_post2022",
+          "pattern": "tree_qa_logistic_sem",
+          "test_size": 9,
+          "qa_better_than_pre_count": 4,
+          "pre_better_than_qa_count": 4,
+          "qa_pre_tie_count": 1,
+          "qa_vs_pre_mse_gain_sum": 1.5627037430453108e-09,
+          "best_model_count_pre": 4,
+          "best_model_count_qa": 2,
+          "best_model_count_sem": 3,
+          "residual_pre_call_market_only_r2": 0.9989083403924951,
+          "residual_pre_call_market_only_rmse": 3.584006297016033e-05,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9990559055603428,
+          "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 3.332981194783134e-05,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9986352008150972,
+          "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 4.007370719564824e-05,
+          "validation_selected_transfer_expert_r2": 0.9986298510619273,
+          "validation_selected_transfer_expert_rmse": 4.015217103437907e-05,
+          "conservative_tree_override_on_selected_expert_r2": 0.9990559055603428,
+          "conservative_tree_override_on_selected_expert_rmse": 3.332981194783134e-05,
+          "conservative_logistic_override_on_selected_expert_r2": 0.9986352008150972,
+          "conservative_logistic_override_on_selected_expert_rmse": 4.007370719564824e-05
+        }
+      }
+    }
+  },
+  "pooled": {
+    "test_size": 82,
+    "pattern_counts": {
+      "tree_qa_logistic_sem": 44,
+      "tree_sem_logistic_qa": 38
+    },
+    "best_model_counts": {
+      "residual_pre_call_market_only": 66,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 8,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 8
+    },
+    "qa_vs_pre": {
+      "qa_better_count": 11,
+      "pre_better_count": 16,
+      "tie_count": 55,
+      "qa_vs_pre_mse_gain_sum": -6.526274888376754e-08
+    },
+    "overall": {
+      "residual_pre_call_market_only": {
+        "mae": 9.507352011855187e-05,
+        "rmse": 0.00020242783578322922,
+        "r2": 0.9977574904710634
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 9.719760769415597e-05,
+        "rmse": 0.00020438423589257408,
+        "r2": 0.9977139347364209
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 9.968397641187544e-05,
+        "rmse": 0.0002041161916558171,
+        "r2": 0.9977199270264122
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00010034393963312845,
+        "rmse": 0.0002043237566568655,
+        "r2": 0.9977152874730756
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 9.958296399410868e-05,
+        "rmse": 0.00020417920143683086,
+        "r2": 0.9977185191119076
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 9.729862011192271e-05,
+        "rmse": 0.00020432128934128147,
+        "r2": 0.9977153426509255
+      }
+    },
+    "pattern_details": {
+      "tree_sem_logistic_qa": {
+        "split": "pooled",
+        "pattern": "tree_sem_logistic_qa",
+        "test_size": 38,
+        "qa_better_than_pre_count": 4,
+        "pre_better_than_qa_count": 9,
+        "qa_pre_tie_count": 25,
+        "qa_vs_pre_mse_gain_sum": -5.917322457506792e-08,
+        "best_model_count_pre": 32,
+        "best_model_count_qa": 4,
+        "best_model_count_sem": 2,
+        "residual_pre_call_market_only_r2": 0.9988769456261678,
+        "residual_pre_call_market_only_rmse": 0.00017062614902735283,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9988168765095483,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00017512987424280572,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9988238496146278,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.0001746130204543045,
+        "validation_selected_transfer_expert_r2": 0.9988235862990775,
+        "validation_selected_transfer_expert_rmse": 0.00017463256546785736,
+        "conservative_tree_override_on_selected_expert_r2": 0.9988238496146278,
+        "conservative_tree_override_on_selected_expert_rmse": 0.0001746130204543045,
+        "conservative_logistic_override_on_selected_expert_r2": 0.9988168765095483,
+        "conservative_logistic_override_on_selected_expert_rmse": 0.00017512987424280572
+      },
+      "tree_qa_logistic_sem": {
+        "split": "pooled",
+        "pattern": "tree_qa_logistic_sem",
+        "test_size": 44,
+        "qa_better_than_pre_count": 7,
+        "pre_better_than_qa_count": 7,
+        "qa_pre_tie_count": 30,
+        "qa_vs_pre_mse_gain_sum": -6.089524308699594e-09,
+        "best_model_count_pre": 34,
+        "best_model_count_qa": 4,
+        "best_model_count_sem": 6,
+        "residual_pre_call_market_only_r2": 0.9941918723264831,
+        "residual_pre_call_market_only_rmse": 0.0002263249679703319,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_r2": 0.9941761794733158,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate_rmse": 0.00022663051296441733,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_r2": 0.9941816159163932,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate_rmse": 0.00022652471029244872,
+        "validation_selected_transfer_expert_r2": 0.9941643694523202,
+        "validation_selected_transfer_expert_rmse": 0.00022686018655806376,
+        "conservative_tree_override_on_selected_expert_r2": 0.9941761794733158,
+        "conservative_tree_override_on_selected_expert_rmse": 0.00022663051296441733,
+        "conservative_logistic_override_on_selected_expert_r2": 0.9941816159163932,
+        "conservative_logistic_override_on_selected_expert_rmse": 0.00022652471029244872
+      }
+    }
+  },
+  "latest_split_focus": {
+    "split": "val2022_test_post2022",
+    "test_size": 16,
+    "pattern_counts": {
+      "tree_sem_logistic_qa": 7,
+      "tree_qa_logistic_sem": 9
+    },
+    "best_model_counts": {
+      "residual_pre_call_market_only": 6,
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 5,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 5
+    },
+    "qa_vs_pre": {
+      "qa_better_count": 7,
+      "pre_better_count": 6,
+      "tie_count": 3,
+      "qa_positive_gain_total": 7.011153240599257e-09,
+      "qa_negative_gain_total": 5.110180221737994e-09,
+      "qa_vs_pre_net_gain": 1.9009730188612628e-09,
+      "top_positive_event_share_of_positive_total": 0.5952816619878274,
+      "top3_positive_event_share_of_positive_total": 0.8567098889844098
+    },
+    "ticker_gain_rows": [
+      {
+        "ticker": "CSCO",
+        "test_size": 5,
+        "qa_vs_pre_mse_gain_sum": 1.2605937812773567e-09,
+        "qa_better_than_pre_count": 2,
+        "pre_better_than_qa_count": 3,
+        "qa_pre_tie_count": 0
+      },
+      {
+        "ticker": "MSFT",
+        "test_size": 2,
+        "qa_vs_pre_mse_gain_sum": 7.608129455587266e-10,
+        "qa_better_than_pre_count": 2,
+        "pre_better_than_qa_count": 0,
+        "qa_pre_tie_count": 0
+      },
+      {
+        "ticker": "NKE",
+        "test_size": 5,
+        "qa_vs_pre_mse_gain_sum": 3.105258694216088e-10,
+        "qa_better_than_pre_count": 3,
+        "pre_better_than_qa_count": 2,
+        "qa_pre_tie_count": 0
+      },
+      {
+        "ticker": "AAPL",
+        "test_size": 1,
+        "qa_vs_pre_mse_gain_sum": 0.0,
+        "qa_better_than_pre_count": 0,
+        "pre_better_than_qa_count": 0,
+        "qa_pre_tie_count": 1
+      },
+      {
+        "ticker": "NVDA",
+        "test_size": 2,
+        "qa_vs_pre_mse_gain_sum": 0.0,
+        "qa_better_than_pre_count": 0,
+        "pre_better_than_qa_count": 0,
+        "qa_pre_tie_count": 2
+      },
+      {
+        "ticker": "DIS",
+        "test_size": 1,
+        "qa_vs_pre_mse_gain_sum": -4.309595773964291e-10,
+        "qa_better_than_pre_count": 0,
+        "pre_better_than_qa_count": 1,
+        "qa_pre_tie_count": 0
+      }
+    ],
+    "top_positive_events": [
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "CSCO_2025_Q1",
+        "ticker": "CSCO",
+        "year": 2025,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "target": -0.00041538,
+        "residual_pre_call_market_only": -0.0005068571015546849,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.00048014456712841417,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0004527917517299446,
+        "validation_selected_transfer_expert": -0.0004527917517299446,
+        "conservative_tree_override_on_selected_expert": -0.00048014456712841417,
+        "conservative_logistic_override_on_selected_expert": -0.0004527917517299446,
+        "residual_pre_call_market_only__err2": 8.36806010884613e-09,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 4.194449155330862e-09,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 1.3996391675030103e-09,
+        "validation_selected_transfer_expert__err2": 1.3996391675030103e-09,
+        "conservative_tree_override_on_selected_expert__err2": 4.194449155330862e-09,
+        "conservative_logistic_override_on_selected_expert__err2": 1.3996391675030103e-09,
+        "qa_vs_pre_mse_gain": 4.173610953515268e-09,
+        "sem_vs_pre_mse_gain": 6.968420941343119e-09,
+        "qa_better_than_pre": 1,
+        "pre_better_than_qa": 0,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "NKE_2024_Q1",
+        "ticker": "NKE",
+        "year": 2024,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 0,
+        "logistic_choose_qa": 1,
+        "pattern": "tree_sem_logistic_qa",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+        "target": -0.0003535,
+        "residual_pre_call_market_only": -0.0004292139282545583,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.00042239227595644124,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.00046676616523058293,
+        "validation_selected_transfer_expert": -0.00046676616523058293,
+        "conservative_tree_override_on_selected_expert": -0.00046676616523058293,
+        "conservative_logistic_override_on_selected_expert": -0.00042239227595644124,
+        "residual_pre_call_market_only__err2": 5.732598931736406e-09,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 4.746145686458455e-09,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 1.282922418604172e-08,
+        "validation_selected_transfer_expert__err2": 1.282922418604172e-08,
+        "conservative_tree_override_on_selected_expert__err2": 1.282922418604172e-08,
+        "conservative_logistic_override_on_selected_expert__err2": 4.746145686458455e-09,
+        "qa_vs_pre_mse_gain": 9.864532452779504e-10,
+        "sem_vs_pre_mse_gain": -7.096625254305314e-09,
+        "qa_better_than_pre": 1,
+        "pre_better_than_qa": 0,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "NKE_2023_Q3",
+        "ticker": "NKE",
+        "year": 2023,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+        "target": -0.0038115600000000003,
+        "residual_pre_call_market_only": -0.003840689554469613,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.003812999037172862,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0037668174307365016,
+        "validation_selected_transfer_expert": -0.0037668174307365016,
+        "conservative_tree_override_on_selected_expert": -0.003812999037172862,
+        "conservative_logistic_override_on_selected_expert": -0.0037668174307365016,
+        "residual_pre_call_market_only__err2": 8.485309435981344e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 2.0708279848780576e-12,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 2.0018975042989796e-09,
+        "validation_selected_transfer_expert__err2": 2.0018975042989796e-09,
+        "conservative_tree_override_on_selected_expert__err2": 2.0708279848780576e-12,
+        "conservative_logistic_override_on_selected_expert__err2": 2.0018975042989796e-09,
+        "qa_vs_pre_mse_gain": 8.464601156132563e-10,
+        "sem_vs_pre_mse_gain": -1.1533665607008452e-09,
+        "qa_better_than_pre": 1,
+        "pre_better_than_qa": 0,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "MSFT_2023_Q1",
+        "ticker": "MSFT",
+        "year": 2023,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+        "tree_choose_qa": 0,
+        "logistic_choose_qa": 1,
+        "pattern": "tree_sem_logistic_qa",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+        "target": -1.2099999999999996e-05,
+        "residual_pre_call_market_only": -3.765525450838956e-05,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -2.8002860074684277e-05,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -3.765525450838956e-05,
+        "validation_selected_transfer_expert": -2.8002860074684277e-05,
+        "conservative_tree_override_on_selected_expert": -3.765525450838956e-05,
+        "conservative_logistic_override_on_selected_expert": -2.8002860074684277e-05,
+        "residual_pre_call_market_only__err2": 6.530710329885651e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 2.5290095855498734e-10,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 6.530710329885651e-10,
+        "validation_selected_transfer_expert__err2": 2.5290095855498734e-10,
+        "conservative_tree_override_on_selected_expert__err2": 6.530710329885651e-10,
+        "conservative_logistic_override_on_selected_expert__err2": 2.5290095855498734e-10,
+        "qa_vs_pre_mse_gain": 4.001700744335778e-10,
+        "sem_vs_pre_mse_gain": 0.0,
+        "qa_better_than_pre": 1,
+        "pre_better_than_qa": 0,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "MSFT_2024_Q1",
+        "ticker": "MSFT",
+        "year": 2024,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "target": -1.174e-05,
+        "residual_pre_call_market_only": -3.444676836025459e-05,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -2.4188070462570098e-05,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -2.1654685315116795e-05,
+        "validation_selected_transfer_expert": -2.4188070462570098e-05,
+        "conservative_tree_override_on_selected_expert": -2.4188070462570098e-05,
+        "conservative_logistic_override_on_selected_expert": -2.1654685315116795e-05,
+        "residual_pre_call_market_only__err2": 5.155973293662588e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 1.5495445824111014e-10,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 9.830098489779264e-11,
+        "validation_selected_transfer_expert__err2": 1.5495445824111014e-10,
+        "conservative_tree_override_on_selected_expert__err2": 1.5495445824111014e-10,
+        "conservative_logistic_override_on_selected_expert__err2": 9.830098489779264e-11,
+        "qa_vs_pre_mse_gain": 3.606428711251487e-10,
+        "sem_vs_pre_mse_gain": 4.172963444684662e-10,
+        "qa_better_than_pre": 1,
+        "pre_better_than_qa": 0,
+        "qa_pre_tie": 0
+      }
+    ],
+    "top_negative_events": [
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "CSCO_2023_Q3",
+        "ticker": "CSCO",
+        "year": 2023,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_only",
+        "target": -0.0007686,
+        "residual_pre_call_market_only": -0.0007636953927031239,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.0007265949831020831,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0006872931641812683,
+        "validation_selected_transfer_expert": -0.0006872931641812683,
+        "conservative_tree_override_on_selected_expert": -0.0007265949831020831,
+        "conservative_logistic_override_on_selected_expert": -0.0006872931641812683,
+        "residual_pre_call_market_only__err2": 2.405517273657038e-11,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 1.7644214445942835e-09,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 6.6108015508542055e-09,
+        "validation_selected_transfer_expert__err2": 6.6108015508542055e-09,
+        "conservative_tree_override_on_selected_expert__err2": 1.7644214445942835e-09,
+        "conservative_logistic_override_on_selected_expert__err2": 6.6108015508542055e-09,
+        "qa_vs_pre_mse_gain": -1.7403662718577132e-09,
+        "sem_vs_pre_mse_gain": -6.586746378117635e-09,
+        "qa_better_than_pre": 0,
+        "pre_better_than_qa": 1,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "NKE_2024_Q2",
+        "ticker": "NKE",
+        "year": 2024,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "target": -0.00164732,
+        "residual_pre_call_market_only": -0.0016710652034338889,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.001607006397113578,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0016472280468004619,
+        "validation_selected_transfer_expert": -0.0016472280468004619,
+        "conservative_tree_override_on_selected_expert": -0.001607006397113578,
+        "conservative_logistic_override_on_selected_expert": -0.0016472280468004619,
+        "residual_pre_call_market_only__err2": 5.638346861167646e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 1.625186577684144e-09,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 8.455390905312795e-15,
+        "validation_selected_transfer_expert__err2": 8.455390905312795e-15,
+        "conservative_tree_override_on_selected_expert__err2": 1.625186577684144e-09,
+        "conservative_logistic_override_on_selected_expert__err2": 8.455390905312795e-15,
+        "qa_vs_pre_mse_gain": -1.0613518915673793e-09,
+        "sem_vs_pre_mse_gain": 5.638262307258593e-10,
+        "qa_better_than_pre": 0,
+        "pre_better_than_qa": 1,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "CSCO_2023_Q1",
+        "ticker": "CSCO",
+        "year": 2023,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 0,
+        "logistic_choose_qa": 1,
+        "pattern": "tree_sem_logistic_qa",
+        "best_model": "residual_pre_call_market_only",
+        "target": -0.00214506,
+        "residual_pre_call_market_only": -0.0021160428418589765,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.0021058798278319945,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0021160428418589765,
+        "validation_selected_transfer_expert": -0.0021160428418589765,
+        "conservative_tree_override_on_selected_expert": -0.0021160428418589765,
+        "conservative_logistic_override_on_selected_expert": -0.0021058798278319945,
+        "residual_pre_call_market_only__err2": 8.419954665811597e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 1.5350858911145384e-09,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 8.419954665811597e-10,
+        "validation_selected_transfer_expert__err2": 8.419954665811597e-10,
+        "conservative_tree_override_on_selected_expert__err2": 8.419954665811597e-10,
+        "conservative_logistic_override_on_selected_expert__err2": 1.5350858911145384e-09,
+        "qa_vs_pre_mse_gain": -6.930904245333787e-10,
+        "sem_vs_pre_mse_gain": 0.0,
+        "qa_better_than_pre": 0,
+        "pre_better_than_qa": 1,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "NKE_2025_Q1",
+        "ticker": "NKE",
+        "year": 2025,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_only",
+        "target": -0.00053343,
+        "residual_pre_call_market_only": -0.0005471671390216446,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.0005048316676884467,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0005026228422663993,
+        "validation_selected_transfer_expert": -0.0005026228422663993,
+        "conservative_tree_override_on_selected_expert": -0.0005048316676884467,
+        "conservative_logistic_override_on_selected_expert": -0.0005026228422663993,
+        "residual_pre_call_market_only__err2": 1.8870898849998963e-10,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 8.178646110020328e-10,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 9.490809676229532e-10,
+        "validation_selected_transfer_expert__err2": 9.490809676229532e-10,
+        "conservative_tree_override_on_selected_expert__err2": 8.178646110020328e-10,
+        "conservative_logistic_override_on_selected_expert__err2": 9.490809676229532e-10,
+        "qa_vs_pre_mse_gain": -6.291556225020432e-10,
+        "sem_vs_pre_mse_gain": -7.603719791229635e-10,
+        "qa_better_than_pre": 0,
+        "pre_better_than_qa": 1,
+        "qa_pre_tie": 0
+      },
+      {
+        "split": "val2022_test_post2022",
+        "event_key": "CSCO_2023_Q4",
+        "ticker": "CSCO",
+        "year": 2023,
+        "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+        "tree_choose_qa": 1,
+        "logistic_choose_qa": 0,
+        "pattern": "tree_qa_logistic_sem",
+        "best_model": "residual_pre_call_market_only",
+        "target": -0.0006168300000000001,
+        "residual_pre_call_market_only": -0.000620510899619537,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": -0.0005929803573215414,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": -0.0005956186169994628,
+        "validation_selected_transfer_expert": -0.0005956186169994628,
+        "conservative_tree_override_on_selected_expert": -0.0005929803573215414,
+        "conservative_logistic_override_on_selected_expert": -0.0005956186169994628,
+        "residual_pre_call_market_only__err2": 1.3549022009106874e-11,
+        "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate__err2": 5.688054558901575e-10,
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__err2": 4.4992276879548055e-10,
+        "validation_selected_transfer_expert__err2": 4.4992276879548055e-10,
+        "conservative_tree_override_on_selected_expert__err2": 5.688054558901575e-10,
+        "conservative_logistic_override_on_selected_expert__err2": 4.4992276879548055e-10,
+        "qa_vs_pre_mse_gain": -5.552564338810507e-10,
+        "sem_vs_pre_mse_gain": -4.3637374678637367e-10,
+        "qa_better_than_pre": 0,
+        "pre_better_than_qa": 1,
+        "qa_pre_tie": 0
+      }
+    ]
+  }
+}

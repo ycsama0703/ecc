@@ -1,0 +1,347 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours",
+    "pre_market"
+  ],
+  "split_sizes": {
+    "train": 239,
+    "val": 78,
+    "test": 160
+  },
+  "feature_groups": {
+    "market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum",
+      "within_call_rv",
+      "within_call_vw_rv",
+      "within_call_volume_sum"
+    ],
+    "controls": [
+      "call_duration_min",
+      "scheduled_hour_et",
+      "revenue_surprise_pct",
+      "ebitda_surprise_pct",
+      "eps_gaap_surprise_pct",
+      "analyst_eps_norm_num_est",
+      "analyst_eps_norm_std",
+      "analyst_revenue_num_est",
+      "analyst_revenue_std",
+      "analyst_net_income_num_est",
+      "analyst_net_income_std"
+    ],
+    "ecc_structured": [
+      "a1_component_count",
+      "a1_question_count",
+      "a1_answer_count",
+      "a1_qna_component_share",
+      "a1_total_text_words",
+      "a1_unique_speaker_count",
+      "a2_paragraph_count",
+      "a2_visible_word_count",
+      "a2_size_ratio_vs_group",
+      "a2_text_ratio_vs_group",
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "ecc_extra_non_audio": [
+      "full_word_count",
+      "qna_word_count",
+      "question_word_count",
+      "answer_word_count",
+      "presenter_word_count",
+      "operator_word_count",
+      "full_sentence_count",
+      "qna_sentence_count",
+      "question_mark_count",
+      "digit_char_share",
+      "qna_word_share",
+      "presenter_word_share",
+      "operator_word_share",
+      "answer_to_question_word_ratio",
+      "avg_words_per_question",
+      "avg_words_per_answer",
+      "speaker_turn_concentration",
+      "speaker_name_count_from_text",
+      "question_mark_per_1k_words",
+      "guidance_term_rate_full",
+      "guidance_term_rate_qna",
+      "guidance_term_rate_presenter",
+      "guidance_term_rate_answer",
+      "guidance_term_rate_question",
+      "uncertainty_term_rate_full",
+      "uncertainty_term_rate_qna",
+      "uncertainty_term_rate_presenter",
+      "uncertainty_term_rate_answer",
+      "uncertainty_term_rate_question",
+      "positive_term_rate_full",
+      "positive_term_rate_qna",
+      "positive_term_rate_presenter",
+      "positive_term_rate_answer",
+      "positive_term_rate_question",
+      "negative_term_rate_full",
+      "negative_term_rate_qna",
+      "negative_term_rate_presenter",
+      "negative_term_rate_answer",
+      "negative_term_rate_question",
+      "qa_pair_count",
+      "qa_pair_overlap_mean",
+      "qa_pair_overlap_median",
+      "qa_pair_low_overlap_share",
+      "qa_pair_question_words_mean",
+      "qa_pair_answer_words_mean",
+      "qa_pair_answer_digit_rate_mean",
+      "qa_pair_answer_hedge_rate_mean",
+      "qa_pair_answer_assertive_rate_mean",
+      "qa_pair_answer_forward_rate_mean",
+      "qa_multi_part_question_share",
+      "qa_evasive_proxy_share",
+      "qna_vs_presenter_uncertainty_gap",
+      "qna_vs_presenter_guidance_gap",
+      "answer_vs_question_uncertainty_gap",
+      "answer_vs_question_negative_gap",
+      "a4_strict_segment_count",
+      "a4_strict_duration_sum_sec",
+      "a4_strict_duration_mean_sec",
+      "a4_strict_duration_median_sec",
+      "a4_strict_duration_std_sec",
+      "a4_strict_gap_mean_sec",
+      "a4_strict_gap_max_sec",
+      "a4_strict_span_sec",
+      "a4_strict_high_conf_share",
+      "a4_strict_overlap_warn_share",
+      "a4_broad_segment_count",
+      "a4_broad_duration_sum_sec",
+      "a4_broad_duration_mean_sec",
+      "a4_broad_duration_median_sec",
+      "a4_broad_duration_std_sec",
+      "a4_broad_gap_mean_sec",
+      "a4_broad_gap_max_sec",
+      "a4_broad_span_sec",
+      "a4_broad_high_conf_share",
+      "a4_broad_overlap_warn_share"
+    ],
+    "audio_proxy": [
+      "has_audio_file",
+      "a3_file_size_bytes",
+      "a3_log_file_size",
+      "a3_bytes_per_call_sec",
+      "a3_bytes_per_strict_span_sec"
+    ],
+    "qa_benchmark": [
+      "qa_bench_answer_specificity_mean",
+      "qa_bench_answer_specificity_median",
+      "qa_bench_coverage_mean",
+      "qa_bench_coverage_median",
+      "qa_bench_delay_share_mean",
+      "qa_bench_delay_share_median",
+      "qa_bench_direct_answer_share",
+      "qa_bench_early_overlap_mean",
+      "qa_bench_early_overlap_median",
+      "qa_bench_hedge_rate_mean",
+      "qa_bench_hedge_rate_median",
+      "qa_bench_late_overlap_share",
+      "qa_bench_nonresponse_share",
+      "qa_bench_numeric_rate_mean",
+      "qa_bench_numeric_rate_median",
+      "qa_bench_pair_count",
+      "qa_bench_question_complexity_mean",
+      "qa_bench_question_complexity_median",
+      "qa_bench_question_specificity_mean",
+      "qa_bench_question_specificity_median",
+      "qa_bench_specificity_gap_mean",
+      "qa_bench_specificity_gap_median",
+      "qa_bench_subjective_rate_mean",
+      "qa_bench_subjective_rate_median"
+    ],
+    "real_audio": [
+      "audio_bitrate_kbps_est",
+      "audio_chunk_count",
+      "audio_duration_sec",
+      "audio_file_size_bytes",
+      "audio_num_channels",
+      "audio_num_frames",
+      "audio_sample_rate",
+      "chunk_abs_mean_mean",
+      "chunk_abs_mean_std",
+      "chunk_dynamic_range_mean",
+      "chunk_dynamic_range_std",
+      "chunk_high_band_share_mean",
+      "chunk_high_band_share_std",
+      "chunk_low_band_share_mean",
+      "chunk_low_band_share_std",
+      "chunk_max_abs_mean",
+      "chunk_max_abs_std",
+      "chunk_mid_band_share_mean",
+      "chunk_mid_band_share_std",
+      "chunk_rms_mean",
+      "chunk_rms_std",
+      "chunk_silence_share_mean",
+      "chunk_silence_share_std",
+      "chunk_spectral_bandwidth_hz_mean",
+      "chunk_spectral_bandwidth_hz_std",
+      "chunk_spectral_centroid_hz_mean",
+      "chunk_spectral_centroid_hz_std",
+      "chunk_spectral_flatness_mean",
+      "chunk_spectral_flatness_std",
+      "chunk_spectral_rolloff85_hz_mean",
+      "chunk_spectral_rolloff85_hz_std",
+      "chunk_std_mean",
+      "chunk_std_std",
+      "chunk_zcr_mean",
+      "chunk_zcr_std",
+      "has_real_audio"
+    ],
+    "qna_lsa_components": 64
+  },
+  "models": {
+    "prior_only": {
+      "family": "prior_passthrough",
+      "feature_bundles": [],
+      "feature_count": 1,
+      "val": {
+        "mae": 0.000845440795154098,
+        "rmse": 0.0027946380475151085,
+        "r2": 0.1355621902662162
+      },
+      "test": {
+        "mae": 0.000892285284185914,
+        "rmse": 0.0021436956278310083,
+        "r2": 0.19112013144933993
+      }
+    },
+    "market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market"
+      ],
+      "feature_count": 9,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0005177000187111489,
+        "rmse": 0.0011039272130567688,
+        "r2": 0.865115049146396
+      },
+      "test": {
+        "mae": 0.000506070926265023,
+        "rmse": 0.0007282508422301211,
+        "r2": 0.9066488282609616
+      }
+    },
+    "market_plus_controls": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls"
+      ],
+      "feature_count": 23,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.00047878859538439246,
+        "rmse": 0.0011271216630746887,
+        "r2": 0.8593874082279269
+      },
+      "test": {
+        "mae": 0.0004721578537738247,
+        "rmse": 0.0007174687034081854,
+        "r2": 0.9093925922646195
+      }
+    },
+    "ecc_text_timing_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "ecc_structured",
+        "ecc_extra_non_audio",
+        "qa_benchmark",
+        "qna_lsa"
+      ],
+      "feature_count": 187,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0012697651205150228,
+        "rmse": 0.00276611452440213,
+        "r2": 0.15311793904905935
+      },
+      "test": {
+        "mae": 0.0013334518842367873,
+        "rmse": 0.002472850355960464,
+        "r2": -0.07634984907459463
+      }
+    },
+    "ecc_text_timing_plus_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "ecc_structured",
+        "ecc_extra_non_audio",
+        "qa_benchmark",
+        "qna_lsa",
+        "audio_proxy",
+        "real_audio"
+      ],
+      "feature_count": 234,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0014917838174886638,
+        "rmse": 0.0027499037818509734,
+        "r2": 0.16301511353406595
+      },
+      "test": {
+        "mae": 0.0017984216513108279,
+        "rmse": 0.0030914837559815086,
+        "r2": -0.6822545831056803
+      }
+    },
+    "market_controls_plus_ecc_text_timing": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "ecc_structured",
+        "ecc_extra_non_audio",
+        "qa_benchmark",
+        "qna_lsa"
+      ],
+      "feature_count": 210,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00038666464424458904,
+        "rmse": 0.0009204351447798415,
+        "r2": 0.9062289011780797
+      },
+      "test": {
+        "mae": 0.00047588464001849945,
+        "rmse": 0.0007607866050527483,
+        "r2": 0.8981212758802901
+      }
+    },
+    "market_controls_plus_ecc_plus_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "ecc_structured",
+        "ecc_extra_non_audio",
+        "qa_benchmark",
+        "qna_lsa",
+        "audio_proxy",
+        "real_audio"
+      ],
+      "feature_count": 257,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0003986740612698107,
+        "rmse": 0.0009493886457271623,
+        "r2": 0.9002367276033675
+      },
+      "test": {
+        "mae": 0.0004762434485066929,
+        "rmse": 0.0007280376944184356,
+        "r2": 0.906703465166161
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "lsa_components": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "runs": {
+    "4": {
+      "fixed_split": {
+        "pre_call_market_only_r2": 0.9173936955166082,
+        "pre_call_market_plus_a4_r2": 0.9014394909383164,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9059380238178654,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9115668859532323
+      },
+      "unseen_ticker": {
+        "pre_call_market_only_r2": 0.9984820619311983,
+        "pre_call_market_plus_a4_r2": 0.9982296529057315,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.998370286435591,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9980648304751341,
+        "median_ticker_pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9951938826520538,
+        "median_ticker_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9914542521586525
+      }
+    },
+    "8": {
+      "fixed_split": {
+        "pre_call_market_only_r2": 0.9173936955166082,
+        "pre_call_market_plus_a4_r2": 0.9014394909383164,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.877459979734733,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.8850860841234179
+      },
+      "unseen_ticker": {
+        "pre_call_market_only_r2": 0.9984820619311983,
+        "pre_call_market_plus_a4_r2": 0.9982296529057315,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9982476964084652,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9981098155698027,
+        "median_ticker_pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9953404279796754,
+        "median_ticker_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9910473358091885
+      }
+    },
+    "16": {
+      "fixed_split": {
+        "pre_call_market_only_r2": 0.9173936955166082,
+        "pre_call_market_plus_a4_r2": 0.9014394909383164,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.8771484634835671,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.8797099619918988
+      },
+      "unseen_ticker": {
+        "pre_call_market_only_r2": 0.9984820619311983,
+        "pre_call_market_plus_a4_r2": 0.9982296529057315,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9978117371614981,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9972012702103232,
+        "median_ticker_pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9930458692309607,
+        "median_ticker_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9890225610619866
+      }
+    },
+    "32": {
+      "fixed_split": {
+        "pre_call_market_only_r2": 0.9173936955166082,
+        "pre_call_market_plus_a4_r2": 0.9014394909383164,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9087685736138175,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9158052054751868
+      },
+      "unseen_ticker": {
+        "pre_call_market_only_r2": 0.9984820619311983,
+        "pre_call_market_plus_a4_r2": 0.9982296529057315,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9974263451124076,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9974862838245666,
+        "median_ticker_pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9925821324341993,
+        "median_ticker_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9891306621054677
+      }
+    },
+    "64": {
+      "fixed_split": {
+        "pre_call_market_only_r2": 0.9173936955166082,
+        "pre_call_market_plus_a4_r2": 0.9014394909383164,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9271126178949579,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9347212284944735
+      },
+      "unseen_ticker": {
+        "pre_call_market_only_r2": 0.9984820619311983,
+        "pre_call_market_plus_a4_r2": 0.9982296529057315,
+        "pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9962141414155292,
+        "pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9936856353456412,
+        "median_ticker_pre_call_market_plus_a4_plus_qna_lsa_r2": 0.9937174267074033,
+        "median_ticker_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_r2": 0.9688546677271326
+      }
+    }
+  },
+  "best_by_setting": {
+    "fixed_split_pre_call_market_plus_a4_plus_qna_lsa": {
+      "lsa_components": 64,
+      "r2": 0.9271126178949579
+    },
+    "unseen_ticker_pre_call_market_plus_a4_plus_qna_lsa": {
+      "lsa_components": 4,
+      "r2": 0.998370286435591
+    }
+  }
+}

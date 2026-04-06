@@ -1,0 +1,590 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_both_audio": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "prior_only": {
+      "mae": 0.0019021485078033428,
+      "rmse": 0.0035445719653678215,
+      "r2": -0.1180741957523701
+    },
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4": {
+      "mae": 7.65483310004972e-05,
+      "rmse": 0.00014104500068784346,
+      "r2": 0.9982296529057315
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+      "mae": 7.755345540921158e-05,
+      "rmse": 0.00013532689776945295,
+      "r2": 0.998370286435591
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "mae": 7.45325011514522e-05,
+      "rmse": 0.00013265247559846274,
+      "r2": 0.9984340649441351
+    },
+    "residual_pre_call_market_plus_controls_plus_a4": {
+      "mae": 9.130623089599362e-05,
+      "rmse": 0.00014781282652861317,
+      "r2": 0.998055682113011
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+      "mae": 9.373138578487655e-05,
+      "rmse": 0.00015129781900137228,
+      "r2": 0.9979629186950152
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+      "mae": 9.757064546051445e-05,
+      "rmse": 0.0001474646736713935,
+      "r2": 0.9980648304751341
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "mae": 9.543267958354835e-05,
+      "rmse": 0.00014603261316593503,
+      "r2": 0.9981022336516117
+    }
+  },
+  "median_ticker_r2": {
+    "prior_only": -0.4814445962507492,
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4": 0.9949477272110294,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": 0.9951938826520538,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": 0.9959066749431505,
+    "residual_pre_call_market_plus_controls_plus_a4": 0.9941241943899779,
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": 0.994070639253386,
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": 0.9914542521586525,
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": 0.9904560249026793
+  },
+  "by_ticker": {
+    "AAPL": {
+      "prior_only": {
+        "mae": 0.0008635336455696203,
+        "rmse": 0.0009753102657720546,
+        "r2": -0.057410016928523655,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 6.705818901086902e-05,
+        "rmse": 7.718627088687973e-05,
+        "r2": 0.9933772563052323,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00012741429781227003,
+        "rmse": 0.00013943167333489414,
+        "r2": 0.97838870915675,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 0.00012283676926663536,
+        "rmse": 0.00013334777798644512,
+        "r2": 0.9802335173370431,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00013460593632282268,
+        "rmse": 0.0001514441343924617,
+        "r2": 0.9745045463589487,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00013498255707634316,
+        "rmse": 0.0001575094737000646,
+        "r2": 0.972421465146792,
+        "n": 5
+      }
+    },
+    "AMGN": {
+      "prior_only": {
+        "mae": 0.000588558582278481,
+        "rmse": 0.0007259269278463547,
+        "r2": -0.9501174078419159,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 0.00017975681237770267,
+        "rmse": 0.0002716745295034654,
+        "r2": 0.7268678690369479,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.00019478020001389962,
+        "rmse": 0.0002788838339162639,
+        "r2": 0.7121795643022787,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00018414980222998778,
+        "rmse": 0.0002805486471301913,
+        "r2": 0.7087329860892564,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00019180943446581145,
+        "rmse": 0.00026117783304784346,
+        "r2": 0.7475661596321479,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 0.00017262161599171323,
+        "rmse": 0.0002759221045357479,
+        "r2": 0.7182603741158609,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00018806427252927892,
+        "rmse": 0.0002663574188485784,
+        "r2": 0.7374545227894707,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00020527555906307116,
+        "rmse": 0.0002759155365663122,
+        "r2": 0.7182737868522624,
+        "n": 5
+      }
+    },
+    "AMZN": {
+      "prior_only": {
+        "mae": 0.0010484594936708864,
+        "rmse": 0.0011417296808001387,
+        "r2": -0.13716120273590393,
+        "n": 6
+      },
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 7.749407118137618e-05,
+        "rmse": 0.0001292729985590898,
+        "r2": 0.9854215585530909,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 9.540631278636173e-05,
+        "rmse": 0.00014758399589947558,
+        "r2": 0.9809991083535919,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 9.27340354068109e-05,
+        "rmse": 0.00014980475847344883,
+        "r2": 0.9804229761872523,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00010640444636187958,
+        "rmse": 0.0001580551065631583,
+        "r2": 0.9782072259805645,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 9.342114441353979e-05,
+        "rmse": 0.0001573141788768471,
+        "r2": 0.9784110665712353,
+        "n": 6
+      }
+    },
+    "CSCO": {
+      "prior_only": {
+        "mae": 0.0022920649639249636,
+        "rmse": 0.003607373271152904,
+        "r2": -0.4814445962507492,
+        "n": 9
+      },
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 9.884647038912764e-05,
+        "rmse": 0.0002106647012163088,
+        "r2": 0.9949477272110294,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001146947882964278,
+        "rmse": 0.00020546864703543542,
+        "r2": 0.9951938826520538,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00010416457022357017,
+        "rmse": 0.00018962102635845015,
+        "r2": 0.9959066749431505,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00010069097404729536,
+        "rmse": 0.00020909831364631442,
+        "r2": 0.9950225797690655,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 9.735566964891548e-05,
+        "rmse": 0.00019975805445702444,
+        "r2": 0.9954573231139325,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001256009392662716,
+        "rmse": 0.00019473365503155585,
+        "r2": 0.9956829678912675,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00011796681917941368,
+        "rmse": 0.00018243659009731215,
+        "r2": 0.9962109778799537,
+        "n": 9
+      }
+    },
+    "DIS": {
+      "prior_only": {
+        "mae": 0.0008173111392405065,
+        "rmse": 0.0011248423905721914,
+        "r2": -0.008785434291886718,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 3.2281067762956906e-05,
+        "rmse": 3.995627494246103e-05,
+        "r2": 0.9987271259306837,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 4.395097901139705e-05,
+        "rmse": 6.158630916945176e-05,
+        "r2": 0.996975985918224,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 6.121932577810746e-05,
+        "rmse": 8.064104274586494e-05,
+        "r2": 0.9948152511587449,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 3.602571545683802e-05,
+        "rmse": 4.318905931097802e-05,
+        "r2": 0.9985128220307218,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.0354521987979094e-05,
+        "rmse": 1.5619019354497426e-05,
+        "r2": 0.9998054984889646,
+        "n": 5
+      }
+    },
+    "IBM": {
+      "prior_only": {
+        "mae": 0.0015514625678119348,
+        "rmse": 0.001980411100840891,
+        "r2": -0.5189568578805708,
+        "n": 7
+      },
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 7.654692019221959e-05,
+        "rmse": 8.409758257028474e-05,
+        "r2": 0.9972609386557791,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 6.20654545681952e-05,
+        "rmse": 7.197243620120114e-05,
+        "r2": 0.9979938327253182,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 7.419081587539569e-05,
+        "rmse": 8.314093956739899e-05,
+        "r2": 0.9973229000177449,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 2.3803975197408848e-05,
+        "rmse": 3.171845473463755e-05,
+        "r2": 0.9996103642682831,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 3.0023449773421697e-05,
+        "rmse": 3.582348845294664e-05,
+        "r2": 0.9995029838689187,
+        "n": 7
+      }
+    },
+    "MSFT": {
+      "prior_only": {
+        "mae": 0.001067133125,
+        "rmse": 0.00107040264496963,
+        "r2": -162.94454161458253,
+        "n": 7
+      },
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 1.5871230152658424e-05,
+        "rmse": 1.905901456283098e-05,
+        "r2": 0.9480239228427186,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 1.3928447183847787e-05,
+        "rmse": 1.732382068191364e-05,
+        "r2": 0.9570572379923804,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.6402257032372616e-05,
+        "rmse": 2.1440290393087467e-05,
+        "r2": 0.9342245328530856,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 1.1441991986501527e-05,
+        "rmse": 1.4750108928713008e-05,
+        "r2": 0.9688690001186587,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 9.761170757375889e-06,
+        "rmse": 1.2726837662114079e-05,
+        "r2": 0.9768237256276371,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 1.2897140336094803e-05,
+        "rmse": 1.5519866081926433e-05,
+        "r2": 0.9655349785082424,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.0672665699878887e-05,
+        "rmse": 1.4434304841978449e-05,
+        "r2": 0.9701877770282448,
+        "n": 7
+      }
+    },
+    "NKE": {
+      "prior_only": {
+        "mae": 0.001055519414556962,
+        "rmse": 0.001390860203052098,
+        "r2": -0.46968674797515453,
+        "n": 8
+      },
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 3.80578857929373e-05,
+        "rmse": 5.818106152855915e-05,
+        "r2": 0.9974282953016413,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 7.798219492173128e-05,
+        "rmse": 8.79437137603989e-05,
+        "r2": 0.9941241943899779,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 8.228682851024254e-05,
+        "rmse": 8.834358694981664e-05,
+        "r2": 0.994070639253386,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 8.894838249254834e-05,
+        "rmse": 0.00010605865827203685,
+        "r2": 0.9914542521586525,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00010009744740736601,
+        "rmse": 0.00011208196605175138,
+        "r2": 0.9904560249026793,
+        "n": 8
+      }
+    },
+    "NVDA": {
+      "prior_only": {
+        "mae": 0.0061360283536585365,
+        "rmse": 0.00839815492545382,
+        "r2": -0.9343923943695647,
+        "n": 8
+      },
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 0.00011143083936551737,
+        "rmse": 0.00016124505119208046,
+        "r2": 0.9992869013720571,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.979434291975784e-05,
+        "rmse": 0.0001120807326492996,
+        "r2": 0.9996554607260162,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 9.502857098489608e-05,
+        "rmse": 0.00011603572453297491,
+        "r2": 0.9996307162064252,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.0001306792461139584,
+        "rmse": 0.00016949821549580734,
+        "r2": 0.9992120347368846,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+        "mae": 0.00014524135226473325,
+        "rmse": 0.0001822216972452524,
+        "r2": 0.9990892965397419,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00016542863823044193,
+        "rmse": 0.00017179932203624886,
+        "r2": 0.999190494687556,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00015812711971349236,
+        "rmse": 0.0001637999780008812,
+        "r2": 0.9992641242523566,
+        "n": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,433 @@
+component,direction,family,rank,term,weight
+1,positive,question_lsa4_bi,1,the,0.37335089945295064
+1,positive,question_lsa4_bi,2,you,0.2675634437422898
+1,positive,question_lsa4_bi,3,and,0.225963246373247
+1,positive,question_lsa4_bi,4,of,0.1981512109787056
+1,positive,question_lsa4_bi,5,to,0.19207658492522167
+1,positive,question_lsa4_bi,6,that,0.18051266126890247
+1,positive,question_lsa4_bi,7,in,0.14170358107244094
+1,positive,question_lsa4_bi,8,on,0.1238121785097244
+1,positive,question_lsa4_bi,9,about,0.11750454423033446
+1,positive,question_lsa4_bi,10,is,0.11725877739240476
+1,positive,question_lsa4_bi,11,just,0.10406454234912145
+1,positive,question_lsa4_bi,12,it,0.09984854095009343
+1,negative,question_lsa4_bi,1,jim,0.00454644365562952
+1,negative,question_lsa4_bi,2,jim you,0.00454644365562952
+1,negative,question_lsa4_bi,3,early indications,0.005065786426218196
+1,negative,question_lsa4_bi,4,any early,0.005065786426218196
+1,negative,question_lsa4_bi,5,the challenges,0.005118958567883836
+1,negative,question_lsa4_bi,6,than you,0.005210829753647142
+1,negative,question_lsa4_bi,7,restructuring,0.005223846843846342
+1,negative,question_lsa4_bi,8,year to,0.005236675687295804
+1,negative,question_lsa4_bi,9,the context,0.005290327666353233
+1,negative,question_lsa4_bi,10,context of,0.005290327666353233
+1,negative,question_lsa4_bi,11,year was,0.005295120665426994
+1,negative,question_lsa4_bi,12,helped,0.00530477874628662
+2,positive,question_lsa4_bi,1,the,0.1905602919429599
+2,positive,question_lsa4_bi,2,is,0.16125598312336403
+2,positive,question_lsa4_bi,3,so,0.11873959335249507
+2,positive,question_lsa4_bi,4,million,0.11542744813091692
+2,positive,question_lsa4_bi,5,next,0.10214105769749285
+2,positive,question_lsa4_bi,6,one,0.09549433976342815
+2,positive,question_lsa4_bi,7,that,0.09401511026407734
+2,positive,question_lsa4_bi,8,question,0.09181491892281442
+2,positive,question_lsa4_bi,9,year,0.08995379420681777
+2,positive,question_lsa4_bi,10,for the,0.07966614302340189
+2,positive,question_lsa4_bi,11,for,0.07788585758827565
+2,positive,question_lsa4_bi,12,disney,0.0746438558425835
+2,negative,question_lsa4_bi,1,little,-0.1708923857338799
+2,negative,question_lsa4_bi,2,software,-0.1619922496918266
+2,negative,question_lsa4_bi,3,bit,-0.1589371031466343
+2,negative,question_lsa4_bi,4,little bit,-0.14904840402764594
+2,negative,question_lsa4_bi,5,maybe,-0.14436337664541643
+2,negative,question_lsa4_bi,6,you,-0.13669295265595122
+2,negative,question_lsa4_bi,7,the software,-0.09475273718242375
+2,negative,question_lsa4_bi,8,if,-0.09314797521277383
+2,negative,question_lsa4_bi,9,growth,-0.07873561679324934
+2,negative,question_lsa4_bi,10,if you,-0.07815650292414271
+2,negative,question_lsa4_bi,11,europe,-0.07161518754092408
+2,negative,question_lsa4_bi,12,us,-0.06949437450825209
+3,positive,question_lsa4_bi,1,do,0.18456162576338578
+3,positive,question_lsa4_bi,2,do you,0.13255155029087007
+3,positive,question_lsa4_bi,3,around,0.12282360948771771
+3,positive,question_lsa4_bi,4,term,0.11002461121117689
+3,positive,question_lsa4_bi,5,million,0.10961617816309335
+3,positive,question_lsa4_bi,6,to,0.1065766247106557
+3,positive,question_lsa4_bi,7,how do,0.10625509419301093
+3,positive,question_lsa4_bi,8,ai,0.09187958674500012
+3,positive,question_lsa4_bi,9,when,0.09185877588893454
+3,positive,question_lsa4_bi,10,think,0.09117804035245058
+3,positive,question_lsa4_bi,11,data,0.08204265877351063
+3,positive,question_lsa4_bi,12,how,0.08182015628756908
+3,negative,question_lsa4_bi,1,year,-0.16838316446030466
+3,negative,question_lsa4_bi,2,flow,-0.16529549481933292
+3,negative,question_lsa4_bi,3,cash,-0.1514827500544144
+3,negative,question_lsa4_bi,4,cash flow,-0.13733420542146837
+3,negative,question_lsa4_bi,5,well,-0.1185313868997312
+3,negative,question_lsa4_bi,6,as well,-0.10774473138860481
+3,negative,question_lsa4_bi,7,just,-0.09773231066832164
+3,negative,question_lsa4_bi,8,bit,-0.09182987542785154
+3,negative,question_lsa4_bi,9,free,-0.09155613694764553
+3,negative,question_lsa4_bi,10,free cash,-0.09155613694764553
+3,negative,question_lsa4_bi,11,quarter,-0.08940406610694947
+3,negative,question_lsa4_bi,12,as,-0.08898618012529914
+4,positive,question_lsa4_bi,1,about,0.1869742068957426
+4,positive,question_lsa4_bi,2,think,0.18007190189836172
+4,positive,question_lsa4_bi,3,think about,0.17552885730960785
+4,positive,question_lsa4_bi,4,flow,0.13370105618748876
+4,positive,question_lsa4_bi,5,how do,0.13119849370940126
+4,positive,question_lsa4_bi,6,cash,0.12863958591174307
+4,positive,question_lsa4_bi,7,cash flow,0.10931656494579116
+4,positive,question_lsa4_bi,8,as,0.10587663062575671
+4,positive,question_lsa4_bi,9,about the,0.10565134829434505
+4,positive,question_lsa4_bi,10,well,0.10526760193973397
+4,positive,question_lsa4_bi,11,as well,0.10153529676364466
+4,positive,question_lsa4_bi,12,do,0.10088389079575134
+4,negative,question_lsa4_bi,1,is,-0.12704511811989955
+4,negative,question_lsa4_bi,2,disney,-0.1263628978681556
+4,negative,question_lsa4_bi,3,on,-0.11542163725759816
+4,negative,question_lsa4_bi,4,to,-0.11076549749335737
+4,negative,question_lsa4_bi,5,is it,-0.08538947547898934
+4,negative,question_lsa4_bi,6,how much,-0.08283094450834864
+4,negative,question_lsa4_bi,7,platform,-0.0799612699415105
+4,negative,question_lsa4_bi,8,if,-0.07960514674232466
+4,negative,question_lsa4_bi,9,that,-0.07871691493335625
+4,negative,question_lsa4_bi,10,much,-0.07390876758816278
+4,negative,question_lsa4_bi,11,give,-0.07165958839688198
+4,negative,question_lsa4_bi,12,or,-0.06859769817496261
+1,positive,question_stop_lsa2_bi,1,just,0.25438892386868434
+1,positive,question_stop_lsa2_bi,2,think,0.2136311807560661
+1,positive,question_stop_lsa2_bi,3,maybe,0.20581126998957305
+1,positive,question_stop_lsa2_bi,4,bit,0.16980423176710618
+1,positive,question_stop_lsa2_bi,5,year,0.16098093310527223
+1,positive,question_stop_lsa2_bi,6,growth,0.15682965979586033
+1,positive,question_stop_lsa2_bi,7,little,0.15505057269031394
+1,positive,question_stop_lsa2_bi,8,little bit,0.14297467707883663
+1,positive,question_stop_lsa2_bi,9,kind,0.1426352512125947
+1,positive,question_stop_lsa2_bi,10,quarter,0.14118358029902012
+1,positive,question_stop_lsa2_bi,11,talk,0.1305577706622877
+1,positive,question_stop_lsa2_bi,12,question,0.12907427580790476
+1,negative,question_stop_lsa2_bi,1,streaming,0.007984775412236156
+1,negative,question_stop_lsa2_bi,2,experience consumers,0.008718156881805605
+1,negative,question_stop_lsa2_bi,3,modeling,0.008974387177475613
+1,negative,question_stop_lsa2_bi,4,premium,0.009468391672442147
+1,negative,question_stop_lsa2_bi,5,peak,0.009630842073236369
+1,negative,question_stop_lsa2_bi,6,businesses,0.00975413352024222
+1,negative,question_stop_lsa2_bi,7,try,0.009887653296658179
+1,negative,question_stop_lsa2_bi,8,restructuring,0.009943157992544194
+1,negative,question_stop_lsa2_bi,9,efficiency,0.010341554580535529
+1,negative,question_stop_lsa2_bi,10,operating margin,0.010347015563180129
+1,negative,question_stop_lsa2_bi,11,margin came,0.010347015563180129
+1,negative,question_stop_lsa2_bi,12,colette,0.010445437353117742
+2,positive,question_stop_lsa2_bi,1,supply,0.2704938362799068
+2,positive,question_stop_lsa2_bi,2,supply chain,0.2330868533360443
+2,positive,question_stop_lsa2_bi,3,chain,0.2330868533360443
+2,positive,question_stop_lsa2_bi,4,advertising,0.19863269502069594
+2,positive,question_stop_lsa2_bi,5,bit,0.13586590060237128
+2,positive,question_stop_lsa2_bi,6,given,0.11996157756112048
+2,positive,question_stop_lsa2_bi,7,little,0.11843723889715851
+2,positive,question_stop_lsa2_bi,8,little bit,0.11824075302319237
+2,positive,question_stop_lsa2_bi,9,ad,0.11724443494397414
+2,positive,question_stop_lsa2_bi,10,quarter,0.10301670286524547
+2,positive,question_stop_lsa2_bi,11,pricing,0.09686767501035361
+2,positive,question_stop_lsa2_bi,12,advertising business,0.09546656917337257
+2,negative,question_stop_lsa2_bi,1,software,-0.17025841262534117
+2,negative,question_stop_lsa2_bi,2,ai,-0.15629049565369174
+2,negative,question_stop_lsa2_bi,3,data,-0.1304483902407972
+2,negative,question_stop_lsa2_bi,4,center,-0.12442835308724208
+2,negative,question_stop_lsa2_bi,5,data center,-0.12442835308724208
+2,negative,question_stop_lsa2_bi,6,lot,-0.10580757623413725
+2,negative,question_stop_lsa2_bi,7,think,-0.10076518271720723
+2,negative,question_stop_lsa2_bi,8,wondering,-0.09764064293926977
+2,negative,question_stop_lsa2_bi,9,guys,-0.09733980421475859
+2,negative,question_stop_lsa2_bi,10,getting,-0.09030032538151518
+2,negative,question_stop_lsa2_bi,11,success,-0.08194225259511768
+2,negative,question_stop_lsa2_bi,12,maybe,-0.07843667682937872
+1,positive,question_stop_lsa4_bi,1,just,0.2543630742722077
+1,positive,question_stop_lsa4_bi,2,think,0.2136148843284928
+1,positive,question_stop_lsa4_bi,3,maybe,0.2058313971844024
+1,positive,question_stop_lsa4_bi,4,bit,0.1698017049193993
+1,positive,question_stop_lsa4_bi,5,year,0.16098797992271938
+1,positive,question_stop_lsa4_bi,6,growth,0.15682119139443743
+1,positive,question_stop_lsa4_bi,7,little,0.15506603650379372
+1,positive,question_stop_lsa4_bi,8,little bit,0.14298327370214908
+1,positive,question_stop_lsa4_bi,9,kind,0.1426525146278147
+1,positive,question_stop_lsa4_bi,10,quarter,0.141175115137114
+1,positive,question_stop_lsa4_bi,11,talk,0.13053788273697484
+1,positive,question_stop_lsa4_bi,12,question,0.12903403306537006
+1,negative,question_stop_lsa4_bi,1,streaming,0.007987151401928782
+1,negative,question_stop_lsa4_bi,2,experience consumers,0.00871850026481491
+1,negative,question_stop_lsa4_bi,3,modeling,0.008970108263359856
+1,negative,question_stop_lsa4_bi,4,premium,0.009470812241049795
+1,negative,question_stop_lsa4_bi,5,peak,0.00962963755667233
+1,negative,question_stop_lsa4_bi,6,businesses,0.009757940394807815
+1,negative,question_stop_lsa4_bi,7,try,0.009884857263760581
+1,negative,question_stop_lsa4_bi,8,restructuring,0.009945522203274042
+1,negative,question_stop_lsa4_bi,9,efficiency,0.01033553700234689
+1,negative,question_stop_lsa4_bi,10,operating margin,0.010356675627029686
+1,negative,question_stop_lsa4_bi,11,margin came,0.010356675627029686
+1,negative,question_stop_lsa4_bi,12,colette,0.010443292417841388
+2,positive,question_stop_lsa4_bi,1,little,0.22480978271892463
+2,positive,question_stop_lsa4_bi,2,bit,0.21997300656905544
+2,positive,question_stop_lsa4_bi,3,little bit,0.20815807855984647
+2,positive,question_stop_lsa4_bi,4,supply,0.20603178200328245
+2,positive,question_stop_lsa4_bi,5,chain,0.1804475368033377
+2,positive,question_stop_lsa4_bi,6,supply chain,0.1804475368033377
+2,positive,question_stop_lsa4_bi,7,advertising,0.13325883949888018
+2,positive,question_stop_lsa4_bi,8,quarter,0.12212947147181406
+2,positive,question_stop_lsa4_bi,9,ad,0.09259233963010909
+2,positive,question_stop_lsa4_bi,10,seen,0.09062993342956682
+2,positive,question_stop_lsa4_bi,11,talk little,0.09060681094938702
+2,positive,question_stop_lsa4_bi,12,pricing,0.09047639869121869
+2,negative,question_stop_lsa4_bi,1,think,-0.15564636813658853
+2,negative,question_stop_lsa4_bi,2,guys,-0.15359282151715492
+2,negative,question_stop_lsa4_bi,3,ai,-0.1443906243388868
+2,negative,question_stop_lsa4_bi,4,data,-0.14165066151132458
+2,negative,question_stop_lsa4_bi,5,data center,-0.12945755808734566
+2,negative,question_stop_lsa4_bi,6,center,-0.12945755808734566
+2,negative,question_stop_lsa4_bi,7,enterprise,-0.1154134903775831
+2,negative,question_stop_lsa4_bi,8,million,-0.10609026274619052
+2,negative,question_stop_lsa4_bi,9,lot,-0.09681211124970603
+2,negative,question_stop_lsa4_bi,10,silicon,-0.09461272410441816
+2,negative,question_stop_lsa4_bi,11,getting,-0.09191687264507946
+2,negative,question_stop_lsa4_bi,12,approach,-0.08124701780689152
+3,positive,question_stop_lsa4_bi,1,little,0.2258948286642098
+3,positive,question_stop_lsa4_bi,2,bit,0.2062729900785307
+3,positive,question_stop_lsa4_bi,3,little bit,0.20369710668013355
+3,positive,question_stop_lsa4_bi,4,software,0.1920896972587134
+3,positive,question_stop_lsa4_bi,5,maybe,0.18566860404836943
+3,positive,question_stop_lsa4_bi,6,talk,0.12358401818474274
+3,positive,question_stop_lsa4_bi,7,talk little,0.10062537378238814
+3,positive,question_stop_lsa4_bi,8,maybe talk,0.08503990709984735
+3,positive,question_stop_lsa4_bi,9,data,0.08371787751984197
+3,positive,question_stop_lsa4_bi,10,china,0.0778552326010837
+3,positive,question_stop_lsa4_bi,11,new,0.07385282811682153
+3,positive,question_stop_lsa4_bi,12,huge,0.06993881210545236
+3,negative,question_stop_lsa4_bi,1,year,-0.18052543532188936
+3,negative,question_stop_lsa4_bi,2,supply,-0.1676637835919692
+3,negative,question_stop_lsa4_bi,3,cash,-0.14310941536502475
+3,negative,question_stop_lsa4_bi,4,supply chain,-0.1383043653640263
+3,negative,question_stop_lsa4_bi,5,chain,-0.1383043653640263
+3,negative,question_stop_lsa4_bi,6,disney,-0.13556020381259407
+3,negative,question_stop_lsa4_bi,7,flow,-0.13217563109584063
+3,negative,question_stop_lsa4_bi,8,million,-0.12395081724049187
+3,negative,question_stop_lsa4_bi,9,cash flow,-0.12304335209299708
+3,negative,question_stop_lsa4_bi,10,given,-0.1151459415600593
+3,negative,question_stop_lsa4_bi,11,margin,-0.11156621879499326
+3,negative,question_stop_lsa4_bi,12,operating,-0.10512416304594115
+4,positive,question_stop_lsa4_bi,1,app,0.21194527815189956
+4,positive,question_stop_lsa4_bi,2,disney,0.173692727880569
+4,positive,question_stop_lsa4_bi,3,ad,0.15728238946427572
+4,positive,question_stop_lsa4_bi,4,app store,0.14502026299484588
+4,positive,question_stop_lsa4_bi,5,store,0.14502026299484588
+4,positive,question_stop_lsa4_bi,6,tim,0.13987068696022148
+4,positive,question_stop_lsa4_bi,7,advertising,0.13428546163162636
+4,positive,question_stop_lsa4_bi,8,consumers,0.12384369353866545
+4,positive,question_stop_lsa4_bi,9,services,0.10550453086789476
+4,positive,question_stop_lsa4_bi,10,china,0.10090608074915514
+4,positive,question_stop_lsa4_bi,11,apple,0.0957482347045672
+4,positive,question_stop_lsa4_bi,12,market,0.09330874994572654
+4,negative,question_stop_lsa4_bi,1,year,-0.18494880646655817
+4,negative,question_stop_lsa4_bi,2,flow,-0.17714331693767388
+4,negative,question_stop_lsa4_bi,3,cash,-0.15379213771881348
+4,negative,question_stop_lsa4_bi,4,cash flow,-0.14128449981838648
+4,negative,question_stop_lsa4_bi,5,quarter,-0.13821752984243635
+4,negative,question_stop_lsa4_bi,6,kind,-0.11214875977620381
+4,negative,question_stop_lsa4_bi,7,different,-0.11034318281092899
+4,negative,question_stop_lsa4_bi,8,margin,-0.10463401205950502
+4,negative,question_stop_lsa4_bi,9,2q,-0.10455112183849058
+4,negative,question_stop_lsa4_bi,10,maybe,-0.09515770967938732
+4,negative,question_stop_lsa4_bi,11,free cash,-0.09418966654559098
+4,negative,question_stop_lsa4_bi,12,free,-0.09418966654559098
+1,positive,question_stop_lsa8_bi,1,just,0.2543748970715051
+1,positive,question_stop_lsa8_bi,2,think,0.2136334254658986
+1,positive,question_stop_lsa8_bi,3,maybe,0.20583398206164194
+1,positive,question_stop_lsa8_bi,4,bit,0.1697937512837981
+1,positive,question_stop_lsa8_bi,5,year,0.1609940116009865
+1,positive,question_stop_lsa8_bi,6,growth,0.15678376411804473
+1,positive,question_stop_lsa8_bi,7,little,0.15504580042476107
+1,positive,question_stop_lsa8_bi,8,little bit,0.14296685324456251
+1,positive,question_stop_lsa8_bi,9,kind,0.14266769445346678
+1,positive,question_stop_lsa8_bi,10,quarter,0.14119595308229727
+1,positive,question_stop_lsa8_bi,11,talk,0.13052408690397688
+1,positive,question_stop_lsa8_bi,12,question,0.1290749504553651
+1,negative,question_stop_lsa8_bi,1,streaming,0.00798366294348989
+1,negative,question_stop_lsa8_bi,2,experience consumers,0.008729434024368663
+1,negative,question_stop_lsa8_bi,3,modeling,0.008966892225772332
+1,negative,question_stop_lsa8_bi,4,premium,0.009469104743574602
+1,negative,question_stop_lsa8_bi,5,peak,0.009624362887616443
+1,negative,question_stop_lsa8_bi,6,businesses,0.009746057582441037
+1,negative,question_stop_lsa8_bi,7,try,0.009896732760997036
+1,negative,question_stop_lsa8_bi,8,restructuring,0.00995101319946252
+1,negative,question_stop_lsa8_bi,9,efficiency,0.010331476775495452
+1,negative,question_stop_lsa8_bi,10,operating margin,0.010343188639638482
+1,negative,question_stop_lsa8_bi,11,margin came,0.010343188639638482
+1,negative,question_stop_lsa8_bi,12,colette,0.010446787254641333
+2,positive,question_stop_lsa8_bi,1,bit,0.23208355248314988
+2,positive,question_stop_lsa8_bi,2,little,0.21914272124800221
+2,positive,question_stop_lsa8_bi,3,little bit,0.20739313401245293
+2,positive,question_stop_lsa8_bi,4,supply,0.20648612797404256
+2,positive,question_stop_lsa8_bi,5,chain,0.18100319238802984
+2,positive,question_stop_lsa8_bi,6,supply chain,0.18100319238802984
+2,positive,question_stop_lsa8_bi,7,advertising,0.16502197011323191
+2,positive,question_stop_lsa8_bi,8,talk little,0.11372045361762433
+2,positive,question_stop_lsa8_bi,9,quarter,0.11165721356447547
+2,positive,question_stop_lsa8_bi,10,talk,0.11119767200112834
+2,positive,question_stop_lsa8_bi,11,ad,0.10399912797517953
+2,positive,question_stop_lsa8_bi,12,advertising business,0.08269015696080345
+2,negative,question_stop_lsa8_bi,1,ai,-0.1563296557548931
+2,negative,question_stop_lsa8_bi,2,think,-0.12832062179810033
+2,negative,question_stop_lsa8_bi,3,guys,-0.1254769341782715
+2,negative,question_stop_lsa8_bi,4,data center,-0.11828333323635597
+2,negative,question_stop_lsa8_bi,5,center,-0.11828333323635597
+2,negative,question_stop_lsa8_bi,6,data,-0.10942943668383148
+2,negative,question_stop_lsa8_bi,7,enterprise,-0.107629907274904
+2,negative,question_stop_lsa8_bi,8,lot,-0.10282704491444787
+2,negative,question_stop_lsa8_bi,9,million,-0.09604294910912964
+2,negative,question_stop_lsa8_bi,10,platform,-0.09247238654373206
+2,negative,question_stop_lsa8_bi,11,getting,-0.09085575426718812
+2,negative,question_stop_lsa8_bi,12,approach,-0.08356359354831726
+3,positive,question_stop_lsa8_bi,1,maybe,0.21772514317233654
+3,positive,question_stop_lsa8_bi,2,little,0.20604574176312596
+3,positive,question_stop_lsa8_bi,3,software,0.19484417044133445
+3,positive,question_stop_lsa8_bi,4,bit,0.19081830724929252
+3,positive,question_stop_lsa8_bi,5,little bit,0.18370939573575557
+3,positive,question_stop_lsa8_bi,6,talk,0.10323840000631376
+3,positive,question_stop_lsa8_bi,7,different,0.09071021721835949
+3,positive,question_stop_lsa8_bi,8,data,0.08539412543213044
+3,positive,question_stop_lsa8_bi,9,maybe talk,0.08411494533891307
+3,positive,question_stop_lsa8_bi,10,huge,0.07572748857037509
+3,positive,question_stop_lsa8_bi,11,talk little,0.07356383021778573
+3,positive,question_stop_lsa8_bi,12,maybe just,0.06751115763003214
+3,negative,question_stop_lsa8_bi,1,supply,-0.1830419639942069
+3,negative,question_stop_lsa8_bi,2,disney,-0.17449704808242925
+3,negative,question_stop_lsa8_bi,3,chain,-0.15393940828286992
+3,negative,question_stop_lsa8_bi,4,supply chain,-0.15393940828286992
+3,negative,question_stop_lsa8_bi,5,million,-0.15056910324014813
+3,negative,question_stop_lsa8_bi,6,given,-0.13648028010714067
+3,negative,question_stop_lsa8_bi,7,year,-0.125832781181332
+3,negative,question_stop_lsa8_bi,8,curious,-0.11197793656901661
+3,negative,question_stop_lsa8_bi,9,parks,-0.10754099079157213
+3,negative,question_stop_lsa8_bi,10,advertising,-0.10581060593774395
+3,negative,question_stop_lsa8_bi,11,cash,-0.09904201743194825
+3,negative,question_stop_lsa8_bi,12,capacity,-0.0984915316818913
+4,positive,question_stop_lsa8_bi,1,year,0.24833284549265916
+4,positive,question_stop_lsa8_bi,2,flow,0.16754302632889562
+4,positive,question_stop_lsa8_bi,3,cash,0.1647849776193943
+4,positive,question_stop_lsa8_bi,4,quarter,0.14729541676050367
+4,positive,question_stop_lsa8_bi,5,cash flow,0.14070091421272268
+4,positive,question_stop_lsa8_bi,6,2q,0.13061848732838552
+4,positive,question_stop_lsa8_bi,7,margin,0.10676971270028293
+4,positive,question_stop_lsa8_bi,8,macro,0.0969610730987992
+4,positive,question_stop_lsa8_bi,9,free cash,0.09380060947514847
+4,positive,question_stop_lsa8_bi,10,free,0.09380060947514847
+4,positive,question_stop_lsa8_bi,11,kind,0.09220146405538165
+4,positive,question_stop_lsa8_bi,12,et cetera,0.09073694905458198
+4,negative,question_stop_lsa8_bi,1,app,-0.2010401760857657
+4,negative,question_stop_lsa8_bi,2,disney,-0.1419274900592476
+4,negative,question_stop_lsa8_bi,3,app store,-0.13989224115900342
+4,negative,question_stop_lsa8_bi,4,store,-0.13989224115900342
+4,negative,question_stop_lsa8_bi,5,ad,-0.13196363546874537
+4,negative,question_stop_lsa8_bi,6,tim,-0.12632594942996164
+4,negative,question_stop_lsa8_bi,7,advertising,-0.11766732174636256
+4,negative,question_stop_lsa8_bi,8,platform,-0.11633389278254064
+4,negative,question_stop_lsa8_bi,9,services,-0.11380343995240491
+4,negative,question_stop_lsa8_bi,10,consumers,-0.11345805883952854
+4,negative,question_stop_lsa8_bi,11,term,-0.10895114633460101
+4,negative,question_stop_lsa8_bi,12,china,-0.10274025126301328
+5,positive,question_stop_lsa8_bi,1,million,0.24044206454558872
+5,positive,question_stop_lsa8_bi,2,just,0.193710614886181
+5,positive,question_stop_lsa8_bi,3,follow,0.1673505263233773
+5,positive,question_stop_lsa8_bi,4,hit,0.14114238565695214
+5,positive,question_stop_lsa8_bi,5,actually,0.12777348951899783
+5,positive,question_stop_lsa8_bi,6,year,0.12229588576015712
+5,positive,question_stop_lsa8_bi,7,guys,0.11243365947724608
+5,positive,question_stop_lsa8_bi,8,just follow,0.10798643160071016
+5,positive,question_stop_lsa8_bi,9,net,0.107507360832824
+5,positive,question_stop_lsa8_bi,10,bit,0.10734066273619745
+5,positive,question_stop_lsa8_bi,11,million hit,0.10181086361652184
+5,positive,question_stop_lsa8_bi,12,capacity,0.0962271759780996
+5,negative,question_stop_lsa8_bi,1,software,-0.18114131325708643
+5,negative,question_stop_lsa8_bi,2,supply,-0.1501099452090796
+5,negative,question_stop_lsa8_bi,3,business,-0.13523679011630804
+5,negative,question_stop_lsa8_bi,4,supply chain,-0.13143098218003743
+5,negative,question_stop_lsa8_bi,5,chain,-0.13143098218003743
+5,negative,question_stop_lsa8_bi,6,like,-0.1067245194981637
+5,negative,question_stop_lsa8_bi,7,guess,-0.10637587884117525
+5,negative,question_stop_lsa8_bi,8,term,-0.10604619636680875
+5,negative,question_stop_lsa8_bi,9,long,-0.10172160459523424
+5,negative,question_stop_lsa8_bi,10,2q,-0.09842167444986374
+5,negative,question_stop_lsa8_bi,11,growing,-0.09478819069024998
+5,negative,question_stop_lsa8_bi,12,think,-0.09274752136808097
+6,positive,question_stop_lsa8_bi,1,disney,0.26539522164305235
+6,positive,question_stop_lsa8_bi,2,consumers,0.1566874351337114
+6,positive,question_stop_lsa8_bi,3,europe,0.14080996713497054
+6,positive,question_stop_lsa8_bi,4,parks,0.12757911695137317
+6,positive,question_stop_lsa8_bi,5,maybe,0.12484704465579802
+6,positive,question_stop_lsa8_bi,6,platform,0.11222426875437942
+6,positive,question_stop_lsa8_bi,7,overhead,0.11010418812174191
+6,positive,question_stop_lsa8_bi,8,approach,0.10681874750856717
+6,positive,question_stop_lsa8_bi,9,3q,0.1055341624828661
+6,positive,question_stop_lsa8_bi,10,fiscal 3q,0.0918341957335661
+6,positive,question_stop_lsa8_bi,11,talked,0.08507714384160121
+6,positive,question_stop_lsa8_bi,12,different,0.08481638197946982
+6,negative,question_stop_lsa8_bi,1,million,-0.24772869808216166
+6,negative,question_stop_lsa8_bi,2,term,-0.16348411541486713
+6,negative,question_stop_lsa8_bi,3,data,-0.15303460141922431
+6,negative,question_stop_lsa8_bi,4,ai,-0.12920089953374936
+6,negative,question_stop_lsa8_bi,5,data center,-0.10755944924196978
+6,negative,question_stop_lsa8_bi,6,center,-0.10755944924196978
+6,negative,question_stop_lsa8_bi,7,supply,-0.10442321980846614
+6,negative,question_stop_lsa8_bi,8,enterprise,-0.1038626816806962
+6,negative,question_stop_lsa8_bi,9,hit,-0.10197170421174129
+6,negative,question_stop_lsa8_bi,10,long,-0.09668071120995575
+6,negative,question_stop_lsa8_bi,11,long term,-0.09455530435692244
+6,negative,question_stop_lsa8_bi,12,business,-0.09317854175789202
+7,positive,question_stop_lsa8_bi,1,cash,0.2037745199882387
+7,positive,question_stop_lsa8_bi,2,flow,0.1975935050338174
+7,positive,question_stop_lsa8_bi,3,cash flow,0.18003350506708085
+7,positive,question_stop_lsa8_bi,4,services,0.15484583192897194
+7,positive,question_stop_lsa8_bi,5,app,0.13797425122878493
+7,positive,question_stop_lsa8_bi,6,rate,0.12543309241105036
+7,positive,question_stop_lsa8_bi,7,free cash,0.12002233671138722
+7,positive,question_stop_lsa8_bi,8,free,0.12002233671138722
+7,positive,question_stop_lsa8_bi,9,growth rate,0.11302557096931101
+7,positive,question_stop_lsa8_bi,10,store,0.11236134936270882
+7,positive,question_stop_lsa8_bi,11,app store,0.11236134936270882
+7,positive,question_stop_lsa8_bi,12,year,0.10825022358032628
+7,negative,question_stop_lsa8_bi,1,china,-0.13691296326323493
+7,negative,question_stop_lsa8_bi,2,kind,-0.1294075875526117
+7,negative,question_stop_lsa8_bi,3,seeing,-0.12238074260539923
+7,negative,question_stop_lsa8_bi,4,supply,-0.10266711341942895
+7,negative,question_stop_lsa8_bi,5,wanted,-0.10184775624184354
+7,negative,question_stop_lsa8_bi,6,half,-0.09679161042634957
+7,negative,question_stop_lsa8_bi,7,enterprise,-0.09411642572637731
+7,negative,question_stop_lsa8_bi,8,supply chain,-0.08761544320217311
+7,negative,question_stop_lsa8_bi,9,chain,-0.08761544320217311
+7,negative,question_stop_lsa8_bi,10,just,-0.08466729616382968
+7,negative,question_stop_lsa8_bi,11,given,-0.08396345533102703
+7,negative,question_stop_lsa8_bi,12,ago,-0.0834941273115203
+8,positive,question_stop_lsa8_bi,1,million,0.2624774361138465
+8,positive,question_stop_lsa8_bi,2,guys,0.1726604781489842
+8,positive,question_stop_lsa8_bi,3,term,0.12361456575668313
+8,positive,question_stop_lsa8_bi,4,hit,0.12146753785696865
+8,positive,question_stop_lsa8_bi,5,like,0.12008920628830484
+8,positive,question_stop_lsa8_bi,6,market,0.1135205915315448
+8,positive,question_stop_lsa8_bi,7,capacity,0.10721821748901987
+8,positive,question_stop_lsa8_bi,8,million hit,0.09570551917656156
+8,positive,question_stop_lsa8_bi,9,net,0.0927886603163783
+8,positive,question_stop_lsa8_bi,10,going,0.09130738948157148
+8,positive,question_stop_lsa8_bi,11,long,0.08996933701660251
+8,positive,question_stop_lsa8_bi,12,guess,0.0893786116612115
+8,negative,question_stop_lsa8_bi,1,data center,-0.234359583837117
+8,negative,question_stop_lsa8_bi,2,center,-0.234359583837117
+8,negative,question_stop_lsa8_bi,3,data,-0.23189885027997093
+8,negative,question_stop_lsa8_bi,4,ai,-0.19503988519742796
+8,negative,question_stop_lsa8_bi,5,enterprise,-0.17774508615977166
+8,negative,question_stop_lsa8_bi,6,second question,-0.11939138628952929
+8,negative,question_stop_lsa8_bi,7,silicon,-0.1134691929078705
+8,negative,question_stop_lsa8_bi,8,year,-0.10712601627381271
+8,negative,question_stop_lsa8_bi,9,clarification,-0.09756621319393874
+8,negative,question_stop_lsa8_bi,10,quarters,-0.08950976377083021
+8,negative,question_stop_lsa8_bi,11,ad,-0.08898459647880215
+8,negative,question_stop_lsa8_bi,12,app,-0.08834258318214698

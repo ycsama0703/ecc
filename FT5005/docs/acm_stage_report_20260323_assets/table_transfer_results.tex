@@ -1,0 +1,18 @@
+
+\begin{table}[t]
+\caption{Representative transfer-side routes from the pooled temporal benchmark and the later local hardest-question branch.}
+\label{tab:transfer-results}
+\begin{tabularx}{\columnwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+Route & Representative $R^2$ \\
+\midrule
+Pre-call market only & 0.997886 \\
+Retained semantic+audio gate & 0.997878 \\
+Validation-selected transfer expert & 0.997879 \\
+Consensus fallback to market baseline & 0.997919 \\
+Hard abstention (latest-window local shell) & 0.998636 \\
+Hardest-question non-structural LSA(4) & \textbf{0.998655} \\
+Question supervised compact subspace (best PLS) & 0.998586 \\
+\bottomrule
+\end{tabularx}
+\end{table}

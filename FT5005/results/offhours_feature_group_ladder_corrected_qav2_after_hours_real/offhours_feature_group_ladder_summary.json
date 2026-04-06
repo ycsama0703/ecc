@@ -1,0 +1,681 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [],
+  "split_sizes": {
+    "train": 101,
+    "val": 32,
+    "test": 71
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "within_call_market": [
+      "within_call_rv",
+      "within_call_vw_rv",
+      "within_call_volume_sum"
+    ],
+    "market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum",
+      "within_call_rv",
+      "within_call_vw_rv",
+      "within_call_volume_sum"
+    ],
+    "controls": [
+      "call_duration_min",
+      "scheduled_hour_et",
+      "revenue_surprise_pct",
+      "ebitda_surprise_pct",
+      "eps_gaap_surprise_pct",
+      "analyst_eps_norm_num_est",
+      "analyst_eps_norm_std",
+      "analyst_revenue_num_est",
+      "analyst_revenue_std",
+      "analyst_net_income_num_est",
+      "analyst_net_income_std"
+    ],
+    "a1_a2_structure": [
+      "a1_component_count",
+      "a1_question_count",
+      "a1_answer_count",
+      "a1_qna_component_share",
+      "a1_total_text_words",
+      "a1_unique_speaker_count",
+      "a2_paragraph_count",
+      "a2_visible_word_count",
+      "a2_size_ratio_vs_group",
+      "a2_text_ratio_vs_group"
+    ],
+    "a4_structure": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "ecc_structure": [
+      "a1_component_count",
+      "a1_question_count",
+      "a1_answer_count",
+      "a1_qna_component_share",
+      "a1_total_text_words",
+      "a1_unique_speaker_count",
+      "a2_paragraph_count",
+      "a2_visible_word_count",
+      "a2_size_ratio_vs_group",
+      "a2_text_ratio_vs_group",
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qna_lsa_components": 64
+  },
+  "models": {
+    "prior_only": {
+      "family": "prior_passthrough",
+      "feature_bundles": [],
+      "feature_count": 1,
+      "val": {
+        "mae": 0.0015388856862868032,
+        "rmse": 0.004149694398833361,
+        "r2": 0.02970023908994346
+      },
+      "test": {
+        "mae": 0.0015399194858940356,
+        "rmse": 0.003083930493836377,
+        "r2": 0.035195971873755005
+      }
+    },
+    "residual_pre_call_market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market"
+      ],
+      "feature_count": 6,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.00064512186676967,
+        "rmse": 0.0008315874743890012,
+        "r2": 0.961033663766404
+      },
+      "test": {
+        "mae": 0.0007142185100887913,
+        "rmse": 0.0008998576063026622,
+        "r2": 0.9178556817723065
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0014457042196615259,
+          "abs_coefficient": 0.0014457042196615259
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": 0.0004874935953901496,
+          "abs_coefficient": 0.0004874935953901496
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00020590347341009954,
+          "abs_coefficient": 0.00020590347341009954
+        },
+        {
+          "feature": "html_integrity_flag=warn",
+          "coefficient": 5.7614313315361354e-05,
+          "abs_coefficient": 5.7614313315361354e-05
+        },
+        {
+          "feature": "html_integrity_flag=fail",
+          "coefficient": -1.887748542003226e-05,
+          "abs_coefficient": 1.887748542003226e-05
+        },
+        {
+          "feature": "html_integrity_flag=pass",
+          "coefficient": 1.2056319779741626e-06,
+          "abs_coefficient": 1.2056319779741626e-06
+        }
+      ]
+    },
+    "residual_market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market"
+      ],
+      "feature_count": 9,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0006381795593416019,
+        "rmse": 0.0008165288984646673,
+        "r2": 0.9624321090287066
+      },
+      "test": {
+        "mae": 0.0007639586029489388,
+        "rmse": 0.0009921040447063792,
+        "r2": 0.9001508468452806
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0012782995258833554,
+          "abs_coefficient": 0.0012782995258833554
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00033082106102186315,
+          "abs_coefficient": 0.00033082106102186315
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": 0.00030576894472944657,
+          "abs_coefficient": 0.00030576894472944657
+        },
+        {
+          "feature": "within_call_rv",
+          "coefficient": 0.00022410688028517918,
+          "abs_coefficient": 0.00022410688028517918
+        },
+        {
+          "feature": "within_call_vw_rv",
+          "coefficient": -0.00021111487806768918,
+          "abs_coefficient": 0.00021111487806768918
+        },
+        {
+          "feature": "within_call_volume_sum",
+          "coefficient": -0.00015433314167235176,
+          "abs_coefficient": 0.00015433314167235176
+        },
+        {
+          "feature": "html_integrity_flag=warn",
+          "coefficient": 4.446244873677564e-05,
+          "abs_coefficient": 4.446244873677564e-05
+        },
+        {
+          "feature": "html_integrity_flag=fail",
+          "coefficient": -1.3299143261104125e-05,
+          "abs_coefficient": 1.3299143261104125e-05
+        },
+        {
+          "feature": "html_integrity_flag=pass",
+          "coefficient": -2.958012009553908e-07,
+          "abs_coefficient": 2.958012009553908e-07
+        }
+      ]
+    },
+    "residual_market_plus_controls": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls"
+      ],
+      "feature_count": 23,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0005781225815631365,
+        "rmse": 0.0006965686074326047,
+        "r2": 0.9726598123382489
+      },
+      "test": {
+        "mae": 0.0007745295636294412,
+        "rmse": 0.0010266550568437352,
+        "r2": 0.8930750522490818
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005853490715510426,
+          "abs_coefficient": 0.0005853490715510426
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00045969556661320816,
+          "abs_coefficient": 0.00045969556661320816
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00033010261463149065,
+          "abs_coefficient": 0.00033010261463149065
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0003279728707496501,
+          "abs_coefficient": 0.0003279728707496501
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00021831344805217558,
+          "abs_coefficient": 0.00021831344805217558
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00016855313071477562,
+          "abs_coefficient": 0.00016855313071477562
+        },
+        {
+          "feature": "analyst_eps_norm_num_est",
+          "coefficient": -0.0001564157527327809,
+          "abs_coefficient": 0.0001564157527327809
+        },
+        {
+          "feature": "within_call_rv",
+          "coefficient": 0.00013687320706256957,
+          "abs_coefficient": 0.00013687320706256957
+        },
+        {
+          "feature": "within_call_vw_rv",
+          "coefficient": -0.00013101104665572813,
+          "abs_coefficient": 0.00013101104665572813
+        },
+        {
+          "feature": "eps_gaap_surprise_pct",
+          "coefficient": -0.00011806954872203638,
+          "abs_coefficient": 0.00011806954872203638
+        }
+      ]
+    },
+    "residual_market_controls_plus_a1_a2": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "a1_a2_structure"
+      ],
+      "feature_count": 36,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005110267640399254,
+        "rmse": 0.0006358359551780191,
+        "r2": 0.9772194680769671
+      },
+      "test": {
+        "mae": 0.0007435015483762162,
+        "rmse": 0.0010270961877197537,
+        "r2": 0.8929831459577647
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005525032635179728,
+          "abs_coefficient": 0.0005525032635179728
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0004998313611263869,
+          "abs_coefficient": 0.0004998313611263869
+        },
+        {
+          "feature": "a1_unique_speaker_count",
+          "coefficient": -0.00038932624067808706,
+          "abs_coefficient": 0.00038932624067808706
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0002327298995614713,
+          "abs_coefficient": 0.0002327298995614713
+        },
+        {
+          "feature": "a2_text_ratio_vs_group",
+          "coefficient": -0.00018821739877691082,
+          "abs_coefficient": 0.00018821739877691082
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00017524203529261634,
+          "abs_coefficient": 0.00017524203529261634
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00016932898918356153,
+          "abs_coefficient": 0.00016932898918356153
+        },
+        {
+          "feature": "a2_paragraph_count",
+          "coefficient": 0.00016476879964175118,
+          "abs_coefficient": 0.00016476879964175118
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0001640289127668478,
+          "abs_coefficient": 0.0001640289127668478
+        },
+        {
+          "feature": "a1_question_count",
+          "coefficient": 0.00012403664236624725,
+          "abs_coefficient": 0.00012403664236624725
+        }
+      ]
+    },
+    "residual_market_controls_plus_a4": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "a4_structure"
+      ],
+      "feature_count": 31,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004948551266497748,
+        "rmse": 0.0006048179380424363,
+        "r2": 0.9793878629384944
+      },
+      "test": {
+        "mae": 0.0007191219739463434,
+        "rmse": 0.001033043733106929,
+        "r2": 0.8917401651350223
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005529488453189015,
+          "abs_coefficient": 0.0005529488453189015
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005292233633206315,
+          "abs_coefficient": 0.0005292233633206315
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0003136888300660017,
+          "abs_coefficient": 0.0003136888300660017
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00023476961297683014,
+          "abs_coefficient": 0.00023476961297683014
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00022205171072747426,
+          "abs_coefficient": 0.00022205171072747426
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.0001716890367387095,
+          "abs_coefficient": 0.0001716890367387095
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00016163962637545234,
+          "abs_coefficient": 0.00016163962637545234
+        },
+        {
+          "feature": "within_call_volume_sum",
+          "coefficient": -0.00014300302425824366,
+          "abs_coefficient": 0.00014300302425824366
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00011450537671734055,
+          "abs_coefficient": 0.00011450537671734055
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00011340586951360272,
+          "abs_coefficient": 0.00011340586951360272
+        }
+      ]
+    },
+    "residual_market_controls_plus_ecc_structure": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "ecc_structure"
+      ],
+      "feature_count": 41,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004817671937046127,
+        "rmse": 0.0005736586817425538,
+        "r2": 0.9814569642191422
+      },
+      "test": {
+        "mae": 0.0007735727016782834,
+        "rmse": 0.0011413813493540048,
+        "r2": 0.8678425991128436
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005798432796960862,
+          "abs_coefficient": 0.0005798432796960862
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005366050135783757,
+          "abs_coefficient": 0.0005366050135783757
+        },
+        {
+          "feature": "a1_unique_speaker_count",
+          "coefficient": -0.00032680472414653856,
+          "abs_coefficient": 0.00032680472414653856
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00026923500579585977,
+          "abs_coefficient": 0.00026923500579585977
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00018693291607490076,
+          "abs_coefficient": 0.00018693291607490076
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00017571694443926927,
+          "abs_coefficient": 0.00017571694443926927
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.0001737418184841274,
+          "abs_coefficient": 0.0001737418184841274
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00015085830725674186,
+          "abs_coefficient": 0.00015085830725674186
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00015074667469775597,
+          "abs_coefficient": 0.00015074667469775597
+        },
+        {
+          "feature": "a2_text_ratio_vs_group",
+          "coefficient": -0.00014901329772817713,
+          "abs_coefficient": 0.00014901329772817713
+        }
+      ]
+    },
+    "residual_market_controls_plus_ecc_structure_plus_qna_lsa": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "market",
+        "controls",
+        "ecc_structure",
+        "qna_lsa"
+      ],
+      "feature_count": 105,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0003340445674910878,
+        "rmse": 0.00048380847576705863,
+        "r2": 0.9868107336088193
+      },
+      "test": {
+        "mae": 0.0006069960020704879,
+        "rmse": 0.0008564504580794303,
+        "r2": 0.925589463224904
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.000552803697830218,
+          "abs_coefficient": 0.000552803697830218
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005432021251656374,
+          "abs_coefficient": 0.0005432021251656374
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00023101293168721214,
+          "abs_coefficient": 0.00023101293168721214
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00021232649837654933,
+          "abs_coefficient": 0.00021232649837654933
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00020656031595329787,
+          "abs_coefficient": 0.00020656031595329787
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": 0.0001869816624723967,
+          "abs_coefficient": 0.0001869816624723967
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00016134169346354967,
+          "abs_coefficient": 0.00016134169346354967
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00014660426854591995,
+          "abs_coefficient": 0.00014660426854591995
+        },
+        {
+          "feature": "qna_text_lsa_18",
+          "coefficient": 0.00013899147080243066,
+          "abs_coefficient": 0.00013899147080243066
+        },
+        {
+          "feature": "qna_text_lsa_20",
+          "coefficient": -0.0001323267444949174,
+          "abs_coefficient": 0.0001323267444949174
+        }
+      ]
+    }
+  },
+  "significance": {
+    "prior_only__vs__residual_pre_call_market_only": {
+      "rmse_diff_mean": 0.0021058985413804606,
+      "rmse_diff_ci_low": 0.0006825108631262419,
+      "rmse_diff_ci_high": 0.003649104577274534,
+      "mae_diff_mean": 0.0008327974426780196,
+      "mae_diff_ci_low": 0.0002915335735925682,
+      "mae_diff_ci_high": 0.00152489837026232,
+      "r2_gain_mean": 0.8567448863025391,
+      "r2_gain_ci_low": 0.5871081697521648,
+      "r2_gain_ci_high": 1.0258613664659701,
+      "mse_gain_mean": 8.700883579193125e-06,
+      "mse_gain_pvalue": 0.00075,
+      "mae_gain_mean": 0.0008257009758052441,
+      "mae_gain_pvalue": 0.002
+    },
+    "residual_pre_call_market_only__vs__residual_market_only": {
+      "rmse_diff_mean": -9.277710569990134e-05,
+      "rmse_diff_ci_low": -0.0001872980981013172,
+      "rmse_diff_ci_high": -9.071608674378181e-06,
+      "mae_diff_mean": -4.967090020147598e-05,
+      "mae_diff_ci_low": -0.00014841820953071528,
+      "mae_diff_ci_high": 3.636234525517436e-05,
+      "r2_gain_mean": -0.02195011433068269,
+      "r2_gain_ci_low": -0.06450572557075342,
+      "r2_gain_ci_high": -0.0020334405688151786,
+      "mse_gain_mean": -1.7452672390200032e-07,
+      "mse_gain_pvalue": 0.043,
+      "mae_gain_mean": -4.974009286014762e-05,
+      "mae_gain_pvalue": 0.30125
+    },
+    "residual_market_only__vs__residual_market_plus_controls": {
+      "rmse_diff_mean": -3.3604023334842426e-05,
+      "rmse_diff_ci_low": -0.00018351187482325575,
+      "rmse_diff_ci_high": 9.71264971216247e-05,
+      "mae_diff_mean": -1.0534911261984776e-05,
+      "mae_diff_ci_low": -0.00011675401642344217,
+      "mae_diff_ci_high": 8.862222821827664e-05,
+      "r2_gain_mean": -0.007043224640778104,
+      "r2_gain_ci_low": -0.05340422068103208,
+      "r2_gain_ci_high": 0.03609171831777519,
+      "mse_gain_mean": -6.9750170220056e-08,
+      "mse_gain_pvalue": 0.6765,
+      "mae_gain_mean": -1.0570960680502468e-05,
+      "mae_gain_pvalue": 0.86475
+    },
+    "residual_market_plus_controls__vs__residual_market_controls_plus_a1_a2": {
+      "rmse_diff_mean": 1.7617652738449502e-07,
+      "rmse_diff_ci_low": -8.416508677513893e-05,
+      "rmse_diff_ci_high": 8.642459846142557e-05,
+      "mae_diff_mean": 3.139014587379492e-05,
+      "mae_diff_ci_low": -3.368139734739476e-05,
+      "mae_diff_ci_high": 0.00010147120488626521,
+      "r2_gain_mean": -0.0012297247518173171,
+      "r2_gain_ci_low": -0.03200993233232499,
+      "r2_gain_ci_high": 0.02193044390950087,
+      "mse_gain_mean": -9.059730856379743e-10,
+      "mse_gain_pvalue": 0.992,
+      "mae_gain_mean": 3.102801525322516e-05,
+      "mae_gain_pvalue": 0.37725
+    },
+    "residual_market_plus_controls__vs__residual_market_controls_plus_a4": {
+      "rmse_diff_mean": -4.568788458268075e-06,
+      "rmse_diff_ci_low": -8.035371315969594e-05,
+      "rmse_diff_ci_high": 7.359175942856223e-05,
+      "mae_diff_mean": 5.443951370577748e-05,
+      "mae_diff_ci_low": -2.1862744720778618e-05,
+      "mae_diff_ci_high": 0.00013288427488831504,
+      "r2_gain_mean": 9.750307201371321e-07,
+      "r2_gain_ci_low": -0.020277456863947094,
+      "r2_gain_ci_high": 0.03022583158995642,
+      "mse_gain_mean": -1.3158748768686949e-08,
+      "mse_gain_pvalue": 0.8835,
+      "mae_gain_mean": 5.540758968309786e-05,
+      "mae_gain_pvalue": 0.16925
+    },
+    "residual_market_plus_controls__vs__residual_market_controls_plus_ecc_structure": {
+      "rmse_diff_mean": -0.00011158881138056665,
+      "rmse_diff_ci_low": -0.00022017619256857747,
+      "rmse_diff_ci_high": -1.92008454377408e-06,
+      "mae_diff_mean": 7.436385321097077e-07,
+      "mae_diff_ci_low": -9.152243754968528e-05,
+      "mae_diff_ci_high": 9.127603365768978e-05,
+      "r2_gain_mean": -0.028847068248227425,
+      "r2_gain_ci_low": -0.07440459787805732,
+      "r2_gain_ci_high": -0.0006381239820518411,
+      "mse_gain_mean": -2.4873077891035554e-07,
+      "mse_gain_pvalue": 0.0795,
+      "mae_gain_mean": 9.568619511580018e-07,
+      "mae_gain_pvalue": 0.9825
+    },
+    "residual_market_controls_plus_ecc_structure__vs__residual_market_controls_plus_ecc_structure_plus_qna_lsa": {
+      "rmse_diff_mean": 0.0002834023804474597,
+      "rmse_diff_ci_low": 9.273195879931604e-05,
+      "rmse_diff_ci_high": 0.0005195599664107338,
+      "mae_diff_mean": 0.00016791591919018968,
+      "mae_diff_ci_low": 4.561678179067744e-05,
+      "mae_diff_ci_high": 0.000313990752869438,
+      "r2_gain_mean": 0.06868863634372832,
+      "r2_gain_ci_low": 0.01750831323993066,
+      "r2_gain_ci_high": 0.16041276777402017,
+      "mse_gain_mean": 5.69243997508703e-07,
+      "mse_gain_pvalue": 0.00275,
+      "mae_gain_mean": 0.00016657669960779545,
+      "mae_gain_pvalue": 0.006
+    }
+  }
+}

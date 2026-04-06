@@ -1,0 +1,354 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "gate_feature": "a4_strict_row_share",
+  "fixed_split": {
+    "lsa_components": 64,
+    "split_sizes": {
+      "train": 89,
+      "val": 23,
+      "test": 60
+    },
+    "gate_feature": "a4_strict_row_share",
+    "selected_threshold": 0.5814,
+    "selected_threshold_metrics": {
+      "threshold": 0.5814,
+      "activation_rate": 1.0,
+      "rmse": 0.0007325382398322524,
+      "r2": 0.9776256789770844
+    },
+    "test_activation_rate": 1.0,
+    "models": {
+      "residual_pre_call_market_only": {
+        "test": {
+          "mae": 0.0007796617701334478,
+          "rmse": 0.0009634630929242406,
+          "r2": 0.9173936955166082
+        }
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "test": {
+          "mae": 0.0006487831398731609,
+          "rmse": 0.0009050126756930325,
+          "r2": 0.9271126178949579
+        }
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "test": {
+          "mae": 0.0006487831398731609,
+          "rmse": 0.0009050126756930325,
+          "r2": 0.9271126178949579
+        }
+      }
+    },
+    "significance": {
+      "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "rmse_diff_mean": 0.0,
+        "rmse_diff_ci_low": 0.0,
+        "rmse_diff_ci_high": 0.0,
+        "mae_diff_mean": 0.0,
+        "mae_diff_ci_low": 0.0,
+        "mae_diff_ci_high": 0.0,
+        "r2_gain_mean": 0.0,
+        "r2_gain_ci_low": 0.0,
+        "r2_gain_ci_high": 0.0,
+        "mse_gain_mean": 0.0,
+        "mse_gain_pvalue": 1.0,
+        "mae_gain_mean": 0.0,
+        "mae_gain_pvalue": 1.0
+      },
+      "residual_pre_call_market_only__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "rmse_diff_mean": 6.077687002962662e-05,
+        "rmse_diff_ci_low": -1.4432150343505762e-05,
+        "rmse_diff_ci_high": 0.00014173139312798462,
+        "mae_diff_mean": 0.00013100915783039493,
+        "mae_diff_ci_low": 5.6657264973562883e-05,
+        "mae_diff_ci_high": 0.0002087010564309295,
+        "r2_gain_mean": 0.012476665500771346,
+        "r2_gain_ci_low": -0.003170367723329728,
+        "r2_gain_ci_high": 0.04209803774192516,
+        "mse_gain_mean": 1.0921318826208138e-07,
+        "mse_gain_pvalue": 0.11925,
+        "mae_gain_mean": 0.000130878630260287,
+        "mae_gain_pvalue": 0.001
+      }
+    }
+  },
+  "unseen_ticker": {
+    "lsa_components": 4,
+    "gate_feature": "a4_strict_row_share",
+    "candidate_tickers": 9,
+    "evaluated_tickers": 9,
+    "skipped_tickers": {},
+    "overall_test_size": 60,
+    "overall": {
+      "residual_pre_call_market_only": {
+        "mae": 6.755971064720823e-05,
+        "rmse": 0.00013060370956904935,
+        "r2": 0.9984820619311995
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 7.755330539517128e-05,
+        "rmse": 0.000135326395182483,
+        "r2": 0.9983702985406684
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 7.41241933580259e-05,
+        "rmse": 0.00013267120212555921,
+        "r2": 0.9984336227873642
+      }
+    },
+    "median_ticker_r2": {
+      "residual_pre_call_market_only": 0.9954270449002914,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": 0.9951938928091829,
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.995343211085927
+    },
+    "mean_test_activation_rate": 0.7994708994708994,
+    "significance": {
+      "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "rmse_diff_mean": 2.655619303401917e-06,
+        "rmse_diff_ci_low": -8.391612489072548e-08,
+        "rmse_diff_ci_high": 5.804354296146339e-06,
+        "mae_diff_mean": 3.414620629445461e-06,
+        "mae_diff_ci_low": -6.801755907513467e-07,
+        "mae_diff_ci_high": 8.16788646877781e-06,
+        "r2_gain_mean": 8.113905617263859e-05,
+        "r2_gain_ci_low": -1.6650625667830041e-06,
+        "r2_gain_ci_high": 0.000281437715991953,
+        "mse_gain_mean": 7.115853596445633e-10,
+        "mse_gain_pvalue": 0.11025,
+        "mae_gain_mean": 3.4291120371453532e-06,
+        "mae_gain_pvalue": 0.146
+      },
+      "residual_pre_call_market_only__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "rmse_diff_mean": -2.231839915113766e-06,
+        "rmse_diff_ci_low": -1.1171090136946215e-05,
+        "rmse_diff_ci_high": 5.16508513210253e-06,
+        "mae_diff_mean": -6.57239074364494e-06,
+        "mae_diff_ci_low": -1.3882448746394478e-05,
+        "mae_diff_ci_high": 5.624815174235842e-07,
+        "r2_gain_mean": -8.74673817346592e-05,
+        "r2_gain_ci_low": -0.00048269189104266363,
+        "r2_gain_ci_high": 8.563675994805177e-05,
+        "mse_gain_mean": -5.443189202443975e-10,
+        "mse_gain_pvalue": 0.61475,
+        "mae_gain_mean": -6.564482710817688e-06,
+        "mae_gain_pvalue": 0.0815
+      }
+    },
+    "by_ticker": {
+      "AAPL": {
+        "threshold": 0.62779,
+        "val_activation_rate": 0.9,
+        "test_activation_rate": 1.0,
+        "residual_pre_call_market_only": {
+          "mae": 5.9074767862726295e-05,
+          "rmse": 7.032460916127549e-05,
+          "r2": 0.9945024082810162,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 7.252477881902992e-05,
+          "rmse": 8.38402689822611e-05,
+          "r2": 0.9921861844502055,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 7.252477881902992e-05,
+          "rmse": 8.38402689822611e-05,
+          "r2": 0.9921861844502055,
+          "n": 5
+        }
+      },
+      "AMGN": {
+        "threshold": 0.6396299999999999,
+        "val_activation_rate": 0.8636363636363636,
+        "test_activation_rate": 0.6,
+        "residual_pre_call_market_only": {
+          "mae": 0.00019395354638911529,
+          "rmse": 0.0002590017889482355,
+          "r2": 0.7517550208617053,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 0.0001947802398373754,
+          "rmse": 0.0002788835568140226,
+          "r2": 0.7121801362655014,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 0.00019922397860938417,
+          "rmse": 0.00027230670521199177,
+          "r2": 0.7255952551199015,
+          "n": 5
+        }
+      },
+      "AMZN": {
+        "threshold": 0.69665,
+        "val_activation_rate": 0.5,
+        "test_activation_rate": 1.0,
+        "residual_pre_call_market_only": {
+          "mae": 6.991755441177406e-05,
+          "rmse": 0.00013869035106716933,
+          "r2": 0.983220154930918,
+          "n": 6
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 8.954797175309282e-05,
+          "rmse": 0.00013755106721514287,
+          "r2": 0.9834947016060206,
+          "n": 6
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 8.954797175309282e-05,
+          "rmse": 0.00013755106721514287,
+          "r2": 0.9834947016060206,
+          "n": 6
+        }
+      },
+      "CSCO": {
+        "threshold": 0.62779,
+        "val_activation_rate": 0.9,
+        "test_activation_rate": 0.6666666666666666,
+        "residual_pre_call_market_only": {
+          "mae": 9.366670114797247e-05,
+          "rmse": 0.0002004226705212506,
+          "r2": 0.9954270449002914,
+          "n": 9
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 0.0001146954106789955,
+          "rmse": 0.00020546842991914915,
+          "r2": 0.9951938928091829,
+          "n": 9
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 0.00010213519269925548,
+          "rmse": 0.0002022514538565081,
+          "r2": 0.995343211085927,
+          "n": 9
+        }
+      },
+      "DIS": {
+        "threshold": 0.5814,
+        "val_activation_rate": 1.0,
+        "test_activation_rate": 1.0,
+        "residual_pre_call_market_only": {
+          "mae": 2.8788684503002717e-05,
+          "rmse": 3.1252962542749666e-05,
+          "r2": 0.9992212504004461,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 3.9332677414906595e-05,
+          "rmse": 4.892517463632175e-05,
+          "r2": 0.9980915524771555,
+          "n": 5
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 3.9332677414906595e-05,
+          "rmse": 4.892517463632175e-05,
+          "r2": 0.9980915524771555,
+          "n": 5
+        }
+      },
+      "IBM": {
+        "threshold": 0.6281,
+        "val_activation_rate": 0.9047619047619048,
+        "test_activation_rate": 1.0,
+        "residual_pre_call_market_only": {
+          "mae": 3.760185850851203e-05,
+          "rmse": 4.672693538507054e-05,
+          "r2": 0.9991543915153751,
+          "n": 7
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 6.0869533041665856e-05,
+          "rmse": 7.051819117850763e-05,
+          "r2": 0.9980740852344409,
+          "n": 7
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 6.0869533041665856e-05,
+          "rmse": 7.051819117850763e-05,
+          "r2": 0.9980740852344409,
+          "n": 7
+        }
+      },
+      "MSFT": {
+        "threshold": 0.69655,
+        "val_activation_rate": 0.5,
+        "test_activation_rate": 0.42857142857142855,
+        "residual_pre_call_market_only": {
+          "mae": 1.7058055071584603e-05,
+          "rmse": 2.0238518167474804e-05,
+          "r2": 0.9413915768914758,
+          "n": 7
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 1.3928176040249389e-05,
+          "rmse": 1.7323377718876765e-05,
+          "r2": 0.9570594340221624,
+          "n": 7
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 1.6906146581033868e-05,
+          "rmse": 1.9484074873678087e-05,
+          "r2": 0.9456796956849973,
+          "n": 7
+        }
+      },
+      "NKE": {
+        "threshold": 0.5814,
+        "val_activation_rate": 1.0,
+        "test_activation_rate": 1.0,
+        "residual_pre_call_market_only": {
+          "mae": 4.4571608727018184e-05,
+          "rmse": 6.966728706330737e-05,
+          "r2": 0.9963126393698838,
+          "n": 8
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 3.856522713555586e-05,
+          "rmse": 6.316261873971624e-05,
+          "r2": 0.9969690548855824,
+          "n": 8
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 3.856522713555586e-05,
+          "rmse": 6.316261873971624e-05,
+          "r2": 0.9969690548855824,
+          "n": 8
+        }
+      },
+      "NVDA": {
+        "threshold": 0.6396299999999999,
+        "val_activation_rate": 0.8636363636363636,
+        "test_activation_rate": 0.5,
+        "residual_pre_call_market_only": {
+          "mae": 8.034996792238172e-05,
+          "rmse": 0.00012475277238279325,
+          "r2": 0.9995731480956285,
+          "n": 8
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+          "mae": 8.979469200829332e-05,
+          "rmse": 0.00011208015749762127,
+          "r2": 0.9996554642620715,
+          "n": 8
+        },
+        "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+          "mae": 7.282353600121881e-05,
+          "rmse": 0.00010438748278570272,
+          "r2": 0.9997011359605983,
+          "n": 8
+        }
+      }
+    }
+  }
+}

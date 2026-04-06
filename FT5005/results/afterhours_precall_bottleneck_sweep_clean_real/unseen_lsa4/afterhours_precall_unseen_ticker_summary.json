@@ -1,0 +1,457 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "prior_only": {
+      "mae": 0.0019021485078033428,
+      "rmse": 0.0035445719653678215,
+      "r2": -0.1180741957523701
+    },
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_controls": {
+      "mae": 8.310498245921939e-05,
+      "rmse": 0.00013535350046082394,
+      "r2": 0.9983696456313008
+    },
+    "residual_pre_call_market_plus_a4": {
+      "mae": 7.65483310004972e-05,
+      "rmse": 0.00014104500068784346,
+      "r2": 0.9982296529057315
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+      "mae": 7.755345540921158e-05,
+      "rmse": 0.00013532689776945295,
+      "r2": 0.998370286435591
+    },
+    "residual_pre_call_market_plus_controls_plus_a4": {
+      "mae": 9.130623089599362e-05,
+      "rmse": 0.00014781282652861317,
+      "r2": 0.998055682113011
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+      "mae": 9.757064546051445e-05,
+      "rmse": 0.0001474646736713935,
+      "r2": 0.9980648304751341
+    }
+  },
+  "median_ticker_r2": {
+    "prior_only": -0.4814445962507492,
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_controls": 0.9928629463910508,
+    "residual_pre_call_market_plus_a4": 0.9949477272110294,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": 0.9951938826520538,
+    "residual_pre_call_market_plus_controls_plus_a4": 0.9941241943899779,
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": 0.9914542521586525
+  },
+  "by_ticker": {
+    "AAPL": {
+      "prior_only": {
+        "mae": 0.0008635336455696203,
+        "rmse": 0.0009753102657720546,
+        "r2": -0.057410016928523655,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 8.356705937643094e-05,
+        "rmse": 8.93951475595083e-05,
+        "r2": 0.9911164669909258,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 6.705818901086902e-05,
+        "rmse": 7.718627088687973e-05,
+        "r2": 0.9933772563052323,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00012741429781227003,
+        "rmse": 0.00013943167333489414,
+        "r2": 0.97838870915675,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00013460593632282268,
+        "rmse": 0.0001514441343924617,
+        "r2": 0.9745045463589487,
+        "n": 5
+      }
+    },
+    "AMGN": {
+      "prior_only": {
+        "mae": 0.000588558582278481,
+        "rmse": 0.0007259269278463547,
+        "r2": -0.9501174078419159,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 0.0002046495130644856,
+        "rmse": 0.00025731536480963843,
+        "r2": 0.7549772640158917,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 0.00017975681237770267,
+        "rmse": 0.0002716745295034654,
+        "r2": 0.7268678690369479,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.00019478020001389962,
+        "rmse": 0.0002788838339162639,
+        "r2": 0.7121795643022787,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00019180943446581145,
+        "rmse": 0.00026117783304784346,
+        "r2": 0.7475661596321479,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00018806427252927892,
+        "rmse": 0.0002663574188485784,
+        "r2": 0.7374545227894707,
+        "n": 5
+      }
+    },
+    "AMZN": {
+      "prior_only": {
+        "mae": 0.0010484594936708864,
+        "rmse": 0.0011417296808001387,
+        "r2": -0.13716120273590393,
+        "n": 6
+      },
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 7.193396163938469e-05,
+        "rmse": 0.00013328121959451354,
+        "r2": 0.9845035090190332,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 7.749407118137618e-05,
+        "rmse": 0.0001292729985590898,
+        "r2": 0.9854215585530909,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 9.540631278636173e-05,
+        "rmse": 0.00014758399589947558,
+        "r2": 0.9809991083535919,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00010640444636187958,
+        "rmse": 0.0001580551065631583,
+        "r2": 0.9782072259805645,
+        "n": 6
+      }
+    },
+    "CSCO": {
+      "prior_only": {
+        "mae": 0.0022920649639249636,
+        "rmse": 0.003607373271152904,
+        "r2": -0.4814445962507492,
+        "n": 9
+      },
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 0.0001204807463874016,
+        "rmse": 0.00019109833297868044,
+        "r2": 0.9958426456285325,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 9.884647038912764e-05,
+        "rmse": 0.0002106647012163088,
+        "r2": 0.9949477272110294,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001146947882964278,
+        "rmse": 0.00020546864703543542,
+        "r2": 0.9951938826520538,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.00010069097404729536,
+        "rmse": 0.00020909831364631442,
+        "r2": 0.9950225797690655,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001256009392662716,
+        "rmse": 0.00019473365503155585,
+        "r2": 0.9956829678912675,
+        "n": 9
+      }
+    },
+    "DIS": {
+      "prior_only": {
+        "mae": 0.0008173111392405065,
+        "rmse": 0.0011248423905721914,
+        "r2": -0.008785434291886718,
+        "n": 5
+      },
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 8.490733571297689e-05,
+        "rmse": 9.461320464405193e-05,
+        "r2": 0.9928629463910508,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 3.2281067762956906e-05,
+        "rmse": 3.995627494246103e-05,
+        "r2": 0.9987271259306837,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 4.395097901139705e-05,
+        "rmse": 6.158630916945176e-05,
+        "r2": 0.996975985918224,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 3.602571545683802e-05,
+        "rmse": 4.318905931097802e-05,
+        "r2": 0.9985128220307218,
+        "n": 5
+      }
+    },
+    "IBM": {
+      "prior_only": {
+        "mae": 0.0015514625678119348,
+        "rmse": 0.001980411100840891,
+        "r2": -0.5189568578805708,
+        "n": 7
+      },
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 3.9721708041716594e-05,
+        "rmse": 5.30004382985143e-05,
+        "r2": 0.9989120882755923,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 7.654692019221959e-05,
+        "rmse": 8.409758257028474e-05,
+        "r2": 0.9972609386557791,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 6.20654545681952e-05,
+        "rmse": 7.197243620120114e-05,
+        "r2": 0.9979938327253182,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 2.3803975197408848e-05,
+        "rmse": 3.171845473463755e-05,
+        "r2": 0.9996103642682831,
+        "n": 7
+      }
+    },
+    "MSFT": {
+      "prior_only": {
+        "mae": 0.001067133125,
+        "rmse": 0.00107040264496963,
+        "r2": -162.94454161458253,
+        "n": 7
+      },
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 1.0435793169201982e-05,
+        "rmse": 1.455665850645356e-05,
+        "r2": 0.9696802230425984,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 1.5871230152658424e-05,
+        "rmse": 1.905901456283098e-05,
+        "r2": 0.9480239228427186,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 1.3928447183847787e-05,
+        "rmse": 1.732382068191364e-05,
+        "r2": 0.9570572379923804,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 1.1441991986501527e-05,
+        "rmse": 1.4750108928713008e-05,
+        "r2": 0.9688690001186587,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 1.2897140336094803e-05,
+        "rmse": 1.5519866081926433e-05,
+        "r2": 0.9655349785082424,
+        "n": 7
+      }
+    },
+    "NKE": {
+      "prior_only": {
+        "mae": 0.001055519414556962,
+        "rmse": 0.001390860203052098,
+        "r2": -0.46968674797515453,
+        "n": 8
+      },
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 3.870641507584244e-05,
+        "rmse": 6.592371099218751e-05,
+        "r2": 0.9966982733873384,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 3.80578857929373e-05,
+        "rmse": 5.818106152855915e-05,
+        "r2": 0.9974282953016413,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 7.798219492173128e-05,
+        "rmse": 8.79437137603989e-05,
+        "r2": 0.9941241943899779,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 8.894838249254834e-05,
+        "rmse": 0.00010605865827203685,
+        "r2": 0.9914542521586525,
+        "n": 8
+      }
+    },
+    "NVDA": {
+      "prior_only": {
+        "mae": 0.0061360283536585365,
+        "rmse": 0.00839815492545382,
+        "r2": -0.9343923943695647,
+        "n": 8
+      },
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls": {
+        "mae": 0.00011799938629720059,
+        "rmse": 0.00015503948060244287,
+        "r2": 0.9993407328724775,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4": {
+        "mae": 0.00011143083936551737,
+        "rmse": 0.00016124505119208046,
+        "r2": 0.9992869013720571,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.979434291975784e-05,
+        "rmse": 0.0001120807326492996,
+        "r2": 0.9996554607260162,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4": {
+        "mae": 0.0001306792461139584,
+        "rmse": 0.00016949821549580734,
+        "r2": 0.9992120347368846,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+        "mae": 0.00016542863823044193,
+        "rmse": 0.00017179932203624886,
+        "r2": 0.999190494687556,
+        "n": 8
+      }
+    }
+  }
+}

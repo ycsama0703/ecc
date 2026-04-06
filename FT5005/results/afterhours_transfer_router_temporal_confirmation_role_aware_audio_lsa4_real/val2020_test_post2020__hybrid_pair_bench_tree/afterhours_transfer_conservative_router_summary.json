@@ -1,0 +1,801 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_qa": 553,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "router_features": [
+      "a4_strict_row_share",
+      "a4_strict_high_conf_share",
+      "qa_pair_count",
+      "qa_pair_low_overlap_share",
+      "qa_pair_answer_hedge_rate_mean",
+      "qa_pair_answer_assertive_rate_mean",
+      "qa_pair_answer_forward_rate_mean",
+      "qa_multi_part_question_share",
+      "qa_evasive_proxy_share",
+      "qa_bench_direct_answer_share",
+      "qa_bench_direct_early_score_mean",
+      "qa_bench_evasion_score_mean",
+      "qa_bench_high_evasion_share",
+      "qa_bench_coverage_mean",
+      "qa_bench_nonresponse_share",
+      "aligned_audio__aligned_audio_sentence_count"
+    ],
+    "router_c": 1.0,
+    "tree_depth": 2,
+    "tree_min_leaf_frac": 0.08,
+    "override_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      0.99
+    ]
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qa_benchmark_all_count": 47,
+    "qna_lsa_components": 4,
+    "qa_benchmark_svd": {
+      "input_feature_count": 47,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.8310825979199598
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.7553613936151105
+    }
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 114,
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 0.000102950424077588,
+      "rmse": 0.000194574658607068,
+      "r2": 0.9966786186791518
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 0.00010405271640340128,
+      "rmse": 0.00019615198947885526,
+      "r2": 0.996624550465675
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 0.00010301604771017974,
+      "rmse": 0.00019459757019560928,
+      "r2": 0.996677836433374
+    },
+    "validation_selected_transfer_expert": {
+      "mae": 0.00010349767119905553,
+      "rmse": 0.00019481102113744894,
+      "r2": 0.996670544380836
+    },
+    "conservative_logistic_override_on_selected_expert": {
+      "mae": 0.00010366903856312054,
+      "rmse": 0.00019594613275444406,
+      "r2": 0.9966316316517249
+    },
+    "conservative_tree_override_on_selected_expert": {
+      "mae": 0.00010293047131298788,
+      "rmse": 0.00019464783893240984,
+      "r2": 0.9966761198391151
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9907724032182628,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9907724032182628,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9907724032182628,
+    "validation_selected_transfer_expert": 0.9907724032182628,
+    "conservative_logistic_override_on_selected_expert": 0.9907724032182628,
+    "conservative_tree_override_on_selected_expert": 0.9907724032182628
+  },
+  "significance": {
+    "validation_selected_transfer_expert__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": -1.1739008158888984e-06,
+      "rmse_diff_ci_low": -3.878733357984304e-06,
+      "rmse_diff_ci_high": 4.66574531365759e-07,
+      "mae_diff_mean": -1.679582294476673e-07,
+      "mae_diff_ci_low": -2.0602555981924527e-06,
+      "mae_diff_ci_high": 1.9069430204773917e-06,
+      "r2_gain_mean": -4.9556758220860444e-05,
+      "r2_gain_ci_low": -0.0002076855813098244,
+      "r2_gain_ci_high": 1.8808400294903527e-05,
+      "mse_gain_mean": -4.4355298480663815e-10,
+      "mse_gain_pvalue": 0.457,
+      "mae_gain_mean": -1.7136736406503124e-07,
+      "mae_gain_pvalue": 0.87075
+    },
+    "validation_selected_transfer_expert__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": 1.7247698802080683e-07,
+      "rmse_diff_ci_low": 0.0,
+      "rmse_diff_ci_high": 5.947468867806217e-07,
+      "mae_diff_mean": 5.683342858397567e-07,
+      "mae_diff_ci_low": 0.0,
+      "mae_diff_ci_high": 1.7015996582028705e-06,
+      "r2_gain_mean": 7.3156553945555595e-06,
+      "r2_gain_ci_low": 0.0,
+      "r2_gain_ci_high": 3.270728243201516e-05,
+      "mse_gain_mean": 6.355275555821613e-11,
+      "mse_gain_pvalue": 1.0,
+      "mae_gain_mean": 5.671998860676216e-07,
+      "mae_gain_pvalue": 1.0
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": -1.4047598117941197e-06,
+      "rmse_diff_ci_low": -4.141291615142609e-06,
+      "rmse_diff_ci_high": 1.5587527393283172e-07,
+      "mae_diff_mean": -6.627214569608363e-07,
+      "mae_diff_ci_low": -2.375224162910408e-06,
+      "mae_diff_ci_high": 1.0582063895377345e-06,
+      "r2_gain_mean": -5.922182076850169e-05,
+      "r2_gain_ci_low": -0.00022395773473886935,
+      "r2_gain_ci_high": 5.177049965987561e-06,
+      "mse_gain_mean": -5.266726153871296e-10,
+      "mse_gain_pvalue": 0.22075,
+      "mae_gain_mean": -6.529908529408018e-07,
+      "mae_gain_pvalue": 0.516
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": -5.83820078844144e-08,
+      "rmse_diff_ci_low": -6.006767471412353e-07,
+      "rmse_diff_ci_high": 4.572930815738977e-07,
+      "mae_diff_mean": 7.357105832658765e-08,
+      "mae_diff_ci_low": -1.5348944601770914e-06,
+      "mae_diff_ci_high": 1.7414192263883392e-06,
+      "r2_gain_mean": -2.3494071530856807e-06,
+      "r2_gain_ci_low": -3.118648123961454e-05,
+      "r2_gain_ci_high": 2.1603148787813233e-05,
+      "mse_gain_mean": -1.956687502227525e-11,
+      "mse_gain_pvalue": 0.8725,
+      "mae_gain_mean": 8.557639719185104e-08,
+      "mae_gain_pvalue": 0.8975
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 7.677225327377793e-05,
+        "rmse": 8.913262558244336e-05,
+        "r2": 0.9907724032182628,
+        "n": 12
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          0.6182351179460189
+        ],
+        [
+          "sem_minus_qa_pred",
+          0.6143790625443771
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.30176958819394695
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.2615355668685846
+        ],
+        [
+          "qa_gate_active",
+          0.24419052962844878
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_pair_low_overlap_share"
+      ]
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00014605995886637007,
+        "rmse": 0.00019930546896889265,
+        "r2": 0.8497084022999897,
+        "n": 9
+      },
+      "chosen_model": "residual_pre_call_market_only",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "sem_minus_qa_pred",
+          0.5924131596232007
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.5924131596232007
+        ],
+        [
+          "sem_audio_gate_active",
+          0.44484091464444514
+        ],
+        [
+          "qa_gate_active",
+          0.3541055945847469
+        ],
+        [
+          "qa_pair_answer_forward_rate_mean",
+          0.3489325773512188
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share"
+      ]
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 8.579361891204157e-05,
+        "rmse": 0.000126499795810888,
+        "r2": 0.977833534375159,
+        "n": 13
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.081971221883319e-05,
+        "rmse": 0.00012427747004459757,
+        "r2": 0.9786055261753362,
+        "n": 13
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.579361891204157e-05,
+        "rmse": 0.000126499795810888,
+        "r2": 0.977833534375159,
+        "n": 13
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 8.579361891204157e-05,
+        "rmse": 0.000126499795810888,
+        "r2": 0.977833534375159,
+        "n": 13
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 8.081971221883319e-05,
+        "rmse": 0.00012427747004459757,
+        "r2": 0.9786055261753362,
+        "n": 13
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 8.081971221883319e-05,
+        "rmse": 0.00012427747004459757,
+        "r2": 0.9786055261753362,
+        "n": 13
+      },
+      "chosen_model": "residual_pre_call_market_only",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          0.8615671922814601
+        ],
+        [
+          "qa_gate_active",
+          0.6832394352183522
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.535939615794694
+        ],
+        [
+          "qa_pair_answer_forward_rate_mean",
+          -0.2578497414713768
+        ],
+        [
+          "a4_strict_row_share",
+          0.24867192945082373
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share"
+      ]
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00013307109968513562,
+        "rmse": 0.00022320555786716541,
+        "r2": 0.9984394928706475,
+        "n": 16
+      },
+      "chosen_model": "residual_pre_call_market_only",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          0.6054122852544586
+        ],
+        [
+          "sem_minus_qa_pred",
+          0.5963532858842313
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.34350247137558604
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.31507739065689516
+        ],
+        [
+          "qa_pair_low_overlap_share",
+          -0.27211101564252616
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share"
+      ]
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 4.883207944134841e-05,
+        "rmse": 7.576708306776032e-05,
+        "r2": 0.9988132522798605,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 4.8738855477417875e-05,
+        "rmse": 7.571679340472433e-05,
+        "r2": 0.9988148271415063,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.883207944134841e-05,
+        "rmse": 7.576708306776032e-05,
+        "r2": 0.9988132522798605,
+        "n": 12
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 4.8738855477417875e-05,
+        "rmse": 7.571679340472433e-05,
+        "r2": 0.9988148271415063,
+        "n": 12
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 4.883207944134841e-05,
+        "rmse": 7.576708306776032e-05,
+        "r2": 0.9988132522798605,
+        "n": 12
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.8738855477417875e-05,
+        "rmse": 7.571679340472433e-05,
+        "r2": 0.9988148271415063,
+        "n": 12
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "sem_minus_qa_pred",
+          0.6154609364099377
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.6109633804862024
+        ],
+        [
+          "qa_gate_active",
+          0.3004141900130936
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.2967271124113371
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.21160771797592948
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_pair_answer_assertive_rate_mean"
+      ]
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00010612053746255853,
+        "rmse": 0.0001497098624146188,
+        "r2": 0.9884698185440758,
+        "n": 11
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00011775107749047902,
+        "rmse": 0.00016883427978835587,
+        "r2": 0.9853358606596442,
+        "n": 11
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010612053746255853,
+        "rmse": 0.0001497098624146188,
+        "r2": 0.9884698185440758,
+        "n": 11
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00010612053746255853,
+        "rmse": 0.0001497098624146188,
+        "r2": 0.9884698185440758,
+        "n": 11
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00011710990898024781,
+        "rmse": 0.0001681420577007022,
+        "r2": 0.9854558603645602,
+        "n": 11
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00010612053746255853,
+        "rmse": 0.0001497098624146188,
+        "r2": 0.9884698185440758,
+        "n": 11
+      },
+      "chosen_model": "residual_pre_call_market_only",
+      "logistic_override_threshold": 0.85,
+      "tree_override_threshold": 0.9,
+      "event_logistic_top_features": [
+        [
+          "qa_gate_active",
+          1.329506681945643
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.5858372989644268
+        ],
+        [
+          "qa_pair_answer_assertive_rate_mean",
+          -0.5747170859934425
+        ],
+        [
+          "sem_audio_gate_active",
+          -0.44463454374565137
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.36752946796465874
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share",
+        "sem_audio_expert_pred"
+      ]
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 9.901540068589583e-05,
+        "rmse": 0.0002106590237758763,
+        "r2": -6.533273506437368,
+        "n": 13
+      },
+      "chosen_model": "residual_pre_call_market_only",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "sem_minus_qa_pred",
+          0.6136403069879321
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.5924053130450947
+        ],
+        [
+          "qa_gate_active",
+          0.36211214167813544
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.35314983136450595
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.2754150034327373
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_pair_answer_assertive_rate_mean"
+      ]
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.0308249525464514e-05,
+        "rmse": 5.947063488915769e-05,
+        "r2": 0.9981068519224807,
+        "n": 16
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 4.427730323886845e-05,
+        "rmse": 6.479373259757679e-05,
+        "r2": 0.9977527808173619,
+        "n": 16
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.0775817907680686e-05,
+        "rmse": 6.000239046248818e-05,
+        "r2": 0.9980728454686297,
+        "n": 16
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 4.427730323886845e-05,
+        "rmse": 6.479373259757679e-05,
+        "r2": 0.9977527808173619,
+        "n": 16
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 4.191448400470432e-05,
+        "rmse": 6.14636512335399e-05,
+        "r2": 0.9979778370609688,
+        "n": 16
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.427730323886845e-05,
+        "rmse": 6.479373259757679e-05,
+        "r2": 0.9977527808173619,
+        "n": 16
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "sem_minus_qa_pred",
+          0.5903113855891665
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.5870115951746363
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.30307393865865084
+        ],
+        [
+          "qa_gate_active",
+          0.24241118802991407
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.23330181932293487
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share"
+      ]
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00021422033068627108,
+        "rmse": 0.0003988563860853149,
+        "r2": 0.9953040673746942,
+        "n": 12
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          0.6171493038409336
+        ],
+        [
+          "sem_minus_qa_pred",
+          0.6143635929737297
+        ],
+        [
+          "aligned_audio__aligned_audio_sentence_count",
+          0.2870615226138952
+        ],
+        [
+          "qa_gate_active",
+          0.25060594695529886
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.23876268619395044
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_pair_answer_assertive_rate_mean"
+      ]
+    }
+  }
+}

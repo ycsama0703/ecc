@@ -1,0 +1,452 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "models": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "mae": 7.45325011514522e-05,
+      "rmse": 0.00013265247559846274,
+      "r2": 0.9984340649441351
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+      "mae": 6.968908403449417e-05,
+      "rmse": 0.00013092592255874207,
+      "r2": 0.9984745628686608
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+      "mae": 7.122398808698844e-05,
+      "rmse": 0.00012970459821662624,
+      "r2": 0.9985028897858412
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+      "mae": 7.254148779701413e-05,
+      "rmse": 0.00013236853481765244,
+      "r2": 0.9984407614939773
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": 0.9959066749431505,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": 0.9959160233667426,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": 0.9954279958916451,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": 0.9958465488224312,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": 0.9952345474099049
+  },
+  "gate_search": {
+    "simple_local_feature": "a4_strict_row_share",
+    "single_feature_candidates": [
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "mapped_row_share",
+      "aligned_audio_sentence_count",
+      "qa_align_score_mean",
+      "qa_bench_coverage_mean",
+      "qa_bench_direct_answer_share",
+      "qa_bench_evasion_score_mean"
+    ],
+    "learned_gate_features": [
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "mapped_row_share",
+      "aligned_audio_sentence_count",
+      "qa_align_score_mean",
+      "qa_bench_coverage_mean",
+      "qa_bench_direct_answer_share",
+      "qa_bench_evasion_score_mean",
+      "qa_bench_pair_count"
+    ],
+    "learned_logistic_c": 0.1,
+    "learned_logistic_threshold": 0.5080312589675685,
+    "learned_logistic_val_metrics": {
+      "direction": "ge",
+      "threshold": 0.5080312589675685,
+      "activation_rate": 0.6086956521739131,
+      "rmse": 7.80468095136952e-05,
+      "r2": 0.9997460199688266
+    },
+    "learned_logistic_coefficients": {
+      "a4_strict_row_share": -0.09167094001194195,
+      "a4_broad_row_share": 0.36372497732388115,
+      "mapped_row_share": 0.0,
+      "aligned_audio_sentence_count": 0.0,
+      "qa_align_score_mean": 0.0,
+      "qa_bench_coverage_mean": 0.0,
+      "qa_bench_direct_answer_share": 0.0,
+      "qa_bench_evasion_score_mean": 0.0,
+      "qa_bench_pair_count": 0.0
+    },
+    "shared_conjunctive_best": {
+      "feature_a": "a4_strict_row_share",
+      "direction_a": "ge",
+      "threshold_a": 0.6408,
+      "feature_b": "a4_broad_row_share",
+      "direction_b": "ge",
+      "threshold_b": 0.9607,
+      "activation_rate": 0.6956521739130435,
+      "rmse": 7.518268676050053e-05,
+      "r2": 0.99976431879641
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 6.876534869643282e-05,
+        "rmse": 8.731281070145807e-05,
+        "r2": 0.9915255061854721,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 5.2104385375102626e-05,
+        "rmse": 6.11259525961296e-05,
+        "r2": 0.9958465488224312,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 6.51341853188335e-05,
+        "rmse": 8.524512711342492e-05,
+        "r2": 0.9919221282326891,
+        "n": 5
+      }
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00018414980222998778,
+        "rmse": 0.0002805486471301913,
+        "r2": 0.7087329860892564,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      }
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      }
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00010416457022357017,
+        "rmse": 0.00018962102635845015,
+        "r2": 0.9959066749431505,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 9.397664317343721e-05,
+        "rmse": 0.00020040182949691217,
+        "r2": 0.9954279958916451,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 9.397664317343721e-05,
+        "rmse": 0.00020040182949691217,
+        "r2": 0.9954279958916451,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 0.00010671406657223662,
+        "rmse": 0.00020459756118355378,
+        "r2": 0.9952345474099049,
+        "n": 9
+      }
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 2.4502145453153276e-05,
+        "rmse": 2.815495405465948e-05,
+        "r2": 0.9993679883272999,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      }
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      }
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.6402257032372616e-05,
+        "rmse": 2.1440290393087467e-05,
+        "r2": 0.9342245328530856,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 1.4416855524324624e-05,
+        "rmse": 1.818291605941661e-05,
+        "r2": 0.9526925343896707,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 1.6402257032372616e-05,
+        "rmse": 2.1440290393087467e-05,
+        "r2": 0.9342245328530856,
+        "n": 7
+      }
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 4.226512880239156e-05,
+        "rmse": 5.9682203108627826e-05,
+        "r2": 0.9972938771443165,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      }
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 9.502857098489608e-05,
+        "rmse": 0.00011603572453297491,
+        "r2": 0.9996307162064252,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_simple_local_a4_strict_row_share": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_single_feature_search": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_logistic_gate": {
+        "mae": 9.502857098489608e-05,
+        "rmse": 0.00011603572453297491,
+        "r2": 0.9996307162064252,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_shared_conjunctive_gate": {
+        "mae": 7.711178282995138e-05,
+        "rmse": 0.00011906234203325262,
+        "r2": 0.9996112005390101,
+        "n": 8
+      }
+    }
+  }
+}

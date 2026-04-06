@@ -1,0 +1,8 @@
+{
+  "subset": "qa",
+  "input_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/role_aware_aligned_audio_afterhours_clean_real/event_role_aware_aligned_acoustic_features.csv",
+  "output_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/role_aware_aligned_audio_afterhours_clean_real/event_aligned_acoustic_qa_view.csv",
+  "num_events": 172,
+  "nonzero_events": 171,
+  "feature_column_count": 88
+}

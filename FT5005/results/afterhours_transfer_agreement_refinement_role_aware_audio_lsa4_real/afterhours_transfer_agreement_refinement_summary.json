@@ -1,0 +1,366 @@
+{
+  "config": {
+    "temporal_root": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_router_temporal_confirmation_role_aware_audio_lsa4_real",
+    "train_split": "val2020_test_post2020",
+    "val_split": "val2021_test_post2021",
+    "refit_train_splits": [
+      "val2020_test_post2020",
+      "val2021_test_post2021"
+    ],
+    "test_split": "val2022_test_post2022",
+    "feature_names": [
+      "agreed_choose_qa",
+      "agreed_minus_pre_pred",
+      "qa_minus_pre_pred",
+      "sem_minus_pre_pred",
+      "selected_minus_pre_pred",
+      "pair_minus_pre_pred",
+      "logistic_minus_pre_pred",
+      "abs_pair_minus_logistic_pred"
+    ],
+    "alpha_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
+  },
+  "split_sizes": {
+    "train_agreement_size": 80,
+    "val_agreement_size": 51,
+    "test_agreement_size": 44,
+    "test_full_size": 60
+  },
+  "tuning": [
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 0.01,
+      "val_r2": 0.9970220970940235,
+      "val_rmse": 8.767363490238521e-05,
+      "val_mae": 5.1726551917551814e-05,
+      "val_agreement_use_share": 0.2549019607843137,
+      "val_pred_signal_min": -8.176064462629184e-08,
+      "val_pred_signal_max": 3.255883075006677e-08
+    },
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 0.1,
+      "val_r2": 0.9970220970940235,
+      "val_rmse": 8.767363490238521e-05,
+      "val_mae": 5.1726551917551814e-05,
+      "val_agreement_use_share": 0.2549019607843137,
+      "val_pred_signal_min": -4.064779243560212e-08,
+      "val_pred_signal_max": 1.4717712187756814e-08
+    },
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 1.0,
+      "val_r2": 0.9973308130292896,
+      "val_rmse": 8.300480695940775e-05,
+      "val_mae": 5.073398319930913e-05,
+      "val_agreement_use_share": 0.2549019607843137,
+      "val_pred_signal_min": -6.097752726570086e-09,
+      "val_pred_signal_max": 2.8707730201552283e-10
+    },
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 10.0,
+      "val_r2": 0.9973314780942115,
+      "val_rmse": 8.299446541623817e-05,
+      "val_mae": 5.062887817510881e-05,
+      "val_agreement_use_share": 0.35294117647058826,
+      "val_pred_signal_min": -2.401033879281423e-09,
+      "val_pred_signal_max": 3.2000758039849458e-09
+    },
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 100.0,
+      "val_r2": 0.9973314780942115,
+      "val_rmse": 8.299446541623817e-05,
+      "val_mae": 5.062887817510881e-05,
+      "val_agreement_use_share": 0.7647058823529411,
+      "val_pred_signal_min": -1.915743955961007e-09,
+      "val_pred_signal_max": 2.6878454445305244e-09
+    },
+    {
+      "calibrator": "compact_learnable_agreement_gain_gate",
+      "alpha": 1000.0,
+      "val_r2": 0.9973314780942115,
+      "val_rmse": 8.299446541623817e-05,
+      "val_mae": 5.062887817510881e-05,
+      "val_agreement_use_share": 0.7647058823529411,
+      "val_pred_signal_min": -6.3774191226967e-10,
+      "val_pred_signal_max": 9.909592683576527e-10
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 0.01,
+      "val_r2": 0.9970221352294114,
+      "val_rmse": 8.767307352095464e-05,
+      "val_mae": 5.1698222394620906e-05,
+      "val_lambda_mean": 0.22751417820736308,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 1.0
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 0.1,
+      "val_r2": 0.9970245999791002,
+      "val_rmse": 8.763678293521773e-05,
+      "val_mae": 5.1659622652374614e-05,
+      "val_lambda_mean": 0.19960027401387245,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 1.0
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 1.0,
+      "val_r2": 0.9971347653685328,
+      "val_rmse": 8.599908720100369e-05,
+      "val_mae": 5.076826613071507e-05,
+      "val_lambda_mean": 0.06497594562169898,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 0.5206835905240987
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 10.0,
+      "val_r2": 0.997184343129489,
+      "val_rmse": 8.525181032346999e-05,
+      "val_mae": 5.057599622576225e-05,
+      "val_lambda_mean": 0.02996487872862616,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 0.40162512546537876
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 100.0,
+      "val_r2": 0.9971941155819594,
+      "val_rmse": 8.510373769815103e-05,
+      "val_mae": 5.052165586605856e-05,
+      "val_lambda_mean": 0.023710173111134852,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 0.2575273901698216
+    },
+    {
+      "calibrator": "compact_learnable_agreement_soft_trust",
+      "alpha": 1000.0,
+      "val_r2": 0.9972003665531589,
+      "val_rmse": 8.500888745623561e-05,
+      "val_mae": 5.044123055791844e-05,
+      "val_lambda_mean": 0.0213899545224683,
+      "val_lambda_min": 0.0,
+      "val_lambda_max": 0.06682184586653721
+    }
+  ],
+  "selected_alpha": {
+    "compact_learnable_agreement_gain_gate": 10.0,
+    "compact_learnable_agreement_soft_trust": 1000.0
+  },
+  "validation_reference": {
+    "residual_pre_call_market_only": {
+      "mae": 5.054148957554601e-05,
+      "rmse": 8.51469690963596e-05,
+      "r2": 0.9971912641650946
+    },
+    "agreement_supported_pred": {
+      "mae": 5.18139405171146e-05,
+      "rmse": 8.55847019065176e-05,
+      "r2": 0.9971623110231403
+    }
+  },
+  "test_agreement_subset": {
+    "residual_pre_call_market_only": {
+      "mae": 7.725793084147608e-05,
+      "rmse": 0.00014877246034387305,
+      "r2": 0.9984178866209196
+    },
+    "agreement_supported_pred": {
+      "mae": 7.682995285104509e-05,
+      "rmse": 0.00014039414692105406,
+      "r2": 0.9985910664293539
+    },
+    "compact_learnable_agreement_gain_gate": {
+      "mae": 7.723505531282148e-05,
+      "rmse": 0.0001404696578798374,
+      "r2": 0.9985895504325975
+    },
+    "compact_learnable_agreement_soft_trust": {
+      "mae": 7.683081485924747e-05,
+      "rmse": 0.00014711298322327797,
+      "r2": 0.9984529850259838
+    }
+  },
+  "test_full_overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "agreement_supported_pred": {
+      "mae": 6.814738429888915e-05,
+      "rmse": 0.0001243356196594965,
+      "r2": 0.9986242670023903
+    },
+    "agreement_pre_only_abstention": {
+      "mae": 6.724586012089539e-05,
+      "rmse": 0.0001236149724373469,
+      "r2": 0.9986401682388036
+    },
+    "compact_learnable_agreement_gain_gate": {
+      "mae": 6.75429352595314e-05,
+      "rmse": 0.00012367786447255066,
+      "r2": 0.9986387841937947
+    },
+    "compact_learnable_agreement_soft_trust": {
+      "mae": 6.72464922602438e-05,
+      "rmse": 0.0001292178439522633,
+      "r2": 0.9985141053852112
+    }
+  },
+  "test_full_significance": {
+    "compact_learnable_agreement_gain_gate__vs__agreement_pre_only_abstention": {
+      "rmse_diff_mean": -6.851518823785963e-08,
+      "rmse_diff_ci_low": -2.6513150594670765e-07,
+      "rmse_diff_ci_high": 6.039766034405672e-08,
+      "mae_diff_mean": -2.912897613064605e-07,
+      "mae_diff_ci_low": -1.2274357596962915e-06,
+      "mae_diff_ci_high": 5.664063446194324e-07,
+      "r2_gain_mean": -1.870232475036898e-06,
+      "r2_gain_ci_low": -9.155773899077734e-06,
+      "r2_gain_ci_high": 1.6206685872099952e-06,
+      "mse_gain_mean": -1.555274980457204e-11,
+      "mse_gain_pvalue": 0.45025,
+      "mae_gain_mean": -2.9707513863601936e-07,
+      "mae_gain_pvalue": 0.512
+    },
+    "compact_learnable_agreement_gain_gate__vs__residual_pre_call_market_only": {
+      "rmse_diff_mean": 6.73634806871006e-06,
+      "rmse_diff_ci_low": -6.989588992484728e-07,
+      "rmse_diff_ci_high": 1.3975929469424208e-05,
+      "mae_diff_mean": -2.659619128175862e-08,
+      "mae_diff_ci_low": -5.365009565954878e-06,
+      "mae_diff_ci_high": 5.4843798087317416e-06,
+      "r2_gain_mean": 0.00017716929664597265,
+      "r2_gain_ci_low": -1.885981997421515e-05,
+      "r2_gain_ci_high": 0.0005538777127033462,
+      "mse_gain_mean": 1.7611147927198637e-09,
+      "mse_gain_pvalue": 0.15925,
+      "mae_gain_mean": 1.6775387680042272e-08,
+      "mae_gain_pvalue": 0.99675
+    },
+    "compact_learnable_agreement_soft_trust__vs__agreement_pre_only_abstention": {
+      "rmse_diff_mean": -5.426463720528957e-06,
+      "rmse_diff_ci_low": -1.1483645259746244e-05,
+      "rmse_diff_ci_high": 8.003519106004277e-07,
+      "mae_diff_mean": 4.1092545073052595e-08,
+      "mae_diff_ci_low": -4.754428293784944e-06,
+      "mae_diff_ci_high": 4.606975967026724e-06,
+      "r2_gain_mean": -0.0001426422180999661,
+      "r2_gain_ci_low": -0.0004596485244224985,
+      "r2_gain_ci_high": 2.323505804439631e-05,
+      "mse_gain_mean": -1.416589784985438e-09,
+      "mse_gain_pvalue": 0.1755,
+      "mae_gain_mean": -6.321393484082408e-10,
+      "mae_gain_pvalue": 0.99975
+    },
+    "compact_learnable_agreement_soft_trust__vs__residual_pre_call_market_only": {
+      "rmse_diff_mean": 1.3783995364189624e-06,
+      "rmse_diff_ci_low": 1.4438550095093834e-07,
+      "rmse_diff_ci_high": 2.6343553641675164e-06,
+      "mae_diff_mean": 3.057861150977545e-07,
+      "mae_diff_ci_low": -6.061143160163821e-07,
+      "mae_diff_ci_high": 1.2748205758927167e-06,
+      "r2_gain_mean": 3.639731102104343e-05,
+      "r2_gain_ci_low": 4.2248150484092145e-06,
+      "r2_gain_ci_high": 0.00010375388140953513,
+      "mse_gain_mean": 3.6007775753899805e-10,
+      "mse_gain_pvalue": 0.07525,
+      "mae_gain_mean": 3.1321838696765337e-07,
+      "mae_gain_pvalue": 0.51575
+    }
+  },
+  "test_behavior": {
+    "compact_learnable_agreement_gain_gate": {
+      "agreement_use_share": 0.5,
+      "pred_signal_min": -2.2921680367569548e-09,
+      "pred_signal_max": 8.249324869683727e-09,
+      "coef_rows": [
+        {
+          "feature": "pair_minus_pre_pred",
+          "coefficient": 4.047365878515002e-10
+        },
+        {
+          "feature": "logistic_minus_pre_pred",
+          "coefficient": 4.0473658785150015e-10
+        },
+        {
+          "feature": "agreed_minus_pre_pred",
+          "coefficient": 4.047365878514995e-10
+        },
+        {
+          "feature": "sem_minus_pre_pred",
+          "coefficient": 2.9860258339539273e-10
+        },
+        {
+          "feature": "selected_minus_pre_pred",
+          "coefficient": -1.4022267230108813e-10
+        },
+        {
+          "feature": "agreed_choose_qa",
+          "coefficient": 4.860456504540245e-11
+        },
+        {
+          "feature": "qa_minus_pre_pred",
+          "coefficient": 2.412313986852069e-11
+        },
+        {
+          "feature": "abs_pair_minus_logistic_pred",
+          "coefficient": 0.0
+        }
+      ]
+    },
+    "compact_learnable_agreement_soft_trust": {
+      "lambda_mean": 0.11844055521498889,
+      "lambda_min": 0.064008611663434,
+      "lambda_max": 0.1853491303522837,
+      "optimal_lambda_mean": 0.2850183566797974,
+      "coef_rows": [
+        {
+          "feature": "agreed_minus_pre_pred",
+          "coefficient": 0.004450902440447546
+        },
+        {
+          "feature": "logistic_minus_pre_pred",
+          "coefficient": 0.004450902440447546
+        },
+        {
+          "feature": "pair_minus_pre_pred",
+          "coefficient": 0.004450902440447545
+        },
+        {
+          "feature": "agreed_choose_qa",
+          "coefficient": 0.003025377027867012
+        },
+        {
+          "feature": "qa_minus_pre_pred",
+          "coefficient": 0.001615772655284257
+        },
+        {
+          "feature": "sem_minus_pre_pred",
+          "coefficient": 0.0007288687513711543
+        },
+        {
+          "feature": "selected_minus_pre_pred",
+          "coefficient": -0.00034605266534379987
+        },
+        {
+          "feature": "abs_pair_minus_logistic_pred",
+          "coefficient": 0.0
+        }
+      ]
+    }
+  }
+}

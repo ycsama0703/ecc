@@ -1,0 +1,21 @@
+
+\begin{table}[t]
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Selected branches that were informative but did not survive as current headline candidates.}
+\label{tab:demoted-paths}
+\begin{tabularx}{\columnwidth}{>{\raggedright\arraybackslash}p{0.27\columnwidth}>{\raggedright\arraybackslash}p{0.21\columnwidth}>{\raggedright\arraybackslash}p{0.18\columnwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Branch & Stronger reference & Branch result & Current reading \\
+\midrule
+Role sequence on clean A4 line & A4 + Q\&A = 0.9347 & A4 + role seq = 0.8409 & Sequence-heavy extension hurts and should stay demoted. \\
+Weak sequence on clean A4 line & A4 + Q\&A = 0.9347 & A4 + weak seq = 0.8657 & Sequence-lite variants are also weaker than compact Q\&A. \\
+Compressed aligned audio on semantic line & Ctrls + A4 + Q\&A = 0.9347 & + audio SVD = 0.9274 & Audio helps side branches, but not the strongest semantic headline. \\
+Question-role stacking on mainline & Ctrls + A4 + Q\&A = 0.9347 & + question role = 0.9294 & Role text is interesting for transfer, not additive to the mainline. \\
+Question-role residual on mainline & Ctrls + A4 + Q\&A = 0.9347 & + question resid = 0.8877 & The unique role-specific residual hurts more sharply. \\
+Hardest-answer local view & Hardest question = 0.998655 & Hardest answer = 0.998551 & The local exploratory signal is question-centric, not answer-centric. \\
+Top-1 Q\&A pair local view & Hardest question = 0.998655 & Top-1 Q\&A = 0.998557 & Broader local fusion adds noise faster than useful recall. \\
+Supervised question subspace & Question LSA = 0.998655 & Best PLS = 0.998586 & Small supervised text subspaces transfer less cleanly than the stable unsupervised encoding. \\
+\bottomrule
+\end{tabularx}
+\end{table}

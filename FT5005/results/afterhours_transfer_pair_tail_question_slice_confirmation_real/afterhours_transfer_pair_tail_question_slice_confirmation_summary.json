@@ -1,0 +1,1556 @@
+{
+  "config": {
+    "predictions_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_pair_tail_text_benchmark_lsa4_real/afterhours_transfer_pair_tail_text_benchmark_test_predictions.csv",
+    "panel_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/audio_sentence_aligned_afterhours_clean_real/panel_subset_afterhours_clean.csv",
+    "features_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/features_real/event_text_audio_features.csv",
+    "qa_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/qa_benchmark_features_v2_real/qa_benchmark_features.csv"
+  },
+  "coverage": {
+    "rows": 60,
+    "with_panel": 60,
+    "with_features": 60,
+    "with_qa": 60,
+    "with_all": 60
+  },
+  "thresholds": {
+    "qa_pair_count_median": 6.0,
+    "qa_bench_direct_early_score_mean_median": 0.7586269999999999,
+    "qa_bench_evasion_score_mean_median": 0.2226525,
+    "a4_strict_row_share_median": 0.6935,
+    "hard_miss_top_quartile_size": 15
+  },
+  "slice_overview": [
+    {
+      "slice": "overall",
+      "n": 60,
+      "pre_r2": 0.9984820619311983,
+      "hard_r2": 0.9986401682388036,
+      "route_r2": 0.9986546797091032,
+      "route_minus_hard_r2": 1.4511470299516382e-05,
+      "mean_mse_gain_vs_hard": 1.6306786658993457e-10,
+      "mean_mse_gain_vs_pre": 1.9397354091143706e-09,
+      "win_share_vs_hard": 0.15,
+      "win_share_vs_pre": 0.13333333333333333,
+      "use_agreed_share": 0.4,
+      "agreement_share": 0.7333333333333333,
+      "net_mse_gain_vs_hard": 9.784071995396075e-09,
+      "net_mse_gain_vs_pre": 1.1638412454686222e-07,
+      "p_mse_vs_hard": 0.04425,
+      "share_of_overall_net_gain_vs_hard": 1.0
+    },
+    {
+      "slice": "agreement_veto",
+      "n": 20,
+      "pre_r2": 0.9992481507299648,
+      "hard_r2": 0.9991767018491332,
+      "route_r2": 0.9992481507299648,
+      "route_minus_hard_r2": 7.144888083154832e-05,
+      "mean_mse_gain_vs_hard": 4.892035997698037e-10,
+      "mean_mse_gain_vs_pre": 0.0,
+      "win_share_vs_hard": 0.45,
+      "win_share_vs_pre": 0.0,
+      "use_agreed_share": 0.0,
+      "agreement_share": 1.0,
+      "net_mse_gain_vs_hard": 9.784071995396075e-09,
+      "net_mse_gain_vs_pre": 0.0,
+      "p_mse_vs_hard": 0.047,
+      "share_of_overall_net_gain_vs_hard": 1.0
+    },
+    {
+      "slice": "agreement_keep",
+      "n": 24,
+      "pre_r2": 0.9981194446762673,
+      "hard_r2": 0.9983707539885167,
+      "route_r2": 0.9983707539885167,
+      "route_minus_hard_r2": 0.0,
+      "mean_mse_gain_vs_hard": 0.0,
+      "mean_mse_gain_vs_pre": 4.849338522785926e-09,
+      "win_share_vs_hard": 0.0,
+      "win_share_vs_pre": 0.3333333333333333,
+      "use_agreed_share": 1.0,
+      "agreement_share": 1.0,
+      "net_mse_gain_vs_hard": 0.0,
+      "net_mse_gain_vs_pre": 1.1638412454686222e-07,
+      "p_mse_vs_hard": 1.0,
+      "share_of_overall_net_gain_vs_hard": 0.0
+    },
+    {
+      "slice": "disagreement",
+      "n": 16,
+      "pre_r2": 0.9990420565517482,
+      "hard_r2": 0.9990420565517482,
+      "route_r2": 0.9990420565517482,
+      "route_minus_hard_r2": 0.0,
+      "mean_mse_gain_vs_hard": 0.0,
+      "mean_mse_gain_vs_pre": 0.0,
+      "win_share_vs_hard": 0.0,
+      "win_share_vs_pre": 0.0,
+      "use_agreed_share": 0.0,
+      "agreement_share": 0.0,
+      "net_mse_gain_vs_hard": 0.0,
+      "net_mse_gain_vs_pre": 0.0,
+      "p_mse_vs_hard": 1.0,
+      "share_of_overall_net_gain_vs_hard": 0.0
+    },
+    {
+      "slice": "hard_miss_top_quartile",
+      "n": 15,
+      "pre_r2": 0.9971479820650343,
+      "hard_r2": 0.9974492391639789,
+      "route_r2": 0.9974592519714631,
+      "route_minus_hard_r2": 1.001280748424982e-05,
+      "mean_mse_gain_vs_hard": 2.287751774789515e-10,
+      "mean_mse_gain_vs_pre": 7.111974158965773e-09,
+      "win_share_vs_hard": 0.06666666666666667,
+      "win_share_vs_pre": 0.26666666666666666,
+      "use_agreed_share": 0.4666666666666667,
+      "agreement_share": 0.7333333333333333,
+      "net_mse_gain_vs_hard": 3.4316276621842726e-09,
+      "net_mse_gain_vs_pre": 1.066796123844866e-07,
+      "p_mse_vs_hard": 1.0,
+      "share_of_overall_net_gain_vs_hard": 0.35073614174129497
+    },
+    {
+      "slice": "high_qna_density",
+      "n": 33,
+      "pre_r2": 0.9959977669742455,
+      "hard_r2": 0.9963134378891862,
+      "route_r2": 0.9963533922956569,
+      "route_minus_hard_r2": 3.995440647064363e-05,
+      "mean_mse_gain_vs_hard": 2.390318490330996e-10,
+      "mean_mse_gain_vs_pre": 2.127569538600707e-09,
+      "win_share_vs_hard": 0.12121212121212122,
+      "win_share_vs_pre": 0.09090909090909091,
+      "use_agreed_share": 0.3333333333333333,
+      "agreement_share": 0.6666666666666666,
+      "net_mse_gain_vs_hard": 7.888051018092287e-09,
+      "net_mse_gain_vs_pre": 7.020979477382333e-08,
+      "p_mse_vs_hard": 0.19425,
+      "share_of_overall_net_gain_vs_hard": 0.8062135092427809
+    },
+    {
+      "slice": "low_directness_high_evasion",
+      "n": 26,
+      "pre_r2": 0.9984449143830904,
+      "hard_r2": 0.9986401691678559,
+      "route_r2": 0.9986480492010513,
+      "route_minus_hard_r2": 7.880033195406533e-06,
+      "mean_mse_gain_vs_hard": 1.6496547582498743e-10,
+      "mean_mse_gain_vs_pre": 4.252549585853903e-09,
+      "win_share_vs_hard": 0.07692307692307693,
+      "win_share_vs_pre": 0.19230769230769232,
+      "use_agreed_share": 0.46153846153846156,
+      "agreement_share": 0.8076923076923077,
+      "net_mse_gain_vs_hard": 4.289102371449673e-09,
+      "net_mse_gain_vs_pre": 1.1056628923220148e-07,
+      "p_mse_vs_hard": 0.495,
+      "share_of_overall_net_gain_vs_hard": 0.43837600269784643
+    },
+    {
+      "slice": "weaker_observability",
+      "n": 30,
+      "pre_r2": 0.9984991909609144,
+      "hard_r2": 0.9986691119671837,
+      "route_r2": 0.9986737317348859,
+      "route_minus_hard_r2": 4.619767702274125e-06,
+      "mean_mse_gain_vs_hard": 8.831676290626213e-11,
+      "mean_mse_gain_vs_pre": 3.3367210530305337e-09,
+      "win_share_vs_hard": 0.03333333333333333,
+      "win_share_vs_pre": 0.1,
+      "use_agreed_share": 0.4,
+      "agreement_share": 0.6666666666666666,
+      "net_mse_gain_vs_hard": 2.649502887187864e-09,
+      "net_mse_gain_vs_pre": 1.0010163159091601e-07,
+      "p_mse_vs_hard": 1.0,
+      "share_of_overall_net_gain_vs_hard": 0.27079756653820575
+    },
+    {
+      "slice": "dense_evasive_weak_obs",
+      "n": 14,
+      "pre_r2": 0.9932040124565765,
+      "hard_r2": 0.9937739934681399,
+      "route_r2": 0.9937739934681399,
+      "route_minus_hard_r2": 0.0,
+      "mean_mse_gain_vs_hard": 0.0,
+      "mean_mse_gain_vs_pre": 4.3412583995071636e-09,
+      "win_share_vs_hard": 0.0,
+      "win_share_vs_pre": 0.14285714285714285,
+      "use_agreed_share": 0.42857142857142855,
+      "agreement_share": 0.7142857142857143,
+      "net_mse_gain_vs_hard": 0.0,
+      "net_mse_gain_vs_pre": 6.07776175931003e-08,
+      "p_mse_vs_hard": 1.0,
+      "share_of_overall_net_gain_vs_hard": 0.0
+    }
+  ],
+  "slice_details": {
+    "overall": {
+      "summary": {
+        "slice": "overall",
+        "n": 60,
+        "pre_r2": 0.9984820619311983,
+        "hard_r2": 0.9986401682388036,
+        "route_r2": 0.9986546797091032,
+        "route_minus_hard_r2": 1.4511470299516382e-05,
+        "mean_mse_gain_vs_hard": 1.6306786658993457e-10,
+        "mean_mse_gain_vs_pre": 1.9397354091143706e-09,
+        "win_share_vs_hard": 0.15,
+        "win_share_vs_pre": 0.13333333333333333,
+        "use_agreed_share": 0.4,
+        "agreement_share": 0.7333333333333333,
+        "net_mse_gain_vs_hard": 9.784071995396075e-09,
+        "net_mse_gain_vs_pre": 1.1638412454686222e-07,
+        "p_mse_vs_hard": 0.04425,
+        "share_of_overall_net_gain_vs_hard": 1.0
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q4",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 3.4316276621842726e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NVDA_2023_Q1",
+          "ticker": "NVDA",
+          "year": 2023,
+          "mse_gain_vs_hard": 2.649502887187864e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q3",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 2.017733287063021e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q1",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.1779474439421387e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NKE_2023_Q1",
+          "ticker": "NKE",
+          "year": 2023,
+          "mse_gain_vs_hard": 1.022105948255233e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "MSFT_2025_Q1",
+          "ticker": "MSFT",
+          "year": 2025,
+          "mse_gain_vs_hard": 2.7073998987791403e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "IBM_2024_Q2",
+          "ticker": "IBM",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.4527045736471123e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "MSFT_2024_Q3",
+          "ticker": "MSFT",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.2717259236078476e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "DIS_2023_Q2",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -6.051595345129582e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "DIS_2023_Q3",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -3.2047273467673814e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NKE_2023_Q2",
+          "ticker": "NKE",
+          "year": 2023,
+          "mse_gain_vs_hard": -1.610800735440463e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "DIS_2023_Q4",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -6.883439665203772e-11,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q1",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ]
+    },
+    "agreement_veto": {
+      "summary": {
+        "slice": "agreement_veto",
+        "n": 20,
+        "pre_r2": 0.9992481507299648,
+        "hard_r2": 0.9991767018491332,
+        "route_r2": 0.9992481507299648,
+        "route_minus_hard_r2": 7.144888083154832e-05,
+        "mean_mse_gain_vs_hard": 4.892035997698037e-10,
+        "mean_mse_gain_vs_pre": 0.0,
+        "win_share_vs_hard": 0.45,
+        "win_share_vs_pre": 0.0,
+        "use_agreed_share": 0.0,
+        "agreement_share": 1.0,
+        "net_mse_gain_vs_hard": 9.784071995396075e-09,
+        "net_mse_gain_vs_pre": 0.0,
+        "p_mse_vs_hard": 0.047,
+        "share_of_overall_net_gain_vs_hard": 1.0
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q4",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 3.4316276621842726e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NVDA_2023_Q1",
+          "ticker": "NVDA",
+          "year": 2023,
+          "mse_gain_vs_hard": 2.649502887187864e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q3",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 2.017733287063021e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q1",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.1779474439421387e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NKE_2023_Q1",
+          "ticker": "NKE",
+          "year": 2023,
+          "mse_gain_vs_hard": 1.022105948255233e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "MSFT_2025_Q1",
+          "ticker": "MSFT",
+          "year": 2025,
+          "mse_gain_vs_hard": 2.7073998987791403e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "IBM_2024_Q2",
+          "ticker": "IBM",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.4527045736471123e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "MSFT_2024_Q3",
+          "ticker": "MSFT",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.2717259236078476e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "DIS_2023_Q2",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -6.051595345129582e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "DIS_2023_Q3",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -3.2047273467673814e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NKE_2023_Q2",
+          "ticker": "NKE",
+          "year": 2023,
+          "mse_gain_vs_hard": -1.610800735440463e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "DIS_2023_Q4",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -6.883439665203772e-11,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2024_Q1",
+          "ticker": "CSCO",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        }
+      ]
+    },
+    "agreement_keep": {
+      "summary": {
+        "slice": "agreement_keep",
+        "n": 24,
+        "pre_r2": 0.9981194446762673,
+        "hard_r2": 0.9983707539885167,
+        "route_r2": 0.9983707539885167,
+        "route_minus_hard_r2": 0.0,
+        "mean_mse_gain_vs_hard": 0.0,
+        "mean_mse_gain_vs_pre": 4.849338522785926e-09,
+        "win_share_vs_hard": 0.0,
+        "win_share_vs_pre": 0.3333333333333333,
+        "use_agreed_share": 1.0,
+        "agreement_share": 1.0,
+        "net_mse_gain_vs_hard": 0.0,
+        "net_mse_gain_vs_pre": 1.1638412454686222e-07,
+        "p_mse_vs_hard": 1.0,
+        "share_of_overall_net_gain_vs_hard": 0.0
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q1",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q1",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q3",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q4",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q1",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q1",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q3",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q4",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ]
+    },
+    "disagreement": {
+      "summary": {
+        "slice": "disagreement",
+        "n": 16,
+        "pre_r2": 0.9990420565517482,
+        "hard_r2": 0.9990420565517482,
+        "route_r2": 0.9990420565517482,
+        "route_minus_hard_r2": 0.0,
+        "mean_mse_gain_vs_hard": 0.0,
+        "mean_mse_gain_vs_pre": 0.0,
+        "win_share_vs_hard": 0.0,
+        "win_share_vs_pre": 0.0,
+        "use_agreed_share": 0.0,
+        "agreement_share": 0.0,
+        "net_mse_gain_vs_hard": 0.0,
+        "net_mse_gain_vs_pre": 0.0,
+        "p_mse_vs_hard": 1.0,
+        "share_of_overall_net_gain_vs_hard": 0.0
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q3",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q4",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2024_Q4",
+          "ticker": "CSCO",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2025_Q1",
+          "ticker": "CSCO",
+          "year": 2025,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "DIS_2024_Q1",
+          "ticker": "DIS",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "MSFT_2023_Q1",
+          "ticker": "MSFT",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q3",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q4",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2024_Q4",
+          "ticker": "CSCO",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2025_Q1",
+          "ticker": "CSCO",
+          "year": 2025,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "DIS_2024_Q1",
+          "ticker": "DIS",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "MSFT_2023_Q1",
+          "ticker": "MSFT",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ]
+    },
+    "hard_miss_top_quartile": {
+      "summary": {
+        "slice": "hard_miss_top_quartile",
+        "n": 15,
+        "pre_r2": 0.9971479820650343,
+        "hard_r2": 0.9974492391639789,
+        "route_r2": 0.9974592519714631,
+        "route_minus_hard_r2": 1.001280748424982e-05,
+        "mean_mse_gain_vs_hard": 2.287751774789515e-10,
+        "mean_mse_gain_vs_pre": 7.111974158965773e-09,
+        "win_share_vs_hard": 0.06666666666666667,
+        "win_share_vs_pre": 0.26666666666666666,
+        "use_agreed_share": 0.4666666666666667,
+        "agreement_share": 0.7333333333333333,
+        "net_mse_gain_vs_hard": 3.4316276621842726e-09,
+        "net_mse_gain_vs_pre": 1.066796123844866e-07,
+        "p_mse_vs_hard": 1.0,
+        "share_of_overall_net_gain_vs_hard": 0.35073614174129497
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q4",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 3.4316276621842726e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q1",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2023_Q1",
+          "ticker": "AMZN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2024_Q2",
+          "ticker": "CSCO",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ]
+    },
+    "high_qna_density": {
+      "summary": {
+        "slice": "high_qna_density",
+        "n": 33,
+        "pre_r2": 0.9959977669742455,
+        "hard_r2": 0.9963134378891862,
+        "route_r2": 0.9963533922956569,
+        "route_minus_hard_r2": 3.995440647064363e-05,
+        "mean_mse_gain_vs_hard": 2.390318490330996e-10,
+        "mean_mse_gain_vs_pre": 2.127569538600707e-09,
+        "win_share_vs_hard": 0.12121212121212122,
+        "win_share_vs_pre": 0.09090909090909091,
+        "use_agreed_share": 0.3333333333333333,
+        "agreement_share": 0.6666666666666666,
+        "net_mse_gain_vs_hard": 7.888051018092287e-09,
+        "net_mse_gain_vs_pre": 7.020979477382333e-08,
+        "p_mse_vs_hard": 0.19425,
+        "share_of_overall_net_gain_vs_hard": 0.8062135092427809
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q4",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 3.4316276621842726e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NVDA_2023_Q1",
+          "ticker": "NVDA",
+          "year": 2023,
+          "mse_gain_vs_hard": 2.649502887187864e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q3",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 2.017733287063021e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "MSFT_2025_Q1",
+          "ticker": "MSFT",
+          "year": 2025,
+          "mse_gain_vs_hard": 2.7073998987791403e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "DIS_2023_Q3",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -3.2047273467673814e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "NKE_2023_Q2",
+          "ticker": "NKE",
+          "year": 2023,
+          "mse_gain_vs_hard": -1.610800735440463e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2024_Q2",
+          "ticker": "AAPL",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        }
+      ]
+    },
+    "low_directness_high_evasion": {
+      "summary": {
+        "slice": "low_directness_high_evasion",
+        "n": 26,
+        "pre_r2": 0.9984449143830904,
+        "hard_r2": 0.9986401691678559,
+        "route_r2": 0.9986480492010513,
+        "route_minus_hard_r2": 7.880033195406533e-06,
+        "mean_mse_gain_vs_hard": 1.6496547582498743e-10,
+        "mean_mse_gain_vs_pre": 4.252549585853903e-09,
+        "win_share_vs_hard": 0.07692307692307693,
+        "win_share_vs_pre": 0.19230769230769232,
+        "use_agreed_share": 0.46153846153846156,
+        "agreement_share": 0.8076923076923077,
+        "net_mse_gain_vs_hard": 4.289102371449673e-09,
+        "net_mse_gain_vs_pre": 1.1056628923220148e-07,
+        "p_mse_vs_hard": 0.495,
+        "share_of_overall_net_gain_vs_hard": 0.43837600269784643
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AAPL_2023_Q4",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 3.4316276621842726e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMZN_2024_Q1",
+          "ticker": "AMZN",
+          "year": 2024,
+          "mse_gain_vs_hard": 1.1779474439421387e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "DIS_2023_Q3",
+          "ticker": "DIS",
+          "year": 2023,
+          "mse_gain_vs_hard": -3.2047273467673814e-10,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q1",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AAPL_2023_Q3",
+          "ticker": "AAPL",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        }
+      ]
+    },
+    "weaker_observability": {
+      "summary": {
+        "slice": "weaker_observability",
+        "n": 30,
+        "pre_r2": 0.9984991909609144,
+        "hard_r2": 0.9986691119671837,
+        "route_r2": 0.9986737317348859,
+        "route_minus_hard_r2": 4.619767702274125e-06,
+        "mean_mse_gain_vs_hard": 8.831676290626213e-11,
+        "mean_mse_gain_vs_pre": 3.3367210530305337e-09,
+        "win_share_vs_hard": 0.03333333333333333,
+        "win_share_vs_pre": 0.1,
+        "use_agreed_share": 0.4,
+        "agreement_share": 0.6666666666666666,
+        "net_mse_gain_vs_hard": 2.649502887187864e-09,
+        "net_mse_gain_vs_pre": 1.0010163159091601e-07,
+        "p_mse_vs_hard": 1.0,
+        "share_of_overall_net_gain_vs_hard": 0.27079756653820575
+      },
+      "top_positive_events": [
+        {
+          "event_key": "NVDA_2023_Q1",
+          "ticker": "NVDA",
+          "year": 2023,
+          "mse_gain_vs_hard": 2.649502887187864e-09,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q3",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ]
+    },
+    "dense_evasive_weak_obs": {
+      "summary": {
+        "slice": "dense_evasive_weak_obs",
+        "n": 14,
+        "pre_r2": 0.9932040124565765,
+        "hard_r2": 0.9937739934681399,
+        "route_r2": 0.9937739934681399,
+        "route_minus_hard_r2": 0.0,
+        "mean_mse_gain_vs_hard": 0.0,
+        "mean_mse_gain_vs_pre": 4.3412583995071636e-09,
+        "win_share_vs_hard": 0.0,
+        "win_share_vs_pre": 0.14285714285714285,
+        "use_agreed_share": 0.42857142857142855,
+        "agreement_share": 0.7142857142857143,
+        "net_mse_gain_vs_hard": 0.0,
+        "net_mse_gain_vs_pre": 6.07776175931003e-08,
+        "p_mse_vs_hard": 1.0,
+        "share_of_overall_net_gain_vs_hard": 0.0
+      },
+      "top_positive_events": [
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q3",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ],
+      "top_negative_events": [
+        {
+          "event_key": "AMGN_2023_Q1",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2023_Q2",
+          "ticker": "AMGN",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q1",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q2",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "AMGN_2024_Q3",
+          "ticker": "AMGN",
+          "year": 2024,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q1",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        },
+        {
+          "event_key": "CSCO_2023_Q2",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 1,
+          "agreement": 1
+        },
+        {
+          "event_key": "CSCO_2023_Q3",
+          "ticker": "CSCO",
+          "year": 2023,
+          "mse_gain_vs_hard": 0.0,
+          "use_agreed": 0,
+          "agreement": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\setlist[itemize]{leftmargin=1.5em}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{1.8em}
+
+\title{ICAIF Project Stage Report\\\large From Noisy Timing to Credible After-Hours ECC Signals}
+\author{FT5005 / ICAIF Repository Snapshot}
+\date{March 23, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report is meant to capture what is genuinely solid at the current stage of the project, rather than to make the story sound larger than it is. The project has gradually moved away from an early ``try a bit of everything'' phase and toward a cleaner core narrative. In a noisy-timing earnings-call setting, we reformulate the task as predicting \texttt{shock\_minus\_pre}, i.e., the incremental volatility shock after the call relative to the pre-call baseline. On top of strong market priors, the most credible incremental signal currently comes from \texttt{A4} observability/alignment and compact \texttt{Q\&A} semantics inside clean \texttt{after\_hours} events. On the transfer side, the results suggest that these local signals should not be trusted unconditionally; the safest current strategy is \textbf{reliability-aware abstention}. A newer exploratory line also suggests that the single hardest analyst question may carry a sharper local signal than the whole noisy conversation, although this line should still be treated as exploratory rather than as a mature main method. Overall, the project now feels less like driving without headlights and more like driving through fog with a few reliable lane markers finally in view.
+\end{abstract}
+
+\section{Research background: what problem are we actually trying to solve?}
+Earnings conference calls (ECCs) are information-dense events. Management delivers a prepared narrative, analysts probe it from different angles, and markets respond in real time. That sounds straightforward in principle, but in practice the timing is noisy. In the shared package, \texttt{A2} often gives only the scheduled call time, while \texttt{A4} provides sentence-level timing that is valuable but noisy and incomplete. In other words, we are not modeling a clean laboratory sequence. We are trying to understand a conversation through fog, and then infer when the market actually heard what.
+
+This is why the project gradually moved away from the idea that simply adding more modalities would solve the problem. If the task definition is not honest enough, and if the baseline is not strong enough, then a more complex model can easily end up learning which firms are usually more volatile rather than what the call itself added. That led to two important narrowing steps. First, we replaced the raw post-call volatility level target with \texttt{shock\_minus\_pre}, i.e., the extra shock after the call relative to the pre-call baseline. Second, we narrowed the main battleground to \texttt{off-hours}, and especially to cleaner \texttt{after\_hours} events.
+
+The intuition is simple. If we first subtract what the market already knew, what the firm usually looks like, and what was already reflected before the call, then the remaining prediction problem is much closer to ``what did this call add?'' rather than ``what kind of firm is this?''
+
+\section{Current storyline: the main hypotheses and questions}
+At this stage, the project can be organized around four main questions.
+
+\begin{itemize}
+    \item \textbf{Question 1: What is the honest target?}\\
+    Our working hypothesis is that \texttt{shock\_minus\_pre} is a better main target than raw post-call volatility levels, because it separates call-specific incremental information from firm-specific scale and market background.
+
+    \item \textbf{Question 2: Where is the credible ECC increment actually coming from?}\\
+    Our current hypothesis is that the most credible increment does not come from generic multimodal stacking. Instead, it comes mainly from noisy but useful observability/alignment clues in \texttt{A4}, combined with a compact \texttt{Q\&A} semantic block.
+
+    \item \textbf{Question 3: In cross-ticker transfer, should we trust local semantic signals all the time?}\\
+    At the moment the answer appears to be no. Transfer is not a setting where one more semantic module is automatically better. The signal should be used when reliability is high enough, and otherwise the safer move is to fall back to a stronger market baseline.
+
+    \item \textbf{Question 4: Can the single hardest analyst question be more informative than the whole noisy exchange?}\\
+    This is the newest exploratory branch. The idea is that instead of blending the whole conversation into a single messy summary, it may be better to focus on the sharpest question in the room and ask whether that local question carries a cleaner clue about what the market still found unresolved.
+\end{itemize}
+
+\section{Experimental setup: how we are testing these ideas}
+The current core experiments are built on the DJ30 pilot sample. The baseline-ready event panel in the repository currently covers \textbf{553 events}, with joins to \texttt{A1} (Q\&A pairs), \texttt{A2} (scheduled timing), \texttt{A4} (noisy sentence-level timing), audio files, and high-frequency market data. For the main fixed-split storyline, we focus on the clean \texttt{after\_hours} subset; the strict split currently used there is \textbf{train 89 / val 23 / test 60}. On the transfer side, we use held-out later-period windows and keep matched samples for stricter comparisons.
+
+Methodologically, the project has intentionally favored relatively compact model families over heavy architectures. The main predictive skeleton is still built around residual ridge-style modeling. The key steps are:
+\begin{itemize}
+    \item start from a strong \textbf{pre-call market prior};
+    \item add controls and \texttt{A4} observability/alignment features;
+    \item test whether low-dimensional \texttt{Q\&A} semantics (currently \texttt{LSA(64)} in the fixed-split main line) still add incremental value;
+    \item on transfer benchmarks, use agreement/disagreement structure to decide when local semantic corrections should be trusted and when the market baseline should take over.
+\end{itemize}
+
+A useful way to picture the setup is to think of it as a two-layer system. The first layer is the foundation: market priors, pre-call information, and basic controls. The second layer is a set of sensors laid on top of that foundation: \texttt{A4} is like a few lane markers on a foggy road, and the \texttt{Q\&A} semantic features are like hints about where the conversation becomes tense, specific, or unresolved. Those second-layer signals only mean something if the foundation is already stable.
+
+\section{Preliminary results: what looks solid so far?}
+\subsection{Main fixed-split result: the credible ECC increment is narrow and structured}
+At the broader corrected off-hours level, the evidence already supports the task redesign. In the clean corrected off-hours benchmark, the prior-only baseline reaches only about \textbf{$R^2 \approx 0.198$}, whereas the structured residual line reaches about \textbf{$R^2 \approx 0.913$}. This does not mean the problem is solved, but it does suggest that the residual framing is doing meaningful work.
+
+If we narrow to the safest paper-facing main line, the most important result remains the clean \texttt{after\_hours} semantic ladder. Table~\ref{tab:mainline} summarizes the current fixed-split picture.
+
+\begin{table}[h]
+\centering
+\caption{Current clean \texttt{after\_hours} main-line results (test $R^2$)}
+\label{tab:mainline}
+\begin{tabularx}{\textwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+Model & test $R^2$ \\
+\midrule
+pre-call market only & 0.9174 \\
+pre-call market + controls & 0.9194 \\
+pre-call market + A4 + compact Q\&A semantics & 0.9271 \\
+pre-call market + controls + A4 + compact Q\&A semantics & \textbf{0.9347} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The important point here is not just that the score goes up. The more important point is where the gain comes from. The current evidence suggests that the most credible increment does \emph{not} come from heavy sequence modeling or generic multimodal accumulation. It comes from combining noisy-but-useful observability cues in \texttt{A4} with compact \texttt{Q\&A} semantics. In plainer language: instead of squeezing the whole call into one giant vector, it seems better to first ask ``do we approximately know what the market had a chance to hear?'' and only then ask ``what was said there?''
+
+\subsection{Transfer result: the key is not being fancier, but knowing when to stay quiet}
+The cross-ticker transfer results gave us an important reality check. Local semantic signals should not be trusted all the time. The strongest current transfer-side strategy is not a more elaborate routing family, but a restrained one: \textbf{reliability-aware abstention}. When the retained views agree, a local correction is allowed to act. When they disagree, the model falls back to the stronger \texttt{pre\_call\_market\_only} backbone.
+
+In the pooled temporal transfer benchmark, this route currently reaches roughly \textbf{$R^2 \approx 0.99792$}, slightly above the retained semantic/audio backbone (about 0.99788) and the validation-selected expert route (about 0.99788). More importantly, the interpretation is intuitive. When multiple local witnesses tell the same story, we listen. When they contradict each other, we do not force a judgment call just to feel sophisticated.
+
+That may sound conservative, but it is actually methodologically healthy. A model is not only defined by when it acts; it is also defined by when it chooses not to overrule a stronger baseline.
+
+\subsection{Newest exploratory finding: the hardest analyst question may be a sharper probe}
+The most interesting new exploratory finding concerns the hardest-question line. Instead of modeling the full exchange, we focus only on the locally hardest analyst question. The strongest current local exploratory route is the \textbf{non-structural hardest-question LSA(4) bi-gram representation}. On the latest held-out window, it reaches about \textbf{$R^2 \approx 0.99865$}, slightly above hard abstention at about \textbf{$R^2 \approx 0.99864$}, with a paired $p(\mathrm{MSE}) \approx 0.044$.
+
+This is still a small gain, so it should not be oversold as a mature method victory. But it is enough to make one strong exploratory point: sometimes the single sharpest question in the room appears to carry more signal than the whole noisy conversation.
+
+Even more interestingly, the signal increasingly looks like a \textbf{question-centric, non-structural local framing signal}:
+\begin{itemize}
+    \item masking structural / strategic probe vocabulary leaves the strongest route unchanged;
+    \item adding the hardest answer or the top-1 local Q\&A pair makes the result worse, not better;
+    \item replacing the compact unsupervised encoding with small supervised subspaces such as PLS also makes the result worse.
+\end{itemize}
+
+Taken together, the picture is surprisingly concrete. The useful clue does not look like a broad topic embedding. It looks more like \textbf{the way the analyst phrases the question}. Many of the positive pockets sound less like big strategic themes and more like moments where the analyst is asking management to help build a model, clarify a mechanism, or pin down a number.
+
+\begin{table}[h]
+\centering
+\caption{Representative transfer-side results}
+\label{tab:transfer}
+\begin{tabularx}{\textwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+Route & Representative $R^2$ \\
+\midrule
+agreement-triggered hard abstention & 0.99864 \\
+non-structural hardest-question LSA(4) bi-gram & \textbf{0.99865} \\
+question supervised compact subspace (best PLS) & 0.99859 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Current contributions: what can we already claim with some confidence?}
+At this stage, the contributions are best described in layers rather than as one oversized headline.
+
+\paragraph{Layer 1: task reformulation and evaluation discipline.}
+We now have a clearer case that ECC modeling should not begin with architecture shopping. It should begin with an honest task definition and strong priors. Reformulating the target as \texttt{shock\_minus\_pre} and evaluating residual value on top of market-aware baselines is one of the project's foundational contributions.
+
+\paragraph{Layer 2: the credible ECC increment is narrow and structured.}
+The safest current fixed-split main line is the clean \texttt{after\_hours} combination of \texttt{A4} plus compact \texttt{Q\&A} semantics. Its value lies in being narrow but trustworthy, rather than broad but diffuse.
+
+\paragraph{Layer 3: transfer requires reliability awareness.}
+Cross-ticker transfer is not a setting where a semantic module should always be pushed through. The most stable method idea so far is reliability-aware abstention: when local evidence is unreliable, the model should step back instead of pretending to know more than it does.
+
+Beyond that, the hardest-question line already contributes an intriguing exploratory insight: \textbf{local analyst question framing may be a sharper transfer signal than full-exchange fusion.}
+
+\section{Conclusion and limitations: how far are we from a stable paper claim?}
+The project is now in a much healthier place than it was in the early exploratory phase. A coherent storyline is beginning to hold together:
+\begin{itemize}
+    \item the main target is after-hours volatility shock under noisy timing;
+    \item the most credible ECC increment comes from \texttt{A4} and compact \texttt{Q\&A} semantics;
+    \item the safest transfer-side method is not a more complex shell, but a better sense of when to abstain;
+    \item the hardest-question result opens a promising local research window.
+\end{itemize}
+
+The limitations are equally clear. First, this is still a DJ30 pilot-scale setting, so many results are directionally informative but not yet broad enough for strong external-validity claims. Second, the transfer-side improvements are coherent, but they are still small. Third, the hardest-question line looks more like a confirmed local mechanism than like a mature main method. Fourth, audio, heavy sequence models, and more elaborate routing families have not yet produced contributions that are cleaner or stronger than the current main line, so they should remain secondary.
+
+In short, the project no longer looks like a search in the dark. It now looks more like a climb up a mountain road where a few reliable markers have finally appeared. We are not at the summit yet, and we should not pretend otherwise. But we now know much better which lights in the distance are real villages and which are only reflections in the fog. That is real progress, and it gives the next stage of research a much clearer direction.
+
+\end{document}

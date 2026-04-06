@@ -1,0 +1,7 @@
+pre_better_than_qa_count,qa_better_than_pre_count,qa_pre_tie_count,qa_vs_pre_mse_gain_sum,test_size,ticker
+3,2,0,1.2605937812773567e-09,5,CSCO
+0,2,0,7.608129455587266e-10,2,MSFT
+2,3,0,3.105258694216088e-10,5,NKE
+0,0,1,0.0,1,AAPL
+0,0,2,0.0,2,NVDA
+1,0,0,-4.309595773964291e-10,1,DIS

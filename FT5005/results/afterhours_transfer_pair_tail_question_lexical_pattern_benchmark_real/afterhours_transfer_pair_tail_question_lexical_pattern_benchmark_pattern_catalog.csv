@@ -1,0 +1,36 @@
+feature,group,patterns
+wondering,clarify_modeling,wondering
+wondering_if,clarify_modeling,wondering if
+if_you_could,clarify_modeling,if you could
+could_you,clarify_modeling,could you
+can_you,clarify_modeling,can you
+how_should_think,clarify_modeling,how should we think | how should i think
+how_do_think,clarify_modeling,how do we think | how do i think
+help_understand,clarify_modeling,help us understand | help me understand
+help_think,clarify_modeling,help us think
+follow_up,clarify_modeling,follow up | to clarify
+give_color,clarify_modeling,give us color | give any color | color on | color
+talk_about,clarify_modeling,talk about | can you talk
+walk_through,clarify_modeling,walk us through | walk through
+frame_model,clarify_modeling,frame | model
+around,quant_bridge,around
+million,quant_bridge,million
+billion,quant_bridge,billion
+percent,quant_bridge,percent | %
+basis_points,quant_bridge,basis points | bps
+sequential,quant_bridge,sequential
+year_over_year,quant_bridge,year over year | yoy
+quarter,quant_bridge,quarter
+cadence,quant_bridge,cadence
+bridge,quant_bridge,bridge
+trajectory,quant_bridge,trajectory
+outlook,quant_bridge,outlook
+visibility,quant_bridge,visibility
+platform,structural_probe,platform
+assets,structural_probe,assets
+content,structural_probe,content
+sports,structural_probe,sports
+portfolio,structural_probe,portfolio
+services,structural_probe,services
+distribution,structural_probe,distribution
+channel,structural_probe,channel

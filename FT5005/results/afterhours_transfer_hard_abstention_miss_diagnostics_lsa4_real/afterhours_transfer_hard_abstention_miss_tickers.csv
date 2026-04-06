@@ -1,0 +1,10 @@
+rest_count,ticker,top_miss_count,top_miss_share_within_ticker
+1,AMGN,4,0.8
+6,CSCO,3,0.3333333333333333
+3,AAPL,2,0.4
+6,NKE,2,0.25
+6,NVDA,2,0.25
+5,AMZN,1,0.16666666666666666
+6,IBM,1,0.14285714285714285
+5,DIS,0,0.0
+7,MSFT,0,0.0

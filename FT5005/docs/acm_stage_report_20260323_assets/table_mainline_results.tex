@@ -1,0 +1,18 @@
+
+\begin{table}[t]
+\caption{Core fixed-split results on the clean \texttt{after\_hours} line.}
+\label{tab:mainline-results}
+\begin{tabularx}{\columnwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+Model & Test $R^2$ \\
+\midrule
+Prior only & 0.0351 \\
+Pre-call market only & 0.9174 \\
+Pre-call market + controls & 0.9194 \\
+Pre-call market + A4 & 0.9014 \\
+Pre-call market + A4 + compact Q\&A & 0.9271 \\
+Pre-call market + controls + A4 & 0.8968 \\
+Pre-call market + controls + A4 + compact Q\&A & \textbf{0.9347} \\
+\bottomrule
+\end{tabularx}
+\end{table}

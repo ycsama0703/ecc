@@ -1,0 +1,11 @@
+feature,loading
+qa_tail_max_evasion,-0.3528383693647961
+qa_tail_top2_evasion_mean,-0.35267167121937826
+qa_tail_bottom2_direct_early_mean,0.3440038363396445
+qa_tail_top2_severity_mean,-0.3356419672680449
+qa_tail_severity_max,-0.32983595390464165
+qa_tail_min_direct_early,0.32160509228835626
+qa_tail_bottom2_coverage_mean,0.31721042134900373
+qa_tail_min_coverage,0.3123890278464663
+qa_tail_high_evasion_share,-0.2739354475580983
+qa_tail_low_overlap_share,-0.1861774164103955

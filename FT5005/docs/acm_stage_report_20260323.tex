@@ -1,0 +1,194 @@
+% Compile from repo root with:
+% TEXINPUTS=./third_party/acmart/acmart//: pdflatex -interaction=nonstopmode -halt-on-error -output-directory=docs docs/acm_stage_report_20260323.tex
+\documentclass[acmsmall,screen,nonacm]{acmart}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{subcaption}
+\usepackage{float}
+\setlength{\headheight}{18.6pt}
+
+\graphicspath{{docs/acm_stage_report_20260323_assets/}}
+
+\title{From Noisy Timing to Credible After-Hours ECC Signals:\\A Comprehensive Stage Report for the ICAIF Repository}
+
+\author{Project stage report prepared from repository artifacts}
+\affiliation{%
+  \institution{FT5005 / ICAIF working repository}
+  \country{N/A}}
+
+\renewcommand\shortauthors{ICAIF Repository Stage Report}
+
+\begin{document}
+\begin{abstract}
+This report consolidates the current state of the ICAIF working repository into a single evidence-grounded narrative. The repository began as a broad multimodal earnings-conference-call (ECC) prediction project, but it has progressively narrowed into a cleaner empirical question: under noisy timing, can after-hours conference calls explain or predict the \emph{incremental} volatility shock that remains after accounting for pre-call market conditions? The strongest current answer is yes, but only in a disciplined and qualified sense. The current paper-safe core is a clean \texttt{after\_hours} setting with target \texttt{shock\_minus\_pre}, strong market-aware baselines, and a narrow signal combination built from \texttt{A4} observability/alignment and compact \texttt{Q\&A} semantics. The strongest transfer-side interpretation is no longer about adding more routing complexity, but about \emph{reliability-aware abstention}: local semantic corrections should be used when agreement is strong and deferred when the market baseline is safer. The newest exploratory branch further suggests that the single hardest analyst question may carry a sharper local clue than the full exchange, especially when represented as a compact, non-structural, question-centric semantic view. This document summarizes the data assets, target design, pipeline, benchmark logic, major empirical findings, negative results, current contribution hierarchy, and the decision gate for the next research phase.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+The repository is no longer in an early ``let us try everything'' state. It now contains enough experiments, negative findings, replications, and checkpoints that the main challenge is no longer lack of work. The main challenge is storyline control: identifying which results are stable, which are merely promising, which branches should be kept as bounded extensions, and which should now be actively demoted.
+
+At a high level, the project studies whether text, timing, and audio information from earnings conference calls can explain or predict high-frequency market reactions. However, the project has undergone a substantial conceptual pivot. Early versions behaved like a generic multimodal prediction exercise. The current version is much narrower and more financially honest. Instead of trying to predict raw post-call volatility levels, the repository now frames the task around \texttt{shock\_minus\_pre}, a residual-style outcome designed to isolate the call-related component of the post-call volatility response.
+
+That reframing matters because conference-call prediction is full of traps. A model can look good simply by learning that some firms are always more volatile than others, that some event types cluster in certain periods, or that regular-hours calls live in a noisier information environment. A large part of the repository's progress came not from building a more complicated model, but from learning how to remove those traps one by one.
+
+This report has two goals. First, it documents the actual current state of the repository in a form that can support stage evaluation, advisor discussion, and future writing. Second, it freezes a hierarchy: what the mainline is, what the most credible secondary method contribution is, and what remains exploratory but worth preserving.
+
+\paragraph{Current bottom line.}
+As of March~23,~2026, the repository supports three main takeaways. First, the fixed-split mainline is stable: under noisy timing, clean \texttt{after\_hours} calls contain usable incremental ECC signal, and the cleanest evidence points to \texttt{A4} plus compact \texttt{Q\&A} semantics. Second, the transfer-side story has become much cleaner: the strongest reading is \emph{reliability-aware abstention}, not greater router complexity. Third, the hardest-question branch is now a meaningful exploratory finding: the single hardest analyst question appears to carry a real local signal, especially in a compact non-structural representation, although this branch remains too narrow to replace the mainline.
+
+\section{Data assets, integrity constraints, and target design}
+The repository is built on the DJ30 package shared for the course project and later research extension. The core assets are \texttt{A1} transcript JSON, \texttt{A2} transcript HTML, \texttt{A3} audio, \texttt{A4} timestamp alignment, analyst-side controls from \texttt{C1/C2}, and 5-minute market data in \texttt{D}. What matters most for the current repository is not merely that these assets exist, but how incomplete or noisy they are.
+
+\input{docs/acm_stage_report_20260323_assets/table_data_assets.tex}
+
+Table~\ref{tab:data-assets} shows the repository-level picture. The raw DJ30 package is sizable, but the usable research core is much smaller. The current event target table, modeling panel, and event-level feature table all cover 553 rows. The matched clean \texttt{after\_hours} subset used by the aligned-audio and hardest-question branches contains 172 rows. The A2 integrity summary also matters: 722 HTML files pass the current integrity check, 6 are warnings, and 114 are fails. In addition, the market-data side still covers only 25 of the 30 DJ30 names, with \texttt{CRM}, \texttt{CVX}, \texttt{PG}, \texttt{TRV}, and \texttt{V} still missing from \texttt{D}.
+
+Two data-quality constraints shape almost everything else in the repository. First, \texttt{A2} is not a gold timing source. It contains scheduled times rather than guaranteed actual call-start times. Second, \texttt{A4} is useful but noisy. It is best treated as observability or alignment supervision, not as perfect timestamp truth. A useful mental picture is that the repo is trying to understand a conversation through fog: \texttt{A4} is not a perfect GPS trace, but it is still far better than pretending that the fog does not exist.
+
+Those constraints directly motivate the target redesign. The repository no longer treats raw post-call realized volatility as the cleanest main outcome. Instead, the canonical target is now
+\begin{equation}
+\texttt{shock\_minus\_pre} = \texttt{post\_call\_60m\_rv} - \texttt{pre\_60m\_rv}.
+\end{equation}
+This shifts the question from ``which firms have high volatility?'' to the much more relevant question ``what extra volatility shock remains after the pre-call baseline is accounted for?'' The resulting setup is narrower, but also more credible.
+
+\section{Pipeline and evaluation philosophy}
+The repository now follows a fairly disciplined build pipeline. File manifests and QC scripts establish what data are actually present and which files are usable. Target-construction scripts turn 5-minute market bars into event-level before/during/after-call outcomes. Panel-building scripts merge transcript, timing, analyst, QC, and target information into a modeling table. Feature-building scripts then create event-level text, timing, audio-proxy, real-audio, and Q\&A benchmark features. Finally, a large family of benchmark and ablation scripts tests target variants, timing subsets, priors, residual models, multimodal additions, transfer settings, and exploratory local-signal branches.
+
+The evaluation philosophy is equally important. Three design choices now define the empirical style of the repository.
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Strong priors first.} The point is not to beat a weak baseline. The point is to test whether ECC-related features add value on top of a credible market-aware prior.
+    \item \textbf{Residual prediction rather than naive pooled prediction.} The current mainline explicitly tries to explain the residual component of the event-level response.
+    \item \textbf{Subset discipline.} The paper-safe main setting is not ``all calls.'' It is off-hours, especially clean \texttt{after\_hours}. This is a narrower but better-defined information environment.
+\end{itemize}
+
+That philosophy is why the repository's best results are not just a matter of architecture choice. The strongest gains came when the task definition, sample definition, and evaluation discipline were made more honest.
+
+\section{The fixed-split mainline: where the current core result comes from}
+The corrected off-hours benchmark provides the broad anchor for the repository. On clean corrected off-hours rows, the prior-only model reaches only about $R^2 \approx 0.198$, whereas the structured residual core reaches about $R^2 \approx 0.913$. This is an important result because it demonstrates that the corrected target is not trivial and that the repo's residual framing is empirically meaningful.
+
+The narrower and more paper-safe mainline, however, lives in clean \texttt{after\_hours}. Table~\ref{tab:mainline-results} shows the canonical fixed-split ladder.
+
+\input{docs/acm_stage_report_20260323_assets/table_mainline_results.tex}
+
+Several things are worth emphasizing here. First, strong pre-call market information already explains a large part of the variation, with \texttt{pre\_call\_market\_only} reaching about 0.917 on the test split. Second, controls alone add very little, pushing the result only to about 0.919. Third, the step from \texttt{A4} to \texttt{A4 + compact Q\&A} is where the most credible additional gain appears. The move from \texttt{pre\_call\_market + A4} to \texttt{pre\_call\_market + A4 + Q\&A} has a paired permutation $p(\mathrm{MSE}) \approx 0.002$. The move from \texttt{pre\_call\_market + controls + A4} to \texttt{pre\_call\_market + controls + A4 + Q\&A} remains positive with $p(\mathrm{MSE}) \approx 0.012$.
+
+The strongest fixed-split line therefore is not a generic multimodal story. It is a much narrower claim: under noisy timing, the most credible incremental ECC signal currently comes from \texttt{A4} observability/alignment and compact \texttt{Q\&A} semantics on top of strong pre-call priors.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{docs/acm_stage_report_20260323_assets/fig_fixed_split_storyline.pdf}
+    \caption{Left: the clean \texttt{after\_hours} fixed-split ladder. Right: the A4 extension branch. Compact Q\&A semantics survive; sequence-heavy additions do not.}
+    \Description{A two-panel bar chart. The left panel shows the clean after-hours fixed-split ladder, where pre-call market features are already strong and compact Q and A semantics provide the clearest incremental lift on top of A4 and controls. The right panel compares A4 extension variants and shows that compact Q and A semantics remain strong while heavier sequence-based variants are materially weaker.}
+    \label{fig:fixed-split-storyline}
+\end{figure*}
+
+Figure~\ref{fig:fixed-split-storyline} makes the structure more visual. The left panel shows the mainline ladder. The right panel highlights a second important conclusion: once the A4-centered branch is isolated, compact Q\&A semantics survive, while sequence-heavy additions do not. The A4 extension benchmark shows
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{controls + A4 + Q\&A}: $R^2 \approx 0.9347$,
+    \item \texttt{controls + A4 + role sequence}: $R^2 \approx 0.8409$,
+    \item \texttt{controls + A4 + weak sequence}: $R^2 \approx 0.8657$.
+\end{itemize}
+In short, the current repository has fairly strong negative evidence against the idea that heavier sequence structure is the right next step. The gain appears to come from disciplined signal isolation, not from more sequence machinery.
+
+\section{Extensions that helped, helped conditionally, or failed}
+One reason the repository is now healthier is that it has accumulated enough negative evidence to stop treating every new branch as a candidate headline.
+
+The audio branch is a good example. The repository did not simply discover that ``audio helps.'' It discovered something narrower and more useful. Raw aligned audio is too noisy, and the old coarse audio proxy is worse still. But compressed aligned audio can help on some branches. On the clean after-hours line,
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{pre\_call\_market + controls}: $R^2 \approx 0.9194$,
+    \item \texttt{+ aligned\_audio\_svd8}: $R^2 \approx 0.9247$.
+\end{itemize}
+The same compression also helps on the controls-plus-A4 branch. However, once the strongest semantic mainline is restored with \texttt{lsa=64}, the same story no longer holds: \texttt{controls + A4 + Q\&A} remains at about 0.9347, while adding aligned-audio SVD lowers the result to about 0.9274. So audio is not worthless, but it is not the main contribution either.
+
+Role-specific text gives another instructive example. The repository tested whether analyst-question or answer-side semantics should replace pooled Q\&A semantics in the mainline. They do not. Question-role semantics are distinct, but not mainline-additive. Replacing pooled Q\&A with question-role features is worse, stacking question-role on top of pooled Q\&A is worse, and residualizing question-role against pooled Q\&A is worse still. That is a useful result because it clarifies the boundary between a signal that is scientifically interesting and a signal that belongs in the core predictive stack.
+
+Table~\ref{tab:demoted-paths} summarizes a set of branches that were informative but should no longer be treated as headline candidates.
+
+\input{docs/acm_stage_report_20260323_assets/table_demoted_paths.tex}
+
+This table is not just housekeeping. It is part of the contribution. The repo now knows much better what should remain center stage and what should become appendix or bounded extension material.
+
+\section{Transfer and generalization: from complexity search to abstention}
+The transfer side of the repository evolved a great deal. Earlier rounds explored observability gates, event routers, conservative override rules, signal-family searches, complementary experts, and consensus schemes. In hindsight, that search was useful because it led to a cleaner conclusion: the strongest transfer story is not ``we found a very clever router.'' The strongest story is that transfer-side local corrections are conditionally credible and should be used with restraint.
+
+\input{docs/acm_stage_report_20260323_assets/table_transfer_results.tex}
+
+The pooled temporal transfer benchmark makes this visible. The best current pooled route is a consensus-style fallback to the market baseline, with $R^2 \approx 0.997919$. This is only slightly higher than the strongest simpler alternatives, but the interpretation is much better. The model uses local information when the retained signals agree, and it abstains when disagreement suggests that the local correction is not trustworthy enough.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{docs/acm_stage_report_20260323_assets/fig_transfer_storyline.pdf}
+    \caption{Pooled temporal transfer routes. The strongest stable reading is now abstention-based rather than complexity-based.}
+    \Description{A bar chart comparing pooled temporal transfer routes. The market-only baseline, retained semantic-plus-audio route, selected expert, and tree override are all tightly clustered, while the consensus route that falls back to the market baseline is the strongest stable pooled result.}
+    \label{fig:transfer-storyline}
+\end{figure}
+
+Figure~\ref{fig:transfer-storyline} visualizes the transfer-side consolidation. The best route does not dramatically dominate all alternatives, and that is precisely why the interpretation must stay disciplined. The repo does \emph{not} currently support a claim that semantic or audio transfer uniformly beats the strongest market baseline across ticker-held-out and temporal slices. What it does support is a narrower claim: \emph{reliability-aware abstention is the cleanest current transfer-side method reading}. That is a more honest contribution than pretending that a slightly more complicated router has already solved transfer.
+
+This matters for stage evaluation. Transfer is no longer a free-for-all search for one more clever model. It has a stable interpretation, even if the effect sizes remain modest.
+
+\section{The hardest-question branch: the strongest exploratory signal in the repo}
+The newest and most interesting exploratory branch shifts attention from the full exchange to a local object: the single hardest analyst question. The branch began as a question about whether the most difficult local pair in a call might carry sharper information than the whole conversation. It has since become much more specific.
+
+The first striking result is that the strongest local route is already fairly compact. The hardest-question LSA(4) bi-gram view reaches about $R^2 \approx 0.998655$ on the latest held-out window, slightly above the hard-abstention shell at about $0.998640$, with paired $p(\mathrm{MSE}) \approx 0.044$. This is a small effect, but it is one of the first exploratory local signals in the repository that clears the current hard-abstention reference on a held-out slice.
+
+The second important result is about what this signal is \emph{not}. Structural or strategic probe vocabulary does not appear to drive it. When structural-probe phrases are masked out, the strongest route is unchanged down to the pooled metrics. Similarly, adding the hardest answer or the top-1 local Q\&A pair does not help. In fact, both hurt. This means the exploratory signal is not simply ``more local context.'' It is much more specifically \emph{question-centric}.
+
+The third result concerns representation. Small supervised subspaces, such as PLS-based question encodings, underperform the compact unsupervised representation. That suggests that, at the current matched-sample scale, the supervised compression is more prone to overfitting phrase pockets that do not transfer as cleanly.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{docs/acm_stage_report_20260323_assets/fig_hardest_question_storyline.pdf}
+    \caption{Left: the main latest-window hardest-question comparison. Right: evidence that the signal is question-centric, non-structural, and only partly compressible.}
+    \Description{A two-panel bar chart for the hardest-question branch. The left panel shows that the compact hardest-question representation slightly exceeds the hard-abstention shell while a supervised PLS question encoding is weaker. The right panel shows that the strongest signal comes from the masked hardest-question view, while answer-only, top-1 question-answer pair, and compact compression variants are weaker.}
+    \label{fig:hardest-question-storyline}
+\end{figure*}
+
+Figure~\ref{fig:hardest-question-storyline} summarizes the branch. The left panel shows that the local signal is real but still narrow. The right panel shows its structure. The masked question view remains strongest; the answer-only and Q\&A-pair views are weaker; the compact clarificatory lexical factor partially recovers the signal; and the supervised question subspace fails to replace the unsupervised masked-question encoding.
+
+This branch is therefore best read as an exploratory signal discovery, not as a replacement for the mainline. The repo now has evidence that the single hardest analyst question may carry a local cue that survives structural masking and does not benefit from broader local fusion. That is scientifically interesting, but it is still too narrow to displace the main fixed-split story.
+
+\section{Stage evaluation: what is locked, what is bounded, and what is next}
+At this stage, the repository supports a fairly clear hierarchy.
+
+\paragraph{Locked mainline.}
+The paper-safe core is now clear. It is the clean \texttt{after\_hours} setting, the \texttt{shock\_minus\_pre} target, strong pre-call market priors, and a narrow signal stack built from \texttt{A4} plus compact Q\&A semantics.
+
+\paragraph{Secondary method contribution.}
+The transfer-side method story is also coherent enough to lock as secondary rather than primary: reliability-aware abstention is the most defensible current interpretation of the transfer experiments.
+
+\paragraph{Exploratory but retained branch.}
+The hardest-question line is worth keeping because it discovered a real local signal. However, it should remain explicitly exploratory. It is strongest when represented as a compact, non-structural, question-centric semantic view. It is not yet broad enough to replace the mainline, and it should not be inflated by reintroducing more shell complexity.
+
+\paragraph{Demoted paths.}
+Heavy sequence modeling, generic multimodal stacking, audio as headline, and growing router complexity for its own sake are now demoted. This is not a weakness. It is a sign that the repository has become selective.
+
+If we had to evaluate the project today, the fairest verdict would be the following: \emph{the project is viable, it has a credible mainline, and it is no longer in uncontrolled exploration; but it is also not yet in final paper-freeze mode}. The right stage label is something like \emph{consolidated mainline plus selective high-value extension phase}.
+
+\section{Limitations and next-phase gate}
+The limitations are as important as the positive results. First, this is still a DJ30 pilot-scale setting. Many results are directionally informative but not yet broad enough for strong external-validity claims. Second, the transfer-side gains are coherent but modest. The repo should not overstate them. Third, the hardest-question branch is a local mechanism, not yet a mature method family. Fourth, the repository still lacks large-scale replication beyond the pilot regime, which remains the biggest structural gap between a strong pilot study and a robust submission package.
+
+These limits naturally imply a gate for the next phase. The project should not go back to broad exploration. It should choose between two disciplined next moves:
+\begin{enumerate}[leftmargin=1.5em]
+    \item a confirmation-and-scale phase, which strengthens the mainline through broader replication, stronger robustness packaging, and more formal benchmarking; or
+    \item a tightly controlled extension phase, where only one exploratory branch is allowed to deepen further, with the hardest-question line currently the strongest candidate.
+\end{enumerate}
+
+What should not happen next is a return to feature piling, sequence inflation, or router proliferation. The strongest progress in the repository has come from narrowing, not widening.
+
+\section{Conclusion}
+The most important thing the repository has achieved is not one dramatic score. It is that the repository now knows the difference between what is stable, what is promising, and what should be left behind. That is exactly what a good stage report is supposed to establish.
+
+The current state of the evidence is encouraging. The repository has a defensible core empirical story under noisy timing. It has a coherent transfer-side interpretation built around abstention rather than complexity. And it has a genuinely interesting exploratory branch in the hardest-question signal. Those are meaningful advances. Just as importantly, the repo has also learned what not to claim. It no longer needs to pretend that every modality helps everywhere, that every new shell is progress, or that every promising local signal is ready to become a paper headline.
+
+In that sense, the project now looks less like a search in the dark and more like a drive through fog with a few reliable lane markers finally visible. We are not at the summit yet, but we are no longer guessing where the road is.
+
+\end{document}

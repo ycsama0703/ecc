@@ -1,0 +1,1333 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "split_sizes": {
+    "train": 89,
+    "val": 23,
+    "test": 60
+  },
+  "text_coverage": {
+    "train": {
+      "rows": 89,
+      "with_qna_text": 89,
+      "with_question_text": 89,
+      "with_answer_text": 89,
+      "with_both_role_texts": 89
+    },
+    "val": {
+      "rows": 23,
+      "with_qna_text": 23,
+      "with_question_text": 23,
+      "with_answer_text": 23,
+      "with_both_role_texts": 23
+    },
+    "test": {
+      "rows": 60,
+      "with_qna_text": 60,
+      "with_question_text": 60,
+      "with_answer_text": 60,
+      "with_both_role_texts": 60
+    },
+    "all_rows": {
+      "rows": 172,
+      "with_qna_text": 172,
+      "with_question_text": 172,
+      "with_answer_text": 172,
+      "with_both_role_texts": 172
+    }
+  },
+  "config": {
+    "qna_lsa_components": 64,
+    "role_lsa_components": 8,
+    "role_explained_variance_ratio_sum": 0.3611718028472245
+  },
+  "role_residualization": {
+    "question_role_resid": {
+      "best_alpha": 0.01,
+      "val_reconstruction_mse": 0.2404028824866742,
+      "feature_count": 8
+    },
+    "answer_role_resid": {
+      "best_alpha": 0.01,
+      "val_reconstruction_mse": 0.03776856616285741,
+      "feature_count": 8
+    }
+  },
+  "models": {
+    "prior_only": {
+      "family": "prior_passthrough",
+      "feature_bundles": [],
+      "feature_count": 1,
+      "val": {
+        "mae": 0.0019584885589000373,
+        "rmse": 0.004891882377800723,
+        "r2": 0.002205108485209162
+      },
+      "test": {
+        "mae": 0.0017171483500254274,
+        "rmse": 0.0032928515889152103,
+        "r2": 0.03508881128987884
+      }
+    },
+    "residual_pre_call_market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market"
+      ],
+      "feature_count": 6,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0007650598697296879,
+        "rmse": 0.0009975759675944897,
+        "r2": 0.9585063900651409
+      },
+      "test": {
+        "mae": 0.0007796617701334478,
+        "rmse": 0.0009634630929242406,
+        "r2": 0.9173936955166082
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0012475446233768226,
+          "abs_coefficient": 0.0012475446233768226
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": 0.0002774126364292516,
+          "abs_coefficient": 0.0002774126364292516
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00023702626821313057,
+          "abs_coefficient": 0.00023702626821313057
+        },
+        {
+          "feature": "html_integrity_flag=warn",
+          "coefficient": 2.3283174019958763e-05,
+          "abs_coefficient": 2.3283174019958763e-05
+        },
+        {
+          "feature": "html_integrity_flag=pass",
+          "coefficient": -2.3283174019953325e-05,
+          "abs_coefficient": 2.3283174019953325e-05
+        },
+        {
+          "feature": "html_integrity_flag=fail",
+          "coefficient": 0.0,
+          "abs_coefficient": 0.0
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "qna_lsa"
+      ],
+      "feature_count": 78,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004809299607062829,
+        "rmse": 0.0007325382398322524,
+        "r2": 0.9776256789770844
+      },
+      "test": {
+        "mae": 0.0006487831398731609,
+        "rmse": 0.0009050126756930325,
+        "r2": 0.9271126178949579
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005243097131943375,
+          "abs_coefficient": 0.0005243097131943375
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005160529274790764,
+          "abs_coefficient": 0.0005160529274790764
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.0002609818661799135,
+          "abs_coefficient": 0.0002609818661799135
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.0002444175550354317,
+          "abs_coefficient": 0.0002444175550354317
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00021899958416666756,
+          "abs_coefficient": 0.00021899958416666756
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00021660161084347543,
+          "abs_coefficient": 0.00021660161084347543
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00021618530320234385,
+          "abs_coefficient": 0.00021618530320234385
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00020435364835389499,
+          "abs_coefficient": 0.00020435364835389499
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00015651736354534694,
+          "abs_coefficient": 0.00015651736354534694
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00013255907316811474,
+          "abs_coefficient": 0.00013255907316811474
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_question_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "question_role"
+      ],
+      "feature_count": 22,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005714370995550446,
+        "rmse": 0.0007181924109200676,
+        "r2": 0.978493443114431
+      },
+      "test": {
+        "mae": 0.0007842705395690441,
+        "rmse": 0.0010616620031220806,
+        "r2": 0.8996966180645285
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005615890968218225,
+          "abs_coefficient": 0.0005615890968218225
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005575852584166367,
+          "abs_coefficient": 0.0005575852584166367
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.0003242957372982036,
+          "abs_coefficient": 0.0003242957372982036
+        },
+        {
+          "feature": "question_role_lsa_4",
+          "coefficient": 0.0002454238960012937,
+          "abs_coefficient": 0.0002454238960012937
+        },
+        {
+          "feature": "question_role_lsa_5",
+          "coefficient": 0.00024277542927862318,
+          "abs_coefficient": 0.00024277542927862318
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.000196733822138731,
+          "abs_coefficient": 0.000196733822138731
+        },
+        {
+          "feature": "question_role_lsa_8",
+          "coefficient": -0.00018404174477446548,
+          "abs_coefficient": 0.00018404174477446548
+        },
+        {
+          "feature": "question_role_lsa_2",
+          "coefficient": 0.00012863272110073042,
+          "abs_coefficient": 0.00012863272110073042
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00012683697085595072,
+          "abs_coefficient": 0.00012683697085595072
+        },
+        {
+          "feature": "a4_hard_fail_rows",
+          "coefficient": 9.341866785390599e-05,
+          "abs_coefficient": 9.341866785390599e-05
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_answer_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "answer_role"
+      ],
+      "feature_count": 22,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005017208996336263,
+        "rmse": 0.0006295119095516008,
+        "r2": 0.9834766856424235
+      },
+      "test": {
+        "mae": 0.0006946563323041915,
+        "rmse": 0.0009821139096101313,
+        "r2": 0.9141645374395899
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005832185866261905,
+          "abs_coefficient": 0.0005832185866261905
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005665363685721876,
+          "abs_coefficient": 0.0005665363685721876
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.0002963060780180162,
+          "abs_coefficient": 0.0002963060780180162
+        },
+        {
+          "feature": "answer_role_lsa_4",
+          "coefficient": 0.00025293336198020774,
+          "abs_coefficient": 0.00025293336198020774
+        },
+        {
+          "feature": "answer_role_lsa_5",
+          "coefficient": 0.0002288859726575284,
+          "abs_coefficient": 0.0002288859726575284
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0002017277781160516,
+          "abs_coefficient": 0.0002017277781160516
+        },
+        {
+          "feature": "answer_role_lsa_8",
+          "coefficient": -0.0001762483348891095,
+          "abs_coefficient": 0.0001762483348891095
+        },
+        {
+          "feature": "a4_hard_fail_rows",
+          "coefficient": 0.00010734448728073954,
+          "abs_coefficient": 0.00010734448728073954
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 9.551084691228123e-05,
+          "abs_coefficient": 9.551084691228123e-05
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": 7.828197295161323e-05,
+          "abs_coefficient": 7.828197295161323e-05
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_question_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "qna_lsa",
+        "question_role"
+      ],
+      "feature_count": 86,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004654796944090728,
+        "rmse": 0.0006917691148794608,
+        "r2": 0.9800468438854675
+      },
+      "test": {
+        "mae": 0.0006802287084021361,
+        "rmse": 0.0009363036328552581,
+        "r2": 0.9219852996335541
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005349352713590768,
+          "abs_coefficient": 0.0005349352713590768
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005264864168782587,
+          "abs_coefficient": 0.0005264864168782587
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.0002549015076411477,
+          "abs_coefficient": 0.0002549015076411477
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.0002440740398748142,
+          "abs_coefficient": 0.0002440740398748142
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0002151883075035553,
+          "abs_coefficient": 0.0002151883075035553
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00018170092887381098,
+          "abs_coefficient": 0.00018170092887381098
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00016638666310759726,
+          "abs_coefficient": 0.00016638666310759726
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00014554464020337791,
+          "abs_coefficient": 0.00014554464020337791
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.0001438188851455542,
+          "abs_coefficient": 0.0001438188851455542
+        },
+        {
+          "feature": "question_role_lsa_5",
+          "coefficient": 0.00013762266691649615,
+          "abs_coefficient": 0.00013762266691649615
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_answer_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "qna_lsa",
+        "answer_role"
+      ],
+      "feature_count": 86,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00044193865308409343,
+        "rmse": 0.0006504572457277945,
+        "r2": 0.9823588547613977
+      },
+      "test": {
+        "mae": 0.0006354663197513284,
+        "rmse": 0.0009072860095384994,
+        "r2": 0.9267459811225269
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005355466428291544,
+          "abs_coefficient": 0.0005355466428291544
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005320205796639505,
+          "abs_coefficient": 0.0005320205796639505
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00024367754251033855,
+          "abs_coefficient": 0.00024367754251033855
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.0002401738285767712,
+          "abs_coefficient": 0.0002401738285767712
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00021630264901690153,
+          "abs_coefficient": 0.00021630264901690153
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00015561857547067597,
+          "abs_coefficient": 0.00015561857547067597
+        },
+        {
+          "feature": "answer_role_lsa_5",
+          "coefficient": 0.00013849452298311612,
+          "abs_coefficient": 0.00013849452298311612
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00013321771773930685,
+          "abs_coefficient": 0.00013321771773930685
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00012230596244991015,
+          "abs_coefficient": 0.00012230596244991015
+        },
+        {
+          "feature": "qna_text_lsa_30",
+          "coefficient": 0.00011992650198006459,
+          "abs_coefficient": 0.00011992650198006459
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_question_role_resid": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "qna_lsa",
+        "question_role_resid"
+      ],
+      "feature_count": 86,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005393694756173097,
+        "rmse": 0.00082464433173174,
+        "r2": 0.9716454590811149
+      },
+      "test": {
+        "mae": 0.0007628151096067823,
+        "rmse": 0.0010335184509288663,
+        "r2": 0.9049440084316906
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005093178605357176,
+          "abs_coefficient": 0.0005093178605357176
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005000656971670418,
+          "abs_coefficient": 0.0005000656971670418
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.000259510760764333,
+          "abs_coefficient": 0.000259510760764333
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00022261393389502417,
+          "abs_coefficient": 0.00022261393389502417
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00021990771032657515,
+          "abs_coefficient": 0.00021990771032657515
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00021630482915917064,
+          "abs_coefficient": 0.00021630482915917064
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.0002122937459820495,
+          "abs_coefficient": 0.0002122937459820495
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00019921433068636405,
+          "abs_coefficient": 0.00019921433068636405
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00014200810097238833,
+          "abs_coefficient": 0.00014200810097238833
+        },
+        {
+          "feature": "qna_text_lsa_28",
+          "coefficient": 0.0001251526537059153,
+          "abs_coefficient": 0.0001251526537059153
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_answer_role_resid": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "a4",
+        "qna_lsa",
+        "answer_role_resid"
+      ],
+      "feature_count": 86,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0005463439809514841,
+        "rmse": 0.0008238830693323626,
+        "r2": 0.971697785355408
+      },
+      "test": {
+        "mae": 0.0007985353126786186,
+        "rmse": 0.0010851944720236123,
+        "r2": 0.8952007502619539
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006801642903803067,
+          "abs_coefficient": 0.0006801642903803067
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.000643685439539971,
+          "abs_coefficient": 0.000643685439539971
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00045527471865156315,
+          "abs_coefficient": 0.00045527471865156315
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.0003490004687758699,
+          "abs_coefficient": 0.0003490004687758699
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00032440293796947894,
+          "abs_coefficient": 0.00032440293796947894
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0003030573404619501,
+          "abs_coefficient": 0.0003030573404619501
+        },
+        {
+          "feature": "a4_broad_row_share",
+          "coefficient": 0.0002761349525168388,
+          "abs_coefficient": 0.0002761349525168388
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00026354466345328954,
+          "abs_coefficient": 0.00026354466345328954
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0002407222327312843,
+          "abs_coefficient": 0.0002407222327312843
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.0002363276560694448,
+          "abs_coefficient": 0.0002363276560694448
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa"
+      ],
+      "feature_count": 92,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004186517244392732,
+        "rmse": 0.0006770551109151293,
+        "r2": 0.9808866283097186
+      },
+      "test": {
+        "mae": 0.000595830499745426,
+        "rmse": 0.0008564745695355815,
+        "r2": 0.9347212284944735
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005241959295796629,
+          "abs_coefficient": 0.0005241959295796629
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005226289048842093,
+          "abs_coefficient": 0.0005226289048842093
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00024621741286399534,
+          "abs_coefficient": 0.00024621741286399534
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00023903569849015728,
+          "abs_coefficient": 0.00023903569849015728
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00020353052115338835,
+          "abs_coefficient": 0.00020353052115338835
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00017395911189460437,
+          "abs_coefficient": 0.00017395911189460437
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00016240311038267496,
+          "abs_coefficient": 0.00016240311038267496
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0001560929992947875,
+          "abs_coefficient": 0.0001560929992947875
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00015428937362930797,
+          "abs_coefficient": 0.00015428937362930797
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00013624092266970695,
+          "abs_coefficient": 0.00013624092266970695
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_question_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "question_role"
+      ],
+      "feature_count": 36,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0003339928345168537,
+        "rmse": 0.0005059783205561873,
+        "r2": 0.9893253638156948
+      },
+      "test": {
+        "mae": 0.0007579918283630164,
+        "rmse": 0.0010158682155749468,
+        "r2": 0.9081629821809784
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006113002255326916,
+          "abs_coefficient": 0.0006113002255326916
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005960774646841516,
+          "abs_coefficient": 0.0005960774646841516
+        },
+        {
+          "feature": "question_role_lsa_5",
+          "coefficient": 0.00036179809817555165,
+          "abs_coefficient": 0.00036179809817555165
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00027316737630624094,
+          "abs_coefficient": 0.00027316737630624094
+        },
+        {
+          "feature": "question_role_lsa_8",
+          "coefficient": -0.00025024362318759656,
+          "abs_coefficient": 0.00025024362318759656
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00021253917228759782,
+          "abs_coefficient": 0.00021253917228759782
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00017386179625229257,
+          "abs_coefficient": 0.00017386179625229257
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": -0.0001554056820267139,
+          "abs_coefficient": 0.0001554056820267139
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00014836169766032156,
+          "abs_coefficient": 0.00014836169766032156
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00014664920041842808,
+          "abs_coefficient": 0.00014664920041842808
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_answer_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "answer_role"
+      ],
+      "feature_count": 36,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0003871470570160926,
+        "rmse": 0.0005332372598984743,
+        "r2": 0.9881442170466115
+      },
+      "test": {
+        "mae": 0.0006876152620077576,
+        "rmse": 0.0010062465432474487,
+        "r2": 0.9098943900601336
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006335456201750526,
+          "abs_coefficient": 0.0006335456201750526
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006004838524320227,
+          "abs_coefficient": 0.0006004838524320227
+        },
+        {
+          "feature": "answer_role_lsa_5",
+          "coefficient": 0.00033086057492735647,
+          "abs_coefficient": 0.00033086057492735647
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00026919647539798425,
+          "abs_coefficient": 0.00026919647539798425
+        },
+        {
+          "feature": "answer_role_lsa_8",
+          "coefficient": -0.0002113982291460045,
+          "abs_coefficient": 0.0002113982291460045
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00019285677395048805,
+          "abs_coefficient": 0.00019285677395048805
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": -0.00016577323480683766,
+          "abs_coefficient": 0.00016577323480683766
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00016571103315645772,
+          "abs_coefficient": 0.00016571103315645772
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.0001590591101166786,
+          "abs_coefficient": 0.0001590591101166786
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00014430147840395935,
+          "abs_coefficient": 0.00014430147840395935
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_question_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "question_role"
+      ],
+      "feature_count": 100,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00040198903849299466,
+        "rmse": 0.0006476099650468459,
+        "r2": 0.9825129597596806
+      },
+      "test": {
+        "mae": 0.0006296344837101931,
+        "rmse": 0.0008905895446206297,
+        "r2": 0.9294173089270833
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005333793226071804,
+          "abs_coefficient": 0.0005333793226071804
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005324479065179504,
+          "abs_coefficient": 0.0005324479065179504
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0001969464222857197,
+          "abs_coefficient": 0.0001969464222857197
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00017459661107169726,
+          "abs_coefficient": 0.00017459661107169726
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.0001683553367632735,
+          "abs_coefficient": 0.0001683553367632735
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00016314966429604175,
+          "abs_coefficient": 0.00016314966429604175
+        },
+        {
+          "feature": "question_role_lsa_5",
+          "coefficient": 0.00016238262195440733,
+          "abs_coefficient": 0.00016238262195440733
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00015607992093857718,
+          "abs_coefficient": 0.00015607992093857718
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00015434418783732891,
+          "abs_coefficient": 0.00015434418783732891
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00012836064844133714,
+          "abs_coefficient": 0.00012836064844133714
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_answer_role": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "answer_role"
+      ],
+      "feature_count": 100,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0003783140160696577,
+        "rmse": 0.0005989890661472816,
+        "r2": 0.9850401563830785
+      },
+      "test": {
+        "mae": 0.0005917991423368841,
+        "rmse": 0.0008630217585539766,
+        "r2": 0.9337193866666652
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005378934531700124,
+          "abs_coefficient": 0.0005378934531700124
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005349211934867174,
+          "abs_coefficient": 0.0005349211934867174
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0002006072237362983,
+          "abs_coefficient": 0.0002006072237362983
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.0001767079209106431,
+          "abs_coefficient": 0.0001767079209106431
+        },
+        {
+          "feature": "answer_role_lsa_5",
+          "coefficient": 0.00014719204337813229,
+          "abs_coefficient": 0.00014719204337813229
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00014663743204018732,
+          "abs_coefficient": 0.00014663743204018732
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.0001419070674976442,
+          "abs_coefficient": 0.0001419070674976442
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00013968672190961686,
+          "abs_coefficient": 0.00013968672190961686
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0001358680573214906,
+          "abs_coefficient": 0.0001358680573214906
+        },
+        {
+          "feature": "qna_text_lsa_30",
+          "coefficient": 0.00012630276013610682,
+          "abs_coefficient": 0.00012630276013610682
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_question_role_resid": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "question_role_resid"
+      ],
+      "feature_count": 100,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0005227408288492541,
+        "rmse": 0.0007522107695907167,
+        "r2": 0.976407804528435
+      },
+      "test": {
+        "mae": 0.0007947341894459504,
+        "rmse": 0.0011233378603038825,
+        "r2": 0.8877041205759219
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006624007705105793,
+          "abs_coefficient": 0.0006624007705105793
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006522716821675812,
+          "abs_coefficient": 0.0006522716821675812
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00040366614606536776,
+          "abs_coefficient": 0.00040366614606536776
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.000320033336581292,
+          "abs_coefficient": 0.000320033336581292
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0003178296089558953,
+          "abs_coefficient": 0.0003178296089558953
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00023951995846925537,
+          "abs_coefficient": 0.00023951995846925537
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00021994244273918696,
+          "abs_coefficient": 0.00021994244273918696
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0002002835348986236,
+          "abs_coefficient": 0.0002002835348986236
+        },
+        {
+          "feature": "a4_hard_fail_rows",
+          "coefficient": -0.00018650382501661964,
+          "abs_coefficient": 0.00018650382501661964
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00018589300149086176,
+          "abs_coefficient": 0.00018589300149086176
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_answer_role_resid": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "answer_role_resid"
+      ],
+      "feature_count": 100,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.000526218089189681,
+        "rmse": 0.0006980351430267388,
+        "r2": 0.9796837363656231
+      },
+      "test": {
+        "mae": 0.0008349656899482044,
+        "rmse": 0.0010418151473767343,
+        "r2": 0.9034117354429575
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006510708233629284,
+          "abs_coefficient": 0.0006510708233629284
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006101253284703709,
+          "abs_coefficient": 0.0006101253284703709
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00038415878128458624,
+          "abs_coefficient": 0.00038415878128458624
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00032535862633649014,
+          "abs_coefficient": 0.00032535862633649014
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0002518414430958281,
+          "abs_coefficient": 0.0002518414430958281
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0002354552252591528,
+          "abs_coefficient": 0.0002354552252591528
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.0002231625216938093,
+          "abs_coefficient": 0.0002231625216938093
+        },
+        {
+          "feature": "a4_hard_fail_rows",
+          "coefficient": -0.00020522452538648692,
+          "abs_coefficient": 0.00020522452538648692
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.0002036852296344178,
+          "abs_coefficient": 0.0002036852296344178
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00019760576298400595,
+          "abs_coefficient": 0.00019760576298400595
+        }
+      ]
+    }
+  },
+  "significance": {
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_question_role": {
+      "rmse_diff_mean": -0.00015840373392221344,
+      "rmse_diff_ci_low": -0.0002477310543031779,
+      "rmse_diff_ci_high": -6.314199263738015e-05,
+      "mae_diff_mean": -0.0001357250662876049,
+      "mae_diff_ci_low": -0.00023095043819723816,
+      "mae_diff_ci_high": -4.15122499859283e-05,
+      "r2_gain_mean": -0.03718264571966893,
+      "r2_gain_ci_low": -0.11673383561844969,
+      "r2_gain_ci_high": -0.008799288817671225,
+      "mse_gain_mean": -3.080782657081265e-07,
+      "mse_gain_pvalue": 0.0025,
+      "mae_gain_mean": -0.00013548739969588332,
+      "mae_gain_pvalue": 0.00775
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_question_role": {
+      "rmse_diff_mean": -3.11106903758821e-05,
+      "rmse_diff_ci_low": -4.959462313580384e-05,
+      "rmse_diff_ci_high": -1.1769125135436788e-05,
+      "mae_diff_mean": -3.140949660572121e-05,
+      "mae_diff_ci_low": -5.630289443734744e-05,
+      "mae_diff_ci_high": -5.275653836209669e-06,
+      "r2_gain_mean": -0.006947677251634168,
+      "r2_gain_ci_low": -0.02201292183357861,
+      "r2_gain_ci_high": -0.001237615455415325,
+      "mse_gain_mean": -5.7616549732891755e-08,
+      "mse_gain_pvalue": 0.00325,
+      "mae_gain_mean": -3.144556852897519e-05,
+      "mae_gain_pvalue": 0.01925
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_question_role_resid": {
+      "rmse_diff_mean": -0.00012644802631678014,
+      "rmse_diff_ci_low": -0.00023467559193498678,
+      "rmse_diff_ci_high": -1.906449154833454e-05,
+      "mae_diff_mean": -0.00011437652467947587,
+      "mae_diff_ci_low": -0.00020308364423175725,
+      "mae_diff_ci_high": -3.0147962199293767e-05,
+      "r2_gain_mean": -0.028314743676913036,
+      "r2_gain_ci_low": -0.0893432017616063,
+      "r2_gain_ci_high": -0.003074448854988145,
+      "mse_gain_mean": -2.4911244524534125e-07,
+      "mse_gain_pvalue": 0.0355,
+      "mae_gain_mean": -0.0001140319697336215,
+      "mae_gain_pvalue": 0.01125
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_answer_role": {
+      "rmse_diff_mean": -7.778331789492876e-05,
+      "rmse_diff_ci_low": -0.0001619227113705582,
+      "rmse_diff_ci_high": 5.496202234394603e-06,
+      "mae_diff_mean": -4.641748566922999e-05,
+      "mae_diff_ci_low": -0.00012904358058661884,
+      "mae_diff_ci_high": 3.3239062384301634e-05,
+      "r2_gain_mean": -0.016633178070941456,
+      "r2_gain_ci_low": -0.0543048228486014,
+      "r2_gain_ci_high": 0.0009184756493223367,
+      "mse_gain_mean": -1.4549978828463518e-07,
+      "mse_gain_pvalue": 0.08125,
+      "mae_gain_mean": -4.587319243103081e-05,
+      "mae_gain_pvalue": 0.2765
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_answer_role": {
+      "rmse_diff_mean": -1.869314879195253e-06,
+      "rmse_diff_ci_low": -2.3129770562207688e-05,
+      "rmse_diff_ci_high": 1.922800826300139e-05,
+      "mae_diff_mean": 1.315416142338052e-05,
+      "mae_diff_ci_low": -1.3227890838908004e-05,
+      "mae_diff_ci_high": 3.9964347849620804e-05,
+      "r2_gain_mean": -0.0005883358289723042,
+      "r2_gain_ci_low": -0.006366988692861003,
+      "r2_gain_ci_high": 0.003759102402256932,
+      "mse_gain_mean": -4.1199599392319095e-09,
+      "mse_gain_pvalue": 0.845,
+      "mae_gain_mean": 1.3316820121832598e-05,
+      "mae_gain_pvalue": 0.3565
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_answer_role_resid": {
+      "rmse_diff_mean": -0.0001769129411594103,
+      "rmse_diff_ci_low": -0.00041106186761673236,
+      "rmse_diff_ci_high": 1.8499120879477597e-05,
+      "mae_diff_mean": -0.00014930685700717506,
+      "mae_diff_ci_low": -0.0002962322050620209,
+      "mae_diff_ci_high": -1.908292871873905e-05,
+      "r2_gain_mean": -0.030912048171950916,
+      "r2_gain_ci_low": -0.06554674137063304,
+      "r2_gain_ci_high": 0.007152825111324523,
+      "mse_gain_mean": -3.5859909894554415e-07,
+      "mse_gain_pvalue": 0.133,
+      "mae_gain_mean": -0.00014975217280545792,
+      "mae_gain_pvalue": 0.0315
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_question_role": {
+      "rmse_diff_mean": -0.00016013559580126984,
+      "rmse_diff_ci_low": -0.00026524035908413377,
+      "rmse_diff_ci_high": -6.259009115022898e-05,
+      "mae_diff_mean": -0.00016277476527190875,
+      "mae_diff_ci_low": -0.00026171396249095115,
+      "mae_diff_ci_high": -7.27453849966314e-05,
+      "r2_gain_mean": -0.03171012733916179,
+      "r2_gain_ci_low": -0.07468904025213645,
+      "r2_gain_ci_high": -0.01201996147505978,
+      "mse_gain_mean": -2.9843954315426725e-07,
+      "mse_gain_pvalue": 0.0025,
+      "mae_gain_mean": -0.00016216132861759038,
+      "mae_gain_pvalue": 0.00125
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_question_role": {
+      "rmse_diff_mean": -3.386250921616452e-05,
+      "rmse_diff_ci_low": -5.5569699633781556e-05,
+      "rmse_diff_ci_high": -1.1830765957814519e-05,
+      "mae_diff_mean": -3.370275001111564e-05,
+      "mae_diff_ci_low": -5.9622190415961325e-05,
+      "mae_diff_ci_high": -7.051782921446632e-06,
+      "r2_gain_mean": -0.007181756635408364,
+      "r2_gain_ci_low": -0.02225059635097368,
+      "r2_gain_ci_high": -0.001169452348721952,
+      "mse_gain_mean": -5.9601048726420724e-08,
+      "mse_gain_pvalue": 0.00425,
+      "mae_gain_mean": -3.3803983964767224e-05,
+      "mae_gain_pvalue": 0.017
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_question_role_resid": {
+      "rmse_diff_mean": -0.00026229668296567075,
+      "rmse_diff_ci_low": -0.0005130440143037835,
+      "rmse_diff_ci_high": -5.528794571606067e-05,
+      "mae_diff_mean": -0.00019902721423265536,
+      "mae_diff_ci_low": -0.0003561425397419165,
+      "mae_diff_ci_high": -6.472128023411481e-05,
+      "r2_gain_mean": -0.04883052623582552,
+      "r2_gain_ci_low": -0.09227221363559186,
+      "r2_gain_ci_high": -0.01691553508924058,
+      "mse_gain_mean": -5.283392601309449e-07,
+      "mse_gain_pvalue": 0.016,
+      "mae_gain_mean": -0.00019890368970052456,
+      "mae_gain_pvalue": 0.004
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_answer_role": {
+      "rmse_diff_mean": -0.00014942960426788637,
+      "rmse_diff_ci_low": -0.0002922889107540839,
+      "rmse_diff_ci_high": -1.8306699358776613e-05,
+      "mae_diff_mean": -9.266626105501933e-05,
+      "mae_diff_ci_low": -0.00021491627468582362,
+      "mae_diff_ci_high": 1.6768000761361378e-05,
+      "r2_gain_mean": -0.02693860321911565,
+      "r2_gain_ci_low": -0.05638735188893685,
+      "r2_gain_ci_high": -0.005827568705102246,
+      "mse_gain_mean": -2.789834175362801e-07,
+      "mse_gain_pvalue": 0.04275,
+      "mae_gain_mean": -9.178476226233167e-05,
+      "mae_gain_pvalue": 0.13425
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_answer_role": {
+      "rmse_diff_mean": -6.036770908626868e-06,
+      "rmse_diff_ci_low": -3.5467085569400054e-05,
+      "rmse_diff_ci_high": 2.3169525527469413e-05,
+      "mae_diff_mean": 3.911224939778413e-06,
+      "mae_diff_ci_low": -2.461607567762088e-05,
+      "mae_diff_ci_high": 3.2882387932878984e-05,
+      "r2_gain_mean": -0.0014114389529752578,
+      "r2_gain_ci_low": -0.009164988446697012,
+      "r2_gain_ci_high": 0.004351113374469537,
+      "mse_gain_mean": -1.125786747643868e-08,
+      "mse_gain_pvalue": 0.69175,
+      "mae_gain_mean": 4.03135740854189e-06,
+      "mae_gain_pvalue": 0.79825
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa__vs__residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_answer_role_resid": {
+      "rmse_diff_mean": -0.00018680758989997264,
+      "rmse_diff_ci_low": -0.00033249126141114227,
+      "rmse_diff_ci_high": -4.305717122395558e-05,
+      "mae_diff_mean": -0.00023975909785348387,
+      "mae_diff_ci_low": -0.00035315121000076147,
+      "mae_diff_ci_high": -0.0001238070830206372,
+      "r2_gain_mean": -0.036976930797538415,
+      "r2_gain_ci_low": -0.0940271812298102,
+      "r2_gain_ci_high": -0.010354909197988968,
+      "mse_gain_mean": -3.518301130424469e-07,
+      "mse_gain_pvalue": 0.014,
+      "mae_gain_mean": -0.00023913519020277838,
+      "mae_gain_pvalue": 0.0
+    }
+  }
+}

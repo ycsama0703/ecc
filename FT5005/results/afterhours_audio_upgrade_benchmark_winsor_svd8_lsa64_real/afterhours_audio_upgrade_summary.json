@@ -1,0 +1,1740 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_both_audio": 172,
+    "joined_rows": 172
+  },
+  "split_sizes": {
+    "train": 89,
+    "val": 23,
+    "test": 60
+  },
+  "config": {
+    "alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "max_features": 8000,
+    "min_df": 2,
+    "lsa_components": 64,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_agg_suffixes": [
+      "winsor_mean"
+    ],
+    "aligned_compressed_components": 8
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "controls": [
+      "call_duration_min",
+      "scheduled_hour_et",
+      "revenue_surprise_pct",
+      "ebitda_surprise_pct",
+      "eps_gaap_surprise_pct",
+      "analyst_eps_norm_num_est",
+      "analyst_eps_norm_std",
+      "analyst_revenue_num_est",
+      "analyst_revenue_std",
+      "analyst_net_income_num_est",
+      "analyst_net_income_std"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "old_audio": [
+      "audio_bitrate_kbps_est",
+      "audio_chunk_count",
+      "audio_duration_sec",
+      "audio_file_size_bytes",
+      "audio_num_channels",
+      "audio_num_frames",
+      "audio_sample_rate",
+      "chunk_abs_mean_mean",
+      "chunk_abs_mean_std",
+      "chunk_dynamic_range_mean",
+      "chunk_dynamic_range_std",
+      "chunk_high_band_share_mean",
+      "chunk_high_band_share_std",
+      "chunk_low_band_share_mean",
+      "chunk_low_band_share_std",
+      "chunk_max_abs_mean",
+      "chunk_max_abs_std",
+      "chunk_mid_band_share_mean",
+      "chunk_mid_band_share_std",
+      "chunk_rms_mean",
+      "chunk_rms_std",
+      "chunk_silence_share_mean",
+      "chunk_silence_share_std",
+      "chunk_spectral_bandwidth_hz_mean",
+      "chunk_spectral_bandwidth_hz_std",
+      "chunk_spectral_centroid_hz_mean",
+      "chunk_spectral_centroid_hz_std",
+      "chunk_spectral_flatness_mean",
+      "chunk_spectral_flatness_std",
+      "chunk_spectral_rolloff85_hz_mean",
+      "chunk_spectral_rolloff85_hz_std",
+      "chunk_std_mean",
+      "chunk_std_std",
+      "chunk_zcr_mean",
+      "chunk_zcr_std",
+      "has_real_audio"
+    ],
+    "aligned_audio": [
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_amean_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile20.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile50.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_percentile80.0_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope_winsor_mean",
+      "aligned_audio__F1amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F1bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F1frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F1frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F2frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F2frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3amplitudeLogRelF0_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3amplitudeLogRelF0_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3bandwidth_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3bandwidth_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__F3frequency_sma3nz_amean_winsor_mean",
+      "aligned_audio__F3frequency_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__HNRdBACF_sma3nz_amean_winsor_mean",
+      "aligned_audio__HNRdBACF_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__MeanUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__MeanVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__StddevUnvoicedSegmentLength_winsor_mean",
+      "aligned_audio__StddevVoicedSegmentLengthSec_winsor_mean",
+      "aligned_audio__VoicedSegmentsPerSec_winsor_mean",
+      "aligned_audio__aligned_audio_duration_mean_sec",
+      "aligned_audio__aligned_audio_duration_median_sec",
+      "aligned_audio__aligned_audio_duration_sum_sec",
+      "aligned_audio__aligned_audio_sentence_count",
+      "aligned_audio__alphaRatioUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__alphaRatioV_sma3nz_amean_winsor_mean",
+      "aligned_audio__alphaRatioV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__equivalentSoundLevel_dBp_winsor_mean",
+      "aligned_audio__hammarbergIndexUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__hammarbergIndexV_sma3nz_amean_winsor_mean",
+      "aligned_audio__hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__jitterLocal_sma3nz_amean_winsor_mean",
+      "aligned_audio__jitterLocal_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__logRelF0-H1-A3_sma3nz_amean_winsor_mean",
+      "aligned_audio__logRelF0-H1-A3_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+      "aligned_audio__logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__loudnessPeaksPerSec_winsor_mean",
+      "aligned_audio__loudness_sma3_amean_winsor_mean",
+      "aligned_audio__loudness_sma3_meanFallingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_meanRisingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_pctlrange0-2_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile20.0_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile50.0_winsor_mean",
+      "aligned_audio__loudness_sma3_percentile80.0_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevFallingSlope_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__loudness_sma3_stddevRisingSlope_winsor_mean",
+      "aligned_audio__mfcc1V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc1V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc1_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc1_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc2V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc2V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc2_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc2_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc3V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc3V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc3_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc3_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc4V_sma3nz_amean_winsor_mean",
+      "aligned_audio__mfcc4V_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__mfcc4_sma3_amean_winsor_mean",
+      "aligned_audio__mfcc4_sma3_stddevNorm_winsor_mean",
+      "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+      "aligned_audio__shimmerLocaldB_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__slopeUV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeUV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV0-500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV0-500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__slopeV500-1500_sma3nz_amean_winsor_mean",
+      "aligned_audio__slopeV500-1500_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__spectralFluxUV_sma3nz_amean_winsor_mean",
+      "aligned_audio__spectralFluxV_sma3nz_amean_winsor_mean",
+      "aligned_audio__spectralFluxV_sma3nz_stddevNorm_winsor_mean",
+      "aligned_audio__spectralFlux_sma3_amean_winsor_mean",
+      "aligned_audio__spectralFlux_sma3_stddevNorm_winsor_mean"
+    ],
+    "aligned_audio_svd": {
+      "input_feature_count": 92,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.7569675508262839
+    }
+  },
+  "models": {
+    "prior_only": {
+      "family": "prior_passthrough",
+      "feature_bundles": [],
+      "feature_count": 1,
+      "val": {
+        "mae": 0.0019584885589000373,
+        "rmse": 0.004891882377800723,
+        "r2": 0.002205108485209162
+      },
+      "test": {
+        "mae": 0.0017171483500254274,
+        "rmse": 0.0032928515889152103,
+        "r2": 0.03508881128987884
+      }
+    },
+    "residual_pre_call_market_only": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market"
+      ],
+      "feature_count": 6,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0007650598697296879,
+        "rmse": 0.0009975759675944897,
+        "r2": 0.9585063900651409
+      },
+      "test": {
+        "mae": 0.0007796617701334478,
+        "rmse": 0.0009634630929242406,
+        "r2": 0.9173936955166082
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0012475446233768226,
+          "abs_coefficient": 0.0012475446233768226
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": 0.0002774126364292516,
+          "abs_coefficient": 0.0002774126364292516
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00023702626821313057,
+          "abs_coefficient": 0.00023702626821313057
+        },
+        {
+          "feature": "html_integrity_flag=warn",
+          "coefficient": 2.3283174019958763e-05,
+          "abs_coefficient": 2.3283174019958763e-05
+        },
+        {
+          "feature": "html_integrity_flag=pass",
+          "coefficient": -2.3283174019953325e-05,
+          "abs_coefficient": 2.3283174019953325e-05
+        },
+        {
+          "feature": "html_integrity_flag=fail",
+          "coefficient": 0.0,
+          "abs_coefficient": 0.0
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls"
+      ],
+      "feature_count": 20,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0005506448747897335,
+        "rmse": 0.0006895953130809618,
+        "r2": 0.980172047675532
+      },
+      "test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0007804146684348236,
+          "abs_coefficient": 0.0007804146684348236
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00039347421272637763,
+          "abs_coefficient": 0.00039347421272637763
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00036012587102581575,
+          "abs_coefficient": 0.00036012587102581575
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00032564985186115183,
+          "abs_coefficient": 0.00032564985186115183
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0002744396694834601,
+          "abs_coefficient": 0.0002744396694834601
+        },
+        {
+          "feature": "eps_gaap_surprise_pct",
+          "coefficient": -0.0001450828297877397,
+          "abs_coefficient": 0.0001450828297877397
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00013816599450603166,
+          "abs_coefficient": 0.00013816599450603166
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": 0.000134907846525655,
+          "abs_coefficient": 0.000134907846525655
+        },
+        {
+          "feature": "analyst_eps_norm_num_est",
+          "coefficient": -0.0001332128956972547,
+          "abs_coefficient": 0.0001332128956972547
+        },
+        {
+          "feature": "analyst_eps_norm_std",
+          "coefficient": -0.00012071417194590262,
+          "abs_coefficient": 0.00012071417194590262
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "old_audio"
+      ],
+      "feature_count": 59,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0006858120966314418,
+        "rmse": 0.0007761309138393483,
+        "r2": 0.9748834937653469
+      },
+      "test": {
+        "mae": 0.0009887039608034028,
+        "rmse": 0.0013566506542874563,
+        "r2": 0.8362131293909326
+      },
+      "top_coefficients": [
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0006771523399534023,
+          "abs_coefficient": 0.0006771523399534023
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006332707257668866,
+          "abs_coefficient": 0.0006332707257668866
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005012664181821178,
+          "abs_coefficient": 0.0005012664181821178
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0004422118553717623,
+          "abs_coefficient": 0.0004422118553717623
+        },
+        {
+          "feature": "chunk_abs_mean_std",
+          "coefficient": 0.0003653114497854774,
+          "abs_coefficient": 0.0003653114497854774
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": 0.0003419987840274641,
+          "abs_coefficient": 0.0003419987840274641
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.0003385249662092285,
+          "abs_coefficient": 0.0003385249662092285
+        },
+        {
+          "feature": "chunk_spectral_flatness_mean",
+          "coefficient": -0.0002994862294399279,
+          "abs_coefficient": 0.0002994862294399279
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": -0.00029373588175139807,
+          "abs_coefficient": 0.00029373588175139807
+        },
+        {
+          "feature": "analyst_eps_norm_num_est",
+          "coefficient": -0.000269230839762018,
+          "abs_coefficient": 0.000269230839762018
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "aligned_audio"
+      ],
+      "feature_count": 115,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005043864641360452,
+        "rmse": 0.0007316590647197391,
+        "r2": 0.9776793530130077
+      },
+      "test": {
+        "mae": 0.0007843358999545956,
+        "rmse": 0.0011226784395927864,
+        "r2": 0.8878359215181529
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006193290129951837,
+          "abs_coefficient": 0.0006193290129951837
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005896537526777923,
+          "abs_coefficient": 0.0005896537526777923
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0002669573758233944,
+          "abs_coefficient": 0.0002669573758233944
+        },
+        {
+          "feature": "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+          "coefficient": -0.00018835031219318558,
+          "abs_coefficient": 0.00018835031219318558
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0001724445930878054,
+          "abs_coefficient": 0.0001724445930878054
+        },
+        {
+          "feature": "aligned_audio__logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+          "coefficient": -0.00015022677127846977,
+          "abs_coefficient": 0.00015022677127846977
+        },
+        {
+          "feature": "aligned_audio__mfcc3V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00014304395057988925,
+          "abs_coefficient": 0.00014304395057988925
+        },
+        {
+          "feature": "aligned_audio__F2bandwidth_sma3nz_amean_winsor_mean",
+          "coefficient": 0.00013932292979278686,
+          "abs_coefficient": 0.00013932292979278686
+        },
+        {
+          "feature": "aligned_audio__loudnessPeaksPerSec_winsor_mean",
+          "coefficient": -0.00013432132204391434,
+          "abs_coefficient": 0.00013432132204391434
+        },
+        {
+          "feature": "aligned_audio__logRelF0-H1-H2_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00012942348568637234,
+          "abs_coefficient": 0.00012942348568637234
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 28,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00035211606941862696,
+        "rmse": 0.00044440384343114514,
+        "r2": 0.9917653550921581
+      },
+      "test": {
+        "mae": 0.000670273443403626,
+        "rmse": 0.0009199608787246567,
+        "r2": 0.9246849538211775
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005791820803992212,
+          "abs_coefficient": 0.0005791820803992212
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.000577752394985184,
+          "abs_coefficient": 0.000577752394985184
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0002954947658066707,
+          "abs_coefficient": 0.0002954947658066707
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00019357488547761464,
+          "abs_coefficient": 0.00019357488547761464
+        },
+        {
+          "feature": "aligned_audio_svd_8",
+          "coefficient": 0.00019084219933515647,
+          "abs_coefficient": 0.00019084219933515647
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00016826709791442786,
+          "abs_coefficient": 0.00016826709791442786
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": -0.00012022729293469905,
+          "abs_coefficient": 0.00012022729293469905
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00010473656845940339,
+          "abs_coefficient": 0.00010473656845940339
+        },
+        {
+          "feature": "analyst_eps_norm_std",
+          "coefficient": -9.128569210055618e-05,
+          "abs_coefficient": 9.128569210055618e-05
+        },
+        {
+          "feature": "aligned_audio_svd_2",
+          "coefficient": 7.18730903504349e-05,
+          "abs_coefficient": 7.18730903504349e-05
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 154,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00043692135004589543,
+        "rmse": 0.0006475110246676696,
+        "r2": 0.9825183026120744
+      },
+      "test": {
+        "mae": 0.0008483295497301117,
+        "rmse": 0.001168526808950381,
+        "r2": 0.8784876586164736
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006246852252684796,
+          "abs_coefficient": 0.0006246852252684796
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005945156483998992,
+          "abs_coefficient": 0.0005945156483998992
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00026001971708930206,
+          "abs_coefficient": 0.00026001971708930206
+        },
+        {
+          "feature": "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+          "coefficient": -0.00016616523794351953,
+          "abs_coefficient": 0.00016616523794351953
+        },
+        {
+          "feature": "aligned_audio__loudnessPeaksPerSec_winsor_mean",
+          "coefficient": -0.00013379249169486428,
+          "abs_coefficient": 0.00013379249169486428
+        },
+        {
+          "feature": "aligned_audio__hammarbergIndexV_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": -0.00013374922411296152,
+          "abs_coefficient": 0.00013374922411296152
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00012738479180178974,
+          "abs_coefficient": 0.00012738479180178974
+        },
+        {
+          "feature": "chunk_low_band_share_mean",
+          "coefficient": 0.00012201713598649718,
+          "abs_coefficient": 0.00012201713598649718
+        },
+        {
+          "feature": "aligned_audio__mfcc3_sma3_stddevNorm_winsor_mean",
+          "coefficient": -0.00011392305838640654,
+          "abs_coefficient": 0.00011392305838640654
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00010934810369700522,
+          "abs_coefficient": 0.00010934810369700522
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4"
+      ],
+      "feature_count": 28,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.00042938256710825577,
+        "rmse": 0.000554773213465561,
+        "r2": 0.9871672353083657
+      },
+      "test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0007361961407485601,
+          "abs_coefficient": 0.0007361961407485601
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00047234132731411134,
+          "abs_coefficient": 0.00047234132731411134
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.00044983077976805955,
+          "abs_coefficient": 0.00044983077976805955
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.0004102941806231901,
+          "abs_coefficient": 0.0004102941806231901
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.0003953585559948337,
+          "abs_coefficient": 0.0003953585559948337
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": -0.00031971600731513667,
+          "abs_coefficient": 0.00031971600731513667
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.0003019138649913462,
+          "abs_coefficient": 0.0003019138649913462
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00026478724182289455,
+          "abs_coefficient": 0.00026478724182289455
+        },
+        {
+          "feature": "a4_broad_row_share",
+          "coefficient": -0.00025503306415810726,
+          "abs_coefficient": 0.00025503306415810726
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00019837704540367788,
+          "abs_coefficient": 0.00019837704540367788
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "old_audio"
+      ],
+      "feature_count": 67,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005121724459276328,
+        "rmse": 0.0006099831159155924,
+        "r2": 0.9844859605316121
+      },
+      "test": {
+        "mae": 0.0007865732459072798,
+        "rmse": 0.0010418177908366297,
+        "r2": 0.9034112452839724
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005682952841563311,
+          "abs_coefficient": 0.0005682952841563311
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005476407595286286,
+          "abs_coefficient": 0.0005476407595286286
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0003283444871458475,
+          "abs_coefficient": 0.0003283444871458475
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00022739336252232026,
+          "abs_coefficient": 0.00022739336252232026
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00021791883021150398,
+          "abs_coefficient": 0.00021791883021150398
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00017955837406127828,
+          "abs_coefficient": 0.00017955837406127828
+        },
+        {
+          "feature": "chunk_low_band_share_mean",
+          "coefficient": 0.0001482736345648942,
+          "abs_coefficient": 0.0001482736345648942
+        },
+        {
+          "feature": "a4_kept_rows_for_duration",
+          "coefficient": -0.0001278997734241593,
+          "abs_coefficient": 0.0001278997734241593
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00012396235724461882,
+          "abs_coefficient": 0.00012396235724461882
+        },
+        {
+          "feature": "chunk_mid_band_share_std",
+          "coefficient": -0.00011531777345489804,
+          "abs_coefficient": 0.00011531777345489804
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "aligned_audio"
+      ],
+      "feature_count": 123,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0005072986536927036,
+        "rmse": 0.0008145728622582539,
+        "r2": 0.9723338238035315
+      },
+      "test": {
+        "mae": 0.000778672719218426,
+        "rmse": 0.0011065778528993686,
+        "r2": 0.8910299937324162
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.000628379650209725,
+          "abs_coefficient": 0.000628379650209725
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006001782183029647,
+          "abs_coefficient": 0.0006001782183029647
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00025701841756582824,
+          "abs_coefficient": 0.00025701841756582824
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00019586746457322298,
+          "abs_coefficient": 0.00019586746457322298
+        },
+        {
+          "feature": "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+          "coefficient": -0.00018831744599560744,
+          "abs_coefficient": 0.00018831744599560744
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00016202435550763066,
+          "abs_coefficient": 0.00016202435550763066
+        },
+        {
+          "feature": "aligned_audio__mfcc3V_sma3nz_stddevNorm_winsor_mean",
+          "coefficient": 0.00013990717143395193,
+          "abs_coefficient": 0.00013990717143395193
+        },
+        {
+          "feature": "aligned_audio__logRelF0-H1-H2_sma3nz_amean_winsor_mean",
+          "coefficient": -0.0001392849428895587,
+          "abs_coefficient": 0.0001392849428895587
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.0001298049421996134,
+          "abs_coefficient": 0.0001298049421996134
+        },
+        {
+          "feature": "aligned_audio__F2bandwidth_sma3nz_amean_winsor_mean",
+          "coefficient": 0.00012777709959216552,
+          "abs_coefficient": 0.00012777709959216552
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 36,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00036410921119762015,
+        "rmse": 0.00047405439715310816,
+        "r2": 0.9906298698683141
+      },
+      "test": {
+        "mae": 0.0006757728269483622,
+        "rmse": 0.000947516261508904,
+        "r2": 0.9201055939866062
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005960867142610684,
+          "abs_coefficient": 0.0005960867142610684
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005954647768077421,
+          "abs_coefficient": 0.0005954647768077421
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00031338811912592473,
+          "abs_coefficient": 0.00031338811912592473
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.0002254785898046756,
+          "abs_coefficient": 0.0002254785898046756
+        },
+        {
+          "feature": "aligned_audio_svd_8",
+          "coefficient": 0.00016239713314578273,
+          "abs_coefficient": 0.00016239713314578273
+        },
+        {
+          "feature": "analyst_revenue_num_est",
+          "coefficient": -0.00015924540419683187,
+          "abs_coefficient": 0.00015924540419683187
+        },
+        {
+          "feature": "a4_strict_row_share",
+          "coefficient": 0.00015727148967017255,
+          "abs_coefficient": 0.00015727148967017255
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00015479686640310682,
+          "abs_coefficient": 0.00015479686640310682
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": -0.00012471588093237302,
+          "abs_coefficient": 0.00012471588093237302
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00012428918881324098,
+          "abs_coefficient": 0.00012428918881324098
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 162,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.00045212134716664915,
+        "rmse": 0.0007088105314246824,
+        "r2": 0.9790516613025875
+      },
+      "test": {
+        "mae": 0.0008137961977651833,
+        "rmse": 0.0011288428026243,
+        "r2": 0.8866008068372129
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006295498047851959,
+          "abs_coefficient": 0.0006295498047851959
+        },
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006021900142533962,
+          "abs_coefficient": 0.0006021900142533962
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00024468634038974285,
+          "abs_coefficient": 0.00024468634038974285
+        },
+        {
+          "feature": "a4_median_match_score",
+          "coefficient": 0.00020164854469846357,
+          "abs_coefficient": 0.00020164854469846357
+        },
+        {
+          "feature": "aligned_audio__shimmerLocaldB_sma3nz_amean_winsor_mean",
+          "coefficient": -0.00015553857999759416,
+          "abs_coefficient": 0.00015553857999759416
+        },
+        {
+          "feature": "analyst_net_income_num_est",
+          "coefficient": 0.00014609423276664197,
+          "abs_coefficient": 0.00014609423276664197
+        },
+        {
+          "feature": "aligned_audio__loudnessPeaksPerSec_winsor_mean",
+          "coefficient": -0.00012576107750422437,
+          "abs_coefficient": 0.00012576107750422437
+        },
+        {
+          "feature": "chunk_low_band_share_mean",
+          "coefficient": 0.0001210838980288805,
+          "abs_coefficient": 0.0001210838980288805
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0001116663002242517,
+          "abs_coefficient": 0.0001116663002242517
+        },
+        {
+          "feature": "aligned_audio__F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope_winsor_mean",
+          "coefficient": 0.00011134577558274001,
+          "abs_coefficient": 0.00011134577558274001
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa"
+      ],
+      "feature_count": 92,
+      "best_alpha": 10.0,
+      "val": {
+        "mae": 0.0004186517244392732,
+        "rmse": 0.0006770551109151293,
+        "r2": 0.9808866283097186
+      },
+      "test": {
+        "mae": 0.000595830499745426,
+        "rmse": 0.0008564745695355815,
+        "r2": 0.9347212284944735
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005241959295796629,
+          "abs_coefficient": 0.0005241959295796629
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005226289048842093,
+          "abs_coefficient": 0.0005226289048842093
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00024621741286399534,
+          "abs_coefficient": 0.00024621741286399534
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00023903569849015728,
+          "abs_coefficient": 0.00023903569849015728
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00020353052115338835,
+          "abs_coefficient": 0.00020353052115338835
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00017395911189460437,
+          "abs_coefficient": 0.00017395911189460437
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00016240311038267496,
+          "abs_coefficient": 0.00016240311038267496
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.0001560929992947875,
+          "abs_coefficient": 0.0001560929992947875
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00015428937362930797,
+          "abs_coefficient": 0.00015428937362930797
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00013624092266970695,
+          "abs_coefficient": 0.00013624092266970695
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "old_audio"
+      ],
+      "feature_count": 131,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0004173500194242119,
+        "rmse": 0.0005643133042510833,
+        "r2": 0.9867220862746975
+      },
+      "test": {
+        "mae": 0.0006487030526596739,
+        "rmse": 0.0008862041314451833,
+        "r2": 0.9301107196363968
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006163436409950489,
+          "abs_coefficient": 0.0006163436409950489
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005992443787857316,
+          "abs_coefficient": 0.0005992443787857316
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.0003497826911557846,
+          "abs_coefficient": 0.0003497826911557846
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.0003386123777644006,
+          "abs_coefficient": 0.0003386123777644006
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00026163894604902413,
+          "abs_coefficient": 0.00026163894604902413
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00025630234138929,
+          "abs_coefficient": 0.00025630234138929
+        },
+        {
+          "feature": "qna_text_lsa_2",
+          "coefficient": 0.00022130328634898094,
+          "abs_coefficient": 0.00022130328634898094
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00021264920798413063,
+          "abs_coefficient": 0.00021264920798413063
+        },
+        {
+          "feature": "qna_text_lsa_28",
+          "coefficient": 0.00016950424208694913,
+          "abs_coefficient": 0.00016950424208694913
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.000153651479749287,
+          "abs_coefficient": 0.000153651479749287
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "aligned_audio"
+      ],
+      "feature_count": 187,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.0005018364577466194,
+        "rmse": 0.0006121439199887057,
+        "r2": 0.9843758519913031
+      },
+      "test": {
+        "mae": 0.0008295959079484545,
+        "rmse": 0.0010954327407573753,
+        "r2": 0.8932139647694058
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005747299036910105,
+          "abs_coefficient": 0.0005747299036910105
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005611212262368698,
+          "abs_coefficient": 0.0005611212262368698
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00030890354653195036,
+          "abs_coefficient": 0.00030890354653195036
+        },
+        {
+          "feature": "qna_text_lsa_30",
+          "coefficient": 0.00019734653739649784,
+          "abs_coefficient": 0.00019734653739649784
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0001832628162657253,
+          "abs_coefficient": 0.0001832628162657253
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.00017304161926395484,
+          "abs_coefficient": 0.00017304161926395484
+        },
+        {
+          "feature": "qna_text_lsa_64",
+          "coefficient": 0.00015711928566976253,
+          "abs_coefficient": 0.00015711928566976253
+        },
+        {
+          "feature": "scheduled_hour_et",
+          "coefficient": -0.00013777220026737816,
+          "abs_coefficient": 0.00013777220026737816
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00013210967134857321,
+          "abs_coefficient": 0.00013210967134857321
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.00013052280615380625,
+          "abs_coefficient": 0.00013052280615380625
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "aligned_audio_svd"
+      ],
+      "feature_count": 100,
+      "best_alpha": 1.0,
+      "val": {
+        "mae": 0.00033743588978483606,
+        "rmse": 0.0005022356488799774,
+        "r2": 0.9894826982217245
+      },
+      "test": {
+        "mae": 0.0006319961759488179,
+        "rmse": 0.0009033459901702968,
+        "r2": 0.9273808317835617
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0006480531835289734,
+          "abs_coefficient": 0.0006480531835289734
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0006071066641751234,
+          "abs_coefficient": 0.0006071066641751234
+        },
+        {
+          "feature": "qna_text_lsa_3",
+          "coefficient": 0.0003056892513661947,
+          "abs_coefficient": 0.0003056892513661947
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.0002880244271074834,
+          "abs_coefficient": 0.0002880244271074834
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.00026239568632045604,
+          "abs_coefficient": 0.00026239568632045604
+        },
+        {
+          "feature": "qna_text_lsa_6",
+          "coefficient": -0.00023561623283616212,
+          "abs_coefficient": 0.00023561623283616212
+        },
+        {
+          "feature": "qna_text_lsa_9",
+          "coefficient": -0.00022519029383744334,
+          "abs_coefficient": 0.00022519029383744334
+        },
+        {
+          "feature": "qna_text_lsa_8",
+          "coefficient": 0.00017846416146816827,
+          "abs_coefficient": 0.00017846416146816827
+        },
+        {
+          "feature": "call_duration_min",
+          "coefficient": 0.00017352006902352011,
+          "abs_coefficient": 0.00017352006902352011
+        },
+        {
+          "feature": "analyst_revenue_std",
+          "coefficient": -0.00017330666361126004,
+          "abs_coefficient": 0.00017330666361126004
+        }
+      ]
+    },
+    "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_plus_aligned_audio": {
+      "family": "residual_ridge",
+      "feature_bundles": [
+        "pre_call_market",
+        "controls",
+        "a4",
+        "qna_lsa",
+        "old_audio",
+        "aligned_audio"
+      ],
+      "feature_count": 226,
+      "best_alpha": 0.1,
+      "val": {
+        "mae": 0.0005691300219356396,
+        "rmse": 0.0007097488647527825,
+        "r2": 0.9789961611815045
+      },
+      "test": {
+        "mae": 0.0008415232483959914,
+        "rmse": 0.0010987983967851178,
+        "r2": 0.8925567684381844
+      },
+      "top_coefficients": [
+        {
+          "feature": "pre_60m_vw_rv",
+          "coefficient": -0.0005482252421689213,
+          "abs_coefficient": 0.0005482252421689213
+        },
+        {
+          "feature": "pre_60m_rv",
+          "coefficient": -0.0005340245341902818,
+          "abs_coefficient": 0.0005340245341902818
+        },
+        {
+          "feature": "qna_text_lsa_16",
+          "coefficient": 0.0002937783666524377,
+          "abs_coefficient": 0.0002937783666524377
+        },
+        {
+          "feature": "qna_text_lsa_30",
+          "coefficient": 0.00020389887670287001,
+          "abs_coefficient": 0.00020389887670287001
+        },
+        {
+          "feature": "qna_text_lsa_64",
+          "coefficient": 0.00016586599113078122,
+          "abs_coefficient": 0.00016586599113078122
+        },
+        {
+          "feature": "qna_text_lsa_48",
+          "coefficient": 0.0001485450780012327,
+          "abs_coefficient": 0.0001485450780012327
+        },
+        {
+          "feature": "pre_60m_volume_sum",
+          "coefficient": 0.00013809452627920184,
+          "abs_coefficient": 0.00013809452627920184
+        },
+        {
+          "feature": "qna_text_lsa_28",
+          "coefficient": 0.00013720760415717194,
+          "abs_coefficient": 0.00013720760415717194
+        },
+        {
+          "feature": "chunk_max_abs_std",
+          "coefficient": -0.0001340882139398871,
+          "abs_coefficient": 0.0001340882139398871
+        },
+        {
+          "feature": "qna_text_lsa_4",
+          "coefficient": 0.0001280906128800355,
+          "abs_coefficient": 0.0001280906128800355
+        }
+      ]
+    }
+  },
+  "significance": {
+    "audio_upgrade_vs_old_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0009887039608034028,
+        "rmse": 0.0013566506542874563,
+        "r2": 0.8362131293909326
+      },
+      "challenger_test": {
+        "mae": 0.0007843358999545956,
+        "rmse": 0.0011226784395927864,
+        "r2": 0.8878359215181529
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 0.0002328242580366115,
+        "rmse_diff_ci_low": -0.00011122051418024086,
+        "rmse_diff_ci_high": 0.0005921580638576472,
+        "mae_diff_mean": 0.0002054880276747884,
+        "mae_diff_ci_low": -6.847041317585028e-06,
+        "mae_diff_ci_high": 0.00041324993259136636,
+        "r2_gain_mean": 0.061900859864886644,
+        "r2_gain_ci_low": -0.032501970800978386,
+        "r2_gain_ci_high": 0.19057557505084005
+      },
+      "permutation": {
+        "mse_gain_mean": 5.800941190520894e-07,
+        "mse_gain_pvalue": 0.27075,
+        "mae_gain_mean": 0.00020436806084880705,
+        "mae_gain_pvalue": 0.05525
+      }
+    },
+    "audio_upgrade_vs_no_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "challenger_test": {
+        "mae": 0.0007843358999545956,
+        "rmse": 0.0011226784395927864,
+        "r2": 0.8878359215181529
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00016662394355659721,
+        "rmse_diff_ci_low": -0.0003416552173747584,
+        "rmse_diff_ci_high": 6.090584834071101e-06,
+        "mae_diff_mean": -5.972813759650697e-05,
+        "mae_diff_ci_low": -0.00020680203996572148,
+        "mae_diff_ci_high": 7.82190941838599e-05,
+        "r2_gain_mean": -0.039957807466434646,
+        "r2_gain_ci_low": -0.13078137820244753,
+        "r2_gain_ci_high": 0.0011187856398570451
+      },
+      "permutation": {
+        "mse_gain_mean": -3.552358582178999e-07,
+        "mse_gain_pvalue": 0.08475,
+        "mae_gain_mean": -6.0691848340766124e-05,
+        "mae_gain_pvalue": 0.396
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.0007236440516138296,
+        "rmse": 0.0009514047616596177,
+        "r2": 0.9194484931037489
+      },
+      "challenger_test": {
+        "mae": 0.000670273443403626,
+        "rmse": 0.0009199608787246567,
+        "r2": 0.9246849538211775
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 3.3494478158113874e-05,
+        "rmse_diff_ci_low": -8.676071248399552e-05,
+        "rmse_diff_ci_high": 0.0001716372894958336,
+        "mae_diff_mean": 5.381930576093326e-05,
+        "mae_diff_ci_low": -5.1450712698215945e-05,
+        "mae_diff_ci_high": 0.000164677765240961,
+        "r2_gain_mean": 0.005749592836153584,
+        "r2_gain_ci_low": -0.024187346726611256,
+        "r2_gain_ci_high": 0.035932174673163335
+      },
+      "permutation": {
+        "mse_gain_mean": 5.884300212475173e-08,
+        "mse_gain_pvalue": 0.67225,
+        "mae_gain_mean": 5.337060821020349e-05,
+        "mae_gain_pvalue": 0.3405
+      }
+    },
+    "merged_vs_aligned_controls_only": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007843358999545956,
+        "rmse": 0.0011226784395927864,
+        "r2": 0.8878359215181529
+      },
+      "challenger_test": {
+        "mae": 0.0008483295497301117,
+        "rmse": 0.001168526808950381,
+        "r2": 0.8784876586164736
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -4.754784770968925e-05,
+        "rmse_diff_ci_low": -0.00016149055405380346,
+        "rmse_diff_ci_high": 6.265037874109853e-05,
+        "mae_diff_mean": -6.363645641953689e-05,
+        "mae_diff_ci_low": -0.00015062329198046513,
+        "mae_diff_ci_high": 2.036675602148812e-05,
+        "r2_gain_mean": -0.011398491951008059,
+        "r2_gain_ci_low": -0.05247108830020459,
+        "r2_gain_ci_high": 0.020844303992749766
+      },
+      "permutation": {
+        "mse_gain_mean": -1.0504802450926621e-07,
+        "mse_gain_pvalue": 0.437,
+        "mae_gain_mean": -6.399364977551602e-05,
+        "mae_gain_pvalue": 0.15625
+      }
+    },
+    "audio_upgrade_vs_old_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007865732459072798,
+        "rmse": 0.0010418177908366297,
+        "r2": 0.9034112452839724
+      },
+      "challenger_test": {
+        "mae": 0.000778672719218426,
+        "rmse": 0.0011065778528993686,
+        "r2": 0.8910299937324162
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -6.201145762691496e-05,
+        "rmse_diff_ci_low": -0.0002538244355716947,
+        "rmse_diff_ci_high": 0.00012219969409912778,
+        "mae_diff_mean": 8.360751577739612e-06,
+        "mae_diff_ci_low": -0.0001492086980798039,
+        "mae_diff_ci_high": 0.00015246550945599333,
+        "r2_gain_mean": -0.012823553935144496,
+        "r2_gain_ci_low": -0.07321713484512543,
+        "r2_gain_ci_high": 0.038014473586502
+      },
+      "permutation": {
+        "mse_gain_mean": -1.3913023522366133e-07,
+        "mse_gain_pvalue": 0.5135,
+        "mae_gain_mean": 7.90052668885366e-06,
+        "mae_gain_pvalue": 0.91375
+      }
+    },
+    "audio_upgrade_vs_no_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "challenger_test": {
+        "mae": 0.000778672719218426,
+        "rmse": 0.0011065778528993686,
+        "r2": 0.8910299937324162
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -2.6098543311172297e-05,
+        "rmse_diff_ci_low": -0.00019356976525866185,
+        "rmse_diff_ci_high": 0.00014208770975917255,
+        "mae_diff_mean": 6.1669343641449425e-06,
+        "mae_diff_ci_low": -0.00012109912801464863,
+        "mae_diff_ci_high": 0.00013126196136071315,
+        "r2_gain_mean": -0.007068253961366657,
+        "r2_gain_ci_low": -0.06431174144727896,
+        "r2_gain_ci_high": 0.036399224757232514
+      },
+      "permutation": {
+        "mse_gain_mean": -6.446610680710627e-08,
+        "mse_gain_pvalue": 0.72475,
+        "mae_gain_mean": 4.8905569548500795e-06,
+        "mae_gain_pvalue": 0.93725
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.0007835632761732761,
+        "rmse": 0.0010770554478392795,
+        "r2": 0.8967668566338923
+      },
+      "challenger_test": {
+        "mae": 0.0006757728269483622,
+        "rmse": 0.000947516261508904,
+        "r2": 0.9201055939866062
+      },
+      "bootstrap": {
+        "rmse_diff_mean": 0.00013114847936138713,
+        "rmse_diff_ci_low": 1.233009755667279e-05,
+        "rmse_diff_ci_high": 0.000256354759193911,
+        "mae_diff_mean": 0.0001088233065083777,
+        "mae_diff_ci_low": 1.7785378546597978e-05,
+        "mae_diff_ci_high": 0.0002024287297017897,
+        "r2_gain_mean": 0.029061838354151756,
+        "r2_gain_ci_low": 0.002305664082490758,
+        "r2_gain_ci_high": 0.0784327470149564
+      },
+      "permutation": {
+        "mse_gain_mean": 2.6226137189646094e-07,
+        "mse_gain_pvalue": 0.0475,
+        "mae_gain_mean": 0.00010779044922491383,
+        "mae_gain_pvalue": 0.022
+      }
+    },
+    "merged_vs_aligned_no_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.000778672719218426,
+        "rmse": 0.0011065778528993686,
+        "r2": 0.8910299937324162
+      },
+      "challenger_test": {
+        "mae": 0.0008137961977651833,
+        "rmse": 0.0011288428026243,
+        "r2": 0.8866008068372129
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -2.3208211799772367e-05,
+        "rmse_diff_ci_low": -0.00013136361502446875,
+        "rmse_diff_ci_high": 7.880468697253291e-05,
+        "mae_diff_mean": -3.4451222525348096e-05,
+        "mae_diff_ci_low": -0.00011292828948145515,
+        "mae_diff_ci_high": 3.95851446313655e-05,
+        "r2_gain_mean": -0.006159669957130253,
+        "r2_gain_ci_low": -0.04519198858188921,
+        "r2_gain_ci_high": 0.02385750912887705
+      },
+      "permutation": {
+        "mse_gain_mean": -4.97715285093077e-08,
+        "mse_gain_pvalue": 0.7025,
+        "mae_gain_mean": -3.5123478546757324e-05,
+        "mae_gain_pvalue": 0.38625
+      }
+    },
+    "audio_upgrade_vs_old_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0006487030526596739,
+        "rmse": 0.0008862041314451833,
+        "r2": 0.9301107196363968
+      },
+      "challenger_test": {
+        "mae": 0.0008295959079484545,
+        "rmse": 0.0010954327407573753,
+        "r2": 0.8932139647694058
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.00020446702228100872,
+        "rmse_diff_ci_low": -0.00042091709796425377,
+        "rmse_diff_ci_high": 4.821368906209831e-06,
+        "mae_diff_mean": -0.00017937472555599448,
+        "mae_diff_ci_low": -0.00032286481442061994,
+        "mae_diff_ci_high": -4.1747106006766406e-05,
+        "r2_gain_mean": -0.04781486819187937,
+        "r2_gain_ci_low": -0.1634690319862431,
+        "r2_gain_ci_high": 0.0008177427022316112
+      },
+      "permutation": {
+        "mse_gain_mean": -4.1461512693270323e-07,
+        "mse_gain_pvalue": 0.08425,
+        "mae_gain_mean": -0.00018089285528878065,
+        "mae_gain_pvalue": 0.0155
+      }
+    },
+    "audio_upgrade_vs_no_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.000595830499745426,
+        "rmse": 0.0008564745695355815,
+        "r2": 0.9347212284944735
+      },
+      "challenger_test": {
+        "mae": 0.0008295959079484545,
+        "rmse": 0.0010954327407573753,
+        "r2": 0.8932139647694058
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -0.000236231936423649,
+        "rmse_diff_ci_low": -0.0003908913524619767,
+        "rmse_diff_ci_high": -8.291729870897175e-05,
+        "mae_diff_mean": -0.0002341947253262791,
+        "mae_diff_ci_low": -0.00035513326624849026,
+        "mae_diff_ci_high": -0.0001100841801885216,
+        "r2_gain_mean": -0.05337641146601436,
+        "r2_gain_ci_low": -0.16201795252363385,
+        "r2_gain_ci_high": -0.01200574443749399
+      },
+      "permutation": {
+        "mse_gain_mean": -4.6642420126205533e-07,
+        "mse_gain_pvalue": 0.00575,
+        "mae_gain_mean": -0.0002337654082030286,
+        "mae_gain_pvalue": 0.0
+      }
+    },
+    "audio_upgrade_svd_vs_no_audio_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio_svd",
+      "baseline_test": {
+        "mae": 0.000595830499745426,
+        "rmse": 0.0008564745695355815,
+        "r2": 0.9347212284944735
+      },
+      "challenger_test": {
+        "mae": 0.0006319961759488179,
+        "rmse": 0.0009033459901702968,
+        "r2": 0.9273808317835617
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -4.54301819470103e-05,
+        "rmse_diff_ci_low": -0.0001904723707397092,
+        "rmse_diff_ci_high": 9.182784009251111e-05,
+        "mae_diff_mean": -3.642781793406365e-05,
+        "mae_diff_ci_low": -0.000142982183590419,
+        "mae_diff_ci_high": 6.489679857646973e-05,
+        "r2_gain_mean": -0.004410063024876202,
+        "r2_gain_ci_low": -0.0254809149635603,
+        "r2_gain_ci_high": 0.03441081951321825
+      },
+      "permutation": {
+        "mse_gain_mean": -8.248528969559422e-08,
+        "mse_gain_pvalue": 0.54575,
+        "mae_gain_mean": -3.616567620339199e-05,
+        "mae_gain_pvalue": 0.5155
+      }
+    },
+    "merged_vs_aligned_with_semantics": {
+      "baseline_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_aligned_audio",
+      "challenger_model": "residual_pre_call_market_plus_controls_plus_a4_plus_qna_lsa_plus_old_plus_aligned_audio",
+      "baseline_test": {
+        "mae": 0.0008295959079484545,
+        "rmse": 0.0010954327407573753,
+        "r2": 0.8932139647694058
+      },
+      "challenger_test": {
+        "mae": 0.0008415232483959914,
+        "rmse": 0.0010987983967851178,
+        "r2": 0.8925567684381844
+      },
+      "bootstrap": {
+        "rmse_diff_mean": -5.16758280603661e-06,
+        "rmse_diff_ci_low": -0.00018808280403914942,
+        "rmse_diff_ci_high": 0.00016294676604622227,
+        "mae_diff_mean": -1.2389029874069177e-05,
+        "mae_diff_ci_low": -0.00013333514742065654,
+        "mae_diff_ci_high": 9.895770128765346e-05,
+        "r2_gain_mean": -0.003798235525277028,
+        "r2_gain_ci_low": -0.07017825629873661,
+        "r2_gain_ci_high": 0.04369837295107333
+      },
+      "permutation": {
+        "mse_gain_mean": -7.385027254330345e-09,
+        "mse_gain_pvalue": 0.97325,
+        "mae_gain_mean": -1.1927340447536852e-05,
+        "mae_gain_pvalue": 0.8405
+      }
+    }
+  }
+}

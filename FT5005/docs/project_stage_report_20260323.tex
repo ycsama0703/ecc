@@ -1,0 +1,150 @@
+% !TEX program = xelatex
+\documentclass[11pt]{ctexart}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\setlist[itemize]{leftmargin=1.5em}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{2em}
+
+\title{ICAIF 项目阶段性报告\\\large 从 noisy timing 到可信的 after-hours ECC 增量信号}
+\author{FT5005 / ICAIF 仓库阶段总结}
+\date{2026年3月23日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+这份阶段性报告的目标，不是把故事讲得“很大”，而是把现在\textbf{真正站得住的东西}讲清楚。当前项目已经从早期“多模态都加一点看看”的发散状态，逐步收束成一条更干净的主线：在带有 noisy timing 的财报电话会议场景里，我们把任务改写为 \texttt{shock\_minus\_pre} 的 after-hours 波动冲击预测；在强 market prior 之上，clean \texttt{after\_hours} 子样本中的 \texttt{A4} observability/alignment 与紧凑 \texttt{Q\&A} semantics 提供了目前最可信的增量信号。跨 ticker 的 transfer 结果则提醒我们：这些增量信息不是“任何时候都该相信”，更稳妥的做法是 \textbf{reliability-aware abstention}。最近一轮探索还发现，最难的 analyst question 本身带有一个小而真实的局部信号，但它更像一个局部探针，而不是已经成熟的主方法。整体上，这个项目现在最像是在迷雾中开车：我们还没有完美 GPS，但已经找到了真正可靠的路标。
+\end{abstract}
+
+\section{研究背景：我们到底在解决什么问题？}
+财报电话会议（earnings conference call, ECC）很像一场高密度的公开问答：管理层先讲主叙事，分析师再围绕风险、需求、指引和执行细节追问。市场确实会对这类信息做出反应，但真正麻烦的地方在于：\textbf{时间并不干净}。现有共享数据里，\texttt{A2} 往往只告诉我们“计划中的开会时间”，而 \texttt{A4} 虽然提供了句子级时间戳，却是有噪声的、不完整的。换句话说，我们不是在一间光线充足的实验室里做建模，而更像是在\textbf{隔着一层雾去听一场对话，再猜市场什么时候真正听到了什么}。
+
+这也是为什么项目后来逐渐放弃了“把所有模态都堆上去，也许会更强”的思路。因为如果任务定义本身不够诚实、基线不够强，模型再复杂，也很容易只是记住“哪个公司一贯更波动”，而不是学到会议本身的新信息。于是我们做了两个关键收缩：第一，把目标从原始波动水平改写成 \texttt{shock\_minus\_pre}，也就是\textbf{会后相对于会前基线多出来的那部分冲击}；第二，把主要战场收缩到 \texttt{off-hours}，尤其是更干净的 \texttt{after\_hours} 子样本。
+
+这一步的直觉其实不复杂：如果把市场的长期体质、公司的固有波动风格、以及会前已经消化掉的信息都先扣掉，那么模型剩下要解释的，就更接近“这场会议到底额外说出了什么”。
+
+\section{当前故事线：核心假设与要回答的问题}
+到目前为止，项目的研究主线已经可以收束成四个问题。
+
+\begin{itemize}
+    \item \textbf{问题一：任务该怎么定义才更诚实？}\\
+    我们的假设是，\texttt{shock\_minus\_pre} 比直接预测原始波动水平更适合作为主任务，因为它能更好地区分“会议带来的增量信息”和“公司本来就不一样”。
+
+    \item \textbf{问题二：真正可信的 ECC 增量信号到底在哪里？}\\
+    我们当前的主假设是，可信增量并不来自泛泛的多模态堆叠，而主要来自 \texttt{A4} 这种带噪但有价值的 observability/alignment 线索，以及一套紧凑的 \texttt{Q\&A} semantic block。
+
+    \item \textbf{问题三：跨公司 transfer 时，文本信号该不该被无条件相信？}\\
+    目前的工作假设是否定的。也就是说，transfer 不是“多一个语义模块就一定更好”，而是应该在可靠性足够高时才放行；否则，最安全的做法是回退到更强的 market baseline。
+
+    \item \textbf{问题四：局部最难的问题里，会不会藏着比整段对话更尖锐的信号？}\\
+    这是最近的 exploratory 支线。我们开始怀疑：与其把整个问答都搅成一锅，不如盯住那一个最“刁钻”、最需要澄清的问题，看它是不是更像一根针，能扎进市场真正关心的地方。
+\end{itemize}
+
+\section{实验设计：我们现在是怎么做的？}
+当前主实验仍然基于 DJ30 试点样本。仓库里的基线就绪 panel 目前覆盖 \textbf{553 个事件}，其中包含 \texttt{A1}（问答对）、\texttt{A2}（计划时间）、\texttt{A4}（带噪句子时间戳）、音频文件，以及高频市场数据。对于主线 fixed-split 结果，我们重点使用 clean \texttt{after\_hours} 子样本；对应的严格 split 大小为 \textbf{train 89 / val 23 / test 60}。对 transfer 分析，我们进一步使用跨时间窗口的 held-out 评估，并保留 matched sample 作为更严格的比较环境。
+
+方法上，我们尽量保持“先把问题讲清楚，再把模型加复杂”的节奏，所以主干模型仍然是相对克制的 residual ridge 家族。最重要的建模步骤包括：
+\begin{itemize}
+    \item 先用 \textbf{pre-call market prior} 做强基线；
+    \item 再加入 controls、\texttt{A4} observability/alignment；
+    \item 然后用低维 \texttt{Q\&A} 语义表示（当前 fixed-split 主线以 \texttt{LSA(64)} 为主）测试是否还能带来增量；
+    \item 在 transfer 侧，用 agreement / disagreement 的结构来决定什么时候信任局部语义修正，什么时候让 market baseline 接管。
+\end{itemize}
+
+可以把这个框架想成两层。第一层像地基：市场先验、会前信息、基础控制变量。第二层像加在地基上的传感器：\texttt{A4} 像雾里的路标，\texttt{Q\&A} 语义像驾驶员从对话里听到的“语气变化”和“关键信号”。只有当地基稳，传感器读数才有意义。
+
+\section{初步结果：哪些结论已经比较站得住？}
+\subsection{主线结果：可信的 ECC 增量是窄而干净的}
+先看更广义的 corrected off-hours benchmark。结果显示，单纯的 prior-only 基线在 clean off-hours 上只有 \textbf{$R^2 \approx 0.198$}，而结构化 residual 主线可以达到 \textbf{$R^2 \approx 0.913$}。这说明任务改写是值得的：模型确实不只是原地记忆，而是在解释剩余冲击。
+
+但如果往论文最安全的主线收缩，真正最值得强调的还是 clean \texttt{after\_hours} 的 ladder。表~\ref{tab:mainline} 给出了当前最关键的 fixed-split 结果。
+
+\begin{table}[h]
+\centering
+\caption{当前最关键的 clean \texttt{after\_hours} 主线结果（test $R^2$）}
+\label{tab:mainline}
+\begin{tabularx}{\textwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+模型 & test $R^2$ \\
+\midrule
+pre-call market only & 0.9174 \\
+pre-call market + controls & 0.9194 \\
+pre-call market + A4 + compact Q\&A semantics & 0.9271 \\
+pre-call market + controls + A4 + compact Q\&A semantics & \textbf{0.9347} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+这个结果的意义不只是“分数更高了一点”。更关键的是：它告诉我们，当前最可信的增量价值并不在重型 sequence 建模，也不在泛泛的多模态堆叠，而是在\textbf{带噪但有用的时间可观测性}（\texttt{A4}）和\textbf{紧凑问答语义}的结合。通俗地说，真正有用的不是把整场会议都榨成一个大而全的向量，而是先确认“我们大致知道市场听到了哪一段”，再去看那一段对话到底在讲什么。
+
+\subsection{transfer 结果：不是更花哨，而是更知道什么时候闭嘴}
+跨 ticker 的 transfer 结果给了一个很重要的提醒：语义信号不是任何时候都该被信任。我们后来逐步收束出的最稳方法，不是更复杂的 router 家族，而是一个非常克制的策略：\textbf{reliability-aware abstention}。如果不同 retained router 观点一致，我们允许局部修正介入；如果它们彼此打架，就让 \texttt{pre\_call\_market\_only} 这条更稳的主干接管。
+
+在 pooled temporal transfer benchmark 上，这条路线目前达到 \textbf{$R^2 \approx 0.99792$}，略好于 retained semantic/audio backbone（约 0.99788）和 validation-selected expert（约 0.99788）。更重要的是，它的解释非常自然：当局部文本信号像多个证人同时指向一个方向时，我们愿意相信它；当证词互相矛盾时，就别让模型逞强。
+
+这件事看起来“保守”，但其实很科研。因为它把一个很常见却常被忽略的问题摆到了桌面上：\textbf{不是所有增量信息都值得强行用上，什么时候不该出手，本身就是方法的一部分。}
+
+\subsection{最近的新发现：最难的 analyst question 可能是一根更尖的针}
+最近最有意思的一条 exploratory 发现，是 hardest-question 这条线。我们不是再把整段问答一起建模，而是只盯住局部最难的 analyst question。结果显示，当前最强的 local exploratory route 是 \textbf{non-structural hardest-question LSA(4) bi-gram}，其 held-out latest-window 表现约为 \textbf{$R^2 \approx 0.99865$}，略高于 hard abstention 的 \textbf{$R^2 \approx 0.99864$}，对应的 paired $p(\mathrm{MSE}) \approx 0.044$。这个提升还不大，所以我们不应该把它夸成主方法胜利，但它已经足够说明：\textbf{整场对话最尖锐的那一个问题，有时比整段对话更有信号密度。}
+
+更有意思的是，这条线后来越来越像一个\textbf{question-centric、non-structural 的局部 framing 信号}：
+\begin{itemize}
+    \item 把 structural / strategic probe 词汇 mask 掉以后，最强结果几乎一模一样；
+    \item 加 hardest answer 或 top-1 Q\&A pair 视角，反而变差；
+    \item 用小型 supervised text subspace（如 PLS）去“学得更聪明”，也没有超过当前的无监督紧凑表示。
+\end{itemize}
+
+这几条合在一起，给出的图景很生动：真正有用的东西，不太像“会议里提到了哪个大主题”，而更像\textbf{分析师是怎么提那个问题的}。很多正向 pocket 都更像是在要求管理层“帮我把模型搭清楚”“帮我把数字说透”，而不是泛泛地聊战略大词。
+
+\begin{table}[h]
+\centering
+\caption{当前 transfer-side 的代表性结果}
+\label{tab:transfer}
+\begin{tabularx}{\textwidth}{l>{\raggedleft\arraybackslash}X}
+\toprule
+路线 & 代表性 $R^2$ \\
+\midrule
+agreement-triggered hard abstention & 0.99864 \\
+non-structural hardest-question LSA(4) bi-gram & \textbf{0.99865} \\
+question supervised compact subspace (best PLS) & 0.99859 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{现阶段 contribution：我们已经可以比较稳地说什么？}
+如果把现阶段贡献压缩一下，我认为可以比较稳地说出三层结论。
+
+\paragraph{第一层：问题重写和评估纪律。}
+我们已经较清楚地证明，ECC 研究不能只追逐更复杂的多模态模型，而必须先把任务定义和基线设稳。把目标改写为 \texttt{shock\_minus\_pre}，并在强 market prior 之上做 residual 评估，是当前项目的一条基础贡献。
+
+\paragraph{第二层：可信的增量信号是狭窄而结构化的。}
+当前最可靠的 fixed-split 主线是 clean \texttt{after\_hours} 中的 \texttt{A4} + compact \texttt{Q\&A} semantics。它的价值在于“窄而真”，而不是“全而大”。
+
+\paragraph{第三层：transfer 需要可靠性意识。}
+跨公司 transfer 不是把一个语义模块硬迁过去就结束了。当前最稳的方法点是 reliability-aware abstention：当局部修正的可靠性不足时，允许模型后退一步。这一点虽然不像某些复杂架构那样“炫”，但其实更接近真实世界的建模逻辑。
+
+此外，hardest-question 这条线虽然还处于 exploratory 阶段，但已经贡献了一个很有意思的研究判断：\textbf{局部 analyst question framing 可能是比全局问答融合更尖锐的 transfer signal。}
+
+\section{结论与局限：我们离“稳定论文结论”还有多远？}
+从阶段性进度来看，项目已经明显脱离了“什么都试一点”的早期状态，开始形成一个可以自洽的研究故事：
+\begin{itemize}
+    \item 主线固定在 noisy timing 下的 after-hours volatility shock prediction；
+    \item 最可信的 ECC 增量来自 \texttt{A4} 与紧凑 \texttt{Q\&A} 语义；
+    \item transfer 侧最稳的方法不是更复杂，而是更知道何时 abstain；
+    \item hardest-question 发现则提供了一个新的局部研究窗口。
+\end{itemize}
+
+但局限也非常清楚。第一，当前仍然是 DJ30 pilot 规模，很多结果虽然方向明确，但样本还不够大。第二，transfer 侧最强路线虽然 coherent，却还称不上“压倒性胜利”；很多提升幅度依然很小。第三，hardest-question 这条新线虽然很有意思，但它现在更像一个\textbf{被确认存在的局部机制}，还不是已经成熟到可以直接上升为主方法的模块。第四，音频、重型 sequence、以及更花哨的 routing 家族，目前都没有形成比主线更强、更干净的贡献，不适合抢故事中心。
+
+总的来说，这个项目现阶段最像是在一条山路上逐渐找到真正的路标。我们还没有到山顶，也还不能说每一步都已经万无一失；但至少已经知道，哪些灯光是远处的村庄，哪些只是雾里的反光。这个判断本身，就比盲目继续堆方法更重要。
+
+\end{document}

@@ -1,0 +1,808 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_qa": 553,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "qa_compressed_components": 8,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "router_features": [
+      "a4_strict_row_share",
+      "a4_strict_high_conf_share",
+      "qa_pair_count",
+      "qa_pair_low_overlap_share",
+      "qa_pair_answer_hedge_rate_mean",
+      "qa_pair_answer_assertive_rate_mean",
+      "qa_pair_answer_forward_rate_mean",
+      "qa_multi_part_question_share",
+      "qa_evasive_proxy_share",
+      "qa_bench_direct_answer_share",
+      "qa_bench_direct_early_score_mean",
+      "qa_bench_evasion_score_mean",
+      "qa_bench_high_evasion_share",
+      "qa_bench_coverage_mean",
+      "qa_bench_nonresponse_share",
+      "aligned_audio__aligned_audio_sentence_count"
+    ],
+    "router_c": 1.0,
+    "tree_depth": 3,
+    "tree_min_leaf_frac": 0.16,
+    "override_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      0.99
+    ]
+  },
+  "feature_groups": {
+    "pre_call_market": [
+      "pre_60m_rv",
+      "pre_60m_vw_rv",
+      "pre_60m_volume_sum"
+    ],
+    "a4": [
+      "a4_kept_rows_for_duration",
+      "a4_median_match_score",
+      "a4_strict_row_share",
+      "a4_broad_row_share",
+      "a4_hard_fail_rows"
+    ],
+    "qa_benchmark_all_count": 47,
+    "qna_lsa_components": 4,
+    "qa_benchmark_svd": {
+      "input_feature_count": 47,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6964621128047552
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6026047228923573
+    }
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+      "mae": 6.921102195379463e-05,
+      "rmse": 0.00013349287280217217,
+      "r2": 0.9984141606625622
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    },
+    "validation_selected_transfer_expert": {
+      "mae": 7.098330214615625e-05,
+      "rmse": 0.00012780682598281307,
+      "r2": 0.9985463792059631
+    },
+    "conservative_logistic_override_on_selected_expert": {
+      "mae": 7.010119514532581e-05,
+      "rmse": 0.00012487391628498203,
+      "r2": 0.9986123290637676
+    },
+    "conservative_tree_override_on_selected_expert": {
+      "mae": 6.8246725421808e-05,
+      "rmse": 0.0001243410422236336,
+      "r2": 0.9986241470019735
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": 0.9945024082810152,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9959160233667426,
+    "validation_selected_transfer_expert": 0.9959160233667426,
+    "conservative_logistic_override_on_selected_expert": 0.9959160233667426,
+    "conservative_tree_override_on_selected_expert": 0.995940470185962
+  },
+  "significance": {
+    "validation_selected_transfer_expert__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": 3.0055392537233884e-06,
+      "rmse_diff_ci_low": -2.6567588908206676e-06,
+      "rmse_diff_ci_high": 1.0083882138433523e-05,
+      "mae_diff_mean": 8.499887546744182e-07,
+      "mae_diff_ci_low": -4.778558943431304e-06,
+      "mae_diff_ci_high": 6.115412378445085e-06,
+      "r2_gain_mean": 8.970929947934373e-05,
+      "r2_gain_ci_low": -6.147189693325172e-05,
+      "r2_gain_ci_high": 0.0004184020563217124,
+      "mse_gain_mean": 7.410897994523636e-10,
+      "mse_gain_pvalue": 0.4195,
+      "mae_gain_mean": 8.821070008304206e-07,
+      "mae_gain_pvalue": 0.7525
+    },
+    "validation_selected_transfer_expert__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": 3.5459046760395457e-06,
+      "rmse_diff_ci_low": -4.5991322685723397e-07,
+      "rmse_diff_ci_high": 9.816055795391779e-06,
+      "mae_diff_mean": 2.649884694453321e-06,
+      "mae_diff_ci_low": -1.965862926993323e-06,
+      "mae_diff_ci_high": 7.531230257820213e-06,
+      "r2_gain_mean": 0.00010173951543727275,
+      "r2_gain_ci_low": -1.0798263101000071e-05,
+      "r2_gain_ci_high": 0.0003954613701297545,
+      "mse_gain_mean": 8.738899865416349e-10,
+      "mse_gain_pvalue": 0.1675,
+      "mae_gain_mean": 2.7365767243482403e-06,
+      "mae_gain_pvalue": 0.2665
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_logistic_override_on_selected_expert": {
+      "rmse_diff_mean": 3.882904382657771e-06,
+      "rmse_diff_ci_low": -1.7905574637817672e-06,
+      "rmse_diff_ci_high": 1.091965314752948e-05,
+      "mae_diff_mean": 1.3736168500891324e-06,
+      "mae_diff_ci_low": -4.289093974454022e-06,
+      "mae_diff_ci_high": 6.778951384453896e-06,
+      "r2_gain_mean": 0.0001151672752016622,
+      "r2_gain_ci_low": -3.953667014504891e-05,
+      "r2_gain_ci_high": 0.00046688271540149543,
+      "mse_gain_mean": 9.55604054287546e-10,
+      "mse_gain_pvalue": 0.275,
+      "mae_gain_mean": 1.3895921145124841e-06,
+      "mae_gain_pvalue": 0.63925
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate__vs__conservative_tree_override_on_selected_expert": {
+      "rmse_diff_mean": 4.423269804973928e-06,
+      "rmse_diff_ci_low": 2.2322772955163755e-07,
+      "rmse_diff_ci_high": 1.068312169466953e-05,
+      "mae_diff_mean": 3.1735127898680354e-06,
+      "mae_diff_ci_low": -2.2708918094221993e-06,
+      "mae_diff_ci_high": 8.684089687189902e-06,
+      "r2_gain_mean": 0.00012719749115959122,
+      "r2_gain_ci_low": 3.3834515914071833e-06,
+      "r2_gain_ci_high": 0.0004555703623252031,
+      "mse_gain_mean": 1.0884042413768173e-09,
+      "mse_gain_pvalue": 0.057,
+      "mae_gain_mean": 3.244061838030304e-06,
+      "mae_gain_pvalue": 0.258
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 6.172252216717292e-05,
+        "rmse": 6.913394845678795e-05,
+        "r2": 0.9946869909915437,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 6.548722180077658e-05,
+        "rmse": 8.529824362657709e-05,
+        "r2": 0.9919120584005837,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.7,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_gate_active",
+          0.890017139531039
+        ],
+        [
+          "qa_multi_part_question_share",
+          0.8447334099894005
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.6910924283209302
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.6842325579122251
+        ],
+        [
+          "qa_bench_evasion_score_mean",
+          -0.5687204094825842
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_evasive_proxy_share",
+        "qa_pair_low_overlap_share"
+      ]
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "a4_strict_row_share",
+          0.7418794206262378
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.7105897669796117
+        ],
+        [
+          "qa_bench_direct_early_score_mean",
+          0.6798706645608765
+        ],
+        [
+          "sem_audio_gate_active",
+          0.5739847279679818
+        ],
+        [
+          "qa_bench_coverage_mean",
+          -0.5307750912692957
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share",
+        "sem_minus_qa_pred"
+      ]
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 7.747293979457885e-05,
+        "rmse": 0.0001348611359885507,
+        "r2": 0.9841339404933089,
+        "n": 6
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          1.2696822398746794
+        ],
+        [
+          "qa_pair_low_overlap_share",
+          -0.6347514445554439
+        ],
+        [
+          "qa_gate_active",
+          0.6123886435433064
+        ],
+        [
+          "sem_audio_gate_active",
+          0.6123886435433064
+        ],
+        [
+          "qa_bench_evasion_score_mean",
+          -0.467751935022887
+        ]
+      ],
+      "event_tree_used_features": [
+        "abs_sem_minus_qa_pred",
+        "sem_audio_expert_pred"
+      ]
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 0.0001147365808099314,
+        "rmse": 0.00021987093023883339,
+        "r2": 0.9944965012043776,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 0.00010290927981261946,
+        "rmse": 0.00018883663097985922,
+        "r2": 0.995940470185962,
+        "n": 9
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "a4_strict_row_share",
+          0.7752140313972646
+        ],
+        [
+          "qa_bench_high_evasion_share",
+          -0.7527465959175498
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.6900952286048939
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.6272810335715164
+        ],
+        [
+          "a4_strict_high_conf_share",
+          -0.5675930523643522
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_expert_pred"
+      ]
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 2.6610982265742954e-05,
+        "rmse": 2.9646135554221436e-05,
+        "r2": 0.9992992685116463,
+        "n": 5
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 2.2893161090861085e-05,
+        "rmse": 2.7625409434018228e-05,
+        "r2": 0.9993915387851129,
+        "n": 5
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.6,
+      "tree_override_threshold": 0.55,
+      "event_logistic_top_features": [
+        [
+          "qa_multi_part_question_share",
+          -0.897131508363577
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.7550230996673153
+        ],
+        [
+          "qa_pair_answer_forward_rate_mean",
+          0.6228098881005002
+        ],
+        [
+          "qa_pair_low_overlap_share",
+          -0.6176149547208376
+        ],
+        [
+          "sem_minus_qa_pred",
+          -0.6016285128284817
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_multi_part_question_share",
+        "qa_pair_count"
+      ]
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.627681494177939e-05,
+        "rmse": 4.526257035661489e-05,
+        "r2": 0.999206561699441,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 4.368348412389272e-05,
+        "rmse": 5.124731987621945e-05,
+        "r2": 0.9989828686267195,
+        "n": 7
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.368348412389272e-05,
+        "rmse": 5.124731987621945e-05,
+        "r2": 0.9989828686267195,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_evasive_proxy_share",
+          1.1609902371379583
+        ],
+        [
+          "qa_gate_active",
+          0.986666493667217
+        ],
+        [
+          "qa_bench_high_evasion_share",
+          -0.8732078592420298
+        ],
+        [
+          "a4_strict_row_share",
+          0.541846472125693
+        ],
+        [
+          "a4_strict_high_conf_share",
+          0.44809821043976644
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share",
+        "qa_evasive_proxy_share"
+      ]
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 1.622641192427161e-05,
+        "rmse": 1.847760110839742e-05,
+        "r2": 0.951146713029363,
+        "n": 7
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 1.6827566727817273e-05,
+        "rmse": 1.8699234081502515e-05,
+        "r2": 0.9499677249794097,
+        "n": 7
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 1.8568392382268498e-05,
+        "rmse": 2.0369630876873933e-05,
+        "r2": 0.9406297424526525,
+        "n": 7
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_gate_active",
+          0.8539412257618865
+        ],
+        [
+          "abs_sem_minus_qa_pred",
+          0.6820973262342407
+        ],
+        [
+          "qa_bench_coverage_mean",
+          0.6289833573504118
+        ],
+        [
+          "a4_strict_row_share",
+          0.627702621874403
+        ],
+        [
+          "qa_pair_answer_assertive_rate_mean",
+          0.5329338925755727
+        ]
+      ],
+      "event_tree_used_features": [
+        "a4_strict_row_share",
+        "qa_pair_low_overlap_share"
+      ]
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 3.315809287679451e-05,
+        "rmse": 4.977015283355336e-05,
+        "r2": 0.9981181033661115,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 4.2721320842316724e-05,
+        "rmse": 6.0712446654653155e-05,
+        "r2": 0.9971996437343542,
+        "n": 8
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 4.19941049220393e-05,
+        "rmse": 6.018278817887265e-05,
+        "r2": 0.9972482915031413,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.5,
+      "event_logistic_top_features": [
+        [
+          "qa_pair_count",
+          0.81869891655909
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.6803814246813744
+        ],
+        [
+          "qa_bench_nonresponse_share",
+          0.6342784685480032
+        ],
+        [
+          "qa_pair_low_overlap_share",
+          -0.6291310593211753
+        ],
+        [
+          "qa_multi_part_question_share",
+          -0.5415444354991835
+        ]
+      ],
+      "event_tree_used_features": [
+        "qa_bench_evasion_score_mean",
+        "qa_pair_count"
+      ]
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qa_benchmark_svd_observability_gate": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "validation_selected_transfer_expert": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "conservative_logistic_override_on_selected_expert": {
+        "mae": 7.861957887292845e-05,
+        "rmse": 0.00010582835636515283,
+        "r2": 0.9996928285031469,
+        "n": 8
+      },
+      "conservative_tree_override_on_selected_expert": {
+        "mae": 6.504959336302926e-05,
+        "rmse": 9.46800263281782e-05,
+        "r2": 0.9997541367874948,
+        "n": 8
+      },
+      "chosen_model": "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate",
+      "logistic_override_threshold": 0.5,
+      "tree_override_threshold": 0.55,
+      "event_logistic_top_features": [
+        [
+          "abs_sem_minus_qa_pred",
+          1.2225147614862684
+        ],
+        [
+          "qa_gate_active",
+          0.9468109731552811
+        ],
+        [
+          "qa_evasive_proxy_share",
+          0.758851566537965
+        ],
+        [
+          "a4_strict_high_conf_share",
+          0.6696335390908802
+        ],
+        [
+          "a4_strict_row_share",
+          0.577835528912047
+        ]
+      ],
+      "event_tree_used_features": [
+        "abs_sem_minus_qa_pred",
+        "sem_audio_expert_pred"
+      ]
+    }
+  }
+}

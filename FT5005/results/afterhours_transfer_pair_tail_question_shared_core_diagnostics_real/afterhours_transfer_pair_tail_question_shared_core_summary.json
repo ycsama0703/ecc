@@ -1,0 +1,579 @@
+{
+  "config": {
+    "predictions_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_pair_tail_question_lexical_pattern_benchmark_real/afterhours_transfer_pair_tail_question_lexical_pattern_benchmark_test_predictions.csv",
+    "text_views_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/qa_pair_tail_text_views_real/qa_pair_tail_text_views.csv",
+    "top_k": 20
+  },
+  "overlap_counts": {
+    "rows_with_any_veto": 16,
+    "shared_veto_rows": 4,
+    "sem_only_veto_rows": 9,
+    "lex_only_veto_rows": 3
+  },
+  "year_group_counts": [
+    {
+      "year": "2023",
+      "shared_veto": 2,
+      "sem_only_veto": 6,
+      "lex_only_veto": 1
+    },
+    {
+      "year": "2024",
+      "shared_veto": 2,
+      "sem_only_veto": 2,
+      "lex_only_veto": 2
+    },
+    {
+      "year": "2025",
+      "shared_veto": 0,
+      "sem_only_veto": 1,
+      "lex_only_veto": 0
+    }
+  ],
+  "group_summaries": [
+    {
+      "group": "shared_veto",
+      "n": 4,
+      "year_span": "2023,2024",
+      "lex_net_mse_gain_vs_hard": 2.4247444511040713e-09,
+      "sem_net_mse_gain_vs_hard": 2.4247444511040713e-09,
+      "lex_mean_mse_gain_vs_hard": 6.061861127760178e-10,
+      "sem_mean_mse_gain_vs_hard": 6.061861127760178e-10,
+      "lex_win_share_vs_hard": 1.0,
+      "sem_win_share_vs_hard": 1.0,
+      "mean_qa_pair_count": 4.5,
+      "mean_direct_early": 0.48389675,
+      "mean_evasion": 0.381776,
+      "mean_coverage": 0.14764900000000003,
+      "mean_severity": 2.7523307499999996,
+      "lex_p_mse_vs_hard": 0.1235,
+      "sem_p_mse_vs_hard": 0.1235,
+      "text__token_count": 112.5,
+      "text__sentence_like_count": 6.5,
+      "text__question_mark_count": 1.75,
+      "text__numeric_token_share": 0.0314285524848069,
+      "text__first_person_share": 0.0268697055346556,
+      "text__second_person_share": 0.04096676127075946,
+      "text__modal_share": 0.02380863331918421,
+      "text__hedge_share": 0.03417580523205965,
+      "text__followup_marker_count": 0.25
+    },
+    {
+      "group": "sem_only_veto",
+      "n": 9,
+      "year_span": "2023,2024,2025",
+      "lex_net_mse_gain_vs_hard": 0.0,
+      "sem_net_mse_gain_vs_hard": 7.359327544292002e-09,
+      "lex_mean_mse_gain_vs_hard": 0.0,
+      "sem_mean_mse_gain_vs_hard": 8.177030604768891e-10,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.5555555555555556,
+      "mean_qa_pair_count": 6.222222222222222,
+      "mean_direct_early": 0.306255,
+      "mean_evasion": 0.3597856666666667,
+      "mean_coverage": 0.174629,
+      "mean_severity": 2.8218714444444446,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 0.2045,
+      "text__token_count": 112.0,
+      "text__sentence_like_count": 7.222222222222222,
+      "text__question_mark_count": 2.6666666666666665,
+      "text__numeric_token_share": 0.007027680424519337,
+      "text__first_person_share": 0.027091557901851342,
+      "text__second_person_share": 0.0362836537829417,
+      "text__modal_share": 0.017995248193862983,
+      "text__hedge_share": 0.026955454194276546,
+      "text__followup_marker_count": 0.6666666666666666
+    },
+    {
+      "group": "lex_only_veto",
+      "n": 3,
+      "year_span": "2023,2024",
+      "lex_net_mse_gain_vs_hard": -7.3115456970864e-10,
+      "sem_net_mse_gain_vs_hard": 0.0,
+      "lex_mean_mse_gain_vs_hard": -2.4371818990288e-10,
+      "sem_mean_mse_gain_vs_hard": 0.0,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.0,
+      "mean_qa_pair_count": 6.0,
+      "mean_direct_early": 0.0,
+      "mean_evasion": 0.4999446666666667,
+      "mean_coverage": 0.10374933333333335,
+      "mean_severity": 3.4937386666666668,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 1.0,
+      "text__token_count": 102.0,
+      "text__sentence_like_count": 4.0,
+      "text__question_mark_count": 2.6666666666666665,
+      "text__numeric_token_share": 0.02538379336408893,
+      "text__first_person_share": 0.032595720280449346,
+      "text__second_person_share": 0.026895509161519015,
+      "text__modal_share": 0.013605442176870748,
+      "text__hedge_share": 0.054671983736023146,
+      "text__followup_marker_count": 0.3333333333333333
+    }
+  ],
+  "shared_vs_sem_only_distinctive_ngrams": [
+    {
+      "ngram": "wondering",
+      "count_a": 5,
+      "count_b": 0,
+      "log_odds": 2.845570111870776
+    },
+    {
+      "ngram": "wondering if",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.6448994164086246
+    },
+    {
+      "ngram": "wondering if you",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.6448994164086246
+    },
+    {
+      "ngram": "if you could",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.6448994164086246
+    },
+    {
+      "ngram": "ai",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.6448994164086246
+    },
+    {
+      "ngram": "you could",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.6448994164086246
+    },
+    {
+      "ngram": "in terms of",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "terms",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "i was",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "little bit",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "terms of",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "in terms",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "a little bit",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "after",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "bit",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.393584988127719
+    },
+    {
+      "ngram": "year",
+      "count_a": 8,
+      "count_b": 1,
+      "log_odds": 2.1822758944605125
+    },
+    {
+      "ngram": "outstanding",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 2.057112751506506
+    },
+    {
+      "ngram": "that number",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 2.057112751506506
+    },
+    {
+      "ngram": "international",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 2.057112751506506
+    },
+    {
+      "ngram": "different",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 2.057112751506506
+    }
+  ],
+  "sem_only_vs_shared_distinctive_ngrams": [
+    {
+      "ngram": "question",
+      "count_a": 8,
+      "count_b": 0,
+      "log_odds": 2.3855385049838107
+    },
+    {
+      "ngram": "disney",
+      "count_a": 8,
+      "count_b": 0,
+      "log_odds": 2.3855385049838107
+    },
+    {
+      "ngram": "more",
+      "count_a": 6,
+      "count_b": 0,
+      "log_odds": 2.1172745183891317
+    },
+    {
+      "ngram": "up",
+      "count_a": 5,
+      "count_b": 0,
+      "log_odds": 1.9502204337259652
+    },
+    {
+      "ngram": "at",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "gaming",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "right",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "consumers",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "million",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "give",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "i think",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "platform",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "approach",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "those",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.7495497382638137
+    },
+    {
+      "ngram": "than",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    },
+    {
+      "ngram": "sports",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    },
+    {
+      "ngram": "follow",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    },
+    {
+      "ngram": "can you",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    },
+    {
+      "ngram": "their",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    },
+    {
+      "ngram": "follow up",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.498235309982908
+    }
+  ],
+  "shared_vs_lex_only_distinctive_ngrams": [
+    {
+      "ngram": "wondering if",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.980366615390599
+    },
+    {
+      "ngram": "wondering if you",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.980366615390599
+    },
+    {
+      "ngram": "if",
+      "count_a": 10,
+      "count_b": 1,
+      "log_odds": 1.7290521871096942
+    },
+    {
+      "ngram": "a little",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "in terms of",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "terms",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "i was",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "terms of",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "in terms",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    },
+    {
+      "ngram": "a little bit",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.7290521871096933
+    }
+  ],
+  "group_mean_text_stats": {
+    "shared_veto": {
+      "token_count": 112.5,
+      "sentence_like_count": 6.5,
+      "question_mark_count": 1.75,
+      "numeric_token_share": 0.0314285524848069,
+      "first_person_share": 0.0268697055346556,
+      "second_person_share": 0.04096676127075946,
+      "modal_share": 0.02380863331918421,
+      "hedge_share": 0.03417580523205965,
+      "followup_marker_count": 0.25
+    },
+    "sem_only_veto": {
+      "token_count": 112.0,
+      "sentence_like_count": 7.222222222222222,
+      "question_mark_count": 2.6666666666666665,
+      "numeric_token_share": 0.007027680424519337,
+      "first_person_share": 0.027091557901851342,
+      "second_person_share": 0.0362836537829417,
+      "modal_share": 0.017995248193862983,
+      "hedge_share": 0.026955454194276546,
+      "followup_marker_count": 0.6666666666666666
+    },
+    "lex_only_veto": {
+      "token_count": 102.0,
+      "sentence_like_count": 4.0,
+      "question_mark_count": 2.6666666666666665,
+      "numeric_token_share": 0.02538379336408893,
+      "first_person_share": 0.032595720280449346,
+      "second_person_share": 0.026895509161519015,
+      "modal_share": 0.013605442176870748,
+      "hedge_share": 0.054671983736023146,
+      "followup_marker_count": 0.3333333333333333
+    }
+  },
+  "top_shared_veto_events": [
+    {
+      "event_key": "AMZN_2024_Q1",
+      "ticker": "AMZN",
+      "year": "2024",
+      "lex_gain_vs_hard": 1.1779474439421387e-09,
+      "sem_gain_vs_hard": 1.1779474439421387e-09,
+      "tail_top1_question_text": "Maybe, Andy, I wanted to ask on international profitability, just after 1Q's 2.8% margin. Talk just about where we are in terms of international getting or to consistent profitability. We're following a similar trajectory as North America in terms of benefiting from regionalization shift, and we saw what average distance of each package traveled actually came down by 25 kilometers and whatnot. And if you could provide any insights on maybe how inbound fulfillment architecture might add to just continued benefits on faster shipping, same-day, next day, et cetera."
+    },
+    {
+      "event_key": "NKE_2023_Q1",
+      "ticker": "NKE",
+      "year": "2023",
+      "lex_gain_vs_hard": 1.022105948255233e-09,
+      "sem_gain_vs_hard": 1.022105948255233e-09,
+      "tail_top1_question_text": "Matt, I was just wondering if you -- to clarify 1 simple thing, you said North America inventory peaked in first quarter. Could you clarify that the total company inventory starts to decline on a year-over-year basis after this? Maybe some of the visibility you have into the back half related to how you're building it after your comment that 2Q will be the low watermark on gross margins. And then, John, I know it's a very different macro but the comments you guys just made for fiscal '24 and beyond. Any reflection on the 5-year targets that you gave us a year ago, some of the growth rates and year-over-year margin opportunities as we get past this year relative to that plan?"
+    },
+    {
+      "event_key": "MSFT_2024_Q3",
+      "ticker": "MSFT",
+      "year": "2024",
+      "lex_gain_vs_hard": 1.2717259236078476e-10,
+      "sem_gain_vs_hard": 1.2717259236078476e-10,
+      "tail_top1_question_text": "Satya and Amy, congrats on these outstanding Azure results. I'd love to hone in a little bit on the 7 point lift to Azure growth from AI, outstanding number, but it's leveling off a little bit from 6 points in December. I'm wondering if you could unpack that a little bit. To what extent did the capacity issues that you Amy highlighted on the call impact that number. Is there any seasonality? I wouldn't think so. Or any other factor that can swing around that number that you'd advise us to keep in mind?"
+    },
+    {
+      "event_key": "IBM_2023_Q2",
+      "ticker": "IBM",
+      "year": "2023",
+      "lex_gain_vs_hard": 9.751846654591493e-11,
+      "sem_gain_vs_hard": 9.751846654591493e-11,
+      "tail_top1_question_text": "Arvind, you noted some initial traction around AI, and I was wondering -- you guys have made a lot of major announcements around AI. Wondering if you can share some thoughts on AI monetization in the short to medium term. And any quantification, if possible, either in terms of dollars or growth rates or '23, '24 would be helpful. And if I could, Jim, you saw very strong transaction processing growth. You noted a few different items there. I was wondering if you could talk about how much of that is structural versus cyclical. And if transaction processing is growing this fast, does that drive upside to software revenue for the year? Or are there other areas that are offsetting? And if you could just reiterate if Red Hat, do you still expect that to grow 11% to 13%?"
+    }
+  ],
+  "top_sem_only_veto_events": [
+    {
+      "event_key": "AAPL_2023_Q4",
+      "ticker": "AAPL",
+      "year": "2023",
+      "sem_gain_vs_hard": 3.4316276621842726e-09,
+      "tail_top1_question_text": "Very clear. And for my follow-up, I had a philosophical question. So you guys always try to provide the best experience for consumers. To that end, I think over the last decade, you in-sourced a lot of important chips in your phones and your Macs, iPads, so on and so forth. And that was, I think, a function that ARM wasn't around in the industry from a merchant angle. But now we see these -- the silicon guys, the chip guys moving to ARM architecture. So my question to you is, has the move to internal silicon been economically profitable proposition for Apple? Or is it a strategic one where you simply need to own this and it's vital to your products for the consumer experience? Or maybe there's a path back to chip vendors at some point in time?"
+    },
+    {
+      "event_key": "NVDA_2023_Q1",
+      "ticker": "NVDA",
+      "year": "2023",
+      "sem_gain_vs_hard": 2.649502887187864e-09,
+      "tail_top1_question_text": "I wanted to follow up on the sequential. So Colette, I know you said the $500 million was a $400 million hit to Gaming and a $100 million hit to data. So I'm assuming, that doesn't mean the Gaming is down $400 million. I mean, is Gaming -- do you see Gaming actually down more than the actual Russia and lockdown hit? And I guess just how do I think about the relative sequentials of the businesses in light of those constraints that you guys are facing?"
+    },
+    {
+      "event_key": "AMZN_2024_Q3",
+      "ticker": "AMZN",
+      "year": "2024",
+      "sem_gain_vs_hard": 2.017733287063021e-09,
+      "tail_top1_question_text": "Maybe a couple of questions. Just on the cloud, are you at all capacity constrained, and will the new Trainium or NVIDIA chips maybe even drive sales growth faster? And then secondly, Andy, I know there's been some competition from some of the more traditional retailers growing quickly online. Maybe talk about maybe the advantages that Amazon has with a fulfillment center distribution versus store distribution? Any thoughts on that?"
+    },
+    {
+      "event_key": "MSFT_2025_Q1",
+      "ticker": "MSFT",
+      "year": "2025",
+      "sem_gain_vs_hard": 2.7073998987791403e-10,
+      "tail_top1_question_text": "Congratulations on the quarter. The question every investor obviously asks is a question on the CapEx growth and the CapEx spend. Obviously, half of that facility is an equivalent that have a longer life, but the other half is the rest of the components. Can you give any color on how you think of that growth? Does it return to the traditional approach, where basically CapEx is going to grow in line or slightly slower than cloud revenue? And if so, any sense of the timing? Do we have enough facilities online by sometime next year, et cetera? Any color would be appreciated."
+    },
+    {
+      "event_key": "IBM_2024_Q2",
+      "ticker": "IBM",
+      "year": "2024",
+      "sem_gain_vs_hard": 1.4527045736471123e-10,
+      "tail_top1_question_text": "Arvind, if we could pick up right where you left off there. Can you just give us a little more color on the decision to open up the Granite models and the code base? And then really what you're seeing in the market that makes you feel like taking maybe a more developer-focused approach to those? I think as you put it, fit-for-purpose models is the right long-term strategy."
+    },
+    {
+      "event_key": "DIS_2023_Q4",
+      "ticker": "DIS",
+      "year": "2023",
+      "sem_gain_vs_hard": -6.883439665203772e-11,
+      "tail_top1_question_text": "Great. Maybe first, a follow-up to Ben's question. Bob, is there an opportunity for ESPN to add local sports rights given what's happening to the RSN model or potentially add sports rights to be distributed outside the U.S.? That's the first question. And then second question is Warner Bros. basically made some news recently by licensing some of their -- what would be considered some of their tentpole content, their DC universe to Netflix. Is that something you think that Disney can do or can lean into more -- at least more so than you're doing now without diluting the Disney brand or the Disney+ growth prospects?"
+    },
+    {
+      "event_key": "NKE_2023_Q2",
+      "ticker": "NKE",
+      "year": "2023",
+      "sem_gain_vs_hard": -1.610800735440463e-10,
+      "tail_top1_question_text": "Congrats on a great quarter. I know it's a lot of heavy lifting. And maybe a simple question, how do you feel on North America inventory in the channel? I know you moved a mountain, but you have a big wholesale business. It's hard for us to track inventory once it leaves your books. Are we past the peak promotions in the U.S.? Is this the highest level of promotions in your view? It would seem so based on some of the inventory comments you gave on the U.S. I just wanted to check that. And then I guess as you start to come out of some of the recent volatility, maybe you can help us connect back to your longer-term targets, in particular, the path to the high teens EBIT margins and the major input to getting there, the D2C versus wholesale transition since we don't get many numbers reported on the margins between those 2 channels. How would you tell us to think about building our understanding into how you get there from here because that seems like the next part of the NIKE story?"
+    },
+    {
+      "event_key": "DIS_2023_Q3",
+      "ticker": "DIS",
+      "year": "2023",
+      "sem_gain_vs_hard": -3.2047273467673814e-10,
+      "tail_top1_question_text": "Bob, the linear business is clearly under pressure, and you made it clear recently that all options are being considered. I'm curious, though, what the practical considerations are of separating assets like ABC, National Geographic or others from both ESPN or sports or integrated or from Hulu, which is kind of the next-generation distribution platform. Can you talk about that? And then second, can we assume that most of those TV assets have been fully depreciated?"
+    },
+    {
+      "event_key": "DIS_2023_Q2",
+      "ticker": "DIS",
+      "year": "2023",
+      "sem_gain_vs_hard": -6.051595345129582e-10,
+      "tail_top1_question_text": "Bob, integrating Hulu into the Disney+ app is intriguing, so I wanted to continue that conversation. When Disney+ was launched, you noted consumers should not have to buy through your entertainment content to get the Marvel and Star Wars and Disney and Pixar content. And you thought at the time having separate services to give consumers choice was the right approach. Is that still the right approach, to have multiple services to give consumer choice? And if the answer is yes, but you want the efficiency and flexibility of a single app, that would suggest that Disney+ is finally turning into a platform. And I'm just curious if you see the opportunity to broaden the number of subscriptions that can live on that Disney+ platform or if you can expand the monetization of that platform in other ways, while maintaining a premium experience for consumers. And if I could add one for Christine, is fiscal 3Q the peak for streaming losses?"
+    }
+  ],
+  "lexical_only_tail_events": [
+    {
+      "event_key": "CSCO_2024_Q3",
+      "ticker": "CSCO",
+      "year": "2024",
+      "lex_gain_vs_hard": 0.0,
+      "tail_top1_question_text": "One question, one small follow-up, and I think this has been the theme of the call. On the main question, actually for Scott, you've got leverage now that sits just under 1 turn, but the business now has a greater mix of recurring revenue, more visibility that, that naturally lends itself to. So I'm just wondering how you think about optimal leverage for the business and uses of excess cash from here? And then just on the follow-up, as we think about low to mid-singles growth next year, well aware of the backlog and the tougher comp that, that creates in fiscal 1Q of next year. Just as we unpack the networking assumptions, are you assuming normal demand and purchasing cadence returns next year once inventories have been digested? Or is there any incremental caution that's embedded there from a macro perspective?"
+    },
+    {
+      "event_key": "MSFT_2024_Q2",
+      "ticker": "MSFT",
+      "year": "2024",
+      "lex_gain_vs_hard": 0.0,
+      "tail_top1_question_text": "Is it possible to unpack the 6-point AI services tailwind just to help us understand which elements are ramped up by the 3 incremental points? For instance, is it more of the OpenAI inferencing, GitHub Copilot, other Copilots, the Azure OpenAI Service, third-party LLMs running on Azure? I'm just wondering where did you see the strongest step-up in that activity?"
+    },
+    {
+      "event_key": "IBM_2023_Q4",
+      "ticker": "IBM",
+      "year": "2023",
+      "lex_gain_vs_hard": -7.3115456970864e-10,
+      "tail_top1_question_text": "I guess my question will be focused on the software side. When I think about the calendar '24 guide of, I think, slightly above the mid-single-digit long-term -- medium-term target that you folks have, can you maybe talk about how do I think about the split between organic versus inorganic in '24? And if you could also perhaps unpack, what do you expect to see across some of the key segments like Red Hat that -- which I think was somewhat below your expectations in '23 and then also the TPP side would be really helpful?"
+    }
+  ]
+}

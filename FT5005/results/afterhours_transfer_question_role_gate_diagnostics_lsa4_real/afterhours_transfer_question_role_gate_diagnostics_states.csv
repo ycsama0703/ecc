@@ -1,0 +1,4 @@
+event_count,mean_hard_abstention_se,mean_question_role_mse_gain_vs_hard,mean_question_role_mse_gain_vs_pre,median_hard_abstention_se,share,state,win_share_vs_hard,win_share_vs_pre
+16,3.0985599434237194e-09,0.0,0.0,7.447311287027797e-10,0.26666666666666666,disagreement_auto_pre,0.0,0.0
+29,1.7477731280665462e-08,0.0,3.251888322828474e-09,1.1918063392763788e-09,0.48333333333333334,agreement_keep_agreed,0.0,0.3448275862068966
+15,2.402723456047227e-08,-8.196860792960271e-10,0.0,1.0654608880467118e-09,0.25,agreement_veto_to_pre,0.2,0.0

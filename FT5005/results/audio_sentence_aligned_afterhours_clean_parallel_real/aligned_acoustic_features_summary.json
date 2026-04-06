@@ -1,0 +1,32 @@
+{
+  "mode": "parallel_chunk_merge",
+  "source_chunks": [
+    "results/audio_sentence_aligned_afterhours_clean_parallel_real/chunk_01",
+    "results/audio_sentence_aligned_afterhours_clean_parallel_real/chunk_02",
+    "results/audio_sentence_aligned_afterhours_clean_parallel_real/chunk_03",
+    "results/audio_sentence_aligned_afterhours_clean_parallel_real/chunk_04"
+  ],
+  "num_chunks": 4,
+  "num_sentence_rows": 53873,
+  "num_event_rows": 172,
+  "num_failures": 0,
+  "feature_set": "eGeMAPSv02",
+  "feature_level": "Functionals",
+  "filter_mode": "strict",
+  "feature_column_count": 88,
+  "sentence_duration_mean_sec": 7.5993,
+  "sentence_duration_median_sec": 7.034,
+  "wav_cache_dir": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/audio_sentence_aligned_afterhours_clean_parallel_real/shared_wav_cache",
+  "chunk_sentence_rows": [
+    13387,
+    13365,
+    13456,
+    13665
+  ],
+  "chunk_event_rows": [
+    43,
+    43,
+    43,
+    43
+  ]
+}

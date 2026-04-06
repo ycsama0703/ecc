@@ -1,0 +1,7 @@
+coefficient,feature
+-2.918483740237707e-09,qa_minus_pre_pred
+1.3031450209221556e-09,sem_minus_qa_pred
+-1.1520463971582868e-09,sem_minus_pre_pred
+-5.175966206176542e-10,abs_sem_minus_qa_pred
+-2.886172144570247e-10,logistic_choose_qa
+2.8861721445692737e-10,tree_choose_qa

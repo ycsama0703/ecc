@@ -1,0 +1,469 @@
+{
+  "target_variant": "shock_minus_pre",
+  "include_regimes": [
+    "after_hours"
+  ],
+  "exclude_html_flags": [
+    "fail"
+  ],
+  "coverage": {
+    "panel_rows": 553,
+    "with_features": 553,
+    "with_old_audio": 553,
+    "with_aligned_audio": 172,
+    "with_both_audio": 172,
+    "joined_rows": 172
+  },
+  "config": {
+    "lsa_components": 4,
+    "aligned_prefix": "aligned_audio__",
+    "aligned_compressed_components": 8,
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ]
+  },
+  "candidate_tickers": 9,
+  "evaluated_tickers": 9,
+  "skipped_tickers": {},
+  "overall_test_size": 60,
+  "overall": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+      "mae": 7.755345540921158e-05,
+      "rmse": 0.00013532689776945295,
+      "r2": 0.998370286435591
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+      "mae": 7.412447206987104e-05,
+      "rmse": 0.00013267180331696235,
+      "r2": 0.9984336085914479
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+      "mae": 7.45325011514522e-05,
+      "rmse": 0.00013265247559846274,
+      "r2": 0.9984340649441351
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "mae": 7.149078725983829e-05,
+      "rmse": 0.00012864330150705964,
+      "r2": 0.9985272895023753
+    }
+  },
+  "median_ticker_r2": {
+    "residual_pre_call_market_only": 0.9954270449002872,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa": 0.9951938826520538,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.9953431936186407,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": 0.9959066749431505,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.9959160233667426
+  },
+  "mean_test_activation_rate": {
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": 0.7994708994708994,
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": 0.7835978835978836
+  },
+  "significance": {
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": 4.012812790210011e-06,
+      "rmse_diff_ci_low": -4.962784530367659e-08,
+      "rmse_diff_ci_high": 8.87095205071384e-06,
+      "mae_diff_mean": 3.0753480871167263e-06,
+      "mae_diff_ci_low": -1.7171991901993404e-06,
+      "mae_diff_ci_high": 8.088944348527451e-06,
+      "r2_gain_mean": 0.00011365256361866658,
+      "r2_gain_ci_low": -1.4270959124179636e-06,
+      "r2_gain_ci_high": 0.0003578766208339746,
+      "mse_gain_mean": 1.0475802597645012e-09,
+      "mse_gain_pvalue": 0.12275,
+      "mae_gain_mean": 3.0417138916139165e-06,
+      "mae_gain_pvalue": 0.247
+    },
+    "residual_pre_call_market_only__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": 1.5760661750472844e-06,
+      "rmse_diff_ci_low": -1.0524481486749989e-05,
+      "rmse_diff_ci_high": 1.1571247359051045e-05,
+      "mae_diff_mean": -3.918505690251259e-06,
+      "mae_diff_ci_low": -1.2273824369359184e-05,
+      "mae_diff_ci_high": 4.637123572802067e-06,
+      "r2_gain_mean": 2.7333659244216546e-05,
+      "r2_gain_ci_low": -0.0003902393578043783,
+      "r2_gain_ci_high": 0.00035393227308436756,
+      "mse_gain_mean": 5.082299305742206e-10,
+      "mse_gain_pvalue": 0.75175,
+      "mae_gain_mean": -3.931076612626845e-06,
+      "mae_gain_pvalue": 0.37125
+    },
+    "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate__vs__residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+      "rmse_diff_mean": 3.8085255087723634e-06,
+      "rmse_diff_ci_low": -2.2327614369463098e-06,
+      "rmse_diff_ci_high": 1.004350959620255e-05,
+      "mae_diff_mean": 2.6541638538307475e-06,
+      "mae_diff_ci_low": -2.9267381132562643e-06,
+      "mae_diff_ci_high": 8.46599723573846e-06,
+      "r2_gain_mean": 0.00011481824603863616,
+      "r2_gain_ci_low": -6.879257079830114e-05,
+      "r2_gain_ci_high": 0.0004845048803536008,
+      "mse_gain_mean": 1.0527083727385e-09,
+      "mse_gain_pvalue": 0.3615,
+      "mae_gain_mean": 2.63368481003275e-06,
+      "mae_gain_pvalue": 0.37175
+    }
+  },
+  "by_ticker": {
+    "AAPL": {
+      "residual_pre_call_market_only": {
+        "mae": 5.907476786276581e-05,
+        "rmse": 7.032460916128126e-05,
+        "r2": 0.9945024082810152,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 7.252632100133218e-05,
+        "rmse": 8.384057310172975e-05,
+        "r2": 0.9921861277629412,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 7.475232211090378e-05,
+        "rmse": 9.115839207130359e-05,
+        "r2": 0.9907625704018016,
+        "n": 5
+      },
+      "threshold_semantic": 0.62779,
+      "val_activation_rate_semantic": 0.9,
+      "threshold_semantic_audio": 0.62779,
+      "val_activation_rate_semantic_audio": 0.9,
+      "test_activation_rate_semantic": 1.0,
+      "test_activation_rate_semantic_audio": 1.0
+    },
+    "AMGN": {
+      "residual_pre_call_market_only": {
+        "mae": 0.00019395354638911312,
+        "rmse": 0.0002590017889481651,
+        "r2": 0.7517550208618401,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.00019478020001389962,
+        "rmse": 0.0002788838339162639,
+        "r2": 0.7121795643022787,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 0.0001992239678617916,
+        "rmse": 0.0002723069769528468,
+        "r2": 0.7255947074505582,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00018414980222998778,
+        "rmse": 0.0002805486471301913,
+        "r2": 0.7087329860892564,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.0001924098739934725,
+        "rmse": 0.0002705938382580596,
+        "r2": 0.7290365259478879,
+        "n": 5
+      },
+      "threshold_semantic": 0.6396299999999999,
+      "val_activation_rate_semantic": 0.8636363636363636,
+      "threshold_semantic_audio": 0.6396299999999999,
+      "val_activation_rate_semantic_audio": 0.8636363636363636,
+      "test_activation_rate_semantic": 0.6,
+      "test_activation_rate_semantic_audio": 0.6
+    },
+    "AMZN": {
+      "residual_pre_call_market_only": {
+        "mae": 6.991755441178796e-05,
+        "rmse": 0.00013869035106715475,
+        "r2": 0.9832201549309215,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 8.954942153369767e-05,
+        "rmse": 0.000137552076764647,
+        "r2": 0.9834944593254292,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 8.449380968018217e-05,
+        "rmse": 0.00014259459613962091,
+        "r2": 0.9822621251397092,
+        "n": 6
+      },
+      "threshold_semantic": 0.69665,
+      "val_activation_rate_semantic": 0.5,
+      "threshold_semantic_audio": 0.69665,
+      "val_activation_rate_semantic_audio": 0.5,
+      "test_activation_rate_semantic": 1.0,
+      "test_activation_rate_semantic_audio": 1.0
+    },
+    "CSCO": {
+      "residual_pre_call_market_only": {
+        "mae": 9.366670114780806e-05,
+        "rmse": 0.0002004226705213428,
+        "r2": 0.9954270449002872,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 0.0001146947882964278,
+        "rmse": 0.00020546864703543542,
+        "r2": 0.9951938826520538,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 0.00010213496596599481,
+        "rmse": 0.0002022518331716136,
+        "r2": 0.9953431936186407,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 0.00010416457022357017,
+        "rmse": 0.00018962102635845015,
+        "r2": 0.9959066749431505,
+        "n": 9
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 0.00010394380690644434,
+        "rmse": 0.00018940437230367707,
+        "r2": 0.9959160233667426,
+        "n": 9
+      },
+      "threshold_semantic": 0.62779,
+      "val_activation_rate_semantic": 0.9,
+      "threshold_semantic_audio": 0.62779,
+      "val_activation_rate_semantic_audio": 0.9,
+      "test_activation_rate_semantic": 0.6666666666666666,
+      "test_activation_rate_semantic_audio": 0.6666666666666666
+    },
+    "DIS": {
+      "residual_pre_call_market_only": {
+        "mae": 2.8788684503002785e-05,
+        "rmse": 3.125296254275188e-05,
+        "r2": 0.999221250400446,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 3.932992035502893e-05,
+        "rmse": 4.892395890446277e-05,
+        "r2": 0.9980916473212371,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 2.1701067615835068e-05,
+        "rmse": 2.7330965307059842e-05,
+        "r2": 0.999404440172799,
+        "n": 5
+      },
+      "threshold_semantic": 0.5814,
+      "val_activation_rate_semantic": 1.0,
+      "threshold_semantic_audio": 0.64054,
+      "val_activation_rate_semantic_audio": 0.8,
+      "test_activation_rate_semantic": 1.0,
+      "test_activation_rate_semantic_audio": 1.0
+    },
+    "IBM": {
+      "residual_pre_call_market_only": {
+        "mae": 3.760185850848022e-05,
+        "rmse": 4.672693538500546e-05,
+        "r2": 0.9991543915153775,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 6.086950231361247e-05,
+        "rmse": 7.05204502832331e-05,
+        "r2": 0.99807396183613,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 5.265980936026573e-05,
+        "rmse": 6.477455133593188e-05,
+        "r2": 0.9983750366807912,
+        "n": 7
+      },
+      "threshold_semantic": 0.6281,
+      "val_activation_rate_semantic": 0.9047619047619048,
+      "threshold_semantic_audio": 0.6281,
+      "val_activation_rate_semantic_audio": 0.9047619047619048,
+      "test_activation_rate_semantic": 1.0,
+      "test_activation_rate_semantic_audio": 1.0
+    },
+    "MSFT": {
+      "residual_pre_call_market_only": {
+        "mae": 1.705805507158671e-05,
+        "rmse": 2.023851816747716e-05,
+        "r2": 0.9413915768914621,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 1.3928447183847787e-05,
+        "rmse": 1.732382068191364e-05,
+        "r2": 0.9570572379923804,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 1.6905869955575092e-05,
+        "rmse": 1.9484013527516626e-05,
+        "r2": 0.9456800377424914,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 1.6402257032372616e-05,
+        "rmse": 2.1440290393087467e-05,
+        "r2": 0.9342245328530856,
+        "n": 7
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 1.5409891193190727e-05,
+        "rmse": 1.8775205189938627e-05,
+        "r2": 0.9495603576266615,
+        "n": 7
+      },
+      "threshold_semantic": 0.69655,
+      "val_activation_rate_semantic": 0.5,
+      "threshold_semantic_audio": 0.71314,
+      "val_activation_rate_semantic_audio": 0.3,
+      "test_activation_rate_semantic": 0.42857142857142855,
+      "test_activation_rate_semantic_audio": 0.2857142857142857
+    },
+    "NKE": {
+      "residual_pre_call_market_only": {
+        "mae": 4.457160872705005e-05,
+        "rmse": 6.966728706335026e-05,
+        "r2": 0.9963126393698792,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 3.8566887998883874e-05,
+        "rmse": 6.31644889533846e-05,
+        "r2": 0.996968875393376,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 4.760338582282969e-05,
+        "rmse": 6.232178463928153e-05,
+        "r2": 0.997049214917831,
+        "n": 8
+      },
+      "threshold_semantic": 0.5814,
+      "val_activation_rate_semantic": 1.0,
+      "threshold_semantic_audio": 0.64028,
+      "val_activation_rate_semantic_audio": 0.7894736842105263,
+      "test_activation_rate_semantic": 1.0,
+      "test_activation_rate_semantic_audio": 1.0
+    },
+    "NVDA": {
+      "residual_pre_call_market_only": {
+        "mae": 8.034996792255111e-05,
+        "rmse": 0.00012475277238314169,
+        "r2": 0.9995731480956261,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa": {
+        "mae": 8.979434291975784e-05,
+        "rmse": 0.0001120807326492996,
+        "r2": 0.9996554607260162,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_observability_gate": {
+        "mae": 7.282416816624695e-05,
+        "rmse": 0.00010438869232935051,
+        "r2": 0.9997011290346491,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd": {
+        "mae": 9.502857098489608e-05,
+        "rmse": 0.00011603572453297491,
+        "r2": 0.9996307162064252,
+        "n": 8
+      },
+      "residual_pre_call_market_plus_a4_plus_qna_lsa_plus_aligned_audio_svd_observability_gate": {
+        "mae": 6.816985078666448e-05,
+        "rmse": 9.603475310719317e-05,
+        "r2": 0.9997470505961126,
+        "n": 8
+      },
+      "threshold_semantic": 0.6396299999999999,
+      "val_activation_rate_semantic": 0.8636363636363636,
+      "threshold_semantic_audio": 0.6396299999999999,
+      "val_activation_rate_semantic_audio": 0.8636363636363636,
+      "test_activation_rate_semantic": 0.5,
+      "test_activation_rate_semantic_audio": 0.5
+    }
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "config": {
+    "panel_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/audio_sentence_aligned_afterhours_clean_real/panel_subset_afterhours_clean.csv",
+    "features_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/features_real/event_text_audio_features.csv",
+    "qa_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/qa_benchmark_features_v2_real/qa_benchmark_features.csv",
+    "aligned_audio_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/role_aware_aligned_audio_afterhours_clean_real/event_role_aware_aligned_acoustic_features.csv",
+    "hard_reference_predictions_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_agreement_signal_benchmark_role_aware_audio_lsa4_real/afterhours_transfer_agreement_signal_benchmark_test_predictions.csv",
+    "hard_reference_summary_json": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_agreement_signal_benchmark_role_aware_audio_lsa4_real/afterhours_transfer_agreement_signal_benchmark_summary.json",
+    "target_variant": "shock_minus_pre",
+    "include_regimes": [
+      "after_hours"
+    ],
+    "exclude_html_flags": [
+      "fail"
+    ],
+    "train_end_year": 2021,
+    "val_year": 2022,
+    "alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "gate_feature": "a4_strict_row_share",
+    "gate_quantiles": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "lsa_components": 4
+  },
+  "coverage": {
+    "panel_rows": 172,
+    "with_features": 172,
+    "with_qa": 172,
+    "with_aligned_audio": 172,
+    "with_all_side_inputs": 172,
+    "joined_rows": 172
+  },
+  "candidate_tickers": [
+    "AAPL",
+    "AMGN",
+    "AMZN",
+    "CSCO",
+    "DIS",
+    "IBM",
+    "MSFT",
+    "NKE",
+    "NVDA"
+  ],
+  "bundle_meta": {
+    "responsiveness_factor": {
+      "feature_names": [
+        "qa_pair_answer_forward_rate_mean",
+        "qa_bench_coverage_mean",
+        "qa_bench_direct_early_score_mean",
+        "qa_bench_evasion_score_mean",
+        "qa_bench_direct_answer_share"
+      ],
+      "explained_variance_ratio_sum": 0.6678047963462396
+    },
+    "content_factor": {
+      "feature_names": [
+        "qa_bench_question_complexity_mean",
+        "qa_bench_numeric_rate_mean",
+        "qa_bench_numeric_mismatch_share",
+        "qa_bench_justification_rate_mean",
+        "qa_bench_external_attr_rate_mean",
+        "qa_bench_subjective_rate_mean"
+      ],
+      "explained_variance_ratio_sum": 0.2702995574749114
+    },
+    "aligned_audio_svd": {
+      "input_feature_count": 367,
+      "n_components": 8,
+      "explained_variance_ratio_sum": 0.6026047228923573
+    },
+    "qna_lsa_components": 4
+  },
+  "reference": {
+    "hard_abstention_summary_best_family": "geometry_plus_hybrid",
+    "hard_abstention_test_full_metrics": {
+      "mae": 6.724586012089539e-05,
+      "rmse": 0.0001236149724373469,
+      "r2": 0.9986401682388036
+    },
+    "agreement_pre_only_abstention": {
+      "mae": 6.724586012089539e-05,
+      "rmse": 0.0001236149724373469,
+      "r2": 0.9986401682388036
+    }
+  },
+  "overall_metrics": {
+    "residual_pre_call_market_only": {
+      "mae": 6.755971064721144e-05,
+      "rmse": 0.00013060370956910247,
+      "r2": 0.9984820619311983
+    },
+    "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+      "mae": 7.821165164293376e-05,
+      "rmse": 0.00016454325505065276,
+      "r2": 0.9975906316738302
+    },
+    "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+      "mae": 7.982142491292838e-05,
+      "rmse": 0.00016558838168934345,
+      "r2": 0.9975599273816328
+    },
+    "validation_selected_compact_factor_expert": {
+      "mae": 7.847385578595316e-05,
+      "rmse": 0.00016489678985096048,
+      "r2": 0.9975802670967296
+    },
+    "agreement_pre_only_abstention": {
+      "mae": 6.724586012089539e-05,
+      "rmse": 0.0001236149724373469,
+      "r2": 0.9986401682388036
+    }
+  },
+  "selection_counts": {
+    "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 4,
+    "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 5
+  },
+  "skipped": {},
+  "ticker_summary": {
+    "AAPL": {
+      "n_test": 5,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9998300894004377,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9998411603306535,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9998768866988793
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9945024082810152,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9947859553977734,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9937493044902824
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 6.55131669193255e-05,
+          "r2": 0.9998411603306535
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 5.767685815151575e-05,
+          "r2": 0.9998768866988793
+        }
+      }
+    },
+    "AMGN": {
+      "n_test": 5,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9996573095084921,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9996967441593602,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.999690854999885
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.7517550208618401,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.39701412642876033,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.39067551103605735
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.625,
+          "activation_rate": 1.0,
+          "rmse": 8.679229162117929e-05,
+          "r2": 0.9996967441593602
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.625,
+          "activation_rate": 1.0,
+          "rmse": 8.76309826872561e-05,
+          "r2": 0.999690854999885
+        }
+      }
+    },
+    "AMZN": {
+      "n_test": 6,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9998494265572286,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.99983185638791,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.999858144711995
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9832201549309215,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9842964265018678,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9870131316834182
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 6.754996299330854e-05,
+          "r2": 0.99983185638791
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 6.204512930120477e-05,
+          "r2": 0.999858144711995
+        }
+      }
+    },
+    "CSCO": {
+      "n_test": 9,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9973601077310792,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.998064274586392,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9981367637569488
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9954270449002872,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9948532418770958,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9944778632788874
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.848511224551553e-05,
+          "r2": 0.998064274586392
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.700153264299983e-05,
+          "r2": 0.9981367637569488
+        }
+      }
+    },
+    "DIS": {
+      "n_test": 5,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9997080403868669,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9998158231065256,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9998060825332387
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.999221250400446,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9990245075035874,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9988747567364785
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 6.856753700538573e-05,
+          "r2": 0.9998158231065256
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.035734497473365e-05,
+          "r2": 0.9998060825332387
+        }
+      }
+    },
+    "IBM": {
+      "n_test": 7,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9997110915963643,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9997551555966143,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9997352563826688
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9991543915153775,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9978443015492977,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9976492279160682
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.997808893301102e-05,
+          "r2": 0.9997551555966143
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 8.316463409539137e-05,
+          "r2": 0.9997352563826688
+        }
+      }
+    },
+    "MSFT": {
+      "n_test": 7,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9996886142191334,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9997201410020362,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9997145101232502
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9413915768914621,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9703616295190769,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9553189220555851
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 8.651795648264371e-05,
+          "r2": 0.9997201410020362
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 8.738401037088131e-05,
+          "r2": 0.9997145101232502
+        }
+      }
+    },
+    "NKE": {
+      "n_test": 8,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.999707082598186,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9997850392460265,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9997811979262522
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9963126393698792,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9979234664043588,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9979283538851289
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.836909119537578e-05,
+          "r2": 0.9997850392460265
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.906621317862074e-05,
+          "r2": 0.9997811979262522
+        }
+      }
+    },
+    "NVDA": {
+      "n_test": 8,
+      "selected_model": "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate",
+      "validation_r2": {
+        "residual_pre_call_market_only": 0.9997083608158329,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.9997633679157868,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9997679138834558
+      },
+      "test_r2": {
+        "residual_pre_call_market_only": 0.9995731480956261,
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": 0.99930398111669,
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": 0.9993336901986378
+      },
+      "gate_meta": {
+        "residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.672707248691592e-05,
+          "r2": 0.9997633679157868
+        },
+        "residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+          "threshold": 0.5814,
+          "activation_rate": 1.0,
+          "rmse": 7.59864918443688e-05,
+          "r2": 0.9997679138834558
+        }
+      }
+    }
+  },
+  "significance": {
+    "validation_selected_compact_factor_expert__vs__residual_pre_call_market_only": {
+      "rmse_diff_mean": -3.1519602976461805e-05,
+      "rmse_diff_ci_low": -7.237912488852535e-05,
+      "rmse_diff_ci_high": -8.511228783353628e-07,
+      "mae_diff_mean": -1.081979443689589e-05,
+      "mae_diff_ci_low": -2.6423126347687877e-05,
+      "mae_diff_ci_high": 7.533154260459133e-07,
+      "r2_gain_mean": -0.0011301691060133711,
+      "r2_gain_ci_low": -0.00449190980974877,
+      "r2_gain_ci_high": -2.080461412115037e-05,
+      "mse_gain_mean": -1.0133622349941352e-08,
+      "mse_gain_pvalue": 0.0895,
+      "mae_gain_mean": -1.0914145138741717e-05,
+      "mae_gain_pvalue": 0.11475
+    },
+    "validation_selected_compact_factor_expert__vs__residual_pre_call_market_plus_a4_plus_responsiveness_factor_observability_gate": {
+      "rmse_diff_mean": -3.2279688131840463e-07,
+      "rmse_diff_ci_low": -4.2363992602069234e-06,
+      "rmse_diff_ci_high": 3.805126567090653e-06,
+      "mae_diff_mean": -2.603849891588244e-07,
+      "mae_diff_ci_low": -5.965409976569521e-06,
+      "mae_diff_ci_high": 4.16841485710182e-06,
+      "r2_gain_mean": -1.2741816021786646e-05,
+      "r2_gain_ci_low": -0.0001797583274242065,
+      "r2_gain_ci_high": 0.00013765929342735898,
+      "mse_gain_mean": -1.1646852048765845e-10,
+      "mse_gain_pvalue": 0.866,
+      "mae_gain_mean": -2.6220414301939954e-07,
+      "mae_gain_pvalue": 0.95125
+    },
+    "validation_selected_compact_factor_expert__vs__residual_pre_call_market_plus_a4_plus_content_accountability_factor_observability_gate": {
+      "rmse_diff_mean": 7.637721764360615e-07,
+      "rmse_diff_ci_low": 3.165100899666458e-08,
+      "rmse_diff_ci_high": 1.961602703072059e-06,
+      "mae_diff_mean": 1.3417452588347817e-06,
+      "mae_diff_ci_low": -2.152989679212863e-07,
+      "mae_diff_ci_high": 2.9650156543854955e-06,
+      "r2_gain_mean": 2.6886030663165667e-05,
+      "r2_gain_ci_low": 9.560689230275757e-07,
+      "r2_gain_ci_high": 0.0001011848319297599,
+      "mse_gain_mean": 2.2856084734387052e-10,
+      "mse_gain_pvalue": 0.06575,
+      "mae_gain_mean": 1.3475691269752272e-06,
+      "mae_gain_pvalue": 0.10075
+    },
+    "validation_selected_compact_factor_expert__vs__agreement_pre_only_abstention": {
+      "rmse_diff_mean": -3.832446623340972e-05,
+      "rmse_diff_ci_low": -7.717434049888126e-05,
+      "rmse_diff_ci_high": -3.7426375438453748e-06,
+      "mae_diff_mean": -1.1084488006920592e-05,
+      "mae_diff_ci_low": -2.7364622283764524e-05,
+      "mae_diff_ci_high": 2.0192539092524818e-06,
+      "r2_gain_mean": -0.0013092086351343805,
+      "r2_gain_ci_low": -0.004864924743881746,
+      "r2_gain_ci_high": -9.409958223637593e-05,
+      "mse_gain_mean": -1.191028989246579e-08,
+      "mse_gain_pvalue": 0.06075,
+      "mae_gain_mean": -1.122799566505778e-05,
+      "mae_gain_pvalue": 0.14825
+    },
+    "residual_pre_call_market_only__vs__agreement_pre_only_abstention": {
+      "rmse_diff_mean": -6.804863256947919e-06,
+      "rmse_diff_ci_low": -1.3972246319745058e-05,
+      "rmse_diff_ci_high": 5.929905451408134e-07,
+      "mae_diff_mean": -2.646935700247019e-07,
+      "mae_diff_ci_low": -5.898998627391242e-06,
+      "mae_diff_ci_high": 5.1716483181211e-06,
+      "r2_gain_mean": -0.00017903952912100954,
+      "r2_gain_ci_low": -0.0005573484151108893,
+      "r2_gain_ci_high": 1.629362418590633e-05,
+      "mse_gain_mean": -1.7766675425244361e-09,
+      "mse_gain_pvalue": 0.15275,
+      "mae_gain_mean": -3.1385052631606163e-07,
+      "mae_gain_pvalue": 0.90675
+    }
+  }
+}

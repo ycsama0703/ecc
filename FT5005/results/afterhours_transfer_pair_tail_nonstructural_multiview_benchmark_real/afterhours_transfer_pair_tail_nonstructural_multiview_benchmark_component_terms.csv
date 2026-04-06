@@ -1,0 +1,289 @@
+component,direction,family,rank,term,weight
+1,positive,question_mask_struct_lsa4_bi,1,the,0.36648568318361247
+1,positive,question_mask_struct_lsa4_bi,2,you,0.260208379174987
+1,positive,question_mask_struct_lsa4_bi,3,and,0.2119218539131037
+1,positive,question_mask_struct_lsa4_bi,4,to,0.20015870873983488
+1,positive,question_mask_struct_lsa4_bi,5,of,0.19306171945360456
+1,positive,question_mask_struct_lsa4_bi,6,that,0.18026811209347257
+1,positive,question_mask_struct_lsa4_bi,7,in,0.14751061634193582
+1,positive,question_mask_struct_lsa4_bi,8,on,0.12680317972073682
+1,positive,question_mask_struct_lsa4_bi,9,is,0.11448044861673769
+1,positive,question_mask_struct_lsa4_bi,10,about,0.10763307831581075
+1,positive,question_mask_struct_lsa4_bi,11,just,0.10747828641865452
+1,positive,question_mask_struct_lsa4_bi,12,it,0.09942139352726397
+1,negative,question_mask_struct_lsa4_bi,1,your aim,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,2,secondly the,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,3,curiosities,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,4,manufacturing capacity,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,5,to million,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,6,and capacity,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,7,curious is,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,8,curiosities on,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,9,patients worth,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,10,imagine,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,11,patient friendly,0.00214255114367389
+1,negative,question_mask_struct_lsa4_bi,12,will ask,0.00214255114367389
+2,positive,question_mask_struct_lsa4_bi,1,you,0.1233098294698408
+2,positive,question_mask_struct_lsa4_bi,2,kind,0.08257840563448136
+2,positive,question_mask_struct_lsa4_bi,3,kind of,0.08090355129368915
+2,positive,question_mask_struct_lsa4_bi,4,re,0.07797424133222901
+2,positive,question_mask_struct_lsa4_bi,5,around,0.07760011570763486
+2,positive,question_mask_struct_lsa4_bi,6,you re,0.0710289234764503
+2,positive,question_mask_struct_lsa4_bi,7,big,0.06686875684588563
+2,positive,question_mask_struct_lsa4_bi,8,do,0.06560007080240066
+2,positive,question_mask_struct_lsa4_bi,9,those,0.06486066543541978
+2,positive,question_mask_struct_lsa4_bi,10,areas,0.06315572278799267
+2,positive,question_mask_struct_lsa4_bi,11,lot,0.06070261630689768
+2,positive,question_mask_struct_lsa4_bi,12,data,0.060414229832059
+2,negative,question_mask_struct_lsa4_bi,1,is,-0.1072139406990554
+2,negative,question_mask_struct_lsa4_bi,2,could,-0.0964484786584872
+2,negative,question_mask_struct_lsa4_bi,3,that,-0.08459092583385427
+2,negative,question_mask_struct_lsa4_bi,4,was,-0.08034773177836159
+2,negative,question_mask_struct_lsa4_bi,5,the,-0.07542864384817406
+2,negative,question_mask_struct_lsa4_bi,6,you could,-0.0744066506649796
+2,negative,question_mask_struct_lsa4_bi,7,at,-0.06917973057926931
+2,negative,question_mask_struct_lsa4_bi,8,disney,-0.06365000527930041
+2,negative,question_mask_struct_lsa4_bi,9,cash flow,-0.060451949748424064
+2,negative,question_mask_struct_lsa4_bi,10,be,-0.05826854357518554
+2,negative,question_mask_struct_lsa4_bi,11,cash,-0.05818894450789945
+2,negative,question_mask_struct_lsa4_bi,12,this,-0.05658479564400105
+3,positive,question_mask_struct_lsa4_bi,1,re,0.1081825672079183
+3,positive,question_mask_struct_lsa4_bi,2,you re,0.10638998456124585
+3,positive,question_mask_struct_lsa4_bi,3,on,0.08644499045893808
+3,positive,question_mask_struct_lsa4_bi,4,bit,0.07786185559291221
+3,positive,question_mask_struct_lsa4_bi,5,seeing,0.07714191599933275
+3,positive,question_mask_struct_lsa4_bi,6,little,0.07392722124817833
+3,positive,question_mask_struct_lsa4_bi,7,little bit,0.06902526352257424
+3,positive,question_mask_struct_lsa4_bi,8,perspective on,0.06857695602778181
+3,positive,question_mask_struct_lsa4_bi,9,your capex,0.06701853863760479
+3,positive,question_mask_struct_lsa4_bi,10,re seeing,0.06641483675984028
+3,positive,question_mask_struct_lsa4_bi,11,how much,0.06586674710903857
+3,positive,question_mask_struct_lsa4_bi,12,just,0.06499454453944688
+3,negative,question_mask_struct_lsa4_bi,1,flow,-0.10770202014737566
+3,negative,question_mask_struct_lsa4_bi,2,think,-0.10218730204867407
+3,negative,question_mask_struct_lsa4_bi,3,think about,-0.09899662804617883
+3,negative,question_mask_struct_lsa4_bi,4,cash,-0.09846852715195921
+3,negative,question_mask_struct_lsa4_bi,5,cash flow,-0.09677728480738541
+3,negative,question_mask_struct_lsa4_bi,6,about,-0.09036807446898361
+3,negative,question_mask_struct_lsa4_bi,7,was,-0.08692385053106168
+3,negative,question_mask_struct_lsa4_bi,8,for,-0.08392584660751695
+3,negative,question_mask_struct_lsa4_bi,9,the,-0.08175593474563718
+3,negative,question_mask_struct_lsa4_bi,10,operating,-0.07840845874338566
+3,negative,question_mask_struct_lsa4_bi,11,target,-0.06615667006389594
+3,negative,question_mask_struct_lsa4_bi,12,free,-0.06451818987159028
+4,positive,question_mask_struct_lsa4_bi,1,do,0.12949447094724031
+4,positive,question_mask_struct_lsa4_bi,2,do you,0.09072932438525191
+4,positive,question_mask_struct_lsa4_bi,3,when,0.09008056766939261
+4,positive,question_mask_struct_lsa4_bi,4,software,0.08990184270514172
+4,positive,question_mask_struct_lsa4_bi,5,term,0.08458559687797455
+4,positive,question_mask_struct_lsa4_bi,6,how,0.08171624223477357
+4,positive,question_mask_struct_lsa4_bi,7,about the,0.07936716458877796
+4,positive,question_mask_struct_lsa4_bi,8,how do,0.0786351999017616
+4,positive,question_mask_struct_lsa4_bi,9,think,0.07807648928394961
+4,positive,question_mask_struct_lsa4_bi,10,how much,0.07345586123738612
+4,positive,question_mask_struct_lsa4_bi,11,clusters,0.07190342683688361
+4,positive,question_mask_struct_lsa4_bi,12,today,0.0705566665881216
+4,negative,question_mask_struct_lsa4_bi,1,with,-0.08583747706036492
+4,negative,question_mask_struct_lsa4_bi,2,kind of,-0.08146036303030228
+4,negative,question_mask_struct_lsa4_bi,3,kind,-0.08102859796476002
+4,negative,question_mask_struct_lsa4_bi,4,you re,-0.06378441864445573
+4,negative,question_mask_struct_lsa4_bi,5,interchangeable,-0.061267869207389136
+4,negative,question_mask_struct_lsa4_bi,6,was,-0.05634297631499361
+4,negative,question_mask_struct_lsa4_bi,7,enough,-0.055754528250726985
+4,negative,question_mask_struct_lsa4_bi,8,as,-0.05496898391671948
+4,negative,question_mask_struct_lsa4_bi,9,guys,-0.052082334030717846
+4,negative,question_mask_struct_lsa4_bi,10,half,-0.05062048880215084
+4,negative,question_mask_struct_lsa4_bi,11,different,-0.05015495269547953
+4,negative,question_mask_struct_lsa4_bi,12,had,-0.049373006433462784
+1,positive,answer_mask_struct_lsa4_bi,1,the,0.3531795266790738
+1,positive,answer_mask_struct_lsa4_bi,2,and,0.3376919136956098
+1,positive,answer_mask_struct_lsa4_bi,3,we,0.2793098812653752
+1,positive,answer_mask_struct_lsa4_bi,4,that,0.25521766629322573
+1,positive,answer_mask_struct_lsa4_bi,5,of,0.24877887747170344
+1,positive,answer_mask_struct_lsa4_bi,6,to,0.24214312673906885
+1,positive,answer_mask_struct_lsa4_bi,7,in,0.19317829896982278
+1,positive,answer_mask_struct_lsa4_bi,8,it,0.14184049283927602
+1,positive,answer_mask_struct_lsa4_bi,9,you,0.13780936590082687
+1,positive,answer_mask_struct_lsa4_bi,10,is,0.11612245954824897
+1,positive,answer_mask_struct_lsa4_bi,11,so,0.11094703851183894
+1,positive,answer_mask_struct_lsa4_bi,12,our,0.10719363025393878
+1,negative,answer_mask_struct_lsa4_bi,1,holidays everyone,0.00048684989665607196
+1,negative,answer_mask_struct_lsa4_bi,2,happy holidays,0.00048684989665607196
+1,negative,answer_mask_struct_lsa4_bi,3,consider,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,4,consider whether,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,5,prescribes,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,6,prescribes you,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,7,presence,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,8,presence it,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,9,pretty different,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,10,pretty exciting,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,11,provide pharmacy,0.0014423085845872232
+1,negative,answer_mask_struct_lsa4_bi,12,pursue,0.0014423085845872232
+2,positive,answer_mask_struct_lsa4_bi,1,thank,0.5060473779586899
+2,positive,answer_mask_struct_lsa4_bi,2,thank you,0.5058666147195002
+2,positive,answer_mask_struct_lsa4_bi,3,you,0.36143925970564145
+2,positive,answer_mask_struct_lsa4_bi,4,you all,0.21680116474322428
+2,positive,answer_mask_struct_lsa4_bi,5,all,0.126179038020234
+2,positive,answer_mask_struct_lsa4_bi,6,call,0.09517006829002361
+2,positive,answer_mask_struct_lsa4_bi,7,turn,0.09516757669826867
+2,positive,answer_mask_struct_lsa4_bi,8,the call,0.09447264983739039
+2,positive,answer_mask_struct_lsa4_bi,9,it back,0.08885968712045755
+2,positive,answer_mask_struct_lsa4_bi,10,me turn,0.08885968712045755
+2,positive,answer_mask_struct_lsa4_bi,11,to close,0.08885968712045755
+2,positive,answer_mask_struct_lsa4_bi,12,close out,0.08885968712045755
+2,negative,answer_mask_struct_lsa4_bi,1,and,-0.08368917169796596
+2,negative,answer_mask_struct_lsa4_bi,2,that,-0.08144866656584374
+2,negative,answer_mask_struct_lsa4_bi,3,of,-0.07753718088754638
+2,negative,answer_mask_struct_lsa4_bi,4,we,-0.07496065622569921
+2,negative,answer_mask_struct_lsa4_bi,5,in,-0.06702030923051944
+2,negative,answer_mask_struct_lsa4_bi,6,the,-0.050000209682019486
+2,negative,answer_mask_struct_lsa4_bi,7,is,-0.0469244946879793
+2,negative,answer_mask_struct_lsa4_bi,8,so,-0.04140381172215749
+2,negative,answer_mask_struct_lsa4_bi,9,there,-0.0330695917342563
+2,negative,answer_mask_struct_lsa4_bi,10,re,-0.03140016255818867
+2,negative,answer_mask_struct_lsa4_bi,11,in the,-0.028430101655162746
+2,negative,answer_mask_struct_lsa4_bi,12,and so,-0.026549845322576923
+3,positive,answer_mask_struct_lsa4_bi,1,thank,0.23369116067337697
+3,positive,answer_mask_struct_lsa4_bi,2,thank you,0.23303279224331316
+3,positive,answer_mask_struct_lsa4_bi,3,you all,0.1518687185244084
+3,positive,answer_mask_struct_lsa4_bi,4,all,0.09221015533758205
+3,positive,answer_mask_struct_lsa4_bi,5,you,0.06030804808526778
+3,positive,answer_mask_struct_lsa4_bi,6,and,0.043893409507153786
+3,positive,answer_mask_struct_lsa4_bi,7,today,0.03979894657159075
+3,positive,answer_mask_struct_lsa4_bi,8,david,0.03935840074999521
+3,positive,answer_mask_struct_lsa4_bi,9,everybody,0.03930306445884927
+3,positive,answer_mask_struct_lsa4_bi,10,we,0.03868009690329368
+3,positive,answer_mask_struct_lsa4_bi,11,of,0.03675899095116563
+3,positive,answer_mask_struct_lsa4_bi,12,joining,0.03397296278033942
+3,negative,answer_mask_struct_lsa4_bi,1,close out,-0.22188500120548024
+3,negative,answer_mask_struct_lsa4_bi,2,to close,-0.22188500120548024
+3,negative,answer_mask_struct_lsa4_bi,3,me turn,-0.22188500120548024
+3,negative,answer_mask_struct_lsa4_bi,4,it back,-0.22188500120548024
+3,negative,answer_mask_struct_lsa4_bi,5,turn it,-0.22032837847852524
+3,negative,answer_mask_struct_lsa4_bi,6,out the,-0.21475126475853684
+3,negative,answer_mask_struct_lsa4_bi,7,you to,-0.21427961109405863
+3,negative,answer_mask_struct_lsa4_bi,8,to you,-0.20817302613012617
+3,negative,answer_mask_struct_lsa4_bi,9,turn,-0.2076840576480058
+3,negative,answer_mask_struct_lsa4_bi,10,back to,-0.20182531508743023
+3,negative,answer_mask_struct_lsa4_bi,11,close,-0.19132197862675354
+3,negative,answer_mask_struct_lsa4_bi,12,back,-0.1831126424440769
+4,positive,answer_mask_struct_lsa4_bi,1,you want,0.39837515827818926
+4,positive,answer_mask_struct_lsa4_bi,2,want,0.36351727723847316
+4,positive,answer_mask_struct_lsa4_bi,3,want to,0.3635107871087665
+4,positive,answer_mask_struct_lsa4_bi,4,to take,0.3121023749225701
+4,positive,answer_mask_struct_lsa4_bi,5,take,0.25108928078348974
+4,positive,answer_mask_struct_lsa4_bi,6,do you,0.2501728630824713
+4,positive,answer_mask_struct_lsa4_bi,7,take the,0.17572778831478864
+4,positive,answer_mask_struct_lsa4_bi,8,take betting,0.16988481741120065
+4,positive,answer_mask_struct_lsa4_bi,9,the first,0.15247282137700222
+4,positive,answer_mask_struct_lsa4_bi,10,do,0.14732913609366172
+4,positive,answer_mask_struct_lsa4_bi,11,to,0.12139322150209907
+4,positive,answer_mask_struct_lsa4_bi,12,question,0.11604554991014138
+4,negative,answer_mask_struct_lsa4_bi,1,thank you,-0.08503767695554215
+4,negative,answer_mask_struct_lsa4_bi,2,thank,-0.08447453235080142
+4,negative,answer_mask_struct_lsa4_bi,3,it,-0.05258993376143743
+4,negative,answer_mask_struct_lsa4_bi,4,we,-0.04929833488969353
+4,negative,answer_mask_struct_lsa4_bi,5,the call,-0.046318598177060695
+4,negative,answer_mask_struct_lsa4_bi,6,call,-0.04594141791555056
+4,negative,answer_mask_struct_lsa4_bi,7,turn it,-0.045112063852511035
+4,negative,answer_mask_struct_lsa4_bi,8,close out,-0.044500371613764834
+4,negative,answer_mask_struct_lsa4_bi,9,me turn,-0.044500371613764834
+4,negative,answer_mask_struct_lsa4_bi,10,to close,-0.044500371613764834
+4,negative,answer_mask_struct_lsa4_bi,11,it back,-0.044500371613764834
+4,negative,answer_mask_struct_lsa4_bi,12,you to,-0.043296163876304646
+1,positive,qa_mask_struct_lsa4_bi,1,the,0.39197224703249833
+1,positive,qa_mask_struct_lsa4_bi,2,and,0.28285816757773363
+1,positive,qa_mask_struct_lsa4_bi,3,to,0.23531759473434258
+1,positive,qa_mask_struct_lsa4_bi,4,you,0.2237000322659186
+1,positive,qa_mask_struct_lsa4_bi,5,that,0.2140760337601613
+1,positive,qa_mask_struct_lsa4_bi,6,of,0.2107133651350536
+1,positive,qa_mask_struct_lsa4_bi,7,we,0.18531259766698008
+1,positive,qa_mask_struct_lsa4_bi,8,in,0.15912697933046238
+1,positive,qa_mask_struct_lsa4_bi,9,it,0.1214761655656563
+1,positive,qa_mask_struct_lsa4_bi,10,on,0.11426237146608702
+1,positive,qa_mask_struct_lsa4_bi,11,is,0.11229354219503947
+1,positive,qa_mask_struct_lsa4_bi,12,for,0.09614101053236804
+1,negative,qa_mask_struct_lsa4_bi,1,have hard,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,2,have conviction,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,3,have connectivity,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,4,have clinics,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,5,have chosen,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,6,2020 and,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,7,had to,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,8,2003 and,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,9,guess and,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,10,guess aws,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,11,had very,0.0011864016563389286
+1,negative,qa_mask_struct_lsa4_bi,12,had what,0.0011864016563389286
+2,positive,qa_mask_struct_lsa4_bi,1,we,0.23184720355326774
+2,positive,qa_mask_struct_lsa4_bi,2,and,0.11758762709167521
+2,positive,qa_mask_struct_lsa4_bi,3,our,0.10083930706737429
+2,positive,qa_mask_struct_lsa4_bi,4,and so,0.08926371284646809
+2,positive,qa_mask_struct_lsa4_bi,5,we re,0.08678747054487607
+2,positive,qa_mask_struct_lsa4_bi,6,so,0.08469127423255134
+2,positive,qa_mask_struct_lsa4_bi,7,that we,0.08261059038617222
+2,positive,qa_mask_struct_lsa4_bi,8,new,0.07496339638223944
+2,positive,qa_mask_struct_lsa4_bi,9,it,0.07052568488732514
+2,positive,qa_mask_struct_lsa4_bi,10,with,0.06954505469979298
+2,positive,qa_mask_struct_lsa4_bi,11,that,0.0676756057251484
+2,positive,qa_mask_struct_lsa4_bi,12,in,0.06204462090503523
+2,negative,qa_mask_struct_lsa4_bi,1,you,-0.21563433777740118
+2,negative,qa_mask_struct_lsa4_bi,2,just,-0.102566312727078
+2,negative,qa_mask_struct_lsa4_bi,3,you could,-0.09423503828114636
+2,negative,qa_mask_struct_lsa4_bi,4,maybe,-0.09220771257880774
+2,negative,qa_mask_struct_lsa4_bi,5,bit,-0.08532353288522153
+2,negative,qa_mask_struct_lsa4_bi,6,could,-0.08211388455568418
+2,negative,qa_mask_struct_lsa4_bi,7,little,-0.07562635343943588
+2,negative,qa_mask_struct_lsa4_bi,8,little bit,-0.07356034943451355
+2,negative,qa_mask_struct_lsa4_bi,9,your,-0.07107563403193742
+2,negative,qa_mask_struct_lsa4_bi,10,30,-0.06878580057567603
+2,negative,qa_mask_struct_lsa4_bi,11,any,-0.06680679960020336
+2,negative,qa_mask_struct_lsa4_bi,12,about the,-0.06656576850074551
+3,positive,qa_mask_struct_lsa4_bi,1,30,0.13592049177768067
+3,positive,qa_mask_struct_lsa4_bi,2,today,0.12416650722149669
+3,positive,qa_mask_struct_lsa4_bi,3,our,0.11531404248951752
+3,positive,qa_mask_struct_lsa4_bi,4,cisco,0.11341163174519704
+3,positive,qa_mask_struct_lsa4_bi,5,joining,0.10694911802356494
+3,positive,qa_mask_struct_lsa4_bi,6,for joining,0.10694911802356494
+3,positive,qa_mask_struct_lsa4_bi,7,call,0.10640458651115947
+3,positive,qa_mask_struct_lsa4_bi,8,time,0.09737237986292009
+3,positive,qa_mask_struct_lsa4_bi,9,for,0.09215500584513897
+3,positive,qa_mask_struct_lsa4_bi,10,statements,0.08957922714284118
+3,positive,qa_mask_struct_lsa4_bi,11,2024,0.0891083440182807
+3,positive,qa_mask_struct_lsa4_bi,12,will,0.08860880997000492
+3,negative,qa_mask_struct_lsa4_bi,1,bit,-0.08384730404091818
+3,negative,qa_mask_struct_lsa4_bi,2,what you,-0.08299117682512383
+3,negative,qa_mask_struct_lsa4_bi,3,the,-0.07606227150486826
+3,negative,qa_mask_struct_lsa4_bi,4,little,-0.07382996121997945
+3,negative,qa_mask_struct_lsa4_bi,5,little bit,-0.07226202194305684
+3,negative,qa_mask_struct_lsa4_bi,6,you,-0.06234825941671481
+3,negative,qa_mask_struct_lsa4_bi,7,can you,-0.059054463614410024
+3,negative,qa_mask_struct_lsa4_bi,8,you re,-0.05757441503835576
+3,negative,qa_mask_struct_lsa4_bi,9,just,-0.05410746878812194
+3,negative,qa_mask_struct_lsa4_bi,10,betting,-0.053828252104723334
+3,negative,qa_mask_struct_lsa4_bi,11,half,-0.0534083697030766
+3,negative,qa_mask_struct_lsa4_bi,12,can,-0.052868564289782746
+4,positive,qa_mask_struct_lsa4_bi,1,statements,0.1364664260373592
+4,positive,qa_mask_struct_lsa4_bi,2,cash flow,0.13608314327139134
+4,positive,qa_mask_struct_lsa4_bi,3,flow,0.13148293945954376
+4,positive,qa_mask_struct_lsa4_bi,4,cash,0.13096995423878946
+4,positive,qa_mask_struct_lsa4_bi,5,target,0.10189333820942234
+4,positive,qa_mask_struct_lsa4_bi,6,free cash,0.09453878509455543
+4,positive,qa_mask_struct_lsa4_bi,7,and,0.09198720218579265
+4,positive,qa_mask_struct_lsa4_bi,8,was,0.08684227217941776
+4,positive,qa_mask_struct_lsa4_bi,9,our,0.08248805381577375
+4,positive,qa_mask_struct_lsa4_bi,10,expectations,0.08169374079404253
+4,positive,qa_mask_struct_lsa4_bi,11,operating,0.07196469234741353
+4,positive,qa_mask_struct_lsa4_bi,12,free,0.06723803851051398
+4,negative,qa_mask_struct_lsa4_bi,1,ai,-0.11605393849772074
+4,negative,qa_mask_struct_lsa4_bi,2,30,-0.09656215867241373
+4,negative,qa_mask_struct_lsa4_bi,3,around,-0.08662439455663938
+4,negative,qa_mask_struct_lsa4_bi,4,cisco,-0.07502855077335317
+4,negative,qa_mask_struct_lsa4_bi,5,much,-0.0676375432321773
+4,negative,qa_mask_struct_lsa4_bi,6,will,-0.0674910202056967
+4,negative,qa_mask_struct_lsa4_bi,7,how much,-0.06744840857354946
+4,negative,qa_mask_struct_lsa4_bi,8,data,-0.06213691220057686
+4,negative,qa_mask_struct_lsa4_bi,9,the approach,-0.06178178464540038
+4,negative,qa_mask_struct_lsa4_bi,10,of,-0.060626466003877576
+4,negative,qa_mask_struct_lsa4_bi,11,much of,-0.06030424679184829
+4,negative,qa_mask_struct_lsa4_bi,12,2024,-0.05912587857584864

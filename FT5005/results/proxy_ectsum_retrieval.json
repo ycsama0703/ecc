@@ -1,0 +1,145 @@
+{
+  "num_examples": 40,
+  "top_k": 5,
+  "mean_oracle_tfidf_f1": 0.55967294857011,
+  "mean_lead_f1": 0.3443391113589209,
+  "mean_random_f1": 0.2745381686361076,
+  "mean_top_segment_similarity": 0.8660339565799775,
+  "samples": [
+    {
+      "summary_preview": "We are in $0.77 per share for the quarter, including $0.02 per share of costs primarily relating to the transitioning of Eversource Gas Company of Massachusetts into the Eversource systems. Excluding these costs, we earned $0.79 per share in the second quarter and $1.87 per share in the first half of 2021. We continue to expect ongoing earnings toward the lower end of our $3.81 to $3.93 per share ",
+      "top_segments": [
+        {
+          "segment": "We are in $0.77 per share for the quarter, including $0.02 per share of costs primarily relating to the transitioning of Eversource Gas Company of Massachusetts into the Eversource systems.",
+          "score": 0.7906279060907463
+        },
+        {
+          "segment": "Excluding these costs, we earned $0.79 per share in the second quarter and $1.87 per share in the first half of 2021.",
+          "score": 0.7203081065161665
+        },
+        {
+          "segment": "We continue to expect ongoing earnings toward the lower end of our $3.81 to $3.93 per share guidance.",
+          "score": 0.5912973304889145
+        },
+        {
+          "segment": "Our Electric Distribution business earned $0.35 per share in the second quarter of '21 compared with earnings of $0.34 per share in the second quarter of 2020.",
+          "score": 0.5033906080527522
+        },
+        {
+          "segment": "Our Electric Transmission business earned $0.40 per share in the second quarter of 2021 compared with earnings of $0.39 per share in the second quarter of 2020, a higher level of necessary investment in our transmission facilities was partially offset by higher share count there.",
+          "score": 0.41054995833586855
+        }
+      ],
+      "lead_segments": [
+        "During hearings spring [Phonetic] resulted in Rhode Island Coastal Resource Management Council approval of the project, we indicated that we would install 12 11-megawatt turbines in connection with this project.",
+        "We are making progress on the 2 larger projects as well.",
+        "In April, the Rhode Island Energy Facility Siting Board issued a preliminary decision in order and Revolution Wind schedule with advisory opinions for local and state agencies to be submitted by August 26, 2021.",
+        "It is also consistent with the administration's target of having 30,000MW of offshore wind operating in the United States by 2030.",
+        "On July 14, PURA took major -- took a major step forward in furthering the state's clean energy goals when it approved a comprehensive program to support the state's push for having at least 125,000 zero emission vehicles on the road by the end of 2025."
+      ],
+      "metrics": {
+        "oracle": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "lead": {
+          "precision": 0.1564625850340136,
+          "recall": 0.3026315789473684,
+          "f1": 0.2062780269058296
+        },
+        "random_f1_mean": 0.38091619381288466
+      }
+    },
+    {
+      "summary_preview": "And I'm confident that our disciplined approach to operating the business will result in our continued success throughout the balance of fiscal 2021.",
+      "top_segments": [
+        {
+          "segment": "And I'm confident that our disciplined approach to operating the business will result in our continued success throughout the balance of fiscal 2021.",
+          "score": 0.9999999999999999
+        },
+        {
+          "segment": "Given the backdrop of today's COVID operating environment, I'm pleased to report that we deliver Q1 adjusted EBITDA of over $29 million, which is approximately 4.5% higher than Q1 of last year, despite the noted sales decline in A&D that Vic mentioned, related to softness within commercial aerospace, which historically is one of our most profitable operating units.",
+          "score": 0.239381064832279
+        },
+        {
+          "segment": "We took several cost reduction actions recently, and as a result, we increased our Q1 gross margin by 150 basis points to 39.4% and reduced our SG&A spending by nearly 3%.",
+          "score": 0.14572797393391315
+        },
+        {
+          "segment": "Our Test business delivered a really solid Q1 by significantly beating our internal expectations and delivering an EBITDA margin of nearly 13% versus 11% last Q1.",
+          "score": 0.13573707176944017
+        },
+        {
+          "segment": "Following up on the strong cash flow performance of the past year, we kicked-off fiscal 2021 with a record amount of cash flow, resulting in a free cash flow conversion ratio of 127% of net earnings.",
+          "score": 0.12047124335342561
+        }
+      ],
+      "lead_segments": [
+        "And I'm confident that our disciplined approach to operating the business will result in our continued success throughout the balance of fiscal 2021.",
+        "Coupled with the cost reduction actions we recently implemented, USG delivered an adjusted EBITDA margin of nearly 25%, up from approximately 19% in the prior year's Q1.",
+        "Following up on the strong cash flow performance of the past year, we kicked-off fiscal 2021 with a record amount of cash flow, resulting in a free cash flow conversion ratio of 127% of net earnings.",
+        "Today, we have approximately $740 million of liquidity at our disposal between cash on hand and available credit capacity while carrying a modest leverage ratio of 0.38.",
+        "We reported adjusted earnings per share of $0.55 a share, which increased $0.12 or 28% from the $0.43 we reported in prior year Q1."
+      ],
+      "metrics": {
+        "oracle": {
+          "precision": 0.13186813186813187,
+          "recall": 1.0,
+          "f1": 0.23300970873786409
+        },
+        "lead": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "f1": 0.2857142857142857
+        },
+        "random_f1_mean": 0.2622958500734494
+      }
+    },
+    {
+      "summary_preview": "Our teams have done an outstanding job monitoring our input costs and quickly translating that into price increases to remain price cost neutral for the year. Today, we announced that our board has approved a 10% per share increase to our dividend, which is consistent with our commitment for a dividend payout in the range of 35% to 45% and to grow the dividend annually in line with earnings. Net s",
+      "top_segments": [
+        {
+          "segment": "For the full year, net sales of 17.4 billion to 17.8 billion and operating EBITDA of approximately 4.4 billion at the midpoint reflects volume growth and acceleration of additional pricing gains throughout the year to offset the impact of both raw material and logistics cost increases.",
+          "score": 0.6008130712091682
+        },
+        {
+          "segment": "From an earnings perspective, we reported fourth quarter operating EBITDA of 973 million and adjusted earnings per share of $1.08 per share, up 5% and 54%, respectively, from the year-ago period.",
+          "score": 0.5918238881404433
+        },
+        {
+          "segment": "In the first quarter, we expect net sales between 4.2 billion and 4.3 billion and operating EBITDA between 940 million and 980 million.",
+          "score": 0.5075088828567705
+        },
+        {
+          "segment": "Adjusted earnings per share of $1.08 per share was up 54% from $0.70 per share in the year-ago period.",
+          "score": 0.4929164289305394
+        },
+        {
+          "segment": "Full year operating EBITDA of 4.2 billion increased 21%, reflecting 1.3 times operating leverage, operating EBITDA margin expansion of about 100 basis points, an incremental margin of 32%.",
+          "score": 0.48431810837871225
+        }
+      ],
+      "lead_segments": [
+        "Our fourth quarter results are highlighted by 6% volume gains, including a 9% increase in the E&I segment and a 12% increase in W&P.",
+        "Customer demand was broad-based across the portfolio, led by greater than 20% volume growth in semiconductor technologies and high teens volume growth in Water.",
+        "Our top-line performance also reflects significant pricing actions we took to offset $250 million of raw material inflation in the quarter.",
+        "Our teams have done an outstanding job monitoring our input costs and quickly translating that into price increases to remain price cost neutral for the year.",
+        "We are taking additional actions as we work to offset logistics costs, which, during the fourth quarter, were a $50 million headwind, mostly in W&P."
+      ],
+      "metrics": {
+        "oracle": {
+          "precision": 1.0,
+          "recall": 0.5781818181818181,
+          "f1": 0.7327188940092165
+        },
+        "lead": {
+          "precision": 0.616,
+          "recall": 0.28,
+          "f1": 0.38500000000000006
+        },
+        "random_f1_mean": 0.3786395791457677
+      }
+    }
+  ]
+}

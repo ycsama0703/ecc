@@ -1,0 +1,612 @@
+{
+  "config": {
+    "predictions_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/afterhours_transfer_pair_tail_question_lexical_pattern_benchmark_real/afterhours_transfer_pair_tail_question_lexical_pattern_benchmark_test_predictions.csv",
+    "panel_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/audio_sentence_aligned_afterhours_clean_real/panel_subset_afterhours_clean.csv",
+    "features_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/features_real/event_text_audio_features.csv",
+    "qa_csv": "/media/volume/dataset/xma8/work/icaif_ecc_news_attention/results/qa_benchmark_features_v2_real/qa_benchmark_features.csv"
+  },
+  "coverage": {
+    "rows": 60,
+    "with_panel": 60,
+    "with_features": 60,
+    "with_qa": 60,
+    "with_all": 60
+  },
+  "route_summary": {
+    "hard": {
+      "name": "hard",
+      "n": 60,
+      "r2": 0.9986401682388036,
+      "rmse": 0.0001236149724373469,
+      "mae": 6.724586012089539e-05,
+      "net_mse_gain_vs_hard": 0.0,
+      "mean_mse_gain_vs_hard": 0.0,
+      "win_share_vs_hard": 0.0,
+      "p_mse_vs_hard": 1.0
+    },
+    "lex": {
+      "name": "lex",
+      "n": 60,
+      "r2": 0.9986426801253959,
+      "rmse": 0.00012350074863199322,
+      "mae": 6.635577036750798e-05,
+      "net_mse_gain_vs_hard": 1.6935898813954316e-09,
+      "mean_mse_gain_vs_hard": 2.8226498023257194e-11,
+      "win_share_vs_hard": 0.06666666666666667,
+      "p_mse_vs_hard": 0.325
+    },
+    "sem": {
+      "name": "sem",
+      "n": 60,
+      "r2": 0.9986546797091032,
+      "rmse": 0.00012295362355008535,
+      "mae": 6.469422446932464e-05,
+      "net_mse_gain_vs_hard": 9.784071995396075e-09,
+      "mean_mse_gain_vs_hard": 1.6306786658993457e-10,
+      "win_share_vs_hard": 0.15,
+      "p_mse_vs_hard": 0.04425
+    },
+    "pre": {
+      "name": "pre",
+      "n": 60,
+      "r2": 0.9984820619311983,
+      "rmse": 0.00013060370956910247,
+      "mae": 6.755971064721144e-05,
+      "net_mse_gain_vs_hard": -1.0660005255146617e-07,
+      "mean_mse_gain_vs_hard": -1.7766675425244361e-09,
+      "win_share_vs_hard": 0.26666666666666666,
+      "p_mse_vs_hard": 0.15275
+    }
+  },
+  "overlap": {
+    "test_rows": 60,
+    "agreement_rows": 44,
+    "disagreement_rows": 16,
+    "lex_veto_rows": 7,
+    "sem_veto_rows": 13,
+    "shared_veto_rows": 4,
+    "sem_only_veto_rows": 9,
+    "lex_only_veto_rows": 3,
+    "lex_precision_to_sem_veto": 0.5714285714285714,
+    "lex_recall_of_sem_veto": 0.3076923076923077
+  },
+  "group_overview": [
+    {
+      "group": "shared_veto",
+      "n": 4,
+      "lex_net_mse_gain_vs_hard": 2.4247444511040713e-09,
+      "sem_net_mse_gain_vs_hard": 2.4247444511040713e-09,
+      "lex_mean_mse_gain_vs_hard": 6.061861127760178e-10,
+      "sem_mean_mse_gain_vs_hard": 6.061861127760178e-10,
+      "lex_win_share_vs_hard": 1.0,
+      "sem_win_share_vs_hard": 1.0,
+      "lex_use_agreed_share": 0.0,
+      "sem_veto_share": 1.0,
+      "mean__qa_pair_count": 4.5,
+      "mean__qa_bench_direct_early_score_mean": 0.8139885,
+      "mean__qa_bench_evasion_score_mean": 0.220327,
+      "mean__qa_bench_coverage_mean": 0.1979805,
+      "mean__a4_strict_row_share": 0.7167749999999999,
+      "mean__a4_strict_high_conf_share": NaN,
+      "lex_p_mse_vs_hard": 0.1235,
+      "sem_p_mse_vs_hard": 0.1235
+    },
+    {
+      "group": "sem_only_veto",
+      "n": 9,
+      "lex_net_mse_gain_vs_hard": 0.0,
+      "sem_net_mse_gain_vs_hard": 7.359327544292002e-09,
+      "lex_mean_mse_gain_vs_hard": 0.0,
+      "sem_mean_mse_gain_vs_hard": 8.177030604768891e-10,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.5555555555555556,
+      "lex_use_agreed_share": 1.0,
+      "sem_veto_share": 1.0,
+      "mean__qa_pair_count": 6.222222222222222,
+      "mean__qa_bench_direct_early_score_mean": 0.78072,
+      "mean__qa_bench_evasion_score_mean": 0.2043291111111111,
+      "mean__qa_bench_coverage_mean": 0.20268233333333333,
+      "mean__a4_strict_row_share": 0.7236777777777778,
+      "mean__a4_strict_high_conf_share": NaN,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 0.2045
+    },
+    {
+      "group": "lex_only_veto",
+      "n": 3,
+      "lex_net_mse_gain_vs_hard": -7.3115456970864e-10,
+      "sem_net_mse_gain_vs_hard": 0.0,
+      "lex_mean_mse_gain_vs_hard": -2.4371818990288e-10,
+      "sem_mean_mse_gain_vs_hard": 0.0,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.0,
+      "lex_use_agreed_share": 0.0,
+      "sem_veto_share": 0.0,
+      "mean__qa_pair_count": 6.0,
+      "mean__qa_bench_direct_early_score_mean": 0.6685866666666667,
+      "mean__qa_bench_evasion_score_mean": 0.2525516666666667,
+      "mean__qa_bench_coverage_mean": 0.18118933333333334,
+      "mean__a4_strict_row_share": 0.6645,
+      "mean__a4_strict_high_conf_share": NaN,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 1.0
+    },
+    {
+      "group": "both_keep_agreed",
+      "n": 28,
+      "lex_net_mse_gain_vs_hard": 0.0,
+      "sem_net_mse_gain_vs_hard": 0.0,
+      "lex_mean_mse_gain_vs_hard": 0.0,
+      "sem_mean_mse_gain_vs_hard": 0.0,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.0,
+      "lex_use_agreed_share": 1.0,
+      "sem_veto_share": 0.0,
+      "mean__qa_pair_count": 7.142857142857143,
+      "mean__qa_bench_direct_early_score_mean": 0.6854716071428573,
+      "mean__qa_bench_evasion_score_mean": 0.2466962142857143,
+      "mean__qa_bench_coverage_mean": 0.18509414285714287,
+      "mean__a4_strict_row_share": 0.6720285714285714,
+      "mean__a4_strict_high_conf_share": NaN,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 1.0
+    },
+    {
+      "group": "disagreement",
+      "n": 16,
+      "lex_net_mse_gain_vs_hard": 0.0,
+      "sem_net_mse_gain_vs_hard": 0.0,
+      "lex_mean_mse_gain_vs_hard": 0.0,
+      "sem_mean_mse_gain_vs_hard": 0.0,
+      "lex_win_share_vs_hard": 0.0,
+      "sem_win_share_vs_hard": 0.0,
+      "lex_use_agreed_share": 0.0,
+      "sem_veto_share": 0.0,
+      "mean__qa_pair_count": 7.125,
+      "mean__qa_bench_direct_early_score_mean": 0.788688625,
+      "mean__qa_bench_evasion_score_mean": 0.2081705,
+      "mean__qa_bench_coverage_mean": 0.1913714375,
+      "mean__a4_strict_row_share": 0.6866375,
+      "mean__a4_strict_high_conf_share": NaN,
+      "lex_p_mse_vs_hard": 1.0,
+      "sem_p_mse_vs_hard": 1.0
+    }
+  ],
+  "year_overview": [
+    {
+      "year": "2023",
+      "n": 29,
+      "lex_net_mse_gain_vs_hard": 3.884698450925079e-10,
+      "sem_net_mse_gain_vs_hard": 6.045208224787504e-09,
+      "lex_veto_rows": 3,
+      "sem_veto_rows": 8,
+      "shared_veto_rows": 2
+    },
+    {
+      "year": "2024",
+      "n": 26,
+      "lex_net_mse_gain_vs_hard": 1.3051200363029234e-09,
+      "sem_net_mse_gain_vs_hard": 3.4681237807306558e-09,
+      "lex_veto_rows": 4,
+      "sem_veto_rows": 4,
+      "shared_veto_rows": 2
+    },
+    {
+      "year": "2025",
+      "n": 5,
+      "lex_net_mse_gain_vs_hard": 0.0,
+      "sem_net_mse_gain_vs_hard": 2.7073998987791403e-10,
+      "lex_veto_rows": 0,
+      "sem_veto_rows": 1,
+      "shared_veto_rows": 0
+    }
+  ],
+  "top_positive_lex_events": [
+    {
+      "event_key": "AMZN_2024_Q1",
+      "ticker": "AMZN",
+      "year": 2024,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.1779474439421387e-09,
+      "sem_gain_vs_hard": 1.1779474439421387e-09
+    },
+    {
+      "event_key": "NKE_2023_Q1",
+      "ticker": "NKE",
+      "year": 2023,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.022105948255233e-09,
+      "sem_gain_vs_hard": 1.022105948255233e-09
+    },
+    {
+      "event_key": "MSFT_2024_Q3",
+      "ticker": "MSFT",
+      "year": 2024,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.2717259236078476e-10,
+      "sem_gain_vs_hard": 1.2717259236078476e-10
+    },
+    {
+      "event_key": "IBM_2023_Q2",
+      "ticker": "IBM",
+      "year": 2023,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 9.751846654591493e-11,
+      "sem_gain_vs_hard": 9.751846654591493e-11
+    },
+    {
+      "event_key": "AAPL_2023_Q1",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q3",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q4",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 3.4316276621842726e-09
+    },
+    {
+      "event_key": "AAPL_2024_Q1",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2024_Q2",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "disagreement",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2023_Q1",
+      "ticker": "AMGN",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    }
+  ],
+  "top_negative_lex_events": [
+    {
+      "event_key": "IBM_2023_Q4",
+      "ticker": "IBM",
+      "year": 2023,
+      "overlap_group": "lex_only_veto",
+      "lex_veto": 1,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": -7.3115456970864e-10,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q1",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q3",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q4",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 3.4316276621842726e-09
+    },
+    {
+      "event_key": "AAPL_2024_Q1",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2024_Q2",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "disagreement",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2023_Q1",
+      "ticker": "AMGN",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2023_Q2",
+      "ticker": "AMGN",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2024_Q1",
+      "ticker": "AMGN",
+      "year": 2024,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2024_Q2",
+      "ticker": "AMGN",
+      "year": 2024,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    }
+  ],
+  "top_positive_sem_events": [
+    {
+      "event_key": "AAPL_2023_Q4",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 3.4316276621842726e-09
+    },
+    {
+      "event_key": "NVDA_2023_Q1",
+      "ticker": "NVDA",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 2.649502887187864e-09
+    },
+    {
+      "event_key": "AMZN_2024_Q3",
+      "ticker": "AMZN",
+      "year": 2024,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 2.017733287063021e-09
+    },
+    {
+      "event_key": "AMZN_2024_Q1",
+      "ticker": "AMZN",
+      "year": 2024,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.1779474439421387e-09,
+      "sem_gain_vs_hard": 1.1779474439421387e-09
+    },
+    {
+      "event_key": "NKE_2023_Q1",
+      "ticker": "NKE",
+      "year": 2023,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.022105948255233e-09,
+      "sem_gain_vs_hard": 1.022105948255233e-09
+    },
+    {
+      "event_key": "MSFT_2025_Q1",
+      "ticker": "MSFT",
+      "year": 2025,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 2.7073998987791403e-10
+    },
+    {
+      "event_key": "IBM_2024_Q2",
+      "ticker": "IBM",
+      "year": 2024,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 1.4527045736471123e-10
+    },
+    {
+      "event_key": "MSFT_2024_Q3",
+      "ticker": "MSFT",
+      "year": 2024,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 1.2717259236078476e-10,
+      "sem_gain_vs_hard": 1.2717259236078476e-10
+    },
+    {
+      "event_key": "IBM_2023_Q2",
+      "ticker": "IBM",
+      "year": 2023,
+      "overlap_group": "shared_veto",
+      "lex_veto": 1,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 9.751846654591493e-11,
+      "sem_gain_vs_hard": 9.751846654591493e-11
+    },
+    {
+      "event_key": "AAPL_2023_Q1",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    }
+  ],
+  "top_negative_sem_events": [
+    {
+      "event_key": "DIS_2023_Q2",
+      "ticker": "DIS",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": -6.051595345129582e-10
+    },
+    {
+      "event_key": "DIS_2023_Q3",
+      "ticker": "DIS",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": -3.2047273467673814e-10
+    },
+    {
+      "event_key": "NKE_2023_Q2",
+      "ticker": "NKE",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": -1.610800735440463e-10
+    },
+    {
+      "event_key": "DIS_2023_Q4",
+      "ticker": "DIS",
+      "year": 2023,
+      "overlap_group": "sem_only_veto",
+      "lex_veto": 0,
+      "sem_veto": 1,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": -6.883439665203772e-11
+    },
+    {
+      "event_key": "AAPL_2023_Q1",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2023_Q3",
+      "ticker": "AAPL",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2024_Q1",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AAPL_2024_Q2",
+      "ticker": "AAPL",
+      "year": 2024,
+      "overlap_group": "disagreement",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2023_Q1",
+      "ticker": "AMGN",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    },
+    {
+      "event_key": "AMGN_2023_Q2",
+      "ticker": "AMGN",
+      "year": 2023,
+      "overlap_group": "both_keep_agreed",
+      "lex_veto": 0,
+      "sem_veto": 0,
+      "lex_gain_vs_hard": 0.0,
+      "sem_gain_vs_hard": 0.0
+    }
+  ]
+}

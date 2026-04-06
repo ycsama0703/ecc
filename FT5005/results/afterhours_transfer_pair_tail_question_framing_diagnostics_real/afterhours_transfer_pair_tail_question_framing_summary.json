@@ -1,0 +1,398 @@
+{
+  "counts": {
+    "agreement_veto_rows": 20,
+    "positive_veto_rows": 9,
+    "negative_veto_rows": 4,
+    "flat_veto_rows": 7
+  },
+  "mean_stats": {
+    "all_veto": {
+      "token_count": 112.45,
+      "sentence_like_count": 6.6,
+      "question_mark_count": 2.55,
+      "numeric_token_share": 0.015213307683705674,
+      "first_person_share": 0.024083486064688304,
+      "second_person_share": 0.034115324292652925,
+      "modal_share": 0.016553688274771987,
+      "hedge_share": 0.03340364050700102,
+      "followup_marker_count": 0.35
+    },
+    "positive_veto": {
+      "token_count": 102.55555555555556,
+      "sentence_like_count": 6.333333333333333,
+      "question_mark_count": 2.3333333333333335,
+      "numeric_token_share": 0.019136204205133817,
+      "first_person_share": 0.03036243234138399,
+      "second_person_share": 0.03895472186477706,
+      "modal_share": 0.017370553729397675,
+      "hedge_share": 0.03501074858964,
+      "followup_marker_count": 0.5555555555555556
+    },
+    "negative_veto": {
+      "token_count": 133.75,
+      "sentence_like_count": 8.5,
+      "question_mark_count": 2.5,
+      "numeric_token_share": 0.0041843739784243215,
+      "first_person_share": 0.019510238045707153,
+      "second_person_share": 0.03495685808662989,
+      "modal_share": 0.025214195864231154,
+      "hedge_share": 0.016051392842491883,
+      "followup_marker_count": 0.5
+    },
+    "flat_veto": {
+      "token_count": 113.0,
+      "sentence_like_count": 5.857142857142857,
+      "question_mark_count": 2.857142857142857,
+      "numeric_token_share": 0.016471831416315984,
+      "first_person_share": 0.018623839719783087,
+      "second_person_share": 0.027412365246220788,
+      "modal_share": 0.010554571210562299,
+      "hedge_share": 0.04125292878047044,
+      "followup_marker_count": 0.0
+    }
+  },
+  "positive_vs_negative_distinctive_ngrams": [
+    {
+      "ngram": "any",
+      "count_a": 9,
+      "count_b": 0,
+      "log_odds": 2.6370648214429844
+    },
+    {
+      "ngram": "year",
+      "count_a": 9,
+      "count_b": 0,
+      "log_odds": 2.6370648214429844
+    },
+    {
+      "ngram": "guys",
+      "count_a": 6,
+      "count_b": 0,
+      "log_odds": 2.2575751997380813
+    },
+    {
+      "ngram": "wondering",
+      "count_a": 5,
+      "count_b": 0,
+      "log_odds": 2.090521115074915
+    },
+    {
+      "ngram": "you guys",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "little",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "gaming",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "if you could",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "a little",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "you could",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "where",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "wondering if you",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "wondering if",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "i think",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "million",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "around",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "ai",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 1.8898504196127632
+    },
+    {
+      "ngram": "capex",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.6385359913318576
+    },
+    {
+      "ngram": "half",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.6385359913318576
+    },
+    {
+      "ngram": "color",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 1.6385359913318576
+    }
+  ],
+  "negative_vs_positive_distinctive_ngrams": [
+    {
+      "ngram": "disney",
+      "count_a": 8,
+      "count_b": 0,
+      "log_odds": 3.1405875017796703
+    },
+    {
+      "ngram": "platform",
+      "count_a": 4,
+      "count_b": 0,
+      "log_odds": 2.504598735059674
+    },
+    {
+      "ngram": "the u s",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "bob",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "u s",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "the disney",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "sports",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "that disney",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "their",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "the u",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "content",
+      "count_a": 3,
+      "count_b": 0,
+      "log_odds": 2.2532843067787676
+    },
+    {
+      "ngram": "then second",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "but you",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "great",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "that and then",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "of their",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "services to",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "the next",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "assets",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    },
+    {
+      "ngram": "that and",
+      "count_a": 2,
+      "count_b": 0,
+      "log_odds": 1.9168120701575546
+    }
+  ],
+  "top_positive_events": [
+    {
+      "event_key": "AAPL_2023_Q4",
+      "ticker": "AAPL",
+      "year": "2023",
+      "mse_gain_vs_hard": 3.4316276621842726e-09,
+      "label": "positive",
+      "tail_top1_question_text": "Very clear. And for my follow-up, I had a philosophical question. So you guys always try to provide the best experience for consumers. To that end, I think over the last decade, you in-sourced a lot of important chips in your phones and your Macs, iPads, so on and so forth. And that was, I think, a function that ARM wasn't around in the industry from a merchant angle. But now we see these -- the silicon guys, the chip guys moving to ARM architecture. So my question to you is, has the move to internal silicon been economically profitable proposition for Apple? Or is it a strategic one where you simply need to own this and it's vital to your products for the consumer experience? Or maybe there's a path back to chip vendors at some point in time?"
+    },
+    {
+      "event_key": "NVDA_2023_Q1",
+      "ticker": "NVDA",
+      "year": "2023",
+      "mse_gain_vs_hard": 2.649502887187864e-09,
+      "label": "positive",
+      "tail_top1_question_text": "I wanted to follow up on the sequential. So Colette, I know you said the $500 million was a $400 million hit to Gaming and a $100 million hit to data. So I'm assuming, that doesn't mean the Gaming is down $400 million. I mean, is Gaming -- do you see Gaming actually down more than the actual Russia and lockdown hit? And I guess just how do I think about the relative sequentials of the businesses in light of those constraints that you guys are facing?"
+    },
+    {
+      "event_key": "AMZN_2024_Q3",
+      "ticker": "AMZN",
+      "year": "2024",
+      "mse_gain_vs_hard": 2.017733287063021e-09,
+      "label": "positive",
+      "tail_top1_question_text": "Maybe a couple of questions. Just on the cloud, are you at all capacity constrained, and will the new Trainium or NVIDIA chips maybe even drive sales growth faster? And then secondly, Andy, I know there's been some competition from some of the more traditional retailers growing quickly online. Maybe talk about maybe the advantages that Amazon has with a fulfillment center distribution versus store distribution? Any thoughts on that?"
+    },
+    {
+      "event_key": "AMZN_2024_Q1",
+      "ticker": "AMZN",
+      "year": "2024",
+      "mse_gain_vs_hard": 1.1779474439421387e-09,
+      "label": "positive",
+      "tail_top1_question_text": "Maybe, Andy, I wanted to ask on international profitability, just after 1Q's 2.8% margin. Talk just about where we are in terms of international getting or to consistent profitability. We're following a similar trajectory as North America in terms of benefiting from regionalization shift, and we saw what average distance of each package traveled actually came down by 25 kilometers and whatnot. And if you could provide any insights on maybe how inbound fulfillment architecture might add to just continued benefits on faster shipping, same-day, next day, et cetera."
+    },
+    {
+      "event_key": "NKE_2023_Q1",
+      "ticker": "NKE",
+      "year": "2023",
+      "mse_gain_vs_hard": 1.022105948255233e-09,
+      "label": "positive",
+      "tail_top1_question_text": "Matt, I was just wondering if you -- to clarify 1 simple thing, you said North America inventory peaked in first quarter. Could you clarify that the total company inventory starts to decline on a year-over-year basis after this? Maybe some of the visibility you have into the back half related to how you're building it after your comment that 2Q will be the low watermark on gross margins. And then, John, I know it's a very different macro but the comments you guys just made for fiscal '24 and beyond. Any reflection on the 5-year targets that you gave us a year ago, some of the growth rates and year-over-year margin opportunities as we get past this year relative to that plan?"
+    },
+    {
+      "event_key": "MSFT_2025_Q1",
+      "ticker": "MSFT",
+      "year": "2025",
+      "mse_gain_vs_hard": 2.7073998987791403e-10,
+      "label": "positive",
+      "tail_top1_question_text": "Congratulations on the quarter. The question every investor obviously asks is a question on the CapEx growth and the CapEx spend. Obviously, half of that facility is an equivalent that have a longer life, but the other half is the rest of the components. Can you give any color on how you think of that growth? Does it return to the traditional approach, where basically CapEx is going to grow in line or slightly slower than cloud revenue? And if so, any sense of the timing? Do we have enough facilities online by sometime next year, et cetera? Any color would be appreciated."
+    },
+    {
+      "event_key": "IBM_2024_Q2",
+      "ticker": "IBM",
+      "year": "2024",
+      "mse_gain_vs_hard": 1.4527045736471123e-10,
+      "label": "positive",
+      "tail_top1_question_text": "Arvind, if we could pick up right where you left off there. Can you just give us a little more color on the decision to open up the Granite models and the code base? And then really what you're seeing in the market that makes you feel like taking maybe a more developer-focused approach to those? I think as you put it, fit-for-purpose models is the right long-term strategy."
+    },
+    {
+      "event_key": "MSFT_2024_Q3",
+      "ticker": "MSFT",
+      "year": "2024",
+      "mse_gain_vs_hard": 1.2717259236078476e-10,
+      "label": "positive",
+      "tail_top1_question_text": "Satya and Amy, congrats on these outstanding Azure results. I'd love to hone in a little bit on the 7 point lift to Azure growth from AI, outstanding number, but it's leveling off a little bit from 6 points in December. I'm wondering if you could unpack that a little bit. To what extent did the capacity issues that you Amy highlighted on the call impact that number. Is there any seasonality? I wouldn't think so. Or any other factor that can swing around that number that you'd advise us to keep in mind?"
+    }
+  ],
+  "top_negative_events": [
+    {
+      "event_key": "DIS_2023_Q2",
+      "ticker": "DIS",
+      "year": "2023",
+      "mse_gain_vs_hard": -6.051595345129582e-10,
+      "label": "negative",
+      "tail_top1_question_text": "Bob, integrating Hulu into the Disney+ app is intriguing, so I wanted to continue that conversation. When Disney+ was launched, you noted consumers should not have to buy through your entertainment content to get the Marvel and Star Wars and Disney and Pixar content. And you thought at the time having separate services to give consumers choice was the right approach. Is that still the right approach, to have multiple services to give consumer choice? And if the answer is yes, but you want the efficiency and flexibility of a single app, that would suggest that Disney+ is finally turning into a platform. And I'm just curious if you see the opportunity to broaden the number of subscriptions that can live on that Disney+ platform or if you can expand the monetization of that platform in other ways, while maintaining a premium experience for consumers. And if I could add one for Christine, is fiscal 3Q the peak for streaming losses?"
+    },
+    {
+      "event_key": "DIS_2023_Q3",
+      "ticker": "DIS",
+      "year": "2023",
+      "mse_gain_vs_hard": -3.2047273467673814e-10,
+      "label": "negative",
+      "tail_top1_question_text": "Bob, the linear business is clearly under pressure, and you made it clear recently that all options are being considered. I'm curious, though, what the practical considerations are of separating assets like ABC, National Geographic or others from both ESPN or sports or integrated or from Hulu, which is kind of the next-generation distribution platform. Can you talk about that? And then second, can we assume that most of those TV assets have been fully depreciated?"
+    },
+    {
+      "event_key": "NKE_2023_Q2",
+      "ticker": "NKE",
+      "year": "2023",
+      "mse_gain_vs_hard": -1.610800735440463e-10,
+      "label": "negative",
+      "tail_top1_question_text": "Congrats on a great quarter. I know it's a lot of heavy lifting. And maybe a simple question, how do you feel on North America inventory in the channel? I know you moved a mountain, but you have a big wholesale business. It's hard for us to track inventory once it leaves your books. Are we past the peak promotions in the U.S.? Is this the highest level of promotions in your view? It would seem so based on some of the inventory comments you gave on the U.S. I just wanted to check that. And then I guess as you start to come out of some of the recent volatility, maybe you can help us connect back to your longer-term targets, in particular, the path to the high teens EBIT margins and the major input to getting there, the D2C versus wholesale transition since we don't get many numbers reported on the margins between those 2 channels. How would you tell us to think about building our understanding into how you get there from here because that seems like the next part of the NIKE story?"
+    },
+    {
+      "event_key": "DIS_2023_Q4",
+      "ticker": "DIS",
+      "year": "2023",
+      "mse_gain_vs_hard": -6.883439665203772e-11,
+      "label": "negative",
+      "tail_top1_question_text": "Great. Maybe first, a follow-up to Ben's question. Bob, is there an opportunity for ESPN to add local sports rights given what's happening to the RSN model or potentially add sports rights to be distributed outside the U.S.? That's the first question. And then second question is Warner Bros. basically made some news recently by licensing some of their -- what would be considered some of their tentpole content, their DC universe to Netflix. Is that something you think that Disney can do or can lean into more -- at least more so than you're doing now without diluting the Disney brand or the Disney+ growth prospects?"
+    }
+  ]
+}
