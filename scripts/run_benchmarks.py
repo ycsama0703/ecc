@@ -29,6 +29,7 @@ from scipy import stats as scipy_stats
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from experiment_targets import apply_target_mode
 from models.market_prior_model import MarketPriorModel
 
 
@@ -39,12 +40,32 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 STRICT_PRECALL_MARKET_FEATURES = list(MarketPriorModel.MARKET_FEATURES)
 STRICT_PRECALL_CONTROL_FEATURES = list(MarketPriorModel.CONTROL_FEATURES)
 
+STRICT_PRECALL_NO_SURPRISE_CONTROL_FEATURES = [
+    "scheduled_hour_et",
+    "analyst_eps_norm_num_est",
+    "analyst_eps_norm_std",
+    "analyst_revenue_num_est",
+    "analyst_revenue_std",
+    "analyst_net_income_num_est",
+    "analyst_net_income_std",
+    "firm_size",
+    "sector",
+    "historical_volatility",
+]
 
-def load_panel(panel_path: Path) -> pd.DataFrame:
+STRICT_PRECALL_SINGLE_RV_MARKET_FEATURES = [
+    "pre_60m_rv",
+    "pre_60m_volume_sum",
+]
+
+
+def load_panel(panel_path: Path, target_mode: str = "shock_minus_pre") -> pd.DataFrame:
     if panel_path.suffix == ".parquet":
-        return pd.read_parquet(panel_path)
+        df = pd.read_parquet(panel_path)
+        return apply_target_mode(df, target_mode=target_mode)
     if panel_path.suffix == ".csv":
-        return pd.read_csv(panel_path)
+        df = pd.read_csv(panel_path)
+        return apply_target_mode(df, target_mode=target_mode)
     raise ValueError(f"Unsupported panel format: {panel_path}")
 
 
@@ -776,6 +797,13 @@ def main() -> None:
     parser.add_argument("--split-version", type=str, default="v1")
     parser.add_argument("--run-id", type=str, default="bench01")
     parser.add_argument(
+        "--target-mode",
+        type=str,
+        default="shock_minus_pre",
+        choices=["shock_minus_pre", "log_rv_ratio"],
+        help="Target definition used during benchmark training.",
+    )
+    parser.add_argument(
         "--tune-market-baselines",
         action="store_true",
         help="Tune market baselines on validation set.",
@@ -784,6 +812,16 @@ def main() -> None:
         "--strict-precall",
         action="store_true",
         help="Use only decision-time-safe pre-call features and skip post-start text/ECC baselines.",
+    )
+    parser.add_argument(
+        "--strict-precall-no-surprise",
+        action="store_true",
+        help="Use an even stricter pre-call benchmark without surprise features.",
+    )
+    parser.add_argument(
+        "--strict-precall-single-rv",
+        action="store_true",
+        help="Use a stricter pre-call benchmark that drops pre_60m_vw_rv.",
     )
     parser.add_argument(
         "--finbert-model",
@@ -819,10 +857,44 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    panel = load_panel(args.panel.resolve())
+    panel = load_panel(args.panel.resolve(), target_mode=args.target_mode)
     split_df = load_split(args.split.resolve())
     train_df, val_df, test_df = split_data(panel, split_df)
-    if args.strict_precall:
+    strict_mode_count = sum(
+        int(flag)
+        for flag in (
+            args.strict_precall,
+            args.strict_precall_no_surprise,
+            args.strict_precall_single_rv,
+        )
+    )
+    if strict_mode_count > 1:
+        raise ValueError(
+            "Use at most one of --strict-precall, --strict-precall-no-surprise, "
+            "and --strict-precall-single-rv."
+        )
+
+    if args.strict_precall_single_rv:
+        market_only_name = "market_precall_single_rv"
+        market_controls_name = "market_precall_single_rv_plus_controls"
+        xgb_name = "xgboost_precall_single_rv_controls"
+        lgb_name = "lightgbm_precall_single_rv_controls"
+        rf_name = "random_forest_precall_single_rv_controls"
+        market_features = STRICT_PRECALL_SINGLE_RV_MARKET_FEATURES
+        market_controls_features = (
+            STRICT_PRECALL_SINGLE_RV_MARKET_FEATURES + STRICT_PRECALL_CONTROL_FEATURES
+        )
+    elif args.strict_precall_no_surprise:
+        market_only_name = "market_precall_only"
+        market_controls_name = "market_precall_controls_no_surprise"
+        xgb_name = "xgboost_precall_controls_no_surprise"
+        lgb_name = "lightgbm_precall_controls_no_surprise"
+        rf_name = "random_forest_precall_controls_no_surprise"
+        market_features = STRICT_PRECALL_MARKET_FEATURES
+        market_controls_features = (
+            STRICT_PRECALL_MARKET_FEATURES + STRICT_PRECALL_NO_SURPRISE_CONTROL_FEATURES
+        )
+    elif args.strict_precall:
         market_only_name = "market_precall_only"
         market_controls_name = "market_precall_plus_controls"
         xgb_name = "xgboost_precall_controls"
@@ -896,7 +968,11 @@ def main() -> None:
         ),
     ]
 
-    if not args.strict_precall:
+    if (
+        not args.strict_precall
+        and not args.strict_precall_no_surprise
+        and not args.strict_precall_single_rv
+    ):
         benchmarks.extend(
             [
                 (
@@ -941,7 +1017,10 @@ def main() -> None:
         "split_version": args.split_version,
         "panel_path": str(args.panel.resolve()),
         "split_path": str(args.split.resolve()),
+        "target_mode": args.target_mode,
         "strict_precall": args.strict_precall,
+        "strict_precall_no_surprise": args.strict_precall_no_surprise,
+        "strict_precall_single_rv": args.strict_precall_single_rv,
         "benchmarks": {},
     }
 

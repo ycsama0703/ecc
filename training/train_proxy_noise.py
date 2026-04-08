@@ -28,6 +28,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from experiment_targets import apply_target_mode
 from models.proxy_noise_model import ProxyNoiseModel
 
 logging.basicConfig(
@@ -40,7 +41,7 @@ TARGET_COLUMN = "shock_minus_pre"
 EVENT_ID_COLUMN = "event_id"
 
 
-def load_panel(panel_path: str) -> pd.DataFrame:
+def load_panel(panel_path: str, target_mode: str = "shock_minus_pre") -> pd.DataFrame:
     """Load the processed event-level panel."""
     if panel_path.endswith(".parquet"):
         df = pd.read_parquet(panel_path)
@@ -48,7 +49,13 @@ def load_panel(panel_path: str) -> pd.DataFrame:
         df = pd.read_csv(panel_path)
     else:
         raise ValueError(f"Unsupported file format: {panel_path}")
-    logger.info("Loaded panel with %d rows, %d columns", len(df), len(df.columns))
+    df = apply_target_mode(df, target_mode=target_mode)
+    logger.info(
+        "Loaded panel with %d rows, %d columns  target_mode=%s",
+        len(df),
+        len(df.columns),
+        target_mode,
+    )
     return df
 
 
@@ -222,6 +229,7 @@ def train_proxy_noise(
     run_id: str = "run01",
     mode: str = "isotonic",
     params: dict | None = None,
+    target_mode: str = "shock_minus_pre",
 ) -> ProxyNoiseModel:
     """End-to-end training of the proxy noise model.
 
@@ -264,11 +272,12 @@ def train_proxy_noise(
         "run_id": run_id,
         "mode": mode,
         "params": params,
+        "target_mode": target_mode,
     }
     logger.info("Starting proxy noise training  run_id=%s  mode=%s", run_id, mode)
 
     # --- Load data ---
-    panel = load_panel(panel_path)
+    panel = load_panel(panel_path, target_mode=target_mode)
     split_df = load_split(split_path)
     train_df, val_df, test_df = split_data(panel, split_df)
 
@@ -420,6 +429,13 @@ def main():
         default=None,
         help="Override random seed.",
     )
+    parser.add_argument(
+        "--target-mode",
+        type=str,
+        default="shock_minus_pre",
+        choices=["shock_minus_pre", "log_rv_ratio"],
+        help="Target definition used during training.",
+    )
     args = parser.parse_args()
 
     params = {}
@@ -437,6 +453,7 @@ def main():
         run_id=args.run_id,
         mode=args.mode,
         params=params if params else None,
+        target_mode=args.target_mode,
     )
 
 

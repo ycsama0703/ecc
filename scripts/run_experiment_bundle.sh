@@ -47,6 +47,7 @@ Split / evaluation options:
   --experiment-dir DIR              Default: outputs/<tag>
   --benchmark-dir DIR               Default: outputs/benchmarks_<tag>
   --ecc-feature-mode MODE           ecc_only only. Default: ecc_only
+  --target-mode MODE                shock_minus_pre | log_rv_ratio. Default: shock_minus_pre
   --abstention-min-coverage X       Default: 0.30
   --abstention-target-coverage X    Optional explicit target coverage for kappa selection
   --coverage-sweep-targets LIST     Default: 0.2,0.4,0.6,0.8,unconstrained
@@ -105,6 +106,7 @@ VAL_RATIO="0.15"
 EXPERIMENT_DIR=""
 BENCHMARK_DIR=""
 ECC_FEATURE_MODE="ecc_only"
+TARGET_MODE="shock_minus_pre"
 ABSTENTION_MIN_COVERAGE="0.30"
 ABSTENTION_TARGET_COVERAGE=""
 COVERAGE_SWEEP_TARGETS="0.2,0.4,0.6,0.8,unconstrained"
@@ -151,6 +153,7 @@ while [[ $# -gt 0 ]]; do
     --experiment-dir) EXPERIMENT_DIR="$2"; shift 2 ;;
     --benchmark-dir) BENCHMARK_DIR="$2"; shift 2 ;;
     --ecc-feature-mode) ECC_FEATURE_MODE="$2"; shift 2 ;;
+    --target-mode) TARGET_MODE="$2"; shift 2 ;;
     --abstention-min-coverage) ABSTENTION_MIN_COVERAGE="$2"; shift 2 ;;
     --abstention-target-coverage) ABSTENTION_TARGET_COVERAGE="$2"; shift 2 ;;
     --coverage-sweep-targets) COVERAGE_SWEEP_TARGETS="$2"; shift 2 ;;
@@ -211,6 +214,7 @@ echo "  experiment_dir: $EXPERIMENT_DIR"
 echo "  benchmark_dir: $BENCHMARK_DIR"
 echo "  timing_mode: $TIMING_MODE"
 echo "  ecc_feature_mode: $ECC_FEATURE_MODE"
+echo "  target_mode: $TARGET_MODE"
 echo "  abstention_target_coverage: ${ABSTENTION_TARGET_COVERAGE:-<none>}"
 
 if [[ "$SKIP_MANIFEST" -eq 0 ]]; then
@@ -260,6 +264,7 @@ if [[ "$SKIP_MAIN" -eq 0 ]]; then
       --run-id "$MAIN_RUN_ID"
       --tune-market-prior
       --ecc-feature-mode "$ECC_FEATURE_MODE"
+      --target-mode "$TARGET_MODE"
       --abstention-min-coverage "$ABSTENTION_MIN_COVERAGE"
       --coverage-sweep-targets "$COVERAGE_SWEEP_TARGETS"
   )
@@ -278,6 +283,7 @@ if [[ "$SKIP_BENCHMARKS" -eq 0 ]]; then
       --output-dir "$BENCHMARK_DIR" \
       --split-version "$SPLIT_VERSION" \
       --run-id "$BENCH_RUN_ID" \
+      --target-mode "$TARGET_MODE" \
       --tune-market-baselines \
       --finbert-device "$FINBERT_DEVICE" \
       --finbert-max-length "$FINBERT_MAX_LENGTH" \

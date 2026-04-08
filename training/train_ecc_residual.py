@@ -28,6 +28,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from experiment_targets import apply_target_mode
 from models.ecc_residual_model import ECCResidualModel
 from models.market_prior_model import MarketPriorModel
 
@@ -41,7 +42,7 @@ TARGET_COLUMN = "shock_minus_pre"
 EVENT_ID_COLUMN = "event_id"
 
 
-def load_panel(panel_path: str) -> pd.DataFrame:
+def load_panel(panel_path: str, target_mode: str = "shock_minus_pre") -> pd.DataFrame:
     """Load the processed event-level panel."""
     if panel_path.endswith(".parquet"):
         df = pd.read_parquet(panel_path)
@@ -49,7 +50,13 @@ def load_panel(panel_path: str) -> pd.DataFrame:
         df = pd.read_csv(panel_path)
     else:
         raise ValueError(f"Unsupported file format: {panel_path}")
-    logger.info("Loaded panel with %d rows, %d columns", len(df), len(df.columns))
+    df = apply_target_mode(df, target_mode=target_mode)
+    logger.info(
+        "Loaded panel with %d rows, %d columns  target_mode=%s",
+        len(df),
+        len(df.columns),
+        target_mode,
+    )
     return df
 
 
@@ -241,6 +248,7 @@ def train_ecc_residual(
     run_id: str = "run01",
     params: dict | None = None,
     feature_mode: str = "ecc_only",
+    target_mode: str = "shock_minus_pre",
 ) -> ECCResidualModel:
     """End-to-end training of the ECC residual model.
 
@@ -281,11 +289,12 @@ def train_ecc_residual(
         "run_id": run_id,
         "params": params,
         "feature_mode": feature_mode,
+        "target_mode": target_mode,
     }
     logger.info("Starting ECC residual training  run_id=%s", run_id)
 
     # --- Load data ---
-    panel = load_panel(panel_path)
+    panel = load_panel(panel_path, target_mode=target_mode)
     split_df = load_split(split_path)
     train_df, val_df, test_df = split_data(panel, split_df)
 
@@ -430,6 +439,13 @@ def main():
         choices=["ecc_only", "ecc_plus_market_controls"],
         help="Feature bundle for the residual model.",
     )
+    parser.add_argument(
+        "--target-mode",
+        type=str,
+        default="shock_minus_pre",
+        choices=["shock_minus_pre", "log_rv_ratio"],
+        help="Target definition used during training.",
+    )
     args = parser.parse_args()
 
     params = {}
@@ -451,6 +467,7 @@ def main():
         run_id=args.run_id,
         params=params if params else None,
         feature_mode=args.feature_mode,
+        target_mode=args.target_mode,
     )
 
 

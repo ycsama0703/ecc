@@ -307,6 +307,7 @@ def fit_full_pipeline(
     sigma_bar_min_margin: float = 0.0,
     abstention_target_coverage: float | None = None,
     coverage_sweep_targets: str = "0.2,0.4,0.6,0.8,unconstrained",
+    target_mode: str = "shock_minus_pre",
 ) -> dict:
     """Run the full pipeline end-to-end.
 
@@ -384,6 +385,7 @@ def fit_full_pipeline(
         run_id=rid,
         tune=tune_market_prior,
         params=market_prior_params,
+        target_mode=target_mode,
     )
 
     # ===================================================================
@@ -401,6 +403,7 @@ def fit_full_pipeline(
         run_id=rid,
         params=ecc_residual_params,
         feature_mode=ecc_feature_mode,
+        target_mode=target_mode,
     )
 
     # ===================================================================
@@ -418,6 +421,7 @@ def fit_full_pipeline(
         run_id=rid,
         mode=proxy_noise_mode,
         params=proxy_noise_params,
+        target_mode=target_mode,
     )
 
     # ===================================================================
@@ -969,8 +973,9 @@ def fit_full_pipeline(
             "ecc_residual_params": ecc_residual_params,
             "proxy_noise_mode": proxy_noise_mode,
             "proxy_noise_params": proxy_noise_params,
-            "use_abstention": use_abstention,
-            "abstention_metric": abstention_metric,
+        "use_abstention": use_abstention,
+        "target_mode": target_mode,
+        "abstention_metric": abstention_metric,
             "abstention_min_coverage": abstention_min_coverage,
             "abstention_target_coverage": abstention_target_coverage,
             "coverage_sweep_targets": coverage_sweep_targets,
@@ -1095,6 +1100,13 @@ def main():
         help="Comma-separated target coverages for selective summary export.",
     )
     parser.add_argument(
+        "--target-mode",
+        type=str,
+        default="shock_minus_pre",
+        choices=["shock_minus_pre", "log_rv_ratio"],
+        help="Target definition used throughout the full pipeline.",
+    )
+    parser.add_argument(
         "--seed",
         type=int,
         default=None,
@@ -1130,6 +1142,7 @@ def main():
         sigma_bar_min_margin=args.sigma_bar_min_margin,
         abstention_target_coverage=args.abstention_target_coverage,
         coverage_sweep_targets=args.coverage_sweep_targets,
+        target_mode=args.target_mode,
     )
 
 
