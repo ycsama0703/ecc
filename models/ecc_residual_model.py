@@ -20,6 +20,7 @@ from typing import Optional
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
+from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -98,6 +99,7 @@ class ECCResidualModel:
         pca_components = self.params["pca_components"]
         if pca_components is not None and pca_components < n_features:
             steps = [
+                ("imputer", SimpleImputer(strategy="median")),
                 ("scaler", StandardScaler()),
                 (
                     "pca",
@@ -110,6 +112,7 @@ class ECCResidualModel:
             ]
         else:
             steps = [
+                ("imputer", SimpleImputer(strategy="median")),
                 ("scaler", StandardScaler()),
                 ("ridge", Ridge(alpha=self.params["ridge_alpha"])),
             ]

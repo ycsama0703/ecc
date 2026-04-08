@@ -29,6 +29,7 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from models.ecc_residual_model import ECCResidualModel
+from models.market_prior_model import MarketPriorModel
 
 logging.basicConfig(
     level=logging.INFO,
@@ -193,6 +194,42 @@ def save_run_log(
     return log_path
 
 
+def resolve_ecc_feature_columns(
+    panel_df: pd.DataFrame,
+    feature_mode: str,
+) -> list[str]:
+    """Resolve feature columns for the residual model.
+
+    `ecc_only` keeps the original design.
+    `ecc_plus_market_controls` augments the residual model with the same
+    market/control bundle used by the market prior.
+    """
+    ecc_columns: list[str] = []
+    for prefix in ECCResidualModel.ECC_FEATURE_GROUPS:
+        matched = sorted(col for col in panel_df.columns if col.startswith(prefix))
+        ecc_columns.extend(matched)
+
+    if not ecc_columns:
+        raise ValueError("No ECC feature columns found in panel.")
+
+    if feature_mode == "ecc_only":
+        return ecc_columns
+
+    if feature_mode == "ecc_plus_market_controls":
+        market_control_columns = (
+            MarketPriorModel.MARKET_FEATURES + MarketPriorModel.CONTROL_FEATURES
+        )
+        missing = [col for col in market_control_columns if col not in panel_df.columns]
+        if missing:
+            raise ValueError(
+                "Missing market/control columns required for "
+                f"`{feature_mode}`: {missing}"
+            )
+        return ecc_columns + market_control_columns
+
+    raise ValueError(f"Unknown ECC feature mode: {feature_mode}")
+
+
 def train_ecc_residual(
     panel_path: str,
     split_path: str,
@@ -203,6 +240,7 @@ def train_ecc_residual(
     split_version: str = "v1",
     run_id: str = "run01",
     params: dict | None = None,
+    feature_mode: str = "ecc_only",
 ) -> ECCResidualModel:
     """End-to-end training of the ECC residual model.
 
@@ -242,6 +280,7 @@ def train_ecc_residual(
         "split_version": split_version,
         "run_id": run_id,
         "params": params,
+        "feature_mode": feature_mode,
     }
     logger.info("Starting ECC residual training  run_id=%s", run_id)
 
@@ -266,7 +305,8 @@ def train_ecc_residual(
     )
 
     # --- Fit model on training residuals ---
-    model = ECCResidualModel(params=params)
+    feature_columns = resolve_ecc_feature_columns(train_df, feature_mode=feature_mode)
+    model = ECCResidualModel(params=params, feature_columns=feature_columns)
     model.fit(train_df, train_df["r_tilde"].values)
     logger.info("Model fitted on %d training samples", len(train_df))
 
@@ -383,6 +423,13 @@ def main():
         default=None,
         help="Override random seed.",
     )
+    parser.add_argument(
+        "--feature-mode",
+        type=str,
+        default="ecc_only",
+        choices=["ecc_only", "ecc_plus_market_controls"],
+        help="Feature bundle for the residual model.",
+    )
     args = parser.parse_args()
 
     params = {}
@@ -403,6 +450,7 @@ def main():
         split_version=args.split_version,
         run_id=args.run_id,
         params=params if params else None,
+        feature_mode=args.feature_mode,
     )
 
 

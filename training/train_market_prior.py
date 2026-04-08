@@ -151,6 +151,7 @@ def save_run_log(
         "feature_columns": model.feature_columns,
         "model_hyperparameters": model.params,
         "best_params": model.best_params,
+        "best_val_mse": model.best_val_mse,
         "train_size": train_size,
         "val_size": val_size,
         "test_size": test_size,
@@ -214,7 +215,12 @@ def train_market_prior(
 
     # --- Fit model ---
     model = MarketPriorModel(params=params, tune=tune)
-    model.fit(train_df, train_df[TARGET_COLUMN].values)
+    model.fit(
+        train_df,
+        train_df[TARGET_COLUMN].values,
+        X_val=val_df,
+        y_val=val_df[TARGET_COLUMN].values,
+    )
     logger.info("Model fitted on %d training samples", len(train_df))
 
     # --- Predict on all splits ---
@@ -297,7 +303,7 @@ def main():
     parser.add_argument(
         "--tune",
         action="store_true",
-        help="Enable hyperparameter tuning via GridSearchCV.",
+        help="Enable hyperparameter tuning via explicit validation-set selection.",
     )
     parser.add_argument(
         "--seed",

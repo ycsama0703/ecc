@@ -5,3 +5,5 @@ __pycache__/
 outputs/
 *.pkl
 .env
+/data/
+/ECC text and audio (Dow30 as in 2025 Jan27)/
